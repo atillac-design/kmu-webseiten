@@ -7,8 +7,8 @@ export function getStaticPaths() {
 }
 
 const { city } = Astro.props;
-const title = `Homepage für Therapiepraxen in ${city.name} — Entwurf in 48h, kostenlos | KMU-Webseiten.de`;
-const description = `Website für deine Physiotherapie-, Ergotherapie- oder Heilpraktiker-Praxis in ${city.name}: Vertrauen auf den ersten Blick, klare Terminanfrage. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const title = `Homepage & Website für Therapiepraxen in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine Physiotherapie-, Ergotherapie- oder Heilpraktiker-Praxis in ${city.name} erstellen lassen: Vertrauen auf den ersten Blick, klare Terminanfrage. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
 const canonical = `https://kmu-webseiten.de/homepage-fuer-therapiepraxen/${city.slug}/`;
 
 const jsonLd = JSON.stringify({
@@ -59,9 +59,10 @@ const jsonLd = JSON.stringify({
   <section>
     <div class="wrap">
       <div class="rv">
-        <p class="eyebrow">Homepage für Therapiepraxen {city.name}</p>
+        <p class="eyebrow">Homepage &amp; Website für Therapiepraxen {city.name}</p>
         <h2 class="display">Gesundheit ist Vertrauenssache — schon vor dem ersten Anruf.</h2>
         <div class="prose">
+          <p>Ob <strong>Homepage</strong> oder <strong>Website für deine Praxis</strong> in {city.name} — bei einem Gesundheitsthema zählt vor allem eines: ein seriöser, ruhiger Auftritt, dem Patienten sofort vertrauen. Genau den gestalten wir.</p>
           <p>{city.intro}</p>
           <p>{city.pain}</p>
           <p>

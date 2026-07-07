@@ -1,0 +1,152 @@
+---
+import Base from '../../layouts/Base.astro';
+import { bauCities } from '../../data/bau-cities.js';
+
+export function getStaticPaths() {
+  return bauCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite & Webdesign für Bauunternehmen in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für dein Bauunternehmen in ${city.name} erstellen lassen: Referenzen, die Bauherren überzeugen, Anfragen und Bewerbungen per Klick. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-bauunternehmen/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Bauunternehmen in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Bauunternehmen' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <strong style="color:var(--hero-text)">Webseite für Bauunternehmen in {city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Bei sechsstelligen Aufträgen entscheidet Vertrauen. Deine Website in <em>{city.name}</em> muss es sofort ausstrahlen.
+      </h1>
+      <p class="sub">
+        Speziell für Bauunternehmen in {city.name}: eine Website, die deine Referenzen ins beste
+        Licht rückt, Bauherren überzeugt und nebenbei Fachkräfte anzieht. Erster Entwurf kostenlos,
+        in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite &amp; Webdesign für Bauunternehmen {city.name}</p>
+        <h2 class="display">Niemand vergibt einen Bauauftrag an eine Firma, die online unsichtbar ist.</h2>
+        <div class="prose">
+          <p>Ob du es <strong>Webseite</strong>, <strong>Homepage</strong> oder <strong>Webdesign für Bauunternehmen</strong> nennst — bei den Investitionssummen im Bau geht es um eines: Vertrauen, bevor das erste Gespräch stattfindet. Genau das schafft ein professioneller Auftritt.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Ob nach <strong>„{city.searchTerms[0]}"</strong>, <strong>„{city.searchTerms[1]}"</strong>
+            oder <strong>„{city.searchTerms[2]}"</strong> gesucht wird — wer in {city.name} nicht mit
+            überzeugenden Referenzen auftaucht, wird gar nicht erst angefragt.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Referenzen, die verkaufen</h3><p>Deine abgeschlossenen Projekte als überzeugende Bildergalerie — das stärkste Argument, das ein Bauunternehmen online hat.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Vertrauen auf den ersten Blick</h3><p>Meisterbrief, Innungen, Zertifikate und echte Team-Fotos an der richtigen Stelle — damit Bauherren dir ihr Projekt anvertrauen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Anfragen ohne Umweg</h3><p>Klarer Weg zur Bauanfrage, auch mobil — für Bauherren, die sich abends in Ruhe informieren.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Fachkräfte gewinnen</h3><p>Eine Karriere-Seite, die zeigt, warum man bei dir arbeiten will — im leergefegten Baumarkt oft entscheidend.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🏗️ Für Betriebe, die Substanz liefern</span>
+        <h3 class="display">Wir zeigen deine Bauqualität so, wie sie verdient hat.</h3>
+        <p>Du schickst uns ein paar Projektfotos und Eckdaten — wir gestalten daraus in 48 Stunden einen Entwurf, der Solidität und Kompetenz ausstrahlt. Kein Baukasten, kein Einheitsbrei, sondern ein Auftritt, der zu einem Bauunternehmen passt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für dein Bauunternehmen in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Betrieb, Schwerpunkt, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du bekommst einen echten Entwurf deiner neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Bauunternehmen</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Wir bekommen unsere Aufträge über Empfehlungen — brauchen wir eine Website?</summary>
+            <p>Gerade dann. Fast jeder Empfohlene googelt euch trotzdem, bevor er anruft. Findet er nichts oder eine veraltete Seite, schwächt das selbst die beste Empfehlung. Und für größere, neue Bauherren seid ihr ohne Website praktisch nicht existent.</p>
+          </details>
+          <details>
+            <summary>Können wir unsere Referenzprojekte zeigen?</summary>
+            <p>Unbedingt — das ist der Kern. Wir bauen eine Projektgalerie, die eure abgeschlossenen Bauten wirken lässt. Nichts überzeugt Bauherren mehr als sichtbare, echte Ergebnisse.</p>
+          </details>
+          <details>
+            <summary>Hilft die Website bei der Suche nach Fachkräften?</summary>
+            <p>Ja, und das wird immer wichtiger. Eine eigene Karriere-Seite zeigt Bewerbern, wer ihr seid und warum sich die Bewerbung lohnt. Für aktive Recruiting-Kampagnen schaut euch zusätzlich unsere <a href="/marketing/">Marketing-Pakete</a> an.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findet ihr auf der <a href="/#preise">Startseite unter Preise</a>. Vorher seht ihr immer erst euren kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichert euch euren kostenlosen Website-Entwurf für euer Bauunternehmen in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden seht ihr, wie eure neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

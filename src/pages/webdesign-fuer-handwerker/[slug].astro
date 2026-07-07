@@ -7,8 +7,8 @@ export function getStaticPaths() {
 }
 
 const { city } = Astro.props;
-const title = `Webdesign für Handwerker in ${city.name} — Entwurf in 48h, kostenlos | KMU-Webseiten.de`;
-const description = `Website für deinen Handwerksbetrieb in ${city.name}: echte Fotos deiner Arbeit, Google Business Profil, Anfragen per Klick. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const title = `Webseite & Webdesign für Handwerker in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Webseite für deinen Handwerksbetrieb in ${city.name} erstellen lassen: echte Fotos deiner Arbeit, Google Business Profil, Anfragen per Klick. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
 const canonical = `https://kmu-webseiten.de/webdesign-fuer-handwerker/${city.slug}/`;
 
 const jsonLd = JSON.stringify({
@@ -59,9 +59,10 @@ const jsonLd = JSON.stringify({
   <section>
     <div class="wrap">
       <div class="rv">
-        <p class="eyebrow">Webdesign für Handwerker {city.name}</p>
+        <p class="eyebrow">Webseite &amp; Webdesign für Handwerker {city.name}</p>
         <h2 class="display">Dein eigentliches Problem ist selten „zu wenig Kunden".</h2>
         <div class="prose">
+          <p>Ob du es <strong>Webseite</strong>, <strong>Homepage</strong> oder <strong>Webdesign für Handwerker</strong> nennst — gemeint ist dasselbe: ein Auftritt in {city.name}, der dir Aufträge und Bewerber bringt. Genau den bauen wir.</p>
           <p>{city.intro}</p>
           <p>{city.pain}</p>
           <p>

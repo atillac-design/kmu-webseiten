@@ -7,8 +7,8 @@ export function getStaticPaths() {
 }
 
 const { city } = Astro.props;
-const title = `Homepage für Coaches & Berater in ${city.name} — Entwurf in 48h, kostenlos | KMU-Webseiten.de`;
-const description = `Website für deine Coaching- oder Beratungspraxis in ${city.name}: klare Positionierung, Vertrauen auf den ersten Blick, Terminanfrage statt Kontaktformular. Kostenloser Entwurf in 48 Stunden.`;
+const title = `Homepage, Website & Landingpage für Coaches in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine Coaching- oder Beratungspraxis in ${city.name} erstellen lassen: klare Positionierung, Vertrauen auf den ersten Blick, Terminanfrage statt Kontaktformular. Kostenloser Entwurf in 48 Stunden.`;
 const canonical = `https://kmu-webseiten.de/homepage-fuer-coaches/${city.slug}/`;
 
 const jsonLd = JSON.stringify({
@@ -59,9 +59,10 @@ const jsonLd = JSON.stringify({
   <section>
     <div class="wrap">
       <div class="rv">
-        <p class="eyebrow">Homepage für Coaches & Berater {city.name}</p>
+        <p class="eyebrow">Homepage · Website · Landingpage für Coaches {city.name}</p>
         <h2 class="display">Ein Instagram-Profil zeigt, dass es dich gibt. Nicht, warum man dir vertrauen sollte.</h2>
         <div class="prose">
+          <p>Ob du eine <strong>Homepage</strong>, eine <strong>Website</strong> oder eine fokussierte <strong>Landingpage für Coaches</strong> in {city.name} suchst — entscheidend ist, dass sie Vertrauen schafft und Termine bringt. Genau darauf bauen wir sie aus.</p>
           <p>{city.intro}</p>
           <p>{city.pain}</p>
           <p>
