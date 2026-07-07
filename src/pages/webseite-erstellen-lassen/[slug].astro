@@ -1,0 +1,253 @@
+---
+import Base from '../../layouts/Base.astro';
+import { cities } from '../../data/cities.js';
+
+export function getStaticPaths() {
+  return cities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite erstellen lassen in ${city.name} — Entwurf in 48h, kostenlos | KMU-Webseiten.de`;
+const description = `Professionelle Website für deinen Betrieb in ${city.name}: kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat mit 0 € Startkosten. Lokal optimiert, DSGVO-konform.`;
+const canonical = `https://kmu-webseiten.de/webseite-erstellen-lassen/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webdesign in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Hüttenstraße 100',
+      postalCode: '56170',
+      addressLocality: 'Bendorf',
+      addressCountry: 'DE',
+    },
+  },
+  areaServed: { '@type': 'City', name: city.name },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/#preise">Webseite erstellen lassen</a> ›
+        <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Webseite erstellen lassen in <em>{city.name}</em> — Entwurf in 48 Stunden, kostenlos.
+      </h1>
+      <p class="sub">
+        Du führst einen Betrieb in {city.name} oder Umgebung und brauchst eine Website, die Kunden
+        bringt? Wir gestalten dir einen echten, individuellen Entwurf deiner neuen Website —
+        kostenlos und unverbindlich.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webdesign {city.name}</p>
+        <h2 class="display">Warum dein Betrieb in {city.name} eine starke Website braucht.</h2>
+        <div class="prose">
+          <p>{city.intro}</p>
+          <p>
+            Suchanfragen wie <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            entscheiden heute darüber, wer den Auftrag bekommt. Was Kunden dort in den ersten
+            Sekunden sehen — oder eben nicht sehen —, macht den Unterschied.
+          </p>
+          <p>{city.regionText}</p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Lokal gefunden werden</h3><p>Optimiert auf Suchbegriffe mit „{city.name}" und Umgebung — inklusive Google Business Profil, damit du auch auf der Karte erscheinst.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Anfragen rund um die Uhr</h3><p>Klare Handlungsaufforderungen und ein einfaches Kontaktformular — Anfragen landen direkt in deinem Postfach.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Texte, die verkaufen</h3><p>Wir schreiben alle Texte für dich — auf deine Leistungen, deine Kunden und deine Stadt zugeschnitten.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Rechtssicher &amp; gepflegt</h3><p>DSGVO, Impressum, Cookie-Lösung und laufende Pflege inklusive — du kümmerst dich um deinen Betrieb, wir uns um den Rest.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">📍 Aus der Region, für die Region</span>
+        <h3 class="display">Wir sind keine anonyme Online-Agentur.</h3>
+        <p>{city.localNote} Über 100 Webseiten haben wir schon umgesetzt — viele davon für Betriebe aus der Region.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Warum eine eigene Website?</p>
+        <h2 class="display">Deine Website ist kein „Nice-to-have". Sie ist das Fundament deiner Marke.</h2>
+        <div class="prose">
+          <p>
+            Viele Betriebe in {city.name} denken: „Ich habe doch ein Instagram-Profil und einen
+            Google-Eintrag — das reicht." Das Problem: <strong>Diese Profile gehören nicht dir.</strong>
+            Die Plattformen ändern ihre Regeln, zeigen Werbung deiner Konkurrenz direkt neben deinem
+            Profil — und wenn ein Account gesperrt wird, ist alles weg.
+          </p>
+          <p>
+            Deine eigene Website ist etwas anderes: Sie gehört zu deinem Betrieb wie dein
+            Firmenschild und deine Arbeitskleidung. Sie ist der Ort, an dem <strong>du</strong>
+            bestimmst, wie dein Unternehmen wahrgenommen wird — dein Branding, deine Farben, deine
+            Geschichte, deine Referenzen.
+          </p>
+        </div>
+      </div>
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Dein Branding, dein Revier</h3><p>Logo, Farben, Tonalität — auf deiner Website entscheidest du über den ersten Eindruck. Nicht der Algorithmus.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Unabhängig von Portalen</h3><p>Keine Provisionen, keine fremden Regeln, keine Konkurrenz-Anzeigen neben deinem Namen. Deine Kunden gehören dir.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Ein Verkäufer, der nie schläft</h3><p>Deine Website beantwortet Fragen, zeigt Referenzen und nimmt Anfragen an — auch sonntags um 22 Uhr.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Jede Werbung wird stärker</h3><p>Flyer, Fahrzeugbeschriftung, Empfehlungen, Social Media — alles wirkt doppelt, wenn am Ende eine überzeugende Website steht.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Der Unterschied</p>
+        <h2 class="display">Warum dein Risiko bei uns bei null liegt — und bei klassischen Agenturen nicht.</h2>
+      </div>
+      <div class="agency rv">
+        <div class="them">
+          <h3>Klassische Agentur</h3>
+          <ul>
+            <li><span class="ic no">✕</span>3.000–12.000 € Vorkasse — bevor du irgendein Ergebnis siehst</li>
+            <li><span class="ic no">✕</span>Erst Vertrag unterschreiben, dann Entwurf: Das Risiko trägst du</li>
+            <li><span class="ic no">✕</span>Jede Änderung danach kostet extra — Angebot, Rechnung, Warten</li>
+            <li><span class="ic no">✕</span>Hosting, Pflege, Updates: dein Problem oder teurer Zusatzvertrag</li>
+            <li><span class="ic no">✕</span>6–12 Wochen Projektlaufzeit</li>
+          </ul>
+        </div>
+        <div class="us">
+          <h3>KMU-Webseiten</h3>
+          <ul>
+            <li><span class="ic">✓</span>Kostenloser Entwurf zuerst — du entscheidest mit dem Ergebnis vor Augen</li>
+            <li><span class="ic">✓</span>Änderungswünsche nach dem Entwurf? Passen wir an — im Monatsabo inklusive</li>
+            <li><span class="ic">✓</span>Bezahlt wird erst, wenn deine Seite live ist — vorher 0 €</li>
+            <li><span class="ic">✓</span>Hosting, Pflege, Updates &amp; Änderungen: ein fester Monatspreis, alles drin</li>
+            <li><span class="ic">✓</span>Live in Tagen statt Monaten</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline rv">
+        <div class="tl free"><span class="tag-free">Kostenlos</span><h3>1 · Entwurf</h3><p>In 48 Stunden siehst du einen echten Entwurf deiner neuen Website.</p></div>
+        <div class="tl free"><span class="tag-free">Kostenlos</span><h3>2 · Anpassungen</h3><p>Deine Wünsche fließen ein, bis der Entwurf zu deinem Betrieb passt.</p></div>
+        <div class="tl free"><span class="tag-free">Kostenlos</span><h3>3 · Livegang</h3><p>Wir stellen alles fertig und schalten deine Website live.</p></div>
+        <div class="tl"><span class="tag-free" style="color:var(--accent)">Ab jetzt</span><h3>4 · Monatsabo</h3><p>Erst ab dem Livegang zahlst du deinen festen Monatspreis.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für deinen Betrieb in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Branche, Betrieb, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du bekommst einen echten Entwurf deiner neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Referenzen</p>
+        <h2 class="display">Webseiten, die wir schon gebaut haben.</h2>
+        <p class="lede">Eine Auswahl aus über 100 Projekten der Agentur Pixel56 hinter KMU-Webseiten.de — vom Dachdecker bis zum Bildungsträger.</p>
+      </div>
+      <div class="refs rv">
+        <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+          <div class="thumb t1"><span class="mono">GM</span></div>
+          <div class="inner"><h3>GM Dach</h3><p>Dachdeckerei · Webdesign &amp; SEO</p></div>
+        </a>
+        <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+          <div class="thumb t2"><span class="mono">MA</span></div>
+          <div class="inner"><h3>MA Transporte</h3><p>Transport &amp; Logistik · Webdesign</p></div>
+        </a>
+        <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+          <div class="thumb t3"><span class="mono">CG</span></div>
+          <div class="inner"><h3>Colak GmbH</h3><p>Trocknungstechnologien · Neue Webpräsenz</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen aus {city.name}</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Was kostet eine Website für meinen Betrieb in {city.name}?</summary>
+            <p>Bei uns gibt es feste Pakete statt undurchsichtiger Angebote: ab 99 € pro Monat mit 0 € Startkosten — inklusive Hosting, Pflege, Texten und laufenden Änderungen. Vorher siehst du einen kostenlosen Entwurf, damit du weißt, wofür du zahlst.</p>
+          </details>
+          <details>
+            <summary>Kommt ihr auch persönlich vorbei?</summary>
+            <p>{city.visitText}</p>
+          </details>
+          <details>
+            <summary>Wie lange dauert es, bis meine Website online ist?</summary>
+            <p>Den kostenlosen Entwurf siehst du nach 48 Stunden. Nach deiner Freigabe ist die fertige Website in wenigen Tagen live.</p>
+          </details>
+          <details>
+            <summary>Helft ihr auch beim Google Business Profil?</summary>
+            <p>Ja, im Pro-Paket richten wir dein Google Business Profil ein und optimieren es — damit dein Betrieb in {city.name} auch auf Google Maps und in den lokalen Suchtreffern sichtbar ist.</p>
+          </details>
+          <details>
+            <summary>Was zahle ich, bevor die Website live ist?</summary>
+            <p>Nichts. Entwurf, Anpassungen und Aufbau kosten dich 0 €. Dein Monatsabo beginnt erst, wenn deine Website tatsächlich online ist — und Änderungswünsche sind danach im Paket inklusive.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für deinen Betrieb in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

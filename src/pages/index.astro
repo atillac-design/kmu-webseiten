@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import body from '../content/home-body.html?raw';
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'KMU-Webseiten.de',
+  description:
+    'Webseite erstellen lassen für KMU, Handwerk und Selbstständige — kostenloser Website-Entwurf in 48 Stunden, Pakete ab 99 € im Monat mit 0 € Startkosten.',
+  url: 'https://kmu-webseiten.de/',
+  email: 'kontakt@kmu-webseiten.de',
+  telephone: '+49 2622 9898654',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Hüttenstraße 100',
+    postalCode: '56170',
+    addressLocality: 'Bendorf',
+    addressCountry: 'DE',
+  },
+  parentOrganization: { '@type': 'Organization', name: 'Pixel56', url: 'https://pixel56.de' },
+  areaServed: 'DE',
+  priceRange: 'ab 99 €/Monat',
+});
+---
+<Base
+  title="Webseite erstellen lassen für KMU — Entwurf in 48h, kostenlos | KMU-Webseiten.de"
+  description="Sieh in 48 Stunden, wie deine neue Website aussehen könnte — kostenlos & unverbindlich. Webseiten für Handwerk, Coaches & Selbstständige ab 99 €/Monat, 0 € Startkosten."
+  css="/css/home.css"
+  canonical="https://kmu-webseiten.de/"
+>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+  <Fragment set:html={body} />
+</Base>

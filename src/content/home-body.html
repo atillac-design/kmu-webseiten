@@ -1,0 +1,645 @@
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo"></a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="#problem">Warum jetzt</a>
+      <a href="#ablauf">So funktioniert's</a>
+      <a href="#referenzen">Referenzen</a>
+      <a href="#preise">Pakete</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-header" href="#formular">Kostenlosen Entwurf sichern</a>
+  </div>
+</header>
+
+<!-- 1 · HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="hero-badge"><span class="dot"></span>Aktuell freie Kapazität für neue Entwürfe</span>
+      <h1 class="display">Deine neue Website — fertig entworfen in 48 Stunden. <em>Bevor du einen Cent zahlst.</em></h1>
+      <p class="sub">Andere Agenturen wollen erst ein Beratungsgespräch. Wir liefern erst das Ergebnis: einen echten, individuellen Entwurf deiner neuen Website — kostenlos. Gefällt er dir, machen wir ihn in wenigen Tagen komplett fertig. Wenn nicht, schuldest du uns nichts.</p>
+      <ul class="trust">
+        <li><span class="ic ok">✓</span>100&nbsp;% kostenlos &amp; unverbindlich</li>
+        <li><span class="ic ok">✓</span>0&nbsp;€ Startkosten</li>
+        <li><span class="ic ok">✓</span>Echter Entwurf, kein Baukasten</li>
+      </ul>
+      <div class="hero-stats">
+        <div><strong><span class="count" data-to="6">0</span>+</strong><span>Jahre Webdesign &amp; SEO</span></div>
+        <div><strong><span class="count" data-to="100">0</span>+</strong><span>Webseiten umgesetzt</span></div>
+        <div><strong>48&nbsp;h</strong><span>bis zu deinem Entwurf</span></div>
+      </div>
+      <p class="byline">Ein Angebot von <strong>Pixel56</strong> — Agentur für Webdesign &amp; Online-Marketing</p>
+    </div>
+
+    <div class="form-card" id="formular">
+      <div class="form-head">
+        <strong>Los geht's</strong>
+        <span class="step-count" id="stepCount">Schritt 1 von 4 · unter 60 Sekunden</span>
+      </div>
+      <div class="progress"><i id="progressBar"></i></div>
+
+      <form id="leadForm" novalidate>
+        <div class="form-step active" data-step="1">
+          <h3>Was machst du?</h3>
+          <p class="hint">Wähl deine Branche — der Rest dauert keine Minute.</p>
+          <div class="choices">
+            <button type="button" class="choice" data-answer="Handwerk &amp; Bau">Handwerk &amp; Bau</button>
+            <button type="button" class="choice" data-answer="Coaching &amp; Beratung">Coaching &amp; Beratung</button>
+            <button type="button" class="choice" data-answer="Therapie &amp; Gesundheit">Therapie &amp; Gesundheit</button>
+            <button type="button" class="choice" data-answer="Beauty &amp; Kosmetik">Beauty &amp; Kosmetik</button>
+            <button type="button" class="choice" data-answer="Gastronomie">Gastronomie</button>
+            <button type="button" class="choice" data-answer="Etwas anderes">Etwas anderes</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2">
+          <h3>Hast du schon eine Website?</h3>
+          <p class="hint">Wir holen dich da ab, wo du stehst.</p>
+          <div class="choices">
+            <button type="button" class="choice wide" data-answer="Noch keine Website" data-advance="1">Noch keine Website</button>
+            <button type="button" class="choice wide" data-answer="Veraltet / unzufrieden" data-url="1">Ja — veraltet oder unzufrieden</button>
+            <button type="button" class="choice wide" data-answer="Läuft, soll besser werden" data-url="1">Ja — läuft, soll besser werden</button>
+          </div>
+          <div class="reveal" id="urlReveal">
+            <label class="field"><span>Adresse deiner Website</span>
+              <input type="url" name="website" placeholder="z. B. meinbetrieb.de" autocomplete="url">
+            </label>
+            <div style="text-align:right"><button type="button" class="btn" id="next2">Weiter <span class="arr">→</span></button></div>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3">
+          <h3>Dein Betrieb &amp; deine Stadt</h3>
+          <p class="hint">Für einen Entwurf mit lokaler Relevanz — den Rest recherchieren wir.</p>
+          <label class="field"><span>Name deines Betriebs *</span>
+            <input type="text" name="firma" autocomplete="organization" placeholder="z. B. Malerbetrieb Schmidt" required>
+          </label>
+          <label class="field"><span>Stadt *</span>
+            <input type="text" name="ort" autocomplete="address-level2" placeholder="z. B. Koblenz" required>
+          </label>
+          <p class="form-error" id="err3">Bitte gib deinen Betrieb und deine Stadt an.</p>
+          <div style="text-align:right"><button type="button" class="btn" id="next3">Weiter <span class="arr">→</span></button></div>
+        </div>
+
+        <div class="form-step" data-step="4">
+          <h3>Fast geschafft — wohin dürfen wir deinen Entwurf schicken?</h3>
+          <p class="hint">In 48 Stunden hast du ihn im Postfach.</p>
+          <label class="field"><span>Name *</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Vor- und Nachname" required>
+          </label>
+          <label class="field"><span>E-Mail *</span>
+            <input type="email" name="email" autocomplete="email" placeholder="name@firma.de" required>
+          </label>
+          <label class="field"><span>Telefon *</span>
+            <input type="tel" name="telefon" autocomplete="tel" placeholder="0151 23456789" required>
+          </label>
+          <label class="hp" aria-hidden="true">Bitte dieses Feld leer lassen <input type="text" name="firmenfax" tabindex="-1" autocomplete="off"></label>
+          <label class="consent">
+            <input type="checkbox" name="datenschutz" required>
+            <span>Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme einverstanden (<a href="/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>). *</span>
+          </label>
+          <p class="form-error" id="err4">Bitte fülle Name, E-Mail und Telefon aus und bestätige den Datenschutz-Hinweis.</p>
+          <div style="text-align:right; margin-top: 1rem"><button type="submit" class="btn">Kostenlosen Entwurf anfordern <span class="arr">→</span></button></div>
+          <p class="fineprint">Du bekommst innerhalb von 48&nbsp;h einen echten Entwurf. Kostenlos, unverbindlich. Keine Werbung, keine Weitergabe deiner Daten.</p>
+        </div>
+
+        <div class="form-step" data-step="5">
+          <div class="success">
+            <div class="mark">✓</div>
+            <h3>Danke! Dein Entwurf ist unterwegs.</h3>
+            <p class="hint" style="margin-top:0.5rem">Wir melden uns innerhalb von 48 Stunden mit deinem persönlichen Entwurf — kostenlos und unverbindlich.</p>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="back" id="backBtn">← Zurück</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 2 · MARQUEE: Kundenprojekte -->
+<div class="marquee" aria-hidden="true">
+  <div class="label">Betriebe, die uns vertrauen</div>
+  <div class="marquee-track">
+    <span>GM Dach <em>·</em></span><span>MA Transporte <em>·</em></span><span>Colak GmbH <em>·</em></span><span>CASS Schulungen <em>·</em></span><span>Lernforum Obertshausen <em>·</em></span><span>Discounthaus Holding <em>·</em></span><span>Oktay Cömertler <em>·</em></span><span>Sportler für Kinderherzen <em>·</em></span>
+    <span>GM Dach <em>·</em></span><span>MA Transporte <em>·</em></span><span>Colak GmbH <em>·</em></span><span>CASS Schulungen <em>·</em></span><span>Lernforum Obertshausen <em>·</em></span><span>Discounthaus Holding <em>·</em></span><span>Oktay Cömertler <em>·</em></span><span>Sportler für Kinderherzen <em>·</em></span>
+  </div>
+</div>
+
+<!-- 3 · PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Kommt dir bekannt vor?</p>
+      <h2 class="display">Jeden Tag suchen Kunden in deiner Stadt nach genau deiner Leistung. Die Frage ist nur: Finden sie dich — oder deinen Wettbewerber?</h2>
+      <p class="lede">Über 80&nbsp;% aller Aufträge beginnen heute mit einer Google-Suche. Was Kunden dort in den ersten Sekunden sehen, entscheidet über den Auftrag.</p>
+    </div>
+    <div class="pains stagger">
+      <div class="pain"><span class="ic no">✕</span><h3>Gar keine Website</h3><p>Wer dich nicht findet, kann dich nicht beauftragen. Empfehlungen allein reichen nicht mehr — und sie werden weniger.</p></div>
+      <div class="pain"><span class="ic no">✕</span><h3>Sieht veraltet aus</h3><p>Ein Auftritt von vorgestern kostet Vertrauen, bevor du überhaupt sprechen konntest. Besucher urteilen in 3 Sekunden.</p></div>
+      <div class="pain"><span class="ic no">✕</span><h3>Bringt keine Anfragen</h3><p>Ohne klaren Weg zur Anfrage ist deine Seite nur eine digitale Visitenkarte — kein Vertriebskanal, der für dich arbeitet.</p></div>
+      <div class="pain"><span class="ic no">✕</span><h3>Keine Zeit dafür</h3><p>Zwischen Aufträgen bleibt die Website liegen. Verständlich — aber jeder Monat ohne gute Seite kostet dich Kunden.</p></div>
+    </div>
+
+    <!-- 4 · RECHNUNG -->
+    <div class="mathband rv">
+      <div>
+        <h3 class="display">Rechne kurz mit uns.</h3>
+        <p>Angenommen, deine schwache (oder fehlende) Website kostet dich nur <strong style="color:var(--hero-text)">einen einzigen Auftrag pro Monat</strong> — bei den meisten Betrieben sind es deutlich mehr. Dann sieht deine Rechnung so aus:</p>
+        <p style="margin-top:1rem">Eine professionelle Website ist keine Ausgabe. Sie ist der Mitarbeiter mit dem besten Stundenlohn, den du je eingestellt hast — er arbeitet 24/7 und wird nie krank.</p>
+      </div>
+      <div class="calc" role="img" aria-label="Beispielrechnung entgangener Umsatz">
+        <div><span>Entgangener Auftrag / Monat</span><strong>1</strong></div>
+        <div><span>Durchschnittlicher Auftragswert</span><strong>500&nbsp;€</strong></div>
+        <div><span>Verlorener Umsatz / Jahr</span><strong>6.000&nbsp;€</strong></div>
+        <div class="total"><span>Deine Website im Basic-Paket / Jahr</span><strong>1.188&nbsp;€</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · DIE 3 WEGE -->
+<section class="tight">
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">Deine Möglichkeiten</p>
+      <h2 class="display">Drei Wege zur Website. Zwei davon kosten dich mehr, als sie bringen.</h2>
+      <p class="lede">Wenn du das hier liest, hast du vermutlich schon über eine dieser Optionen nachgedacht. Lass uns ehrlich vergleichen:</p>
+    </div>
+    <div class="threecol stagger">
+      <div class="way">
+        <h3>Selbst machen mit Baukasten</h3>
+        <span class="tag">Wix, Jimdo &amp; Co. — „kostenlos"</span>
+        <ul>
+          <li><span class="ic no">✕</span>Kostet dich 40+ Stunden deiner Arbeitszeit</li>
+          <li><span class="ic no">✕</span>Sieht am Ende trotzdem nach Vorlage aus</li>
+          <li><span class="ic no">✕</span>Texte, SEO, Recht — alles dein Problem</li>
+          <li><span class="ic no">✕</span>Bei Google praktisch unsichtbar</li>
+        </ul>
+        <p class="verdict">Billig am Anfang, teuer am Ende.</p>
+      </div>
+      <div class="way">
+        <h3>Klassische Agentur</h3>
+        <span class="tag">Projektpreis 3.000–12.000 €</span>
+        <ul>
+          <li><span class="ic no">✕</span>Hohe Investition, bevor du irgendwas siehst</li>
+          <li><span class="ic no">✕</span>6–12 Wochen Projektdauer</li>
+          <li><span class="ic no">✕</span>Jede Änderung danach: Angebot &amp; Rechnung</li>
+          <li><span class="ic no">✕</span>Wartung &amp; Hosting? Extra.</li>
+        </ul>
+        <p class="verdict">Stark, aber teuer und träge.</p>
+      </div>
+      <div class="way win">
+        <h3>KMU-Webseiten</h3>
+        <span class="tag">Pakete ab 99 €/Monat — 0 € Startkosten</span>
+        <ul>
+          <li><span class="ic ok">✓</span>Du siehst den Entwurf, bevor du zahlst</li>
+          <li><span class="ic ok">✓</span>Agentur-Qualität, in Tagen statt Monaten</li>
+          <li><span class="ic ok">✓</span>Texte, SEO, Recht, Pflege — alles inklusive</li>
+          <li><span class="ic ok">✓</span>Änderungen? Kurze Nachricht genügt.</li>
+        </ul>
+        <p class="verdict">Das Beste aus beiden Welten — ohne die Nachteile.</p>
+      </div>
+    </div>
+    <p class="handoff center-h rv" style="text-align:center">Und das Beste: Du musst uns nicht glauben. Wir beweisen es dir — mit einem kostenlosen Entwurf. So läuft das ab: ↓</p>
+  </div>
+</section>
+
+<!-- 6 · ABLAUF -->
+<section class="tight" id="ablauf">
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">So funktioniert's</p>
+      <h2 class="display">Erst sehen, dann entscheiden.</h2>
+      <p class="lede">Kein Verkaufsgespräch, kein Risiko, keine Vorkasse. Du investierst 60 Sekunden — wir den Rest.</p>
+    </div>
+    <div class="steps stagger">
+      <div class="step-card">
+        <img src="/img/schritt-analyse.jpg" alt="Analyse und Strategie für deine neue Website" loading="lazy">
+        <div class="inner">
+          <span class="num">SCHRITT 01</span>
+          <h3>60 Sekunden Formular</h3>
+          <p>Branche, Stadt, Kontakt — mehr brauchen wir nicht. Kein Briefing, keine Meetings, kein Fachchinesisch.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="/img/schritt-umsetzung.jpg" alt="Umsetzung deines kostenlosen Website-Entwurfs" loading="lazy">
+        <div class="inner">
+          <span class="num">SCHRITT 02</span>
+          <h3>Entwurf in 48 Stunden</h3>
+          <p>Wir recherchieren deinen Betrieb, deine Branche und deine Region — und gestalten daraus einen echten Entwurf deiner neuen Startseite. Komplett kostenlos.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="/img/schritt-launch.jpg" alt="Livegang deiner neuen Firmenwebsite" loading="lazy">
+        <div class="inner">
+          <span class="num">SCHRITT 03</span>
+          <h3>Live in wenigen Tagen</h3>
+          <p>Gefällt dir der Entwurf, wählst du dein Paket — wir stellen alles fertig und schalten live. Wenn nicht: Alles gut, du schuldest uns nichts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · LEISTUNGEN -->
+<section class="tight" id="loesung">
+  <div class="wrap">
+    <div class="split rv">
+      <div>
+        <p class="eyebrow">Was du bekommst</p>
+        <h2 class="display">Eine Website, die aussieht wie du — und verkauft wie ein Profi.</h2>
+        <p class="lede">Jede Website bauen wir von Grund auf für deinen Betrieb. Nichts von der Stange:</p>
+        <ul class="checklist">
+          <li><span class="ic ok">✓</span><div><strong>Dein Branding, dein Logo, deine Farben</strong><span class="d">Die Website wird an deinen Auftritt angepasst — dein Logo, deine Wunschbilder, dein Stil. Kein Einheitsbrei.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Verkaufsstarke Texte vom Profi</strong><span class="d">Wir schreiben alle Texte — keyword-optimiert für Google und psychologisch auf Anfragen ausgerichtet. In jedem Paket.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Kontaktformular, das bei dir ankommt</strong><span class="d">Anfragen landen direkt in deinem E-Mail-Postfach — ohne Umwege, ohne Extra-Software.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Rechtssicher nach DSGVO</strong><span class="d">Impressum, Datenschutzerklärung und Cookie-Lösung auf jeder einzelnen Seite — abmahnsicher aufgesetzt.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Mobil-optimiert &amp; blitzschnell</strong><span class="d">Perfekt auf jedem Smartphone — dort, wo deine Kunden suchen. Ladezeit unter 2 Sekunden.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Hosting, Domain &amp; SSL inklusive</strong><span class="d">Du brauchst dich um nichts Technisches zu kümmern. Wirklich um nichts.</span></div></li>
+        </ul>
+      </div>
+      <img src="/img/webdesign-beispiel.jpg" alt="Moderne KMU-Website auf Laptop, Tablet und Smartphone" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 8 · LOCAL SEO -->
+<section class="local" id="local-seo">
+  <div class="wrap">
+    <div class="local-grid rv">
+      <div>
+        <p class="eyebrow">Lokal gefunden werden</p>
+        <h2 class="display">Schön allein reicht nicht. Deine Website muss gefunden werden.</h2>
+        <p class="lede">„Maler Koblenz", „Physiotherapie Bendorf", „Coach Neuwied" — genau solche Suchen bringen dir Aufträge. Deshalb bauen wir jede Website von Grund auf für die lokale Suche:</p>
+        <ul class="checklist">
+          <li><span class="ic ok">✓</span><div><strong>Eigene Stadt- &amp; Leistungsseiten</strong><span class="d">Für jede Stadt und Leistung, die dir wichtig ist — mit echten, individuellen Texten statt Massenware.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Google Business Profil</strong><span class="d">Einrichtung und Optimierung — damit du auf der Karte und in den lokalen Treffern erscheinst.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Technisches SEO inklusive</strong><span class="d">Strukturierte Daten, Sitemap, saubere Seitentitel — die Hausaufgaben, die 90&nbsp;% aller Webseiten nicht machen.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Deine Bewertungen sichtbar gemacht</strong><span class="d">Echte Google-Bewertungen direkt auf der Website — das stärkste Verkaufsargument überhaupt.</span></div></li>
+        </ul>
+        <p class="handoff">Sichtbarkeit ist kein Zufall. Sie ist Handwerk — unseres.</p>
+      </div>
+      <img src="/img/local-seo.jpg" alt="Lokale Suchmaschinenoptimierung für kleine Unternehmen" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 9 · VORHER/NACHHER -->
+<section>
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">Der Unterschied</p>
+      <h2 class="display">So verwandeln wir müde Webseiten in Anfrage-Maschinen.</h2>
+    </div>
+    <div class="vn rv">
+      <div class="old">
+        <span class="pill">Vorher</span>
+        <h3>Typische Betriebs-Website heute</h3>
+        <ul>
+          <li><span class="ic no">✕</span>Design im Stil von 2015, wirkt verstaubt</li>
+          <li><span class="ic no">✕</span>Auf dem Handy kaum bedienbar</li>
+          <li><span class="ic no">✕</span>Anfrage nur per Telefon zu Bürozeiten</li>
+          <li><span class="ic no">✕</span>Lädt langsam, bei Google unsichtbar</li>
+          <li><span class="ic no">✕</span>Keine Preise, kein klares Angebot</li>
+          <li><span class="ic no">✕</span>Impressum &amp; Datenschutz fehlerhaft — Abmahnrisiko</li>
+        </ul>
+      </div>
+      <div class="new">
+        <span class="pill">Nachher · KMU-Webseiten</span>
+        <h3>Deine neue Seite</h3>
+        <ul>
+          <li><span class="ic ok">✓</span>Klare Headline mit Nutzenversprechen</li>
+          <li><span class="ic ok">✓</span>Mobil-first — perfekt auf jedem Gerät</li>
+          <li><span class="ic ok">✓</span>Anfrage in 60 Sekunden, rund um die Uhr</li>
+          <li><span class="ic ok">✓</span>Blitzschnell &amp; für lokale Suche optimiert</li>
+          <li><span class="ic ok">✓</span>Transparentes Angebot, das Vertrauen schafft</li>
+          <li><span class="ic ok">✓</span>DSGVO-konform auf jeder Seite — abmahnsicher</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · REFERENZEN -->
+<section class="tight" id="referenzen">
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">Referenzen</p>
+      <h2 class="display">Echte Projekte. Echte Betriebe. Echte Ergebnisse.</h2>
+      <p class="lede">Eine Auswahl aus über 100 umgesetzten Projekten von Pixel56 — vom Dachdecker bis zum Bildungsträger.</p>
+    </div>
+    <div class="refs stagger">
+      <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+        <div class="thumb t1"><span class="mono">GM</span></div>
+        <div class="inner"><h3>GM Dach</h3><p>Dachdeckerei · Webdesign &amp; SEO</p></div>
+      </a>
+      <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+        <div class="thumb t2"><span class="mono">MA</span></div>
+        <div class="inner"><h3>MA Transporte</h3><p>Transport &amp; Logistik · Webdesign</p></div>
+      </a>
+      <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+        <div class="thumb t3"><span class="mono">CG</span></div>
+        <div class="inner"><h3>Colak GmbH</h3><p>Trocknungstechnologien · Neue Webpräsenz</p></div>
+      </a>
+      <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+        <div class="thumb t4"><span class="mono">CS</span></div>
+        <div class="inner"><h3>CASS Schulungen</h3><p>Luftsicherheit · Digitale Transformation</p></div>
+      </a>
+      <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+        <div class="thumb t5"><span class="mono">LO</span></div>
+        <div class="inner"><h3>Lernforum Obertshausen</h3><p>Bildung &amp; Nachhilfe · Online-Auftritt</p></div>
+      </a>
+      <a class="ref" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">
+        <div class="thumb t6"><span class="mono">DH</span></div>
+        <div class="inner"><h3>Discounthaus Holding</h3><p>Handel · Branding &amp; Webdesign</p></div>
+      </a>
+    </div>
+    <p class="center rv" style="margin-top:2.2rem"><a class="btn ghost" href="https://pixel56.de/kundenprojekte" target="_blank" rel="noopener">Alle Projekte ansehen <span class="arr">→</span></a></p>
+  </div>
+</section>
+
+<!-- 11 · GROSSES ZITAT -->
+<section class="bigquote">
+  <div class="wrap rv">
+    <figure style="margin:0">
+      <span class="qmark" aria-hidden="true">„</span>
+      <blockquote class="display">Das Ergebnis hat meine Erwartungen bei weitem übertroffen. Endlich eine Website, die aussieht wie mein Betrieb — und Anfragen bringt.</blockquote>
+      <figcaption><strong style="color:var(--hero-text)">Sarah</strong> · Kleinunternehmerin<div class="stars" aria-label="5 von 5 Sternen">★★★★★</div></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 12 · ZIELGRUPPEN -->
+<section>
+  <div class="wrap">
+    <div class="split rv">
+      <img src="/img/zielgruppen.jpg" alt="Zielgruppen: Handwerker, Coaches, Therapeuten, Praxen und Dienstleister" loading="lazy">
+      <div>
+        <p class="eyebrow">Für wen wir arbeiten</p>
+        <h2 class="display">Für Betriebe wie deinen.</h2>
+        <p class="lede">Ob Meisterbetrieb, Coach oder Praxis: Wir kennen den Alltag kleiner Unternehmen — wenig Zeit, klares Budget, echte Kunden statt Klicks. Genau dafür bauen wir.</p>
+        <div class="audience">
+          <span class="chip">Handwerk &amp; Bau</span>
+          <span class="chip">Coaches &amp; Berater</span>
+          <span class="chip">Therapeuten &amp; Praxen</span>
+          <span class="chip">Beauty &amp; Kosmetik</span>
+          <span class="chip">Gastronomie</span>
+          <span class="chip">Immobilien</span>
+          <span class="chip">Dienstleister</span>
+          <span class="chip">Selbstständige</span>
+          <span class="chip"><strong>+ deine Branche</strong></span>
+        </div>
+        <p class="handoff">Und weil jeder Betrieb anders weit ist, gibt es drei Pakete — je nachdem, was du brauchst. ↓</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · PAKETE -->
+<section class="tight" id="preise">
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">Unsere Pakete</p>
+      <h2 class="display">Ein fester Monatspreis. Alles drin. Keine Überraschungen.</h2>
+      <p class="lede">Der Entwurf ist immer kostenlos und unverbindlich. Erst wenn er dich überzeugt, wählst du dein Paket — mit 0&nbsp;€ Startkosten.</p>
+    </div>
+    <div class="pricing stagger">
+      <div class="price-card">
+        <h3 class="display">Basic</h3>
+        <p class="model-sub">Der professionelle Auftritt: Alles Wichtige über deinen Betrieb auf einer starken Seite.</p>
+        <p class="price">99&nbsp;€<small> / Monat</small></p>
+        <p class="price-note">0&nbsp;€ Startkosten</p>
+        <ul>
+          <li><span class="ic ok">✓</span>Professionelle One-Page-Website</li>
+          <li><span class="ic ok">✓</span>Texte von unseren Profis geschrieben</li>
+          <li><span class="ic ok">✓</span>Dein Branding: Logo, Farben, Wunschbilder</li>
+          <li><span class="ic ok">✓</span>Kontaktformular direkt in dein E-Mail-Postfach</li>
+          <li><span class="ic ok">✓</span>Impressum, Datenschutz &amp; Cookie-Lösung</li>
+          <li><span class="ic ok">✓</span>Hosting, Domain, SSL &amp; Pflege inklusive</li>
+          <li><span class="ic ok">✓</span>1 Änderungswunsch pro Monat inklusive</li>
+        </ul>
+        <a class="btn ghost" href="#formular">Kostenlosen Entwurf anfordern</a>
+      </div>
+      <div class="price-card featured">
+        <span class="badge">Unsere Empfehlung</span>
+        <h3 class="display">Pro</h3>
+        <p class="model-sub">Die komplette Website: mehrere Unterseiten, lokal auffindbar — für Betriebe, die es ernst meinen.</p>
+        <p class="price">249&nbsp;€<small> / Monat</small></p>
+        <p class="price-note">0&nbsp;€ Startkosten</p>
+        <ul>
+          <li><span class="ic plus">＋</span>Alles aus Starter</li>
+          <li><span class="ic ok">✓</span>Komplette Website mit bis zu 6 Unterseiten</li>
+          <li><span class="ic ok">✓</span>Eigene Seite je Leistung — stark für Google</li>
+          <li><span class="ic ok">✓</span>Lokale SEO: Stadt- &amp; Leistungsseiten</li>
+          <li><span class="ic ok">✓</span>Google Business Profil eingerichtet &amp; optimiert</li>
+          <li><span class="ic ok">✓</span>Deine Google-Bewertungen auf der Website</li>
+          <li><span class="ic ok">✓</span>Newsletter-Anbindung für Kundenkontakte</li>
+          <li><span class="ic ok">✓</span>3 Änderungswünsche pro Monat inklusive</li>
+        </ul>
+        <a class="btn" href="#formular">Kostenlosen Entwurf anfordern</a>
+      </div>
+      <div class="price-card">
+        <h3 class="display">Premium</h3>
+        <p class="model-sub">Deine externe Marketing-Abteilung: Website plus Kampagnen, die aktiv Anfragen und Bewerber bringen.</p>
+        <p class="price"><small>ab </small>1.499&nbsp;€<small> / Monat</small></p>
+        <p class="price-note">zzgl. dein Werbebudget (geht direkt an Google &amp; Meta) · Umfang &amp; Festpreis nach Bedarf</p>
+        <ul>
+          <li><span class="ic plus">＋</span>Alles aus Pro</li>
+          <li><span class="ic ok">✓</span>Werbekampagnen auf Facebook &amp; Instagram</li>
+          <li><span class="ic ok">✓</span>Google Ads Betreuung (Werbebudget separat)</li>
+          <li><span class="ic ok">✓</span>Eigene Landingpages je Kampagne</li>
+          <li><span class="ic ok">✓</span>Mitarbeiter-Gewinnung: Recruiting-Kampagnen</li>
+          <li><span class="ic ok">✓</span>Laufende SEO- &amp; Content-Pflege</li>
+          <li><span class="ic ok">✓</span>Monatlicher Strategie-Call &amp; klarer Report</li>
+        </ul>
+        <a class="btn ghost" href="#formular">Unverbindlich anfragen</a>
+      </div>
+    </div>
+    <p class="price-foot rv">Alle Preise zzgl. MwSt. · Laufzeit 12 Monate, danach jederzeit monatlich kündbar · Paket-Wechsel jederzeit möglich</p>
+
+    <!-- 14 · IN JEDEM PAKET -->
+    <div class="strip rv">
+      <h3 class="display">In jedem Paket selbstverständlich enthalten:</h3>
+      <ul>
+        <li><span class="ic ok">✓</span>Individuelles Design nach deinem Branding</li>
+        <li><span class="ic ok">✓</span>Dein Logo &amp; deine Wunschbilder integriert</li>
+        <li><span class="ic ok">✓</span>Alle Texte von uns geschrieben</li>
+        <li><span class="ic ok">✓</span>Kontaktformular mit Zustellung an deine E-Mail</li>
+        <li><span class="ic ok">✓</span>DSGVO: Impressum, Datenschutz, Cookie-Lösung</li>
+        <li><span class="ic ok">✓</span>Mobil-optimiert &amp; blitzschnelle Ladezeit</li>
+        <li><span class="ic ok">✓</span>Hosting, Domain &amp; SSL-Verschlüsselung</li>
+        <li><span class="ic ok">✓</span>Laufende technische Pflege &amp; Updates</li>
+        <li><span class="ic ok">✓</span>Fester Ansprechpartner — auch per WhatsApp</li>
+      </ul>
+    </div>
+
+    <!-- 15 · VERSPRECHEN -->
+    <div class="promise rv">
+      <h3 class="display">Unser Versprechen an dich</h3>
+      <div class="promise-grid">
+        <div><span class="ic ok">✓</span><div><strong>Erst der Entwurf, dann deine Entscheidung</strong><span class="d">Du siehst ein echtes Ergebnis, bevor du einen Cent zahlst. Kein anderes Modell ist fairer.</span></div></div>
+        <div><span class="ic ok">✓</span><div><strong>0 € Startkosten — immer</strong><span class="d">Keine Einrichtungsgebühr, keine Anzahlung, keine versteckten Posten. Dein Monatspreis ist der ganze Preis.</span></div></div>
+        <div><span class="ic ok">✓</span><div><strong>Feste Preise, keine Überraschungsrechnungen</strong><span class="d">Änderungswünsche im Paketumfang kosten nie extra. Größeres besprechen wir vorher — transparent.</span></div></div>
+        <div><span class="ic ok">✓</span><div><strong>Antwort innerhalb von 24 Stunden</strong><span class="d">Werktags erreichst du deinen festen Ansprechpartner per E-Mail, Telefon oder WhatsApp.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 · KUNDENSTIMMEN -->
+<section class="tight">
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">Kundenstimmen</p>
+      <h2 class="display">Das sagen Betriebe, die es gemacht haben.</h2>
+    </div>
+    <div class="quotes stagger">
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Das Ergebnis hat meine Erwartungen bei weitem übertroffen. Vielen Dank an das Team!"</p>
+        <footer><span class="avatar">S</span><span><strong>Sarah</strong>Kleinunternehmerin</span></footer>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Ich empfehle diesen Webdesign-Service jedem, der qualitativ hochwertige Arbeit für sein Unternehmen sucht."</p>
+        <footer><span class="avatar">H</span><span><strong>Heinrich H.</strong>Coach</span></footer>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Bin sehr zufrieden mit dem Service und freue mich, unsere neue Webseite präsentieren zu dürfen."</p>
+        <footer><span class="avatar">M</span><span><strong>Markus K.</strong>Geschäftsführer</span></footer>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Beeindruckt vom Design der Webseite. Auf Wünsche wurde reagiert und ich wurde super beraten!"</p>
+        <footer><span class="avatar">P</span><span><strong>Peyman</strong>IT-Service</span></footer>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Das Team war in der Lage, unsere Markenbotschaft sehr gut einzufangen."</p>
+        <footer><span class="avatar">I</span><span><strong>Ismail</strong>Projektleiter</span></footer>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Danke für die Beratung und den Aufbau der neuen Webseite."</p>
+        <footer><span class="avatar">K</span><span><strong>Kevin D.</strong>Designer</span></footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 · PIXEL56 -->
+<section class="about">
+  <div class="wrap">
+    <div class="split rv">
+      <div>
+        <p class="eyebrow">Wer dahinter steht</p>
+        <h2 class="display">Ein Produkt von Pixel56 — kein anonymer Baukasten.</h2>
+        <p class="lede">KMU-Webseiten.de ist das Website-Angebot der Agentur <strong>Pixel56</strong> für Webdesign &amp; Online-Marketing. Über 6 Jahre Erfahrung, mehr als 100 umgesetzte Webseiten — und ein Prinzip: Erst liefern, dann verkaufen. Du sprichst bei uns nicht mit einem Callcenter, sondern direkt mit den Leuten, die deine Website bauen.</p>
+        <ul class="checklist" style="margin-top:1.6rem">
+          <li><span class="ic ok">✓</span><div><strong>Direkter Draht</strong><span class="d">Fester Ansprechpartner, erreichbar auch per WhatsApp.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Deutsche Agentur, deutsches Recht</strong><span class="d">DSGVO, Impressumspflicht, Cookie-Regeln — wir setzen es korrekt um.</span></div></li>
+          <li><span class="ic ok">✓</span><div><strong>Marketing-Kompetenz inklusive</strong><span class="d">Webdesign, SEO, Google &amp; Facebook Ads, Branding — alles im Haus.</span></div></li>
+        </ul>
+      </div>
+      <img src="/img/pixel56-agentur.jpg" alt="Pixel56 — die Agentur hinter KMU-Webseiten.de" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 18 · FAQ -->
+<section class="tight" id="faq" style="padding-top:96px">
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">Häufige Fragen</p>
+      <h2 class="display">Kurz und ehrlich beantwortet.</h2>
+    </div>
+    <div class="faq rv">
+      <details>
+        <summary>Ist der Entwurf wirklich kostenlos?</summary>
+        <p>Ja, komplett. Du bekommst einen echten Design-Entwurf deiner neuen Startseite, ohne etwas zu zahlen und ohne etwas abnehmen zu müssen. Gefällt er dir nicht, ist das Thema erledigt — kein Kleingedrucktes, kein Nachfassen-Marathon.</p>
+      </details>
+      <details>
+        <summary>Muss ich danach ein Paket nehmen?</summary>
+        <p>Nein. Der Entwurf ist unverbindlich. Erst wenn er dich überzeugt, wählst du eines der drei Pakete — oder eben nicht.</p>
+      </details>
+      <details>
+        <summary>Warum gibt es eine Laufzeit von 12 Monaten?</summary>
+        <p>Weil wir komplett in Vorleistung gehen: kostenloser Entwurf, 0&nbsp;€ Startkosten, Aufbau der kompletten Website, Domain und Hosting ab Tag eins. Die 12 Monate machen das für beide Seiten fair. Danach läuft dein Paket flexibel weiter und ist monatlich kündbar.</p>
+      </details>
+      <details>
+        <summary>Was passiert nach einer Kündigung?</summary>
+        <p>Dann endet die Bereitstellung der Website in Ruhe und geordnet. Deine Domain, dein Logo und alle Inhalte, die du uns gegeben hast, gehören selbstverständlich dir — wir unterstützen dich bei der Übergabe. Alles Weitere regeln die AGB transparent.</p>
+      </details>
+      <details>
+        <summary>Kann ich das Paket später wechseln?</summary>
+        <p>Jederzeit. Viele Kunden starten mit Basic und wechseln zu Pro, sobald die ersten Anfragen kommen und sie mehr Sichtbarkeit wollen. Ein Upgrade ist sofort möglich, ein Downgrade zum Laufzeitende.</p>
+      </details>
+      <details>
+        <summary>Was zählt als „Änderungswunsch"?</summary>
+        <p>Zum Beispiel: neue Öffnungszeiten, ein neues Teamfoto, eine zusätzliche Leistung, aktualisierte Preise. Kurze Nachricht genügt — in der Regel ist es innerhalb von 48 Stunden online. Größere Umbauten besprechen wir vorher transparent.</p>
+      </details>
+      <details>
+        <summary>Wie kommen Anfragen von meiner Website bei mir an?</summary>
+        <p>Direkt in dein E-Mail-Postfach — einfacher geht es nicht. Im Pro-Paket verbinden wir dein Formular auf Wunsch zusätzlich mit einem Newsletter-Tool, damit du Kundenkontakte sammeln und später anschreiben kannst.</p>
+      </details>
+      <details>
+        <summary>Wie schnell ist meine Website online?</summary>
+        <p>Den Entwurf siehst du nach 48 Stunden. Nach deiner Freigabe ist die fertige Website in wenigen Tagen live — nicht in Wochen oder Monaten.</p>
+      </details>
+      <details>
+        <summary>Werde ich damit bei Google gefunden?</summary>
+        <p>Ja — dafür bauen wir sie. Blitzschnelle Ladezeiten, saubere Struktur, lokale Optimierung auf deine Stadt und deine Leistungen, Google Business Profil im Pro-Paket. Seriös gesagt: Niemand kann dir Platz 1 „garantieren" — aber wir machen alle Hausaufgaben, die dafür nötig sind, und du kannst die Ergebnisse messen.</p>
+      </details>
+      <details>
+        <summary>Ich habe schon eine Website. Lohnt sich der Entwurf trotzdem?</summary>
+        <p>Gerade dann. Du siehst im direkten Vergleich, wie viel moderner und überzeugender dein Auftritt sein kann — kostenlos und ohne deine bestehende Seite anzufassen.</p>
+      </details>
+      <details>
+        <summary>Ist die Website rechtssicher (DSGVO, Impressum, Cookies)?</summary>
+        <p>Ja. Jede Seite bekommt Impressum, Datenschutzerklärung und eine saubere Cookie-Lösung. Als deutsche Agentur setzen wir deutsches Recht um — kein US-Baukasten, der Daten irgendwohin schickt.</p>
+      </details>
+      <details>
+        <summary>Was ist im Premium-Paket genau enthalten — und was kostet die Werbung?</summary>
+        <p>Das Premium-Paket ist deine externe Marketing-Abteilung: Zusätzlich zur kompletten Website planen und betreuen wir laufend deine Werbekampagnen auf Facebook, Instagram und Google — für Kundengewinnung und auf Wunsch auch für Mitarbeitersuche. Wichtig zur Transparenz: Der Paketpreis ab 1.499&nbsp;€ ist unsere Betreuungsleistung. Dein Werbebudget legst du selbst fest — es geht direkt an Google und Meta, nicht an uns. Den genauen Umfang und deinen Festpreis stimmen wir vorab individuell ab, damit es keine Überraschungen gibt.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 19 · FINALER CTA -->
+<section class="cta-bottom">
+  <div class="wrap rv">
+    <p class="eyebrow" style="justify-content:center">Bereit?</p>
+    <h2 class="display">Dein Wettbewerber hat auch noch keine gute Website. Noch.</h2>
+    <p>60 Sekunden für 4 Schritte — in 48 Stunden weißt du, wie deine neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+    <a class="btn big" href="#formular">Jetzt kostenlosen Entwurf anfordern <span class="arr">→</span></a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap cols">
+    <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de"></a>
+    <div>
+      <div>kontakt@kmu-webseiten.de</div>
+      <div>WhatsApp: +49 178 5282464</div>
+    </div>
+    <nav>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+      <a href="/agb/">AGB</a>
+    </nav>
+  </div>
+  <div class="wrap copy">
+    <span>© 2026 kmu-webseiten.de — ein Produkt von <a href="https://pixel56.de">Pixel56</a>, Agentur für Webdesign &amp; Online-Marketing. Alle Rechte vorbehalten.</span>
+  </div>
+</footer>
+
+
+
+
+<script src="/js/home.js" defer></script>

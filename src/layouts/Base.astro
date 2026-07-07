@@ -1,0 +1,26 @@
+---
+const { title, description, css, canonical, ogImage = '/img/webdesign-beispiel.jpg' } = Astro.props;
+const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || '';
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <link rel="icon" href="/img/logo.png" />
+    <link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href={css} />
+    <script is:inline define:vars={{ webhook }}>window.KMU_WEBHOOK_URL = webhook;</script>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
