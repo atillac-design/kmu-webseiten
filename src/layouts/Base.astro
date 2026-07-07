@@ -1,6 +1,10 @@
 ---
 const { title, description, css, canonical, ogImage = '/img/webdesign-beispiel.jpg' } = Astro.props;
-const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || '';
+// Make-Webhook: nimmt Formular-Anfragen entgegen und leitet sie an E-Mail + MailerLite weiter.
+// Öffentlich (steckt ohnehin im Browser-JS); zum Wechseln einfach hier die URL tauschen
+// oder die Umgebungsvariable PUBLIC_MAKE_WEBHOOK_URL setzen.
+const DEFAULT_WEBHOOK = 'https://hook.eu2.make.com/1xbi884cw1seurhhfuf844bty3egtxwy';
+const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || DEFAULT_WEBHOOK;
 ---
 <!doctype html>
 <html lang="de">
