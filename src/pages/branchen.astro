@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import { niches } from '../data/niches.js';
+
+const title = 'Webseiten für deine Branche — Handwerk, Gastronomie, Coaches & mehr | KMU-Webseiten.de';
+const description =
+  'Wir bauen Websites, die zu deiner Branche passen: Handwerk, Bau, Gastronomie, Kosmetik, Coaches, Therapiepraxen und Immobilienmakler. Kostenloser Entwurf in 48 Stunden.';
+const totalCities = niches.reduce((sum, n) => sum + n.cities.length, 0);
+---
+<Base title={title} description={description} css="/css/city.css" canonical="https://kmu-webseiten.de/branchen/">
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <strong style="color:var(--hero-text)">Branchen</strong>
+      </nav>
+      <h1 class="display">Eine Website, die deine Branche versteht.</h1>
+      <p class="sub">Ein Handwerker braucht eine andere Website als ein Coach, ein Restaurant eine andere als ein Maklerbüro. Deshalb bauen wir für jede Branche eigens — mit der richtigen Sprache, den richtigen Funktionen und lokal für deine Stadt optimiert.</p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">{niches.length} Branchen · über {totalCities} Standorte</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Für wen wir bauen</p>
+        <h2 class="display">Wähl deine Branche.</h2>
+        <p class="lede">Jede Branchen-Seite ist auf die typischen Ziele und Sorgen deines Geschäfts zugeschnitten — und dann noch einmal lokal auf deine Stadt.</p>
+      </div>
+      <div class="branchgrid rv">
+        {niches.map((n) => (
+          <a class="branchcard" href={`/${n.prefix}/`}>
+            <span class="bicon">{n.icon}</span>
+            <h3>{n.label}</h3>
+            <p>{n.audience}</p>
+            <span class="blink">{n.cities.length} Städte ansehen →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Deine Branche ist nicht dabei? Kein Problem.</h2>
+      <p>Wir bauen für jeden Betrieb — fordere einfach deinen kostenlosen Entwurf an, wir stimmen ihn genau auf dich ab.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <style>
+    .branchgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin-top: 2.2rem; }
+    .branchcard { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px; text-decoration: none; color: var(--text); transition: border-color 0.15s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+    .branchcard:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .branchcard .bicon { font-size: 2rem; display: block; margin-bottom: 0.6rem; }
+    .branchcard h3 { font-family: "Bricolage", sans-serif; font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .branchcard p { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
+    .branchcard .blink { color: var(--accent); font-weight: 650; font-size: 0.92rem; }
+  </style>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

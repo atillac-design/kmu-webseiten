@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+const { niche } = Astro.props;
+const title = `${niche.label} — Städte im Überblick | KMU-Webseiten.de`;
+const description = `${niche.hubLead} Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/${niche.prefix}/`;
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/branchen/">Branchen</a> ›
+        <strong style="color:var(--hero-text)">{niche.label}</strong>
+      </nav>
+      <h1 class="display">{niche.icon} {niche.hubHeading}</h1>
+      <p class="sub">{niche.hubLead}</p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">{niche.label}</p>
+        <h2 class="display">In welcher Stadt bist du?</h2>
+        <p class="lede">Wähl deinen Standort — jede Seite ist auf deine Region zugeschnitten. Ist deine Stadt nicht dabei? Fordere trotzdem deinen kostenlosen Entwurf an, wir arbeiten deutschlandweit.</p>
+      </div>
+      <div class="citygrid rv">
+        {niche.cities.map((c) => (
+          <a class="citycard" href={`/${niche.prefix}/${c.slug}/`}>
+            <span class="pin-sm">📍</span>
+            <span>{c.name}</span>
+            <span class="arr-sm">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Entwurf.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <style>
+    .citygrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 2rem; }
+    .citycard { display: flex; align-items: center; gap: 0.6rem; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 0.9rem 1.1rem; text-decoration: none; color: var(--text); font-weight: 600; transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease; }
+    .citycard:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .citycard .arr-sm { margin-left: auto; color: var(--accent); transition: transform 0.15s ease; }
+    .citycard:hover .arr-sm { transform: translateX(3px); }
+    .citycard .pin-sm { opacity: 0.7; }
+  </style>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>
