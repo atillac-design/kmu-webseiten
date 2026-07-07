@@ -1,0 +1,152 @@
+---
+import Base from '../../layouts/Base.astro';
+import { gastroCities } from '../../data/gastro-cities.js';
+
+export function getStaticPaths() {
+  return gastroCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Restaurant & Gastronomie in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für dein Restaurant, Café oder Lokal in ${city.name} erstellen lassen: Speisekarte, Fotos, Reservierung, Google-Maps-Anbindung. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-gastronomie/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Gastronomie in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Gastronomie' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <strong style="color:var(--hero-text)">Webseite für Gastronomie in {city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Der Tisch wird heute online gewählt. Sorg dafür, dass Gäste in <em>{city.name}</em> bei dir landen.
+      </h1>
+      <p class="sub">
+        Speziell für Restaurants, Cafés und Lokale in {city.name}: eine Website, die Appetit macht —
+        mit Speisekarte, echten Fotos, Öffnungszeiten und einem Klick zur Reservierung. Erster
+        Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Restaurant &amp; Gastronomie {city.name}</p>
+        <h2 class="display">Gutes Essen allein füllt heute keine Tische mehr.</h2>
+        <div class="prose">
+          <p>Ob <strong>Webseite</strong>, <strong>Homepage</strong> oder <strong>Webdesign für dein Restaurant</strong> in {city.name} — gemeint ist immer dasselbe: ein Auftritt, der hungrig macht und den Tisch reserviert. Genau den gestalten wir.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Ob nach <strong>„{city.searchTerms[0]}"</strong>, <strong>„{city.searchTerms[1]}"</strong>
+            oder <strong>„{city.searchTerms[2]}"</strong> gesucht wird — wer in {city.name} nicht mit
+            appetitanregenden Fotos und aktueller Speisekarte auftaucht, wird beim Scrollen übersprungen.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Speisekarte, die Appetit macht</h3><p>Immer aktuell, schön dargestellt und in Sekunden auf dem Handy zu finden — kein PDF-Download, kein Zoomen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Reservierung mit einem Klick</h3><p>Tischanfrage direkt über die Seite oder verlinkt zu deinem Reservierungstool — bevor der Gast es sich anders überlegt.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Google Maps &amp; Bewertungen</h3><p>Gepflegtes Google-Profil und sichtbare Sterne — damit du in „Restaurant in der Nähe" ganz oben stehst.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Echte Fotos statt Stock</h3><p>Deine Gerichte, dein Ambiente, dein Team — das macht mehr Hunger als jedes Katalogbild und schafft Vertrauen.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🍽️ Für Gastgeber, die keine Zeit für Technik haben</span>
+        <h3 class="display">Du kümmerst dich um deine Gäste. Wir um deinen Auftritt.</h3>
+        <p>Du schickst uns ein paar Fotos und deine Speisekarte — wir gestalten daraus in 48 Stunden einen Entwurf, der Lust auf einen Besuch macht. Und Änderungen an der Karte oder den Öffnungszeiten? Kurze Nachricht genügt, wir aktualisieren das für dich.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für dein Lokal in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Art des Lokals, Name, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du bekommst einen echten Entwurf deiner neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen aus der Gastronomie</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Können wir unsere Speisekarte selbst aktuell halten?</summary>
+            <p>Änderungen wie neue Gerichte, Preise oder Öffnungszeiten schickst du uns einfach kurz — meist ist es innerhalb von 48 Stunden online. Auf Wunsch richten wir es so ein, dass du kleinere Dinge auch selbst anpassen kannst.</p>
+          </details>
+          <details>
+            <summary>Kann man über die Website einen Tisch reservieren?</summary>
+            <p>Ja. Wir bauen ein einfaches Reservierungsformular ein oder verlinken zu deinem bestehenden Reservierungssystem — je nachdem, was für dich am einfachsten ist.</p>
+          </details>
+          <details>
+            <summary>Helft ihr auch beim Google-Eintrag und den Bewertungen?</summary>
+            <p>Ja, im Pro-Paket richten wir dein Google Business Profil ein und optimieren es — damit du auf Google Maps und in der lokalen Suche in {city.name} ganz vorne erscheinst.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für dein Lokal in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

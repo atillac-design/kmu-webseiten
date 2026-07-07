@@ -1,0 +1,152 @@
+---
+import Base from '../../layouts/Base.astro';
+import { beautyCities } from '../../data/beauty-cities.js';
+
+export function getStaticPaths() {
+  return beautyCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Kosmetikstudio & Beauty in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für dein Kosmetik-, Nagel- oder Beautystudio in ${city.name} erstellen lassen: Online-Terminbuchung, Vorher/Nachher-Bilder, Preisliste. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-kosmetikstudios/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Kosmetikstudios in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Kosmetik- und Beautystudios' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <strong style="color:var(--hero-text)">Webseite für Kosmetikstudios in {city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Instagram zeigt deine Arbeit. Eine Website in <em>{city.name}</em> füllt deinen Terminkalender.
+      </h1>
+      <p class="sub">
+        Speziell für Kosmetik-, Nagel-, Wimpern- und Beautystudios in {city.name}: eine Website mit
+        Online-Terminbuchung, Vorher/Nachher-Bildern und klarer Preisliste — rund um die Uhr
+        buchbar. Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Kosmetikstudio &amp; Beauty {city.name}</p>
+        <h2 class="display">Ein Instagram-Profil ist ein Schaufenster. Aber keine Kasse.</h2>
+        <div class="prose">
+          <p>Ob <strong>Webseite</strong>, <strong>Homepage</strong> oder <strong>Landingpage für dein Studio</strong> in {city.name} — gemeint ist immer dasselbe: ein Ort, an dem Kundinnen deine Arbeit sehen, deine Preise kennen und sofort einen Termin buchen können. Genau den bauen wir.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Ob nach <strong>„{city.searchTerms[0]}"</strong>, <strong>„{city.searchTerms[1]}"</strong>
+            oder <strong>„{city.searchTerms[2]}"</strong> gesucht wird — wer in {city.name} nicht mit
+            schönen Bildern und einfacher Buchung auftaucht, verliert die Kundin an das nächste Studio.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Online-Terminbuchung rund um die Uhr</h3><p>Kundinnen buchen abends auf dem Sofa — genau dann, wenn sie Zeit haben. Verlinkt zu deinem Buchungstool oder direkt eingebaut.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Vorher/Nachher, das überzeugt</h3><p>Deine besten Arbeiten als Galerie — nichts verkauft eine Behandlung besser als sichtbare Ergebnisse.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Klare Preisliste &amp; Leistungen</h3><p>Kundinnen sehen sofort, was du anbietest und was es kostet — das erspart dir Rückfragen und bringt passende Buchungen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Gefunden bei Google &amp; Maps</h3><p>Optimiert auf „Kosmetikstudio {city.name}" &amp; Co., mit gepflegtem Google-Profil und sichtbaren Bewertungen.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">💅 Für Studios, die lieber an Kundinnen als am Laptop arbeiten</span>
+        <h3 class="display">Du machst deine Kundinnen schön. Wir deinen Auftritt.</h3>
+        <p>Du schickst uns ein paar Bilder deiner Arbeit und deine Leistungen — wir gestalten daraus in 48 Stunden einen Entwurf, der zu deinem Stil passt und Kundinnen zum Buchen bringt. Ganz ohne Technik-Stress auf deiner Seite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für dein Studio in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Art des Studios, Name, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du bekommst einen echten Entwurf deiner neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen aus der Beauty-Branche</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Kann man über die Website direkt einen Termin buchen?</summary>
+            <p>Ja. Wir binden eine Online-Terminbuchung ein oder verlinken zu deinem bestehenden Tool (z. B. Treatwell, Shore o. Ä.) — so buchen Kundinnen rund um die Uhr, auch außerhalb deiner Öffnungszeiten.</p>
+          </details>
+          <details>
+            <summary>Ich habe schon Instagram — reicht das nicht?</summary>
+            <p>Instagram zeigt deine Arbeit, aber es ersetzt keine Website: Preisliste, Öffnungszeiten und Terminbuchung an einem Ort, gefunden über Google. Am besten wirken beide zusammen — wir verlinken dein Instagram natürlich mit ein.</p>
+          </details>
+          <details>
+            <summary>Kann ich meine eigenen Bilder verwenden?</summary>
+            <p>Unbedingt — deine echten Vorher/Nachher-Bilder sind das stärkste Verkaufsargument. Du schickst sie uns, wir setzen sie ins beste Licht.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für dein Studio in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>
