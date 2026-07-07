@@ -1,0 +1,153 @@
+---
+import Base from '../../layouts/Base.astro';
+import { handwerkerCities } from '../../data/handwerker-cities.js';
+
+export function getStaticPaths() {
+  return handwerkerCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webdesign für Handwerker in ${city.name} — Entwurf in 48h, kostenlos | KMU-Webseiten.de`;
+const description = `Website für deinen Handwerksbetrieb in ${city.name}: echte Fotos deiner Arbeit, Google Business Profil, Anfragen per Klick. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webdesign-fuer-handwerker/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webdesign für Handwerker in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Handwerksbetriebe' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <strong style="color:var(--hero-text)">Webdesign für Handwerker in {city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Volle Auftragsbücher reichen nicht. Deine Website in <em>{city.name}</em> muss auch neue Kunden und Mitarbeiter finden.
+      </h1>
+      <p class="sub">
+        Speziell für Handwerksbetriebe in {city.name}: eine Website mit echten Fotos deiner Arbeit,
+        Google Business Profil und einem Weg zur Anfrage, der auch auf der Baustelle vom Handy aus
+        funktioniert. Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webdesign für Handwerker {city.name}</p>
+        <h2 class="display">Dein eigentliches Problem ist selten „zu wenig Kunden".</h2>
+        <div class="prose">
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob <strong>„{city.searchTerms[0]}"</strong>, <strong>„{city.searchTerms[1]}"</strong>
+            oder <strong>„{city.searchTerms[2]}"</strong> — wer bei diesen Suchen in {city.name} nicht
+            auftaucht, verliert Anfragen, ohne es zu merken. Und wer eine gute Website hat, gewinnt
+            damit auch leichter neue Mitarbeiter: Bewerber schauen heute zuerst online nach, bevor
+            sie sich melden.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Echte Fotos statt Stockbilder</h3><p>Deine Baustellen, dein Team, dein Fuhrpark — das schafft mehr Vertrauen als jedes Stockfoto von der Stange.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Anfrage direkt vom Handy</h3><p>Kontaktformular und Klick-zum-Anrufen-Button — für Kunden, die dich zwischen zwei Terminen kurz erreichen wollen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Google Business Profil inklusive</h3><p>Im Pro-Paket richten wir dein Profil ein, damit du auf Google Maps und in der lokalen Suche auftauchst.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Auch für Mitarbeitersuche geeignet</h3><p>Eine eigene Seite „Karriere" oder ein Hinweis auf offene Stellen kostet dich fast nichts — und bringt oft mehr als Stellenportale.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🔨 Für Betriebe, die anpacken statt reden</span>
+        <h3 class="display">Wir wissen, dass du keine Zeit für Website-Theater hast.</h3>
+        <p>Deshalb halten wir unseren Teil so einfach wie möglich: Du schickst uns ein paar Infos und Fotos, wir liefern in 48 Stunden einen fertigen Entwurf. Kein stundenlanges Briefing, kein Fachchinesisch — genau wie bei einem guten Handwerker.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für deinen Betrieb in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Gewerk, Betrieb, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du bekommst einen echten Entwurf deiner neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Handwerksbetrieben</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Ich habe kaum Zeit — wie viel Aufwand macht das für mich?</summary>
+            <p>Minimal. Du beantwortest ein kurzes Formular und schickst uns ein paar Fotos deiner Arbeit — den Rest übernehmen wir. Änderungen danach klärst du kurz per WhatsApp.</p>
+          </details>
+          <details>
+            <summary>Kann ich Fotos von Baustellen und meinem Team verwenden?</summary>
+            <p>Unbedingt — genau das empfehlen wir. Echte Fotos wirken glaubwürdiger als jedes Stockbild und sind eines der stärksten Vertrauenssignale auf einer Handwerker-Website.</p>
+          </details>
+          <details>
+            <summary>Hilft die Website auch bei der Mitarbeitersuche?</summary>
+            <p>Ja. Eine klare Karriere-Sektion oder ein Hinweis auf offene Stellen kostet fast nichts extra, wird aber von vielen Bewerbern zuerst gecheckt, bevor sie sich melden. Für eine aktive Recruiting-Kampagne schau dir gerne auch unsere <a href="/marketing/">Marketing-Pakete</a> an.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für deinen Handwerksbetrieb in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

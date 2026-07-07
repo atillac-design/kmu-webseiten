@@ -132,4 +132,95 @@ export const cities = [
     visitText:
       'Das meiste klären wir bequem per Telefon, WhatsApp oder Videocall — so bleibt es für dich schnell und unkompliziert. Ein persönliches Treffen in Bonn lässt sich nach Absprache aber gut einrichten.',
   },
+  {
+    slug: 'mainz',
+    name: 'Mainz',
+    intro:
+      'Mainz ist Landeshauptstadt, Medienstandort und mit rund 220.000 Einwohnern einer der größten Wirtschaftsräume am Rhein — von der Neustadt über die Oberstadt bis nach Mainz-Kastel prägen unzählige Handwerksbetriebe, Praxen und Dienstleister das Stadtbild.',
+    regionText:
+      'Gerade weil Mainz so groß und die Konkurrenz entsprechend dicht ist, entscheidet die Google-Suche noch stärker darüber, wer den Auftrag bekommt. Wir optimieren deinen Auftritt für Mainz und die Rhein-Main-Region bis Wiesbaden, Ingelheim und Nierstein.',
+    searchTerms: ['Friseur Mainz Neustadt', 'Physiotherapie Mainz', 'Steuerberater Mainz'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — über die A60 in etwa 45 Minuten in Mainz.',
+    visitText:
+      'Ja — über die A60 sind wir in rund 45 Minuten in Mainz. Das meiste klären wir aber bequem per Telefon oder WhatsApp, ein persönliches Treffen lässt sich gut einrichten.',
+  },
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Trier, Deutschlands älteste Stadt, ist mit rund 110.000 Einwohnern das wirtschaftliche Zentrum der Region Trier — geprägt von Weinbau, Handwerk, Tourismus und einer wachsenden Dienstleistungsbranche zwischen Mosel und Luxemburg.',
+    regionText:
+      'Viele Trierer Betriebe leben seit Jahrzehnten von Stammkundschaft und Mundpropaganda — verschenken damit aber das Potenzial der vielen Neubürger, Studierenden und Touristen, die online nach ihnen suchen. Wir optimieren für Trier und die Region bis Konz, Schweich und Wittlich.',
+    searchTerms: ['Winzer Trier', 'Zahnarzt Trier', 'Malerbetrieb Trier'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — über die A48/A1 in etwa einer Stunde in Trier.',
+    visitText:
+      'Ja, wenn auch mit etwas Vorlauf — Trier ist rund eine Autostunde entfernt. Die meisten Abstimmungen laufen aber ohnehin bequem per Telefon oder Videocall.',
+  },
+  {
+    slug: 'wiesbaden',
+    name: 'Wiesbaden',
+    intro:
+      'Wiesbaden, hessische Landeshauptstadt mit rund 280.000 Einwohnern, ist geprägt von einem starken Branchenmix aus Handwerk, Beratung, Gesundheit und gehobener Dienstleistung — von der Innenstadt bis nach Biebrich und Dotzheim.',
+    regionText:
+      'Wiesbaden liegt direkt an der Grenze zum dicht besiedelten Rhein-Main-Gebiet — ein Markt, in dem sich Betriebe aus Wiesbaden, Mainz und Frankfurt direkte Konkurrenz um dieselben Google-Suchanfragen machen. Ein professioneller, lokal optimierter Auftritt ist hier kein Nice-to-have, sondern Pflicht.',
+    searchTerms: ['Kosmetikstudio Wiesbaden', 'Rechtsanwalt Wiesbaden', 'Fliesenleger Wiesbaden'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — über die A66/A60 in gut einer Stunde in Wiesbaden.',
+    visitText:
+      'Ja, mit etwas Vorlauf — Wiesbaden liegt gut eine Autostunde entfernt. Für die meisten Abstimmungen reichen aber Telefon, WhatsApp oder Videocall völlig aus.',
+  },
+  {
+    slug: 'koeln',
+    name: 'Köln',
+    intro:
+      'Köln ist mit über einer Million Einwohnern die größte Stadt Nordrhein-Westfalens und einer der dichtesten KMU-Standorte Deutschlands — von Handwerksbetrieben in Ehrenfeld über Kanzleien in der Innenstadt bis zu Coaches und Beratern rund um den Rheinauhafen.',
+    regionText:
+      'In einer Millionenstadt wie Köln entscheidet die lokale Google-Suche noch schärfer über Sichtbarkeit als in kleineren Städten — hier suchen Kunden gezielt nach Stadtteil und Leistung. Wir optimieren deinen Auftritt für Köln und die Region bis Bonn, Leverkusen und das Bergische Land.',
+    searchTerms: ['Webdesign Köln Ehrenfeld', 'Coach Köln', 'Handwerker Köln Nippes'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — über die A61 in rund einer Stunde in Köln, und regelmäßig für Kunden im Rheinland unterwegs.',
+    visitText:
+      'Ja, mit etwas Vorlauf — Köln erreichen wir in rund einer Stunde. Für die meisten Abstimmungen reichen Telefon, WhatsApp oder Videocall völlig aus.',
+  },
+  {
+    slug: 'frankfurt-am-main',
+    name: 'Frankfurt am Main',
+    intro:
+      'Frankfurt am Main ist mit rund 770.000 Einwohnern einer der wirtschaftsstärksten Standorte Deutschlands — und laut Wirtschaftsstatistik einer der Orte mit der höchsten Dichte an kleinen und mittleren Unternehmen bundesweit. Zwischen Banken und Konzernzentralen behaupten sich tausende Handwerksbetriebe, Praxen und Dienstleister.',
+    regionText:
+      'Gerade weil Frankfurt so groß ist, entscheidet die lokale Google-Suche mit über den Erfolg — Kunden suchen gezielt nach Stadtteil und Leistung, von Sachsenhausen bis Bornheim. Wir arbeiten dabei komplett digital: Anfrageformular, Videocall, E-Mail — ganz ohne Anfahrt, genauso schnell wie bei einem Betrieb um die Ecke.',
+    searchTerms: ['Steuerberater Frankfurt', 'Physiotherapie Frankfurt Sachsenhausen', 'Coach Frankfurt'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Frankfurt bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Frankfurt komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'duesseldorf',
+    name: 'Düsseldorf',
+    intro:
+      'Düsseldorf hat unter allen deutschen Großstädten die höchste KMU-Dichte überhaupt — auf 10.000 Einwohner kommen hier mehr kleine und mittlere Unternehmen als in jeder anderen deutschen Stadt. Ein hart umkämpfter, aber auch besonders lohnender Markt für einen starken Online-Auftritt.',
+    regionText:
+      'In einem so dichten Markt wie Düsseldorf reicht ein gutes Angebot allein nicht — man muss bei Google auch gefunden werden, bevor der Wettbewerber von nebenan es tut. Wir betreuen unsere Düsseldorfer Kunden komplett digital: gleiche Qualität, gleiche persönliche Betreuung, ganz ohne Anfahrt.',
+    searchTerms: ['Webdesign Düsseldorf', 'Kosmetikstudio Düsseldorf', 'Steuerberater Düsseldorf'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Düsseldorf bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Düsseldorf komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Hamburg hat die höchste KMU-Dichte aller deutschen Bundesländer und die höchste Firmendichte insgesamt — kein Zufall, sondern Ausdruck einer Hansestadt, die seit jeher vom Mittelstand lebt. Von der Speicherstadt bis nach Altona: Kleine und mittlere Betriebe prägen die Stadt wie kaum eine zweite.',
+    regionText:
+      'Gerade in einem so unternehmerischen Umfeld wie Hamburg zählt jede Google-Platzierung doppelt — die Konkurrenz um lokale Suchanfragen ist groß. Wir betreuen unsere Hamburger Kunden komplett digital: gleiche Qualität, gleiche persönliche Betreuung, ganz ohne Anfahrt.',
+    searchTerms: ['Webdesign Hamburg', 'Handwerker Hamburg Altona', 'Coach Hamburg'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Hamburg bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Hamburg komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
 ];

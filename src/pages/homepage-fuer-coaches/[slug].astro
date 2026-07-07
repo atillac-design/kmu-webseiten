@@ -1,0 +1,152 @@
+---
+import Base from '../../layouts/Base.astro';
+import { coachesCities } from '../../data/coaches-cities.js';
+
+export function getStaticPaths() {
+  return coachesCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Homepage für Coaches & Berater in ${city.name} — Entwurf in 48h, kostenlos | KMU-Webseiten.de`;
+const description = `Website für deine Coaching- oder Beratungspraxis in ${city.name}: klare Positionierung, Vertrauen auf den ersten Blick, Terminanfrage statt Kontaktformular. Kostenloser Entwurf in 48 Stunden.`;
+const canonical = `https://kmu-webseiten.de/homepage-fuer-coaches/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Homepage für Coaches & Berater in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Coaches und Berater' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <strong style="color:var(--hero-text)">Homepage für Coaches & Berater in {city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Bevor jemand in <em>{city.name}</em> bei dir bucht, googelt er dich. Was findet er?
+      </h1>
+      <p class="sub">
+        Eine Website, die deine Positionierung klar macht und Vertrauen aufbaut — noch bevor das
+        erste Gespräch stattfindet. Speziell für Coaches, Berater und Consultants. Erster Entwurf
+        kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Homepage für Coaches & Berater {city.name}</p>
+        <h2 class="display">Ein Instagram-Profil zeigt, dass es dich gibt. Nicht, warum man dir vertrauen sollte.</h2>
+        <div class="prose">
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob potenzielle Klienten nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — in dem Moment, in dem sie deine Seite öffnen, entscheidet sich, ob sie dir ihre
+            Zeit und ihr Vertrauen schenken. Social-Media-Profile allein schaffen das selten.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Klare Positionierung</h3><p>Für wen arbeitest du, wobei hilfst du konkret, was unterscheidet dich? Wir bringen das in Worte, die überzeugen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Vertrauen durch Referenzen</h3><p>Testimonials, Erfolge und dein Werdegang an der richtigen Stelle platziert — statt in der Bio versteckt.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Terminanfrage statt Kontaktformular</h3><p>Auf Wunsch mit direkter Kalender-Verlinkung, damit Interessenten ohne Umweg einen Termin bei dir finden.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Seriös auf jedem Gerät</h3><p>Viele Klienten recherchieren abends vom Handy aus — deine Seite wirkt dort genauso professionell wie am Desktop.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🎯 Für Coaches, die ihre Zeit lieber in Klienten investieren</span>
+        <h3 class="display">Du bist Expertin oder Experte für dein Fach — nicht für Webdesign.</h3>
+        <p>Deshalb übernehmen wir Text, Design und Struktur komplett. Du gibst uns dein Anliegen, deine Zielgruppe und ein paar Eckdaten — wir liefern in 48 Stunden einen Entwurf, der zu deiner Positionierung passt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Homepage für deine Praxis in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Fachgebiet, Zielgruppe, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du bekommst einen echten Entwurf deiner neuen Homepage. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Coaches & Beratern</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Ich habe noch keine feste Positionierung — hilft ihr dabei?</summary>
+            <p>Ja. Im Formular fragen wir gezielt nach deiner Zielgruppe und deinem Angebot, und im Entwurf schlagen wir dir eine klare Positionierung vor — du musst sie nur noch bestätigen oder anpassen.</p>
+          </details>
+          <details>
+            <summary>Kann ich eine Terminbuchung einbinden?</summary>
+            <p>Ja, auf Wunsch verlinken wir direkt zu deinem bestehenden Kalender-Tool (z. B. Calendly oder Ähnlichem), damit Interessenten ohne Umweg über E-Mail einen Termin finden.</p>
+          </details>
+          <details>
+            <summary>Wie diskret ist das Ganze — ich möchte nicht, dass Kunden merken, dass ich gerade wechsle?</summary>
+            <p>Kein Problem. Wir bauen deinen Entwurf komplett unter der Hand — er geht erst live, wenn du es freigibst. Bis dahin ist nichts öffentlich sichtbar.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Homepage-Entwurf für deine Praxis in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Homepage aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>
