@@ -223,4 +223,30 @@ export const cities = [
     visitText:
       'Wir arbeiten mit Kunden in Hamburg komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
   },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Stuttgart ist das industrielle Herz Baden-Württembergs — geprägt von einer der höchsten Ingenieursdichten Deutschlands und einem entsprechend breiten Mittelstand an Zulieferern, Handwerksbetrieben und Beratern rund um die großen Automobilkonzerne.',
+    regionText:
+      'Gerade weil in Stuttgart so viel technisches Know-how zusammenkommt, erwarten auch Kunden kleiner Betriebe einen professionellen, technisch einwandfreien Online-Auftritt. Wir betreuen unsere Stuttgarter Kunden komplett digital: gleiche Qualität, gleiche persönliche Betreuung, ganz ohne Anfahrt.',
+    searchTerms: ['Elektriker Stuttgart', 'Steuerberater Stuttgart', 'Coach Stuttgart'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Stuttgart bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Stuttgart komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München ist nicht nur Bayerns Landeshauptstadt, sondern auch der Standort mit einer der höchsten KMU-Dichten unter deutschen Großstädten — von der Maxvorstadt bis nach Sendling reihen sich Handwerksbetriebe, Praxen und Beratungen dicht aneinander.',
+    regionText:
+      'In einer so wohlhabenden und wettbewerbsintensiven Stadt wie München erwarten Kunden einen Online-Auftritt, der zum Anspruch der Stadt passt. Wir betreuen unsere Münchner Kunden komplett digital: gleiche Qualität, gleiche persönliche Betreuung, ganz ohne Anfahrt.',
+    searchTerms: ['Schreiner München', 'Physiotherapie München', 'Unternehmensberatung München'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für München bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in München komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
 ];

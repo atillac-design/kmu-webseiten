@@ -51,4 +51,28 @@ export const coachesCities = [
     pain: 'In einer Stadt voller Unternehmer und Coaches entscheidet oft die klarste Positionierung, wer den Klienten bekommt — nicht der lauteste Auftritt.',
     searchTerms: ['Business Coach Hamburg', 'Gründerberatung Hamburg', 'Coach Hamburg Altona'],
   },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München zieht durch seine Wirtschaftskraft besonders viele Business-Coaches, Karriereberater und Consultants an — die Konkurrenz um zahlungskräftige Klienten aus Konzernen und Mittelstand ist entsprechend groß.',
+    pain: 'In München reicht ein gutes Netzwerk allein oft nicht mehr — wer online keinen professionellen Eindruck macht, verliert Klienten an Kollegen mit besserer Website.',
+    searchTerms: ['Business Coach München', 'Karrierecoaching München', 'Unternehmensberatung München'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Stuttgart mit seiner Nähe zu Industrie und Mittelstand ist ein gefragter Standort für Businesscoaches und Organisationsberater — viele Klienten kommen direkt aus dem Ingenieurs- und Führungskräfte-Umfeld.',
+    pain: 'Ein technisch geprägtes Publikum wie in Stuttgart erwartet auch von Coaches einen klaren, professionellen Auftritt — vage Formulierungen wirken hier schnell unseriös.',
+    searchTerms: ['Business Coach Stuttgart', 'Organisationsberatung Stuttgart', 'Coaching Stuttgart'],
+  },
+  {
+    slug: 'mainz',
+    name: 'Mainz',
+    intro:
+      'Mainz als Landeshauptstadt und Medienstandort hat eine überdurchschnittlich hohe Dichte an Beratern, Coaches und Kommunikationsexperten — viele mit Kunden aus Politik, Medien und Verwaltung.',
+    pain: 'In einem so kommunikationsaffinen Umfeld wie Mainz fällt schlechte oder veraltete Selbstdarstellung besonders auf — deine Website ist hier dein erstes Aushängeschild.',
+    searchTerms: ['Coach Mainz', 'Kommunikationsberatung Mainz', 'Businesscoaching Mainz'],
+  },
 ];

@@ -51,4 +51,36 @@ export const handwerkerCities = [
     pain: 'In einem so dichten Markt reicht gute Arbeit allein nicht — die Website entscheidet oft, wer überhaupt erst angerufen wird.',
     searchTerms: ['Dachdecker Düsseldorf', 'Sanitär Düsseldorf', 'Malerbetrieb Düsseldorf'],
   },
+  {
+    slug: 'andernach',
+    name: 'Andernach',
+    intro:
+      'Andernach und das Umland leben von soliden Handwerksbetrieben — Sanitär, Elektro, Bau — die oft seit Jahrzehnten Bestand haben, aber online kaum sichtbar sind.',
+    pain: 'Gerade etablierte Andernacher Betriebe verlassen sich zu oft allein auf ihren guten Ruf — während jüngere Kunden fast ausschließlich über Google suchen.',
+    searchTerms: ['Sanitärbetrieb Andernach', 'Elektriker Andernach', 'Bauunternehmen Andernach'],
+  },
+  {
+    slug: 'mayen',
+    name: 'Mayen',
+    intro:
+      'Mayen und die Vulkaneifel haben eine lange Handwerkstradition — von Steinmetzen über Schreiner bis zu modernen Sanitär- und Elektrobetrieben.',
+    pain: 'In einer eher ländlich geprägten Region wie der Vulkaneifel wird die Google-Suche zunehmend wichtiger, weil Empfehlungen allein nicht mehr über die Ortsgrenze hinaus reichen.',
+    searchTerms: ['Schreiner Mayen', 'Sanitärbetrieb Mayen', 'Gartenbau Mayen'],
+  },
+  {
+    slug: 'montabaur',
+    name: 'Montabaur',
+    intro:
+      'Montabaur und der Westerwaldkreis wachsen durch die ICE-Anbindung spürbar — mit dem Wachstum steigt auch die Nachfrage nach Handwerksleistungen für Neubau und Sanierung.',
+    pain: 'Viele Westerwälder Handwerksbetriebe haben mehr Anfragen, als sie bewältigen können — ihr eigentliches Problem ist die Suche nach zuverlässigen neuen Mitarbeitern, nicht nach Kunden.',
+    searchTerms: ['Bauunternehmen Montabaur', 'Elektriker Montabaur', 'Heizungsbau Montabaur'],
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München ist einer der umkämpftesten Handwerksmärkte Deutschlands — hohe Nachfrage durch Bauboom und Sanierungswelle trifft auf ebenso hohe Konkurrenz um Aufträge und Fachkräfte.',
+    pain: 'In München entscheidet die Website oft nicht nur über neue Kunden, sondern auch darüber, ob sich überhaupt noch Fachkräfte bei dir bewerben — der Arbeitsmarkt ist hart umkämpft.',
+    searchTerms: ['Schreiner München', 'Elektriker München', 'Sanitärbetrieb München'],
+  },
 ];

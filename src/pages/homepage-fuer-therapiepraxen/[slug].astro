@@ -1,0 +1,153 @@
+---
+import Base from '../../layouts/Base.astro';
+import { therapieCities } from '../../data/therapie-cities.js';
+
+export function getStaticPaths() {
+  return therapieCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Homepage für Therapiepraxen in ${city.name} — Entwurf in 48h, kostenlos | KMU-Webseiten.de`;
+const description = `Website für deine Physiotherapie-, Ergotherapie- oder Heilpraktiker-Praxis in ${city.name}: Vertrauen auf den ersten Blick, klare Terminanfrage. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/homepage-fuer-therapiepraxen/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Homepage für Therapiepraxen in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Therapiepraxen' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <strong style="color:var(--hero-text)">Homepage für Therapiepraxen in {city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Bevor ein Patient in <em>{city.name}</em> anruft, sucht er online nach Vertrauen.
+      </h1>
+      <p class="sub">
+        Eine ruhige, seriöse Website für deine Physiotherapie-, Ergotherapie- oder
+        Heilpraktiker-Praxis — mit klarer Terminanfrage statt komplizierter Formulare.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Homepage für Therapiepraxen {city.name}</p>
+        <h2 class="display">Gesundheit ist Vertrauenssache — schon vor dem ersten Anruf.</h2>
+        <div class="prose">
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob Patienten nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — bei einem Gesundheitsthema entscheiden Menschen besonders vorsichtig. Eine
+            unruhige, veraltete oder unklare Website kostet dich genau die Patienten, die am
+            meisten Vertrauen brauchen.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Ruhiges, seriöses Design</h3><p>Klare Struktur statt Reizüberflutung — passend zum Vertrauen, das eine Gesundheitspraxis braucht.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Behandlungsschwerpunkte klar erklärt</h3><p>Patienten verstehen auf einen Blick, ob deine Praxis zu ihrem Anliegen passt — das erspart dir unpassende Anfragen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Terminanfrage statt Kontaktformular</h3><p>Ein klarer, einfacher Weg zur Terminanfrage — auf Wunsch mit Verlinkung zu deinem bestehenden Buchungssystem.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Team &amp; Praxis vorgestellt</h3><p>Echte Fotos von dir und deinem Team schaffen mehr Vertrauen als jedes Stockbild einer fremden Praxis.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🩺 Für Praxen, die ihre Zeit lieber in Patienten investieren</span>
+        <h3 class="display">Du kümmerst dich um deine Patienten. Wir kümmern uns um deine Website.</h3>
+        <p>Du gibst uns deine Behandlungsschwerpunkte und ein paar Eckdaten zur Praxis — wir liefern in 48 Stunden einen fertigen Entwurf, der Vertrauen schafft, ohne aufdringlich zu wirken. Kein Verkaufsdruck, keine reißerischen Versprechen — so, wie es zu einer Gesundheitspraxis passt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Homepage für deine Praxis in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Behandlungsschwerpunkt, Praxis, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du bekommst einen echten Entwurf deiner neuen Praxis-Homepage. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Therapiepraxen</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Dürfen wir mit Behandlungserfolgen oder Heilversprechen werben?</summary>
+            <p>Hier gelten besondere rechtliche Vorgaben (u. a. Heilmittelwerbegesetz). Wir formulieren Texte deshalb bewusst zurückhaltend und sachlich — Fokus auf Behandlungsschwerpunkte und Praxisalltag statt auf Heilversprechen. Details zu deiner konkreten Situation besprichst du am besten zusätzlich mit deiner Kammer oder einem Fachanwalt.</p>
+          </details>
+          <details>
+            <summary>Können wir unser bestehendes Terminbuchungssystem einbinden?</summary>
+            <p>Ja, wir verlinken deine Website gerne mit einem bestehenden Buchungstool, damit Patienten ohne Umweg über E-Mail einen Termin finden.</p>
+          </details>
+          <details>
+            <summary>Wie viel Aufwand macht das für unser Praxisteam?</summary>
+            <p>Minimal. Du beantwortest ein kurzes Formular zu deinen Behandlungsschwerpunkten — den Rest übernehmen wir. Änderungen danach klärst du kurz per Telefon oder E-Mail.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Homepage-Entwurf für deine Praxis in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Homepage aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>
