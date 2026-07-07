@@ -83,9 +83,14 @@
       answers.name = name;
       answers.email = email;
       answers.telefon = telefon;
+      answers.quelle = 'kmu-webseiten.de';
       var WEBHOOK = window.KMU_WEBHOOK_URL || '';
       if (WEBHOOK) {
-        fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(answers) }).catch(function () {});
+        /* form-urlencoded = "simple request": kein CORS-Preflight, funktioniert
+           zuverlässig aus dem Browser zu Make-Webhooks. Fire-and-forget. */
+        var body = new URLSearchParams();
+        Object.keys(answers).forEach(function (k) { body.append(k, answers[k]); });
+        fetch(WEBHOOK, { method: 'POST', body: body }).catch(function () {});
       } else {
         console.log('Lead (Demo-Modus, kein Webhook konfiguriert):', answers);
       }
