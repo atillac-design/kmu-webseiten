@@ -5,8 +5,9 @@ const { title, description, css, canonical, ogImage = '/img/webdesign-beispiel.j
 // oder die Umgebungsvariable PUBLIC_MAKE_WEBHOOK_URL setzen.
 const DEFAULT_WEBHOOK = 'https://hook.eu2.make.com/1xbi884cw1seurhhfuf844bty3egtxwy';
 const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || DEFAULT_WEBHOOK;
-// Onboarding-Formular (Kunden nach Zusage): eigener Make-Webhook, bis dahin Demo-Modus.
-const onboardingWebhook = import.meta.env.PUBLIC_ONBOARDING_WEBHOOK_URL || '';
+// Onboarding-Formular (Kunden nach Zusage): eigener Make-Webhook (Szenario „KMU Onboarding").
+const DEFAULT_ONBOARDING_WEBHOOK = 'https://hook.eu2.make.com/miu7jywnrhp1wkjth4194x28aq47yxmj';
+const onboardingWebhook = import.meta.env.PUBLIC_ONBOARDING_WEBHOOK_URL || DEFAULT_ONBOARDING_WEBHOOK;
 ---
 <!doctype html>
 <html lang="de">
