@@ -13,6 +13,10 @@ export default {
   adresse: 'Industriestraße 7, 56410 Montabaur',
 
   farben: { accent: '#D97C1F', dark: '#171208' },
+  stil: { variante: 'bild', schrift: 'archivo', radius: '8px', button: '10px', caps: true },
+  bilder: {
+    // hero: '/img/entwurf/demo-bauunternehmen/hero.jpg', // Baustelle mit Kran, Rohbau
+  },
   monogramm: 'BK',
 
   usps: ['Eigenes Team, keine Sub-Ketten', 'Festpreis-Garantie', 'Seit 1987', 'Westerwald & Umgebung'],

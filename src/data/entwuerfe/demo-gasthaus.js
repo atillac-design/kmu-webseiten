@@ -12,7 +12,11 @@ export default {
   email: 'info@gasthaus-lindenhof.de',
   adresse: 'Lindenstraße 8, 56564 Neuwied',
 
-  farben: { accent: '#4A7C3F', dark: '#12170F' },
+  farben: { accent: '#4A7C3F', dark: '#12170F', paper: '#FAF5EC' },
+  stil: { variante: 'hell', schrift: 'playfair', radius: '14px' },
+  bilder: {
+    // hero wird bei Variante „hell" nicht benötigt
+  },
   monogramm: 'GL',
 
   usps: ['Seit 3 Generationen', 'Regionale Zutaten', 'Biergarten mit 80 Plätzen', 'Räume für Feiern'],

@@ -78,6 +78,12 @@ Demo ansehen: `https://kmu-webseiten.de/entwurf/demo-malerbetrieb/`
 
 - **Nie Platzhalter-Texte an Kunden schicken.** Jeder Entwurf wird individuell
   recherchiert und getextet — das ist das Verkaufsargument.
+- **Stil pro Kunde variieren** (`stil` im Datensatz): Layout-Variante (dunkel/bild/
+  hell/split), Schrift (6 zur Wahl), Rundung und Button-Form. Zwei aufeinanderfolgende
+  Kunden derselben Branche dürfen nicht dasselbe Layout mit anderer Farbe bekommen.
+- **Bilder einsetzen** (`bilder.hero`, `themen[].img`, `projekte[].img`): echte Fotos
+  des Betriebs (alte Website, Google Maps) oder Stock-Material — Bilder machen den
+  Unterschied zwischen „Skizze" und „fertige Website".
 - **Foto-Kacheln** dürfen Platzhalter sein (gestreifte Kacheln mit Beschriftung) —
   sie zeigen dem Kunden, wo seine Bilder hinkommen.
 - **Keine erfundenen Fakten:** Zahlen (Gründungsjahr, Bewertung, Teamgröße) nur

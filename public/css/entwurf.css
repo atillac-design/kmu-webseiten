@@ -13,6 +13,13 @@
   font-stretch: 75% 125%;
   font-display: swap;
 }
+/* Alternative Display-Schriften — pro Entwurf wählbar, damit nicht alle gleich aussehen.
+   Es lädt nur die Schrift, die der jeweilige Entwurf wirklich benutzt. */
+@font-face { font-family: "Playfair"; src: url(/fonts/playfair.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Archivo Black"; src: url(/fonts/archivo-black.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url(/fonts/nunito.woff2) format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Fraunces"; src: url(/fonts/fraunces.woff2) format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "DM Serif"; src: url(/fonts/dm-serif.woff2) format("woff2"); font-weight: 400; font-display: swap; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -103,9 +110,15 @@ p { margin: 0; }
   --e-dark-text: #F2F1EE;
   --e-dark-muted: #A9AFB8;
   --e-shadow: 0 18px 50px rgba(15,18,24,0.14);
+  --e-font: "Bricolage", "Avenir Next", sans-serif; /* Display-Schrift, pro Entwurf anders */
+  --e-radius: 18px;      /* Karten-Rundung — rund vs. kantig prägt den Look */
+  --e-btn-radius: 999px; /* Button-Form: Pille vs. Rechteck */
   background: var(--e-paper); color: var(--e-ink);
   margin-top: 46px; /* Platz für die Vorschau-Leiste */
 }
+.e-site .display { font-family: var(--e-font); }
+.e-site.caps .display { text-transform: uppercase; letter-spacing: 0.02em; }
+.e-site.caps .e-hero h1 { font-size: clamp(2rem, 4.8vw, 3.2rem); }
 
 /* Header */
 .e-header {
@@ -132,7 +145,7 @@ p { margin: 0; }
 .e-tel {
   flex: none; display: inline-flex; align-items: center; gap: 0.5rem;
   background: var(--e-accent); color: #fff; text-decoration: none;
-  font-weight: 700; font-size: 0.9rem; padding: 9px 18px; border-radius: 999px;
+  font-weight: 700; font-size: 0.9rem; padding: 9px 18px; border-radius: var(--e-btn-radius);
   transition: transform 0.15s ease, filter 0.15s ease;
 }
 .e-tel:hover { transform: translateY(-1px); filter: brightness(1.08); }
@@ -160,7 +173,7 @@ p { margin: 0; }
 .e-btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
   text-decoration: none; font-weight: 700; font-size: 0.98rem;
-  padding: 13px 26px; border-radius: 999px;
+  padding: 13px 26px; border-radius: var(--e-btn-radius);
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 .e-btn-primary { background: var(--e-accent); color: #fff; box-shadow: 0 10px 30px color-mix(in srgb, var(--e-accent) 40%, transparent); }
@@ -192,7 +205,7 @@ p { margin: 0; }
 @media (max-width: 900px) { .e-cards { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 580px) { .e-cards { grid-template-columns: 1fr; } }
 .e-card {
-  background: var(--e-card); border: 1px solid var(--e-line); border-radius: 18px;
+  background: var(--e-card); border: 1px solid var(--e-line); border-radius: var(--e-radius);
   padding: 1.6rem 1.4rem; box-shadow: 0 6px 24px rgba(15,18,24,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -213,7 +226,7 @@ p { margin: 0; }
 .e-about .e-text p { color: var(--e-muted); }
 .e-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .e-fact {
-  background: var(--e-card); border: 1px solid var(--e-line); border-radius: 16px;
+  background: var(--e-card); border: 1px solid var(--e-line); border-radius: var(--e-radius);
   padding: 1.3rem 1.2rem; text-align: center;
 }
 .e-fact strong { display: block; font-size: 1.9rem; font-weight: 800; color: var(--e-accent); font-family: "Bricolage", sans-serif; }
@@ -224,7 +237,7 @@ p { margin: 0; }
 @media (max-width: 760px) { .e-vorteile { grid-template-columns: 1fr; } }
 .e-vorteil {
   display: flex; gap: 1.1rem; align-items: flex-start;
-  background: var(--e-paper); border: 1px solid var(--e-line); border-radius: 18px;
+  background: var(--e-paper); border: 1px solid var(--e-line); border-radius: var(--e-radius);
   padding: 1.4rem 1.4rem 1.5rem;
 }
 .e-vorteil .e-ico { margin-bottom: 0; flex: none; }
@@ -236,7 +249,7 @@ p { margin: 0; }
 @media (max-width: 900px) { .e-projekte { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 620px) { .e-projekte { grid-template-columns: 1fr; } }
 .e-projekt {
-  background: var(--e-card); border: 1px solid var(--e-line); border-radius: 18px;
+  background: var(--e-card); border: 1px solid var(--e-line); border-radius: var(--e-radius);
   overflow: hidden; box-shadow: 0 6px 24px rgba(15,18,24,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -270,7 +283,7 @@ p { margin: 0; }
   .e-thema.rev .e-thema-img { order: 0; }
 }
 .e-thema-img {
-  border-radius: 20px; overflow: hidden; aspect-ratio: 4/3;
+  border-radius: var(--e-radius); overflow: hidden; aspect-ratio: 4/3;
   border: 1px solid var(--e-line); box-shadow: var(--e-shadow);
 }
 .e-thema-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -286,7 +299,7 @@ p { margin: 0; }
 @media (max-width: 900px) { .e-ablauf { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .e-ablauf { grid-template-columns: 1fr; } }
 .e-schritt {
-  background: var(--e-paper); border: 1px solid var(--e-line); border-radius: 18px;
+  background: var(--e-paper); border: 1px solid var(--e-line); border-radius: var(--e-radius);
   padding: 1.5rem 1.4rem 1.6rem; position: relative;
 }
 .e-schritt .num {
@@ -310,7 +323,7 @@ p { margin: 0; }
 /* FAQ */
 .e-faq { max-width: 780px; margin: 2.4rem auto 0; display: grid; gap: 0.8rem; }
 .e-faq-item {
-  background: var(--e-paper); border: 1px solid var(--e-line); border-radius: 16px;
+  background: var(--e-paper); border: 1px solid var(--e-line); border-radius: var(--e-radius);
   padding: 0 1.3rem; overflow: hidden;
 }
 .e-faq-item summary {
@@ -330,7 +343,7 @@ p { margin: 0; }
 .e-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.4rem; }
 @media (max-width: 900px) { .e-reviews { grid-template-columns: 1fr; } }
 .e-review {
-  background: var(--e-card); border: 1px solid var(--e-line); border-radius: 18px;
+  background: var(--e-card); border: 1px solid var(--e-line); border-radius: var(--e-radius);
   padding: 1.5rem 1.4rem 1.6rem; display: flex; flex-direction: column;
 }
 .e-review .e-stars { color: #F5B942; letter-spacing: 0.12em; margin-bottom: 0.7rem; }
@@ -353,7 +366,7 @@ p { margin: 0; }
 
 /* Zitat */
 .e-quote {
-  background: var(--e-dark); color: var(--e-dark-text); border-radius: 22px;
+  background: var(--e-dark); color: var(--e-dark-text); border-radius: var(--e-radius);
   padding: 2.6rem 2.4rem; margin-top: 3rem; position: relative; overflow: hidden;
 }
 .e-quote::before {
@@ -368,7 +381,7 @@ p { margin: 0; }
 /* Galerie */
 .e-galerie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.4rem; }
 @media (max-width: 700px) { .e-galerie { grid-template-columns: repeat(2, 1fr); } }
-.e-galerie figure { margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--e-line); aspect-ratio: 4/3; }
+.e-galerie figure { margin: 0; border-radius: var(--e-radius); overflow: hidden; border: 1px solid var(--e-line); aspect-ratio: 4/3; }
 .e-galerie img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
 .e-galerie figure:hover img { transform: scale(1.04); }
 .e-galerie .ph {
@@ -385,7 +398,7 @@ p { margin: 0; }
 .e-kbox {
   border: 1px solid color-mix(in srgb, var(--e-dark-text) 14%, transparent);
   background: color-mix(in srgb, var(--e-dark-text) 4%, transparent);
-  border-radius: 18px; padding: 1.7rem 1.6rem;
+  border-radius: var(--e-radius); padding: 1.7rem 1.6rem;
 }
 .e-kbox h3 { font-size: 1.05rem; font-weight: 750; margin-bottom: 1rem; }
 .e-krow { display: flex; gap: 0.8rem; align-items: baseline; padding: 0.5rem 0; border-bottom: 1px dashed color-mix(in srgb, var(--e-dark-text) 12%, transparent); font-size: 0.95rem; }
@@ -437,3 +450,65 @@ p { margin: 0; }
 .pitch .p-note { font-size: 0.85rem; color: #6B7788; margin-top: 1.6rem; }
 .pitch .p-brand { margin-top: 2.6rem; font-size: 0.82rem; color: #6B7788; }
 .pitch .p-brand a { color: #97A4B6; }
+
+/* ============================================================
+   Layout-Varianten — damit kein Entwurf wie der andere aussieht.
+   Gesetzt als Klasse auf .e-site: v-dunkel (Standard), v-bild,
+   v-hell, v-split. Kombiniert mit --e-font/--e-radius/--e-btn-radius.
+   ============================================================ */
+
+/* v-bild: Hero als großes Foto mit Farbverlauf-Overlay */
+.v-bild .e-hero {
+  position: relative; background-size: cover; background-position: center;
+  min-height: 580px; display: flex; align-items: center; padding: 4rem 0;
+}
+.v-bild .e-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg,
+    color-mix(in srgb, var(--e-dark) 90%, transparent) 20%,
+    color-mix(in srgb, var(--e-dark) 45%, transparent) 65%,
+    color-mix(in srgb, var(--e-dark) 15%, transparent));
+}
+.v-bild .e-hero .wrap { position: relative; width: 100%; }
+
+/* Heller Header für die hellen Varianten */
+.v-hell .e-header, .v-split .e-header {
+  background: color-mix(in srgb, var(--e-paper) 90%, transparent);
+  border-bottom: 1px solid var(--e-line);
+}
+.v-hell .e-brand, .v-split .e-brand { color: var(--e-ink); }
+.v-hell .e-brand .e-brand-txt small, .v-split .e-brand .e-brand-txt small { color: var(--e-muted); }
+.v-hell .e-nav a, .v-split .e-nav a { color: var(--e-muted); }
+.v-hell .e-nav a:hover, .v-split .e-nav a:hover { color: var(--e-ink); }
+
+/* Helle Hero-Grundfarben (v-hell & v-split) */
+.v-hell .e-hero, .v-split .e-hero { background: var(--e-paper); color: var(--e-ink); }
+.v-hell .e-hero .e-sub, .v-split .e-hero .e-sub { color: var(--e-muted); }
+.v-hell .e-hero .e-usps li, .v-split .e-hero .e-usps li {
+  border-color: var(--e-line); background: var(--e-card); color: var(--e-muted);
+}
+.v-hell .e-hero .e-badge, .v-split .e-hero .e-badge {
+  background: var(--e-accent-soft);
+  border-color: color-mix(in srgb, var(--e-accent) 30%, transparent);
+  color: var(--e-accent-deep);
+}
+.v-hell .e-btn-ghost, .v-split .e-btn-ghost { border-color: color-mix(in srgb, var(--e-ink) 25%, transparent); color: var(--e-ink); }
+.v-hell .e-btn-ghost:hover, .v-split .e-btn-ghost:hover { border-color: var(--e-ink); }
+
+/* v-hell: alles zentriert, ruhig, elegant */
+.v-hell .e-hero { text-align: center; padding: 5.4rem 0 4.8rem; }
+.v-hell .e-hero h1 { max-width: 22ch; margin-left: auto; margin-right: auto; }
+.v-hell .e-hero .e-sub { margin-left: auto; margin-right: auto; }
+.v-hell .e-hero .e-cta-row, .v-hell .e-hero .e-usps { justify-content: center; }
+
+/* v-split: Text links, großes Bild rechts */
+.v-split .e-hero { padding: 4.4rem 0; }
+.v-split .e-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center; }
+@media (max-width: 860px) { .v-split .e-hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.v-split .e-hero-img {
+  border-radius: var(--e-radius); overflow: hidden; aspect-ratio: 4/3.4;
+  box-shadow: var(--e-shadow); border: 1px solid var(--e-line);
+}
+.v-split .e-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+.v-split .e-hero-img .e-foto-ph { height: 100%; border-bottom: none; }
+.v-split .e-hero h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); }

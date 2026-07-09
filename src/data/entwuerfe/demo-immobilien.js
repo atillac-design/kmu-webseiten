@@ -13,6 +13,10 @@ export default {
   adresse: 'Löhrstraße 42, 56068 Koblenz',
 
   farben: { accent: '#B08D46', dark: '#131A26' },
+  stil: { variante: 'bild', schrift: 'fraunces', radius: '10px', button: '12px' },
+  bilder: {
+    // hero: '/img/entwurf/demo-immobilien/hero.jpg', // hochwertiges Wohnhaus / Villa außen
+  },
   monogramm: 'RI',
 
   usps: ['Kostenlose Bewertung', 'Ø 8 Wochen bis zum Notar', 'IHK-geprüfter Makler', 'Koblenz & Mittelrhein'],

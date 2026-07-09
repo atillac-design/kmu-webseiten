@@ -28,6 +28,29 @@ const telHref = 'tel:' + e.telefon.replace(/[^\d+]/g, '');
 const title = `${e.firma} — ${e.branche} in ${e.ort} | Website-Entwurf`;
 const description = `Kostenloser Website-Entwurf für ${e.firma} (${e.ort}), erstellt von kmu-webseiten.de.`;
 
+/* Stil-Variante: Jeder Entwurf bekommt eigenes Layout, eigene Schrift und Formensprache,
+   damit kein Entwurf wie der andere aussieht. Siehe entwurf.css (v-dunkel/v-bild/v-hell/v-split). */
+const fontMap = {
+  bricolage: '"Bricolage", "Avenir Next", sans-serif',
+  playfair: '"Playfair", Georgia, serif',
+  archivo: '"Archivo Black", Impact, sans-serif',
+  nunito: '"Nunito", "Segoe UI", sans-serif',
+  fraunces: '"Fraunces", Georgia, serif',
+  dmserif: '"DM Serif", Georgia, serif',
+};
+const stil = e.stil || {};
+const variante = stil.variante || 'dunkel';
+const siteClass = `e-site v-${variante}${stil.caps ? ' caps' : ''}`;
+const siteVars = [
+  `--e-accent:${e.farben.accent}`,
+  `--e-dark:${e.farben.dark}`,
+  e.farben.paper ? `--e-paper:${e.farben.paper}` : '',
+  `--e-font:${fontMap[stil.schrift] || fontMap.bricolage}`,
+  stil.radius ? `--e-radius:${stil.radius}` : '',
+  stil.button ? `--e-btn-radius:${stil.button}` : '',
+].filter(Boolean).join('; ');
+const bilder = e.bilder || {};
+
 /* Icon-Bibliothek (Stroke-Icons, erben die Akzentfarbe) */
 const icons = {
   check: '<polyline points="20 6 9 17 4 12"/>',
@@ -62,7 +85,7 @@ const icon = (name) =>
     </div>
   </div>
 
-  <div class="e-site" style={`--e-accent:${e.farben.accent}; --e-dark:${e.farben.dark};`}>
+  <div class={siteClass} style={siteVars}>
     <!-- Header der Kunden-Website -->
     <header class="e-header">
       <div class="wrap">
@@ -86,19 +109,43 @@ const icon = (name) =>
       </div>
     </header>
 
-    <!-- Hero -->
-    <section class="e-hero">
+    <!-- Hero (Layout je nach Variante) -->
+    <section class="e-hero" style={variante === 'bild' && bilder.hero ? `background-image:url('${bilder.hero}')` : undefined}>
       <div class="wrap">
-        <span class="e-badge">✦ {e.branche} in {e.ort}</span>
-        <h1 class="display">{e.claim}</h1>
-        <p class="e-sub">{e.sub}</p>
-        <div class="e-cta-row">
-          <a class="e-btn e-btn-primary" href={telHref}>Jetzt anrufen</a>
-          <a class="e-btn e-btn-ghost" href="#leistungen">Unsere Leistungen</a>
-        </div>
-        <ul class="e-usps">
-          {e.usps.map((u) => <li>{u}</li>)}
-        </ul>
+        {variante === 'split' ? (
+          <div class="e-hero-grid">
+            <div>
+              <span class="e-badge">✦ {e.branche} in {e.ort}</span>
+              <h1 class="display">{e.claim}</h1>
+              <p class="e-sub">{e.sub}</p>
+              <div class="e-cta-row">
+                <a class="e-btn e-btn-primary" href={telHref}>Jetzt anrufen</a>
+                <a class="e-btn e-btn-ghost" href="#leistungen">Unsere Leistungen</a>
+              </div>
+              <ul class="e-usps">
+                {e.usps.map((u) => <li>{u}</li>)}
+              </ul>
+            </div>
+            <div class="e-hero-img">
+              {bilder.hero
+                ? <img src={bilder.hero} alt={`${e.firma} — ${e.branche} in ${e.ort}`} />
+                : <div class="e-foto-ph"><span class="cam">📷</span><strong>Hier kommt Ihr Foto hin</strong><span>z. B. Sie bei der Arbeit oder Ihr Team</span></div>}
+            </div>
+          </div>
+        ) : (
+          <>
+            <span class="e-badge">✦ {e.branche} in {e.ort}</span>
+            <h1 class="display">{e.claim}</h1>
+            <p class="e-sub">{e.sub}</p>
+            <div class="e-cta-row">
+              <a class="e-btn e-btn-primary" href={telHref}>Jetzt anrufen</a>
+              <a class="e-btn e-btn-ghost" href="#leistungen">Unsere Leistungen</a>
+            </div>
+            <ul class="e-usps">
+              {e.usps.map((u) => <li>{u}</li>)}
+            </ul>
+          </>
+        )}
       </div>
     </section>
 

@@ -26,6 +26,19 @@ export default {
   farben: {
     accent: '#2557E8', // Hauptfarbe des Betriebs
     dark: '#10151D',   // dunkler Ton für Hero/Kontakt (zur Accent-Farbe passend)
+    // paper: '#FAF5EC', // optional: Grundton der hellen Flächen (z. B. Creme für Gastro)
+  },
+  /* WICHTIG: Stil pro Kunde variieren, damit kein Entwurf wie der andere aussieht!
+     variante: 'dunkel' (dunkle Hero, Standard) | 'bild' (großes Hero-Foto mit Overlay)
+              | 'hell' (hell & zentriert) | 'split' (Text links, Bild rechts)
+     schrift:  'bricolage' | 'playfair' (elegant/Serif) | 'archivo' (kräftig/Industrie)
+              | 'nunito' (rund/freundlich) | 'fraunces' (edel/Serif) | 'dmserif' (klassisch)
+     radius:   z. B. '8px' (kantig) bis '26px' (weich) — Standard 18px
+     button:   z. B. '10px' (Rechteck) — Standard Pille (999px)
+     caps:     true = Überschriften in GROSSBUCHSTABEN (z. B. Bau/Industrie) */
+  stil: { variante: 'dunkel', schrift: 'bricolage' },
+  bilder: {
+    // hero: '/img/entwurf/muster-betrieb/hero.jpg', // Pflicht bei Variante 'bild' und 'split'
   },
   monogramm: 'MB', // 1–2 Buchstaben fürs Logo-Feld (solange kein echtes Logo da ist)
   // logo: '/img/entwurf/muster-betrieb/logo.png', // optional: echtes Logo, ersetzt Monogramm
