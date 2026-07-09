@@ -1,6 +1,37 @@
 (function () {
   var form = document.getElementById('obForm');
   if (!form) return;
+
+  /* Vorbefüllung über URL-Parameter (?firma=…&name=…&email=…) — der Link wird
+     dem Kunden personalisiert geschickt, damit er nichts doppelt eintippen muss.
+     Nur leere Felder werden befüllt; der Kunde prüft und korrigiert. */
+  var params = new URLSearchParams(window.location.search);
+  var prefillMap = {
+    firma: 'firma',
+    name: 'ansprechpartner',
+    ansprechpartner: 'ansprechpartner',
+    telefon: 'telefon',
+    email: 'email',
+    strasse: 'strasse',
+    plzort: 'plzOrt',
+    ort: 'plzOrt',
+    inhaber: 'inhaber',
+    ustid: 'ustId',
+    domain: 'domain',
+    website: 'domain',
+  };
+  var prefilled = false;
+  params.forEach(function (value, key) {
+    var field = prefillMap[key.toLowerCase()];
+    if (field && form.elements[field] && !form.elements[field].value && value.trim()) {
+      form.elements[field].value = value.trim();
+      prefilled = true;
+    }
+  });
+  if (prefilled) {
+    var note = document.getElementById('prefillNote');
+    if (note) note.style.display = 'block';
+  }
   var steps = Array.prototype.slice.call(form.querySelectorAll('.form-step'));
   var progressBar = document.getElementById('progressBar');
   var stepCount = document.getElementById('stepCount');
