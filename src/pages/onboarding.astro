@@ -1,0 +1,203 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Willkommen an Bord — deine Angaben für die neue Website | KMU-Webseiten.de';
+const description =
+  'Onboarding für Kunden von KMU-Webseiten.de: Mit diesen Angaben bauen wir deine neue Website fertig.';
+---
+<Base title={title} description={description} css="/css/home.css" canonical="https://kmu-webseiten.de/onboarding/" noindex={true}>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="https://wa.me/491785282464" target="_blank" rel="noopener">Fragen? WhatsApp an uns</a>
+    </div>
+  </header>
+
+  <div class="hero ob-hero">
+    <div class="wrap">
+      <div class="ob-intro">
+        <span class="hero-badge"><span class="dot"></span>Schön, dass du dabei bist!</span>
+        <h1 class="display">Willkommen an Bord. Jetzt machen wir deine Website fertig.</h1>
+        <p class="sub">
+          Dir hat dein Entwurf gefallen — jetzt brauchen wir noch ein paar Angaben, um alles
+          fertigzustellen: Texte, Impressum, Farben, Kontaktdaten. Dauert etwa <strong>5 Minuten</strong>.
+          Du musst nichts perfekt formulieren — Stichworte reichen völlig, den Feinschliff übernehmen wir.
+        </p>
+      </div>
+
+      <div class="form-card ob-card" id="onboarding">
+        <div class="form-head">
+          <strong>Deine Angaben</strong>
+          <span class="step-count" id="stepCount">Schritt 1 von 6</span>
+        </div>
+        <div class="progress"><i id="progressBar"></i></div>
+
+        <form id="obForm" novalidate>
+          <div class="form-step active" data-step="1">
+            <h3>Dein Betrieb &amp; deine Kontaktdaten</h3>
+            <p class="hint">So erreichen wir dich während der Umsetzung.</p>
+            <label class="field"><span>Name deines Betriebs *</span>
+              <input type="text" name="firma" autocomplete="organization" placeholder="z. B. Malerbetrieb Schmidt GmbH" required />
+            </label>
+            <label class="field"><span>Dein Name (Ansprechpartner) *</span>
+              <input type="text" name="ansprechpartner" autocomplete="name" placeholder="Vor- und Nachname" required />
+            </label>
+            <label class="field"><span>Telefon *</span>
+              <input type="tel" name="telefon" autocomplete="tel" placeholder="0151 23456789" required />
+            </label>
+            <label class="field"><span>E-Mail *</span>
+              <input type="email" name="email" autocomplete="email" placeholder="name@firma.de" required />
+            </label>
+            <p class="form-error" id="err1">Bitte fülle alle Felder aus (gültige E-Mail-Adresse).</p>
+            <div style="text-align:right"><button type="button" class="btn" data-next="2">Weiter <span class="arr">→</span></button></div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <h3>Standort &amp; Erreichbarkeit</h3>
+            <p class="hint">Brauchen wir für Impressum, Google Maps und die Kontakt-Sektion.</p>
+            <label class="field"><span>Straße &amp; Hausnummer *</span>
+              <input type="text" name="strasse" autocomplete="street-address" placeholder="z. B. Hauptstraße 12" required />
+            </label>
+            <label class="field"><span>PLZ &amp; Ort *</span>
+              <input type="text" name="plzOrt" placeholder="z. B. 56170 Bendorf" required />
+            </label>
+            <label class="field"><span>Öffnungszeiten <span class="opt">(optional)</span></span>
+              <textarea name="oeffnungszeiten" rows="3" placeholder="z. B. Mo–Fr 8–17 Uhr, Sa nach Vereinbarung"></textarea>
+            </label>
+            <p class="form-error" id="err2">Bitte gib Straße und PLZ/Ort an.</p>
+            <div style="text-align:right"><button type="button" class="btn" data-next="3">Weiter <span class="arr">→</span></button></div>
+          </div>
+
+          <div class="form-step" data-step="3">
+            <h3>Deine Leistungen &amp; deine Geschichte</h3>
+            <p class="hint">Stichworte genügen — wir machen daraus verkaufsstarke Texte.</p>
+            <label class="field"><span>Deine wichtigsten Leistungen *</span>
+              <textarea name="leistungen" rows="4" placeholder="Eine pro Zeile, z. B.:&#10;Innenanstrich &amp; Tapezierarbeiten&#10;Fassadenanstrich&#10;Bodenbeläge" required></textarea>
+            </label>
+            <label class="field"><span>Über deinen Betrieb <span class="opt">(optional)</span></span>
+              <textarea name="ueberUns" rows="3" placeholder="z. B. seit wann gibt es euch, wer steckt dahinter, Familienbetrieb?"></textarea>
+            </label>
+            <label class="field"><span>Was macht dich besser oder anders als andere? <span class="opt">(optional)</span></span>
+              <textarea name="besonderes" rows="3" placeholder="z. B. 24h-Notdienst, Festpreisgarantie, Meisterbetrieb, besonders schnell …"></textarea>
+            </label>
+            <p class="form-error" id="err3">Bitte nenne mindestens deine wichtigsten Leistungen.</p>
+            <div style="text-align:right"><button type="button" class="btn" data-next="4">Weiter <span class="arr">→</span></button></div>
+          </div>
+
+          <div class="form-step" data-step="4">
+            <h3>Design &amp; Branding</h3>
+            <p class="hint">Damit die Website aussieht wie dein Betrieb.</p>
+            <span class="field-label">Hast du ein Logo? *</span>
+            <div class="choices" data-group="logoStatus">
+              <button type="button" class="choice" data-answer="Logo vorhanden">Ja, Logo vorhanden</button>
+              <button type="button" class="choice" data-answer="Logo soll überarbeitet werden">Ja, soll aber überarbeitet werden</button>
+              <button type="button" class="choice wide" data-answer="Kein Logo — bitte Vorschlag machen">Nein — macht mir einen Vorschlag</button>
+            </div>
+            <label class="field" style="margin-top:1rem"><span>Deine Wunschfarben <span class="opt">(optional)</span></span>
+              <input type="text" name="farben" placeholder="z. B. Blau &amp; Weiß — oder: nehmt die Farben aus meinem Logo" />
+            </label>
+            <span class="field-label">Welcher Stil passt zu dir? *</span>
+            <div class="choices" data-group="stil">
+              <button type="button" class="choice" data-answer="Modern &amp; klar">Modern &amp; klar</button>
+              <button type="button" class="choice" data-answer="Edel &amp; hochwertig">Edel &amp; hochwertig</button>
+              <button type="button" class="choice" data-answer="Warm &amp; persönlich">Warm &amp; persönlich</button>
+              <button type="button" class="choice" data-answer="Kräftig &amp; auffällig">Kräftig &amp; auffällig</button>
+            </div>
+            <label class="field" style="margin-top:1rem"><span>Bestehende Links <span class="opt">(optional)</span></span>
+              <textarea name="links" rows="3" placeholder="Alte Website, Instagram, Facebook, Google-Profil — einfach reinkopieren"></textarea>
+            </label>
+            <p class="form-error" id="err4">Bitte wähle bei Logo und Stil je eine Option.</p>
+            <div style="text-align:right"><button type="button" class="btn" data-next="5">Weiter <span class="arr">→</span></button></div>
+          </div>
+
+          <div class="form-step" data-step="5">
+            <h3>Rechtliches &amp; Domain</h3>
+            <p class="hint">Für ein sauberes, abmahnsicheres Impressum.</p>
+            <label class="field"><span>Inhaber / Rechtsform *</span>
+              <input type="text" name="inhaber" placeholder="z. B. Max Mustermann — oder: Mustermann GmbH, Geschäftsführer Max Mustermann" required />
+            </label>
+            <label class="field"><span>Umsatzsteuer-ID <span class="opt">(optional, falls vorhanden)</span></span>
+              <input type="text" name="ustId" placeholder="z. B. DE123456789" />
+            </label>
+            <span class="field-label">Hast du schon eine Domain (Internet-Adresse)? *</span>
+            <div class="choices" data-group="domainStatus">
+              <button type="button" class="choice" data-answer="Domain vorhanden">Ja, habe ich</button>
+              <button type="button" class="choice" data-answer="Noch keine — bitte registrieren">Nein — registriert eine für mich</button>
+            </div>
+            <label class="field" style="margin-top:1rem"><span>Deine Domain bzw. Wunsch-Adresse <span class="opt">(optional)</span></span>
+              <input type="text" name="domain" placeholder="z. B. malerbetrieb-schmidt.de" />
+            </label>
+            <p class="form-error" id="err5">Bitte gib den Inhaber an und wähle eine Domain-Option.</p>
+            <div style="text-align:right"><button type="button" class="btn" data-next="6">Weiter <span class="arr">→</span></button></div>
+          </div>
+
+          <div class="form-step" data-step="6">
+            <h3>Fast geschafft — noch Wünsche?</h3>
+            <p class="hint">Alles, was dir sonst noch wichtig ist.</p>
+            <label class="field"><span>Deine Wünsche &amp; Anmerkungen <span class="opt">(optional)</span></span>
+              <textarea name="wuensche" rows="4" placeholder="z. B. „Die Notdienst-Nummer soll groß oben stehen" oder „Bitte kein Rot verwenden""></textarea>
+            </label>
+            <label class="hp" aria-hidden="true">Bitte dieses Feld leer lassen <input type="text" name="firmenfax" tabindex="-1" autocomplete="off" /></label>
+            <label class="consent">
+              <input type="checkbox" name="datenschutz" required />
+              <span>Ich bin mit der Verarbeitung meiner Angaben zur Erstellung meiner Website einverstanden (<a href="/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>). *</span>
+            </label>
+            <p class="form-error" id="err6">Bitte bestätige den Datenschutz-Hinweis.</p>
+            <div style="text-align:right; margin-top:1rem"><button type="submit" class="btn">Angaben absenden <span class="arr">→</span></button></div>
+          </div>
+
+          <div class="form-step" data-step="7">
+            <div class="success">
+              <div class="mark">✓</div>
+              <h3>Danke! Deine Angaben sind bei uns. 🎉</h3>
+              <p class="hint" style="margin-top:0.6rem">
+                <strong>Ein letzter Schritt:</strong> Schick uns jetzt noch dein Logo und 5–10 deiner
+                besten Fotos (Team, Arbeiten, Betrieb) — am einfachsten per WhatsApp:
+              </p>
+              <p style="margin-top:1.2rem">
+                <a class="btn" href="https://wa.me/491785282464?text=Hallo!%20Hier%20kommen%20Logo%20und%20Fotos%20f%C3%BCr%20meine%20neue%20Website." target="_blank" rel="noopener">📱 Logo &amp; Fotos per WhatsApp senden</a>
+              </p>
+              <p class="fineprint">Oder per E-Mail an kontakt@kmu-webseiten.de. Danach legen wir los — deine Website ist in wenigen Tagen fertig.</p>
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="back" id="backBtn">← Zurück</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <div>
+        <div>kontakt@kmu-webseiten.de</div>
+        <div>WhatsApp: +49 178 5282464</div>
+      </div>
+      <nav>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <style is:inline>
+    /* Onboarding: einspaltig statt Hero-Grid, Formular mittig */
+    .ob-hero .wrap { display: block; max-width: 760px; }
+    .ob-intro { text-align: center; margin-bottom: 2.4rem; }
+    .ob-intro .sub { margin-left: auto; margin-right: auto; }
+    .ob-card { max-width: 680px; margin: 0 auto; }
+    .field textarea {
+      width: 100%; font: inherit; color: var(--text); padding: 0.72rem 0.85rem;
+      border-radius: 12px; border: 1.5px solid var(--line); background: var(--paper);
+      resize: vertical; min-height: 2.6em;
+    }
+    .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+    .field-label { display: block; font-size: 0.85rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+  </style>
+
+  <script is:inline src="/js/onboarding.js" defer></script>
+</Base>

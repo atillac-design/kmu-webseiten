@@ -1,10 +1,12 @@
 ---
-const { title, description, css, canonical, ogImage = '/img/webdesign-beispiel.jpg' } = Astro.props;
+const { title, description, css, canonical, ogImage = '/img/webdesign-beispiel.jpg', noindex = false } = Astro.props;
 // Make-Webhook: nimmt Formular-Anfragen entgegen und leitet sie an E-Mail + MailerLite weiter.
 // Öffentlich (steckt ohnehin im Browser-JS); zum Wechseln einfach hier die URL tauschen
 // oder die Umgebungsvariable PUBLIC_MAKE_WEBHOOK_URL setzen.
 const DEFAULT_WEBHOOK = 'https://hook.eu2.make.com/1xbi884cw1seurhhfuf844bty3egtxwy';
 const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || DEFAULT_WEBHOOK;
+// Onboarding-Formular (Kunden nach Zusage): eigener Make-Webhook, bis dahin Demo-Modus.
+const onboardingWebhook = import.meta.env.PUBLIC_ONBOARDING_WEBHOOK_URL || '';
 ---
 <!doctype html>
 <html lang="de">
@@ -14,6 +16,7 @@ const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || DEFAULT_WEBHOOK;
     <title>{title}</title>
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -21,7 +24,7 @@ const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || DEFAULT_WEBHOOK;
     <link rel="icon" href="/img/logo.png" />
     <link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href={css} />
-    <script is:inline define:vars={{ webhook }}>window.KMU_WEBHOOK_URL = webhook;</script>
+    <script is:inline define:vars={{ webhook, onboardingWebhook }}>window.KMU_WEBHOOK_URL = webhook; window.KMU_ONBOARDING_WEBHOOK_URL = onboardingWebhook;</script>
     <slot name="head" />
   </head>
   <body>
