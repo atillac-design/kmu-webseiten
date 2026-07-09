@@ -5,8 +5,8 @@ export default defineConfig({
   site: 'https://kmu-webseiten.de',
   integrations: [
     sitemap({
-      // Onboarding ist nur für Kunden mit persönlichem Link — nicht für Google
-      filter: (page) => !page.includes('/onboarding'),
+      // Onboarding & Kunden-Entwürfe sind nur über persönliche Links erreichbar — nicht für Google
+      filter: (page) => !page.includes('/onboarding') && !page.includes('/entwurf'),
     }),
   ],
   trailingSlash: 'ignore',

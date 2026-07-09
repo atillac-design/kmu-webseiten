@@ -27,6 +27,9 @@ Stands: `4948ec7` ("Erste Version: Astro-Site mit Landingpage, ...").
 ## Was frei bearbeitbar ist (keine Rückfrage nötig)
 
 - `src/data/cities.js`: neue Städte nach dem bestehenden Muster ergänzen
+- `src/data/entwuerfe/`: neue Kunden-Entwürfe nach `_vorlage.js` anlegen —
+  Prozess und Regeln stehen in `docs/entwurfs-fabrik.md` (Texte immer individuell
+  recherchieren, nie Platzhalter an Kunden schicken)
 - Technisches Setup: Cloudflare-Konfiguration, Umgebungsvariablen, Make-Webhook-Anbindung
 - Bugfixes, die sichtbares Verhalten nicht verändern (z. B. defekter Link, Tippfehler)
 - Alles, was der Nutzer in der aktuellen Unterhaltung explizit anweist

@@ -1,0 +1,234 @@
+---
+import Base from '../../layouts/Base.astro';
+import { entwuerfe } from '../../data/entwuerfe/index.js';
+
+export function getStaticPaths() {
+  return entwuerfe.map((e) => ({ params: { slug: e.slug }, props: { e } }));
+}
+
+const { e } = Astro.props;
+
+/* Persönlicher Onboarding-Link: alles, was wir schon wissen, ist vorbefüllt */
+const prefill = new URLSearchParams();
+prefill.set('firma', e.firma);
+if (e.kunde?.name) prefill.set('name', e.kunde.name);
+if (e.kunde?.email) prefill.set('email', e.kunde.email);
+if (e.kunde?.telefon) prefill.set('telefon', e.kunde.telefon);
+if (e.kunde?.website) prefill.set('website', e.kunde.website);
+if (e.adresse) {
+  const teile = e.adresse.split(',').map((t) => t.trim());
+  if (teile.length > 1) {
+    prefill.set('strasse', teile[0]);
+    prefill.set('plzort', teile.slice(1).join(', '));
+  }
+}
+const onboardingUrl = '/onboarding/?' + prefill.toString();
+
+const telHref = 'tel:' + e.telefon.replace(/[^\d+]/g, '');
+const title = `${e.firma} — ${e.branche} in ${e.ort} | Website-Entwurf`;
+const description = `Kostenloser Website-Entwurf für ${e.firma} (${e.ort}), erstellt von kmu-webseiten.de.`;
+
+/* Icon-Bibliothek (Stroke-Icons, erben die Akzentfarbe) */
+const icons = {
+  check: '<polyline points="20 6 9 17 4 12"/>',
+  werkzeug: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+  pinsel: '<path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/>',
+  haus: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  blitz: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  schild: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  stern: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  uhr: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  herz: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+  chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  blatt: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+  diamant: '<path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/>',
+  kamera: '<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>',
+  teller: '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>',
+  schere: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/>',
+  lupe: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+};
+const icon = (name) =>
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name] || icons.check}</svg>`;
+---
+<Base title={title} description={description} css="/css/entwurf.css" noindex={true}>
+  <!-- Vorschau-Leiste von kmu-webseiten.de -->
+  <div class="preview-bar">
+    <div class="wrap">
+      <div class="pv-label">
+        <i class="pv-dot"></i>
+        <span><strong>Dein kostenloser Entwurf</strong> <em>· erstellt von kmu-webseiten.de · unverbindlich</em></span>
+      </div>
+      <a class="pv-cta" href={onboardingUrl}>Ja, so soll meine Website werden →</a>
+    </div>
+  </div>
+
+  <div class="e-site" style={`--e-accent:${e.farben.accent}; --e-dark:${e.farben.dark};`}>
+    <!-- Header der Kunden-Website -->
+    <header class="e-header">
+      <div class="wrap">
+        <a class="e-brand" href={`/entwurf/${e.slug}/`}>
+          {e.logo
+            ? <img class="e-logo" src={e.logo} alt={`${e.firma} Logo`} style="object-fit:contain; background:#fff; padding:4px;" />
+            : <span class="e-logo">{e.monogramm}</span>}
+          <span class="e-brand-txt">
+            <strong>{e.firma}</strong>
+            <small>{e.branche} · {e.ort}</small>
+          </span>
+        </a>
+        <nav class="e-nav" aria-label="Hauptnavigation">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#ueber-uns">Über uns</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <a class="e-tel" href={telHref}>📞 <span>{e.telefon}</span></a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="e-hero">
+      <div class="wrap">
+        <span class="e-badge">✦ {e.branche} in {e.ort}</span>
+        <h1 class="display">{e.claim}</h1>
+        <p class="e-sub">{e.sub}</p>
+        <div class="e-cta-row">
+          <a class="e-btn e-btn-primary" href={telHref}>Jetzt anrufen</a>
+          <a class="e-btn e-btn-ghost" href="#leistungen">Unsere Leistungen</a>
+        </div>
+        <ul class="e-usps">
+          {e.usps.map((u) => <li>{u}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section class="e-section" id="leistungen">
+      <div class="wrap">
+        <div class="rv">
+          <span class="e-kicker">Leistungen</span>
+          <h2 class="display">Das machen wir für Sie</h2>
+        </div>
+        <div class="e-cards stagger">
+          {e.leistungen.map((l) => (
+            <article class="e-card">
+              <span class="e-ico" set:html={icon(l.icon)} />
+              <h3>{l.titel}</h3>
+              <p>{l.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Über uns -->
+    <section class="e-section alt" id="ueber-uns">
+      <div class="wrap">
+        <div class="e-about">
+          <div class="e-text rv">
+            <span class="e-kicker">Über uns</span>
+            <h2 class="display">{e.firma}</h2>
+            <div style="margin-top:1.2rem;">
+              {e.ueberUns.text.map((p) => <p>{p}</p>)}
+            </div>
+          </div>
+          <div class="e-facts stagger">
+            {e.ueberUns.fakten.map((f) => (
+              <div class="e-fact"><strong>{f.zahl}</strong><span>{f.label}</span></div>
+            ))}
+          </div>
+        </div>
+        {e.zitat && (
+          <div class="e-quote rv">
+            <div class="e-stars">★★★★★</div>
+            <blockquote>{e.zitat.text}</blockquote>
+            <cite>— {e.zitat.name}</cite>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Galerie -->
+    {e.galerie && e.galerie.length > 0 && (
+      <section class="e-section" id="galerie">
+        <div class="wrap">
+          <div class="rv">
+            <span class="e-kicker">Einblicke</span>
+            <h2 class="display">Unsere Arbeit in Bildern</h2>
+          </div>
+          <div class="e-galerie stagger">
+            {e.galerie.map((g) => (
+              <figure>
+                {g.src ? <img src={g.src} alt={g.alt} loading="lazy" /> : <span class="ph">📷 {g.alt}</span>}
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Kontakt -->
+    <section class="e-section e-kontakt" id="kontakt">
+      <div class="wrap">
+        <div class="rv">
+          <span class="e-kicker">Kontakt</span>
+          <h2 class="display">So erreichen Sie uns</h2>
+          <p class="e-lead">Rufen Sie an oder schreiben Sie uns — wir melden uns schnellstmöglich zurück.</p>
+        </div>
+        <div class="e-kontakt-grid stagger">
+          <div class="e-kbox">
+            <h3>Kontaktdaten</h3>
+            <div class="e-krow"><span class="k">Adresse</span><span>{e.adresse}</span></div>
+            <div class="e-krow"><span class="k">Telefon</span><a href={telHref}>{e.telefon}</a></div>
+            <div class="e-krow"><span class="k">E-Mail</span><a href={`mailto:${e.email}`}>{e.email}</a></div>
+          </div>
+          <div class="e-kbox">
+            <h3>Öffnungszeiten</h3>
+            <table class="e-zeiten">
+              {e.oeffnungszeiten.map(([tag, zeit]) => (
+                <tr><td>{tag}</td><td>{zeit}</td></tr>
+              ))}
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="e-footer">
+      <div class="wrap">
+        <span>© {e.firma}, {e.ort}</span>
+        <span>Impressum &amp; Datenschutz ergänzen wir beim Livegang.</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Abschluss-Panel von kmu-webseiten.de -->
+  <section class="pitch">
+    <div class="wrap">
+      <span class="p-kicker">Und jetzt du</span>
+      <h2 class="display">Gefällt dir dein Entwurf?</h2>
+      <p>
+        Genau so — mit deinen echten Fotos, Texten und deinem Logo — bringen wir deine Website
+        online. Ein Klick, 5 Minuten Angaben, und wir legen los.
+      </p>
+      <div class="p-ctas">
+        <a class="p-yes" href={onboardingUrl}>Ja, so soll meine Website werden →</a>
+        <a class="p-wa" href={`https://wa.me/491785282464?text=${encodeURIComponent(`Hallo! Ich habe meinen Entwurf gesehen (${e.firma}) und hätte gern noch Änderungen: `)}`} target="_blank" rel="noopener">💬 Ich wünsche mir Änderungen</a>
+      </div>
+      <p class="p-note">
+        Der Entwurf ist kostenlos und unverbindlich. Gefällt er dir nicht, sag es uns —
+        wir passen ihn an oder du lässt es einfach. Kein Kleingedrucktes.
+      </p>
+      <p class="p-brand">Ein Entwurf von <a href="https://kmu-webseiten.de">kmu-webseiten.de</a> · Ein Produkt von Pixel56</p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.rv, .stagger').forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</Base>
