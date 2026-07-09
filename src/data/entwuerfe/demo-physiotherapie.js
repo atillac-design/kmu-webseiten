@@ -15,7 +15,7 @@ export default {
   farben: { accent: '#2E8F83', dark: '#0E1A18', paper: '#F4F8F7' },
   stil: { variante: 'split', schrift: 'nunito', radius: '26px' },
   bilder: {
-    // hero: '/img/entwurf/demo-physiotherapie/hero.jpg', // Behandlung im hellen Therapieraum
+    hero: '/img/entwurf/physio-hero.jpg',
   },
   monogramm: 'PB',
 

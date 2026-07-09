@@ -17,6 +17,9 @@ export default {
     accent: '#C2452D',
     dark: '#1B1512',
   },
+  bilder: {
+    hero: '/img/entwurf/maler-hero.jpg',
+  },
   monogramm: 'MS',
 
   usps: ['Meisterbetrieb seit 1995', 'Festpreis-Garantie', 'Saubere Baustelle', 'Koblenz & Umgebung'],

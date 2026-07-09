@@ -15,7 +15,7 @@ export default {
   farben: { accent: '#B08D46', dark: '#131A26' },
   stil: { variante: 'bild', schrift: 'fraunces', radius: '10px', button: '12px' },
   bilder: {
-    // hero: '/img/entwurf/demo-immobilien/hero.jpg', // hochwertiges Wohnhaus / Villa außen
+    hero: '/img/entwurf/immo-hero.jpg',
   },
   monogramm: 'RI',
 
