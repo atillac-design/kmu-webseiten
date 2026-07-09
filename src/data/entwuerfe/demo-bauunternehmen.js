@@ -15,7 +15,7 @@ export default {
   farben: { accent: '#D97C1F', dark: '#171208' },
   stil: { variante: 'bild', schrift: 'archivo', radius: '8px', button: '10px', caps: true },
   bilder: {
-    // hero: '/img/entwurf/demo-bauunternehmen/hero.jpg', // Baustelle mit Kran, Rohbau
+    hero: '/img/entwurf/bau-hero.jpg',
   },
   monogramm: 'BK',
 

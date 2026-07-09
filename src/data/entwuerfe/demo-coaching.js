@@ -15,7 +15,7 @@ export default {
   farben: { accent: '#A34D64', dark: '#1D131A', paper: '#FAF4F2' },
   stil: { variante: 'hell', schrift: 'dmserif' },
   bilder: {
-    // hero wird bei Variante „hell" nicht benötigt
+    hero: '/img/entwurf/coaching-hero.jpg',
   },
   monogramm: 'KC',
 

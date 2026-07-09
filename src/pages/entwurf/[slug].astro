@@ -112,7 +112,7 @@ const icon = (name) =>
     <!-- Hero (Layout je nach Variante) -->
     <section class="e-hero" style={variante === 'bild' && bilder.hero ? `background-image:url('${bilder.hero}')` : undefined}>
       <div class="wrap">
-        {variante === 'split' ? (
+        {variante === 'split' || (variante === 'dunkel' && bilder.hero) ? (
           <div class="e-hero-grid">
             <div>
               <span class="e-badge">✦ {e.branche} in {e.ort}</span>
@@ -144,6 +144,11 @@ const icon = (name) =>
             <ul class="e-usps">
               {e.usps.map((u) => <li>{u}</li>)}
             </ul>
+            {variante === 'hell' && bilder.hero && (
+              <div class="e-hero-banner">
+                <img src={bilder.hero} alt={`${e.firma} — ${e.branche} in ${e.ort}`} />
+              </div>
+            )}
           </>
         )}
       </div>

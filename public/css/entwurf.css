@@ -512,3 +512,21 @@ p { margin: 0; }
 .v-split .e-hero-img img { width: 100%; height: 100%; object-fit: cover; }
 .v-split .e-hero-img .e-foto-ph { height: 100%; border-bottom: none; }
 .v-split .e-hero h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); }
+
+/* v-hell mit Hero-Bild: breites Panorama-Banner unter dem zentrierten Text */
+.v-hell .e-hero-banner {
+  max-width: 960px; margin: 2.8rem auto 0; aspect-ratio: 21/9;
+  border-radius: var(--e-radius); overflow: hidden;
+  box-shadow: var(--e-shadow); border: 1px solid var(--e-line);
+}
+.v-hell .e-hero-banner img { width: 100%; height: 100%; object-fit: cover; }
+
+/* v-dunkel mit Hero-Bild: dunkles Split-Layout (Text links, Bild rechts) */
+.v-dunkel .e-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center; }
+@media (max-width: 860px) { .v-dunkel .e-hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.v-dunkel .e-hero-img {
+  border-radius: var(--e-radius); overflow: hidden; aspect-ratio: 4/3.4;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  border: 1px solid color-mix(in srgb, var(--e-dark-text) 14%, transparent);
+}
+.v-dunkel .e-hero-img img { width: 100%; height: 100%; object-fit: cover; }

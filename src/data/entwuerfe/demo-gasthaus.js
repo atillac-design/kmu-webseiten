@@ -15,7 +15,7 @@ export default {
   farben: { accent: '#4A7C3F', dark: '#12170F', paper: '#FAF5EC' },
   stil: { variante: 'hell', schrift: 'playfair', radius: '14px' },
   bilder: {
-    // hero wird bei Variante „hell" nicht benötigt
+    hero: '/img/entwurf/gasthaus-hero.jpg',
   },
   monogramm: 'GL',
 
