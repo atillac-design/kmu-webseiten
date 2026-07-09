@@ -219,6 +219,73 @@ p { margin: 0; }
 .e-fact strong { display: block; font-size: 1.9rem; font-weight: 800; color: var(--e-accent); font-family: "Bricolage", sans-serif; }
 .e-fact span { color: var(--e-muted); font-size: 0.86rem; }
 
+/* Vorteile („Warum wir?") */
+.e-vorteile { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2.4rem; }
+@media (max-width: 760px) { .e-vorteile { grid-template-columns: 1fr; } }
+.e-vorteil {
+  display: flex; gap: 1.1rem; align-items: flex-start;
+  background: var(--e-paper); border: 1px solid var(--e-line); border-radius: 18px;
+  padding: 1.4rem 1.4rem 1.5rem;
+}
+.e-vorteil .e-ico { margin-bottom: 0; flex: none; }
+.e-vorteil h3 { font-size: 1.05rem; font-weight: 750; margin-bottom: 0.35rem; }
+.e-vorteil p { color: var(--e-muted); font-size: 0.94rem; }
+
+/* Letzte Projekte */
+.e-projekte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.4rem; }
+@media (max-width: 900px) { .e-projekte { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .e-projekte { grid-template-columns: 1fr; } }
+.e-projekt {
+  background: var(--e-card); border: 1px solid var(--e-line); border-radius: 18px;
+  overflow: hidden; box-shadow: 0 6px 24px rgba(15,18,24,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.e-projekt:hover { transform: translateY(-4px); box-shadow: var(--e-shadow); }
+.e-projekt > img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.e-projekt-body { padding: 1.2rem 1.3rem 1.4rem; }
+.e-projekt-body h3 { font-size: 1.08rem; font-weight: 750; }
+.e-projekt-ort { display: block; color: var(--e-muted); font-size: 0.82rem; margin: 0.25rem 0 0.6rem; }
+.e-projekt-body p { color: var(--e-muted); font-size: 0.93rem; }
+
+/* Foto-Platzhalter: deutlich als „hier kommt dein Bild hin" erkennbar */
+.e-foto-ph {
+  aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 0.25rem; text-align: center; padding: 1rem;
+  background:
+    linear-gradient(color-mix(in srgb, var(--e-accent) 7%, var(--e-card)), color-mix(in srgb, var(--e-accent) 7%, var(--e-card)));
+  border-bottom: 2px dashed color-mix(in srgb, var(--e-accent) 45%, transparent);
+  color: var(--e-muted);
+}
+.e-foto-ph .cam { font-size: 2rem; }
+.e-foto-ph strong { color: var(--e-accent); font-size: 0.94rem; }
+.e-foto-ph span:last-child { font-size: 0.82rem; max-width: 26ch; }
+.e-galerie .e-foto-ph { height: 100%; border-bottom: none; border: 2px dashed color-mix(in srgb, var(--e-accent) 40%, transparent); border-radius: inherit; }
+
+/* Bewertungen */
+.e-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.4rem; }
+@media (max-width: 900px) { .e-reviews { grid-template-columns: 1fr; } }
+.e-review {
+  background: var(--e-card); border: 1px solid var(--e-line); border-radius: 18px;
+  padding: 1.5rem 1.4rem 1.6rem; display: flex; flex-direction: column;
+}
+.e-review .e-stars { color: #F5B942; letter-spacing: 0.12em; margin-bottom: 0.7rem; }
+.e-review p { color: var(--e-ink); font-size: 0.96rem; flex: 1; }
+.e-review footer { margin-top: 1.1rem; color: var(--e-muted); font-size: 0.86rem; font-weight: 650; }
+
+/* Kontaktformular (im Entwurf: Vorschau ohne Versand) */
+.e-formbox { margin-top: 1.4rem; }
+.e-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+@media (max-width: 600px) { .e-form-grid { grid-template-columns: 1fr; } }
+.e-form input, .e-form textarea {
+  width: 100%; font: inherit; font-size: 0.95rem; color: var(--e-dark-text);
+  background: color-mix(in srgb, var(--e-dark-text) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--e-dark-text) 18%, transparent);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 0.8rem; resize: vertical;
+}
+.e-form input::placeholder, .e-form textarea::placeholder { color: var(--e-dark-muted); }
+.e-form button { border: none; cursor: pointer; font: inherit; font-weight: 700; }
+.e-form-note { margin-top: 1rem; font-size: 0.88rem; color: #38C98A; }
+
 /* Zitat */
 .e-quote {
   background: var(--e-dark); color: var(--e-dark-text); border-radius: 22px;

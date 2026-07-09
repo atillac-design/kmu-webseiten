@@ -40,21 +40,29 @@ export default {
       { zahl: '7', label: 'Mitarbeiter im Team' },
     ],
   },
-  zitat: {
-    text: 'Pünktlich, freundlich, sauber — und das Ergebnis sieht aus wie neu. Herr Schmidt hat uns sogar noch Tipps zur Pflege gegeben. Absolute Empfehlung!',
-    name: 'Familie Weber, Koblenz-Metternich',
-  },
+  vorteile: [
+    { icon: 'check', titel: 'Festpreis statt Überraschung', text: 'Sie bekommen vorab ein verbindliches Angebot — und genau das zahlen Sie am Ende auch.' },
+    { icon: 'uhr', titel: 'Termine, die halten', text: 'Wir kommen, wann wir es sagen — und sind fertig, wann wir es versprochen haben.' },
+    { icon: 'schild', titel: 'Meisterqualität mit Garantie', text: 'Zwei Meister im Betrieb, geprüfte Materialien und Gewährleistung auf jede Arbeit.' },
+    { icon: 'stern', titel: 'Besenreine Übergabe', text: 'Abkleben, abdecken, aufräumen — Sie ziehen keine Folie ab und wischen nichts weg.' },
+  ],
+  projekte: [
+    { titel: 'Fassade, Einfamilienhaus', ort: 'Koblenz-Metternich', text: 'Kompletter Fassadenanstrich inkl. Putzausbesserung — in 6 Arbeitstagen fertig.' },
+    { titel: 'Praxisräume, Innenanstrich', ort: 'Koblenz-Altstadt', text: 'Arztpraxis über ein Wochenende renoviert — Montag früh lief der Betrieb normal weiter.' },
+    { titel: 'Treppenhaus, Wohnanlage', ort: 'Koblenz-Lützel', text: 'Treppenhaus über 4 Etagen für eine Hausverwaltung — inkl. Lackierung aller Geländer.' },
+  ],
+  bewertungen: [
+    { text: 'Pünktlich, freundlich, sauber — und das Ergebnis sieht aus wie neu. Herr Schmidt hat uns sogar noch Tipps zur Pflege gegeben. Absolute Empfehlung!', name: 'Familie Weber', ort: 'Koblenz-Metternich' },
+    { text: 'Festpreis-Angebot innerhalb von zwei Tagen, Ausführung eine Woche später. So stellt man sich Handwerk vor.', name: 'M. Krause', ort: 'Vallendar' },
+    { text: 'Wir arbeiten als Hausverwaltung seit Jahren mit dem Betrieb — zuverlässig, fair im Preis und immer erreichbar.', name: 'Hausverwaltung Reuter', ort: 'Koblenz' },
+  ],
   oeffnungszeiten: [
     ['Montag – Donnerstag', '07:30 – 17:00 Uhr'],
     ['Freitag', '07:30 – 14:00 Uhr'],
     ['Samstag', 'nach Vereinbarung'],
     ['Sonntag', 'geschlossen'],
   ],
-  galerie: [
-    { alt: 'Platz für Ihre Projektfotos — z. B. ein frisch gestrichenes Wohnzimmer' },
-    { alt: 'Platz für Ihr Team-Foto' },
-    { alt: 'Platz für ein Vorher-Nachher Ihrer Fassade' },
-  ],
+  galerie: [],
 
   kunde: {
     name: 'Thomas Schmidt',

@@ -51,7 +51,24 @@ export default {
       { zahl: '48h', label: 'Reaktionszeit' },
     ],
   },
-  zitat: null, // oder: { text: 'Echte Kundenstimme (z. B. aus Google-Rezensionen).', name: 'M. Mustermann, Musterstadt' }
+  vorteile: [
+    // 3–4 Gründe, warum Kunden diesen Betrieb wählen (die Sektion „Warum wir?")
+    { icon: 'check', titel: 'Vorteil eins', text: 'Ein Satz, der den Vorteil konkret belegt.' },
+    { icon: 'uhr', titel: 'Vorteil zwei', text: 'Ein Satz, der den Vorteil konkret belegt.' },
+    { icon: 'schild', titel: 'Vorteil drei', text: 'Ein Satz, der den Vorteil konkret belegt.' },
+  ],
+  projekte: [
+    // Letzte Projekte / Referenzen — img optional, sonst deutlicher Foto-Platzhalter
+    // { img: '/img/entwurf/muster-betrieb/projekt1.jpg', titel: '…', ort: '…', text: '…' },
+    { titel: 'Projekt eins', ort: 'Musterstadt', text: 'Was wurde gemacht, wie lange hat es gedauert.' },
+    { titel: 'Projekt zwei', ort: 'Musterstadt', text: 'Was wurde gemacht, wie lange hat es gedauert.' },
+    { titel: 'Projekt drei', ort: 'Musterstadt', text: 'Was wurde gemacht, wie lange hat es gedauert.' },
+  ],
+  bewertungen: [
+    // Echte Stimmen (z. B. aus Google-Rezensionen recherchieren) — 2–3 Stück
+    { text: 'Echte Kundenstimme.', name: 'M. Mustermann', ort: 'Musterstadt' },
+    { text: 'Echte Kundenstimme.', name: 'A. Beispiel', ort: 'Musterstadt' },
+  ],
   oeffnungszeiten: [
     ['Montag – Freitag', '08:00 – 17:00 Uhr'],
     ['Samstag', 'nach Vereinbarung'],

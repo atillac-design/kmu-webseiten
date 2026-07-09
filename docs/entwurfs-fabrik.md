@@ -9,7 +9,12 @@ Website-Entwurf unter `kmu-webseiten.de/entwurf/{slug}/`.
 - **Ein Datensatz pro Kunde:** `src/data/entwuerfe/{slug}.js` (Vorlage: `_vorlage.js`)
 - **Register:** `src/data/entwuerfe/index.js` — nur was hier im Array steht, geht live
 - **Renderer:** `src/pages/entwurf/[slug].astro` baut aus dem Datensatz eine komplette
-  One-Page-Website im Look des Kunden (eigene Farben, eigenes Monogramm/Logo)
+  One-Page-Website im Look des Kunden (eigene Farben, eigenes Monogramm/Logo) mit den
+  Sektionen: Hero → Leistungen → Vorteile („Warum wir?") → Letzte Projekte →
+  Über uns + Fakten → Bewertungen → Kontakt (Daten, Öffnungszeiten, Kontaktformular).
+  Das Kontaktformular ist im Entwurf eine Vorschau (sendet nichts); wo Fotos fehlen,
+  zeigen deutlich markierte Platzhalter-Kacheln („Hier kommt Ihr Foto hin"), was der
+  Kunde noch liefern soll.
 - **Unsichtbar für Google:** `noindex` + Ausschluss aus der Sitemap + nirgends verlinkt.
   Nur wer den Link hat, sieht den Entwurf.
 - **Eingebauter Verkaufsabschluss:** Oben eine fixierte Vorschau-Leiste, unten das Panel

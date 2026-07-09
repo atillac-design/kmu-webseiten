@@ -77,7 +77,9 @@ const icon = (name) =>
         </a>
         <nav class="e-nav" aria-label="Hauptnavigation">
           <a href="#leistungen">Leistungen</a>
+          <a href="#projekte">Projekte</a>
           <a href="#ueber-uns">Über uns</a>
+          <a href="#bewertungen">Bewertungen</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
         <a class="e-tel" href={telHref}>📞 <span>{e.telefon}</span></a>
@@ -119,6 +121,56 @@ const icon = (name) =>
       </div>
     </section>
 
+    <!-- Vorteile / Warum wir -->
+    {e.vorteile && e.vorteile.length > 0 && (
+      <section class="e-section alt" id="vorteile">
+        <div class="wrap">
+          <div class="rv">
+            <span class="e-kicker">Warum wir?</span>
+            <h2 class="display">Ihre Vorteile mit {e.firma}</h2>
+          </div>
+          <div class="e-vorteile stagger">
+            {e.vorteile.map((v) => (
+              <div class="e-vorteil">
+                <span class="e-ico" set:html={icon(v.icon)} />
+                <div>
+                  <h3>{v.titel}</h3>
+                  <p>{v.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Letzte Projekte -->
+    {e.projekte && e.projekte.length > 0 && (
+      <section class="e-section" id="projekte">
+        <div class="wrap">
+          <div class="rv">
+            <span class="e-kicker">Referenzen</span>
+            <h2 class="display">Unsere letzten Projekte</h2>
+            <p class="e-lead">Ein Blick auf Arbeiten, die wir zuletzt umgesetzt haben.</p>
+          </div>
+          <div class="e-projekte stagger">
+            {e.projekte.map((p) => (
+              <article class="e-projekt">
+                {p.img
+                  ? <img src={p.img} alt={p.titel} loading="lazy" />
+                  : <div class="e-foto-ph"><span class="cam">📷</span><strong>Hier kommt Ihr Foto hin</strong><span>{p.titel}</span></div>}
+                <div class="e-projekt-body">
+                  <h3>{p.titel}</h3>
+                  {p.ort && <span class="e-projekt-ort">📍 {p.ort}</span>}
+                  <p>{p.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <!-- Über uns -->
     <section class="e-section alt" id="ueber-uns">
       <div class="wrap">
@@ -136,19 +188,33 @@ const icon = (name) =>
             ))}
           </div>
         </div>
-        {e.zitat && (
-          <div class="e-quote rv">
-            <div class="e-stars">★★★★★</div>
-            <blockquote>{e.zitat.text}</blockquote>
-            <cite>— {e.zitat.name}</cite>
-          </div>
-        )}
       </div>
     </section>
 
+    <!-- Bewertungen -->
+    {e.bewertungen && e.bewertungen.length > 0 && (
+      <section class="e-section" id="bewertungen">
+        <div class="wrap">
+          <div class="rv">
+            <span class="e-kicker">Bewertungen</span>
+            <h2 class="display">Das sagen unsere Kunden</h2>
+          </div>
+          <div class="e-reviews stagger">
+            {e.bewertungen.map((b) => (
+              <article class="e-review">
+                <div class="e-stars">★★★★★</div>
+                <p>„{b.text}"</p>
+                <footer>— {b.name}{b.ort && `, ${b.ort}`}</footer>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <!-- Galerie -->
     {e.galerie && e.galerie.length > 0 && (
-      <section class="e-section" id="galerie">
+      <section class="e-section alt" id="galerie">
         <div class="wrap">
           <div class="rv">
             <span class="e-kicker">Einblicke</span>
@@ -157,7 +223,9 @@ const icon = (name) =>
           <div class="e-galerie stagger">
             {e.galerie.map((g) => (
               <figure>
-                {g.src ? <img src={g.src} alt={g.alt} loading="lazy" /> : <span class="ph">📷 {g.alt}</span>}
+                {g.src
+                  ? <img src={g.src} alt={g.alt} loading="lazy" />
+                  : <div class="e-foto-ph"><span class="cam">📷</span><strong>Hier kommt Ihr Foto hin</strong><span>{g.alt}</span></div>}
               </figure>
             ))}
           </div>
@@ -188,6 +256,21 @@ const icon = (name) =>
               ))}
             </table>
           </div>
+        </div>
+        <div class="e-kbox e-formbox rv">
+          <h3>Oder schreiben Sie uns direkt</h3>
+          <form class="e-form" id="eKontaktForm" novalidate>
+            <div class="e-form-grid">
+              <input type="text" name="name" placeholder="Ihr Name" autocomplete="name" />
+              <input type="text" name="kontakt" placeholder="Telefon oder E-Mail" />
+            </div>
+            <textarea name="nachricht" rows="4" placeholder="Ihre Nachricht — was können wir für Sie tun?"></textarea>
+            <button type="submit" class="e-btn e-btn-primary">Nachricht senden</button>
+            <p class="e-form-note" id="eFormNote" style="display:none;">
+              ✓ Im Entwurf ist das Formular eine Vorschau — auf deiner fertigen Website landet
+              diese Anfrage direkt in deinem E-Mail-Postfach.
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -229,6 +312,13 @@ const icon = (name) =>
         });
       }, { threshold: 0.12 });
       document.querySelectorAll('.rv, .stagger').forEach(function (el) { io.observe(el); });
+
+      /* Kontaktformular ist im Entwurf eine Vorschau — zeigt beim Absenden den Hinweis */
+      var kf = document.getElementById('eKontaktForm');
+      if (kf) kf.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        document.getElementById('eFormNote').style.display = 'block';
+      });
     })();
   </script>
 </Base>
