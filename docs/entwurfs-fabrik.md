@@ -10,8 +10,10 @@ Website-Entwurf unter `kmu-webseiten.de/entwurf/{slug}/`.
 - **Register:** `src/data/entwuerfe/index.js` — nur was hier im Array steht, geht live
 - **Renderer:** `src/pages/entwurf/[slug].astro` baut aus dem Datensatz eine komplette
   One-Page-Website im Look des Kunden (eigene Farben, eigenes Monogramm/Logo) mit den
-  Sektionen: Hero → Leistungen → Vorteile („Warum wir?") → Letzte Projekte →
-  Über uns + Fakten → Bewertungen → Kontakt (Daten, Öffnungszeiten, Kontaktformular).
+  Sektionen: Hero → Leistungen → Vorteile („Warum wir?") → Themen (Bild + Text im
+  Wechsel, links/rechts alternierend) → Ablauf („So läuft's ab") → CTA-Band in der
+  Betriebsfarbe → Letzte Projekte → Über uns + Fakten → Bewertungen → FAQ →
+  Kontakt (Daten, Öffnungszeiten, Kontaktformular).
   Das Kontaktformular ist im Entwurf eine Vorschau (sendet nichts); wo Fotos fehlen,
   zeigen deutlich markierte Platzhalter-Kacheln („Hier kommt Ihr Foto hin"), was der
   Kunde noch liefern soll.

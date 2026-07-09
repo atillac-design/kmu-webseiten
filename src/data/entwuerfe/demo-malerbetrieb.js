@@ -46,6 +46,48 @@ export default {
     { icon: 'schild', titel: 'Meisterqualität mit Garantie', text: 'Zwei Meister im Betrieb, geprüfte Materialien und Gewährleistung auf jede Arbeit.' },
     { icon: 'stern', titel: 'Besenreine Übergabe', text: 'Abkleben, abdecken, aufräumen — Sie ziehen keine Folie ab und wischen nichts weg.' },
   ],
+  themen: [
+    {
+      kicker: 'Innenarbeiten',
+      titel: 'Räume, die sich wieder gut anfühlen',
+      text: 'Ob einzelnes Zimmer oder die ganze Wohnung: Wir streichen Wände und Decken deckend, streifenfrei und mit sauberen Kanten. Vorher beraten wir Sie zu Farben und Oberflächen — ehrlich und ohne Aufpreis.',
+      punkte: [
+        'Wände & Decken — deckend und streifenfrei',
+        'Feine Kanten ohne Kleckerränder',
+        'Abkleben, abdecken, besenreine Übergabe',
+        'Auf Wunsch mit Farbberatung vor Ort',
+      ],
+      bildAlt: 'z. B. Ihr frisch gestrichenes Wohnzimmer',
+    },
+    {
+      kicker: 'Außenarbeiten',
+      titel: 'Fassaden, die schützen — und was hermachen',
+      text: 'Eine gute Fassade ist mehr als Optik: Sie schützt Ihr Haus vor Wetter und Wertverlust. Wir arbeiten mit wetterfesten Markenfarben und bessern Putzschäden gleich mit aus.',
+      punkte: [
+        'Fassadenanstrich inkl. Putzausbesserung',
+        'Wetterfeste Markenfarben mit Langzeitschutz',
+        'Gerüst organisieren wir für Sie',
+        'Verbindlicher Festpreis nach Besichtigung',
+      ],
+      bildAlt: 'z. B. ein Vorher-Nachher Ihrer Fassade',
+    },
+  ],
+  ablauf: [
+    { titel: 'Besichtigung', text: 'Wir schauen uns Ihr Projekt vor Ort an und beraten ehrlich, was nötig ist — und was nicht.' },
+    { titel: 'Festpreis-Angebot', text: 'Innerhalb von 48 Stunden bekommen Sie ein verbindliches Angebot ohne versteckte Posten.' },
+    { titel: 'Ausführung', text: 'Wir kommen zum vereinbarten Termin, arbeiten sauber und halten Sie auf dem Laufenden.' },
+    { titel: 'Abnahme & Garantie', text: 'Gemeinsame Abnahme, besenreine Übergabe — und Gewährleistung auf jede Arbeit.' },
+  ],
+  cta: {
+    titel: 'Bereit für frische Farbe?',
+    text: 'Rufen Sie an oder schreiben Sie uns — wir beraten kostenlos und machen Ihnen innerhalb von 48 Stunden ein Festpreis-Angebot.',
+  },
+  faq: [
+    { frage: 'Was kostet ein Innenanstrich?', antwort: 'Das hängt von Fläche und Zustand der Wände ab. Nach einer kurzen Besichtigung bekommen Sie von uns ein Festpreis-Angebot — kostenlos und unverbindlich.' },
+    { frage: 'Wie schnell bekomme ich einen Termin?', antwort: 'Kleinere Arbeiten meist innerhalb von 1–2 Wochen, größere Projekte nach Absprache. Dringende Fälle — etwa nach einem Wasserschaden — priorisieren wir.' },
+    { frage: 'Muss ich die Räume leerräumen?', antwort: 'Nein. Möbel rücken wir zusammen und decken alles sorgfältig ab — das gehört bei uns zum Service.' },
+    { frage: 'Arbeiten Sie auch für Firmen und Hausverwaltungen?', antwort: 'Ja, ein großer Teil unserer Aufträge kommt von Gewerbekunden und Hausverwaltungen — auf Wunsch mit fester Rahmenvereinbarung.' },
+  ],
   projekte: [
     { titel: 'Fassade, Einfamilienhaus', ort: 'Koblenz-Metternich', text: 'Kompletter Fassadenanstrich inkl. Putzausbesserung — in 6 Arbeitstagen fertig.' },
     { titel: 'Praxisräume, Innenanstrich', ort: 'Koblenz-Altstadt', text: 'Arztpraxis über ein Wochenende renoviert — Montag früh lief der Betrieb normal weiter.' },

@@ -144,6 +144,63 @@ const icon = (name) =>
       </section>
     )}
 
+    <!-- Themen: Bild + Text im Wechsel -->
+    {e.themen && e.themen.length > 0 && (
+      <section class="e-section" id="themen">
+        <div class="wrap">
+          {e.themen.map((t, i) => (
+            <div class={`e-thema rv${i % 2 === 1 ? ' rev' : ''}`}>
+              <div class="e-thema-img">
+                {t.img
+                  ? <img src={t.img} alt={t.bildAlt || t.titel} loading="lazy" />
+                  : <div class="e-foto-ph"><span class="cam">📷</span><strong>Hier kommt Ihr Foto hin</strong><span>{t.bildAlt || t.titel}</span></div>}
+              </div>
+              <div class="e-thema-txt">
+                {t.kicker && <span class="e-kicker">{t.kicker}</span>}
+                <h2 class="display">{t.titel}</h2>
+                <p>{t.text}</p>
+                {t.punkte && t.punkte.length > 0 && (
+                  <ul class="e-punkte">
+                    {t.punkte.map((p) => <li>{p}</li>)}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Ablauf -->
+    {e.ablauf && e.ablauf.length > 0 && (
+      <section class="e-section alt" id="ablauf">
+        <div class="wrap">
+          <div class="rv">
+            <span class="e-kicker">So läuft's ab</span>
+            <h2 class="display">Von der Anfrage zum Ergebnis</h2>
+          </div>
+          <div class="e-ablauf stagger">
+            {e.ablauf.map((s, i) => (
+              <div class="e-schritt">
+                <span class="num">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{s.titel}</h3>
+                <p>{s.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- CTA-Band -->
+    <section class="e-ctaband rv">
+      <div class="wrap">
+        <h2 class="display">{e.cta?.titel || 'Lassen Sie uns über Ihr Projekt sprechen'}</h2>
+        <p>{e.cta?.text || 'Rufen Sie an oder schreiben Sie uns — wir beraten kostenlos und unverbindlich.'}</p>
+        <a class="e-btn e-btn-light" href={telHref}>📞 {e.telefon}</a>
+      </div>
+    </section>
+
     <!-- Letzte Projekte -->
     {e.projekte && e.projekte.length > 0 && (
       <section class="e-section" id="projekte">
@@ -227,6 +284,26 @@ const icon = (name) =>
                   ? <img src={g.src} alt={g.alt} loading="lazy" />
                   : <div class="e-foto-ph"><span class="cam">📷</span><strong>Hier kommt Ihr Foto hin</strong><span>{g.alt}</span></div>}
               </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- FAQ -->
+    {e.faq && e.faq.length > 0 && (
+      <section class="e-section alt" id="faq">
+        <div class="wrap">
+          <div class="rv" style="text-align:center;">
+            <span class="e-kicker">Häufige Fragen</span>
+            <h2 class="display">Gut zu wissen</h2>
+          </div>
+          <div class="e-faq stagger">
+            {e.faq.map((f) => (
+              <details class="e-faq-item">
+                <summary>{f.frage}<span class="pl" aria-hidden="true">+</span></summary>
+                <p>{f.antwort}</p>
+              </details>
             ))}
           </div>
         </div>

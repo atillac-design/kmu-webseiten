@@ -57,6 +57,42 @@ export default {
     { icon: 'uhr', titel: 'Vorteil zwei', text: 'Ein Satz, der den Vorteil konkret belegt.' },
     { icon: 'schild', titel: 'Vorteil drei', text: 'Ein Satz, der den Vorteil konkret belegt.' },
   ],
+  themen: [
+    // Bild-und-Text-Sektionen im Wechsel (1. Bild links, 2. Bild rechts, …)
+    // 2–3 Themen wählen, die für den Betrieb am wichtigsten sind.
+    {
+      kicker: 'Themenbereich',
+      titel: 'Überschrift zum Thema',
+      text: 'Zwei bis drei Sätze, die das Thema konkret beschreiben.',
+      punkte: ['Punkt eins', 'Punkt zwei', 'Punkt drei', 'Punkt vier'],
+      // img: '/img/entwurf/muster-betrieb/thema1.jpg', // sonst Foto-Platzhalter
+      bildAlt: 'z. B. Beschreibung, welches Foto hier hin soll',
+    },
+    {
+      kicker: 'Zweiter Themenbereich',
+      titel: 'Überschrift zum zweiten Thema',
+      text: 'Zwei bis drei Sätze, die das Thema konkret beschreiben.',
+      punkte: ['Punkt eins', 'Punkt zwei', 'Punkt drei'],
+      bildAlt: 'z. B. Beschreibung, welches Foto hier hin soll',
+    },
+  ],
+  ablauf: [
+    // „So läuft's ab" — 3–4 Schritte von Anfrage bis Ergebnis
+    { titel: 'Schritt eins', text: 'Was passiert zuerst.' },
+    { titel: 'Schritt zwei', text: 'Was danach kommt.' },
+    { titel: 'Schritt drei', text: 'Wie es abgeschlossen wird.' },
+  ],
+  cta: {
+    // Farbiges Zwischenband mit Anruf-Button
+    titel: 'Kurze Aufforderung mit Bezug zur Branche',
+    text: 'Ein Satz, der zum Anruf motiviert — z. B. kostenlose Beratung, schnelles Angebot.',
+  },
+  faq: [
+    // 3–5 Fragen, die Kunden dieser Branche wirklich stellen
+    { frage: 'Häufige Frage eins?', antwort: 'Kurze, ehrliche Antwort.' },
+    { frage: 'Häufige Frage zwei?', antwort: 'Kurze, ehrliche Antwort.' },
+    { frage: 'Häufige Frage drei?', antwort: 'Kurze, ehrliche Antwort.' },
+  ],
   projekte: [
     // Letzte Projekte / Referenzen — img optional, sonst deutlicher Foto-Platzhalter
     // { img: '/img/entwurf/muster-betrieb/projekt1.jpg', titel: '…', ort: '…', text: '…' },
