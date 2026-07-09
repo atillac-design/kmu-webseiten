@@ -1,8 +1,9 @@
 # Make-Anbindung: Onboarding-Formular
 
-Stand: vorbereitet, Webhook fehlt noch. Das Formular unter `/onboarding/` läuft
-bis dahin im Demo-Modus (Daten landen nur in der Browser-Konsole, nichts geht verloren,
-weil noch kein Kunde den Link hat).
+**Stand: LIVE.** Szenario „KMU Onboarding" in Make ist aktiv, das Formular unter
+`/onboarding/` sendet an den Webhook (Standard-URL in `src/layouts/Base.astro`),
+die E-Mail-Zustellung wurde end-to-end getestet. Die Anleitung unten bleibt als
+Referenz, falls der Webhook mal neu aufgesetzt werden muss.
 
 ## Was Atilla in Make macht (ca. 5 Minuten)
 
