@@ -425,3 +425,8 @@
     .mathband, .promise { padding: 32px 26px; }
   }
   @media (max-width: 560px) { .pains { grid-template-columns: 1fr; } .hero-stats { gap: 1.5rem; } }
+
+  /* Referenz-Kacheln ohne Live-Link (Seite offline): nicht klickbar, kein Pfeil */
+  .ref.static { cursor: default; }
+  .ref.static .thumb::after { display: none; }
+  .ref.static:hover { transform: none; box-shadow: none; }
