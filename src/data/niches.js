@@ -10,7 +10,10 @@ import { gastroCities } from './gastro-cities.js';
 import { beautyCities } from './beauty-cities.js';
 import { immoCities } from './immo-cities.js';
 import { fotografenCities } from './fotografen-cities.js';
-import { fitnessCities } from './fitness-cities.js';
+import { personalTrainerCities } from './personal-trainer-cities.js';
+import { kfzCities } from './kfz-cities.js';
+import { pflegeCities } from './pflege-cities.js';
+import { anwaelteCities } from './anwaelte-cities.js';
 import { steuerberaterCities } from './steuerberater-cities.js';
 
 export const niches = [
@@ -105,14 +108,44 @@ export const niches = [
     cities: fotografenCities,
   },
   {
-    prefix: 'webseite-fuer-fitnessstudios',
-    label: 'Webseite für Fitnessstudios',
-    audience: 'Fitnessstudios, Gyms & Personal Trainer',
-    hubHeading: 'Webseite für Fitnessstudios — in deiner Stadt',
+    prefix: 'homepage-fuer-personal-trainer',
+    label: 'Homepage für Personal Trainer',
+    audience: 'Personal Trainer & Fitness-Coaches',
+    hubHeading: 'Homepage für Personal Trainer & Fitness-Coaches — in deiner Stadt',
     hubLead:
-      'Websites für Studios: Kursplan, Preise und ein Probetraining-Button, der neue Mitglieder bringt. Wähl deine Stadt.',
-    icon: '💪',
-    cities: fitnessCities,
+      'Websites für Trainer und Coaches: klare Positionierung, Erfolgsgeschichten und Erstgespräch-Anfragen statt Instagram-DMs. Wähl deine Stadt.',
+    icon: '🏋️',
+    cities: personalTrainerCities,
+  },
+  {
+    prefix: 'webseite-fuer-kfz-werkstaetten',
+    label: 'Webseite für KFZ-Werkstätten',
+    audience: 'KFZ-Werkstätten & Autohäuser',
+    hubHeading: 'Webseite für KFZ-Werkstätten — in deiner Stadt',
+    hubLead:
+      'Websites für Werkstätten: Terminanfragen für Reifen, TÜV und Inspektion — und Vertrauen, das Kunden bindet. Wähl deine Stadt.',
+    icon: '🔧',
+    cities: kfzCities,
+  },
+  {
+    prefix: 'webseite-fuer-pflegedienste',
+    label: 'Webseite für Pflegedienste',
+    audience: 'Ambulante Pflegedienste & Tagespflegen',
+    hubHeading: 'Webseite für Pflegedienste — in deiner Stadt',
+    hubLead:
+      'Websites für Pflegedienste: Vertrauen für Angehörige — und eine Karriereseite gegen den Fachkräftemangel. Wähl deine Stadt.',
+    icon: '💙',
+    cities: pflegeCities,
+  },
+  {
+    prefix: 'webseite-fuer-rechtsanwaelte',
+    label: 'Webseite für Rechtsanwälte',
+    audience: 'Rechtsanwälte & Kanzleien',
+    hubHeading: 'Webseite für Rechtsanwälte — in deiner Stadt',
+    hubLead:
+      'Websites für Kanzleien: Rechtsgebiete klar positioniert, seriöser Auftritt, Mandate aus der Google-Suche. Wähl deine Stadt.',
+    icon: '⚖️',
+    cities: anwaelteCities,
   },
   {
     prefix: 'webseite-fuer-steuerberater',

@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import { kfzCities } from '../../data/kfz-cities.js';
+
+export function getStaticPaths() {
+  return kfzCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für KFZ-Werkstätten in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine KFZ-Werkstatt in ${city.name} erstellen lassen: Terminanfragen für Reifen, TÜV & Inspektion, Vertrauen statt Werkstatt-Skepsis. Kostenloser Entwurf in 48 Stunden, ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-kfz-werkstaetten/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für KFZ-Werkstätten in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'KFZ-Werkstätten & Autohäuser' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-kfz-werkstaetten/" style="color:var(--hero-muted)">Webseite für KFZ-Werkstätten</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Wenn in <em>{city.name}</em> die Motorleuchte angeht, entscheidet Google — nicht der Zufall.
+      </h1>
+      <p class="sub">
+        Eine Website für deine Werkstatt, die Terminanfragen bringt: Reifen, TÜV,
+        Inspektion — mit Preisen und Leistungen, denen Autofahrer vertrauen.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für KFZ-Werkstätten {city.name}</p>
+        <h2 class="display">Gute Arbeit unter der Haube reicht nicht — man muss dich finden.</h2>
+        <div class="prose">
+          <p>Ob <strong>freie Werkstatt</strong>, <strong>Reifenservice</strong> oder <strong>Autohaus</strong> in {city.name} — Autofahrer suchen im Bedarfsfall: schnell, mobil, mit klarer Absicht. Deine Website muss in Sekunden beantworten: Macht ihr das? Was kostet es? Wann habt ihr Zeit?</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob Kunden nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — die Werkstatt-Wahl ist eine Vertrauensfrage. Meisterbetrieb, faire
+            Preise, echte Bewertungen: Was Kunden an dir schätzen, muss online sichtbar
+            sein, sonst gewinnt die Kette mit dem größeren Werbebudget.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Terminanfrage statt Warteschleife</h3><p>Reifenwechsel, Inspektion, TÜV: Kunden fragen ihren Termin direkt über die Website an — auch sonntagabends, wenn dein Telefon aus ist.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Leistungen &amp; Preise transparent</h3><p>Klare Übersicht statt „Preis auf Anfrage" — Transparenz baut genau das Vertrauen auf, das Autofahrer bei Werkstätten oft vermissen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Meisterbetrieb sichtbar gemacht</h3><p>Team, Hebebühnen, Spezialisierungen, Innungsmitgliedschaft — echte Fotos aus deiner Werkstatt schlagen jede Stock-Werkstatt.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Lokal ganz vorn bei Google</h3><p>„Werkstatt in der Nähe" ist eine der häufigsten lokalen Suchen überhaupt — wir optimieren deine Seite genau darauf, für {city.name} und Umgebung.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🔧 Für Betriebe, die an Autos schrauben statt an Websites</span>
+        <h3 class="display">Du kümmerst dich um die Autos. Wir uns um deinen Auftritt.</h3>
+        <p>Du nennst uns deine Leistungen und ein paar Eckdaten zum Betrieb — wir liefern in 48 Stunden einen fertigen Entwurf, der Vertrauen schafft und Termine bringt. Preisänderungen oder Saisonaktionen (Reifenwechsel!) pflegen wir danach laufend für dich ein.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Werkstatt-Website in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Werkstatt, Leistungen, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du siehst einen echten Entwurf deiner neuen Werkstatt-Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Werkstätten</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Können Kunden online Termine anfragen?</summary>
+            <p>Ja — mit Fahrzeug, Anliegen und Wunschtermin, direkt in dein E-Mail-Postfach. Auf Wunsch verlinken wir auch ein bestehendes Online-Buchungssystem, falls du eines nutzt.</p>
+          </details>
+          <details>
+            <summary>Lohnt sich das auch für eine kleine Werkstatt mit zwei Hebebühnen?</summary>
+            <p>Gerade dann: Die Ketten haben Marketingabteilungen, du hast uns. Schon eine Handvoll zusätzlicher Kunden pro Monat — ein Reifensatz, eine Inspektion — zahlt das Paket um ein Vielfaches.</p>
+          </details>
+          <details>
+            <summary>Können wir Saisonaktionen wie Reifenwechsel-Termine bewerben?</summary>
+            <p>Ja, das übernehmen wir laufend: Reifensaison, Klimaservice im Frühjahr, Lichttest im Herbst — du sagst kurz Bescheid, wir stellen es prominent auf die Seite.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für deine Werkstatt in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Werkstatt-Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

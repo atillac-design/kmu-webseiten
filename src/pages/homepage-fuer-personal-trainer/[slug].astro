@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import { personalTrainerCities } from '../../data/personal-trainer-cities.js';
+
+export function getStaticPaths() {
+  return personalTrainerCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Homepage für Personal Trainer & Fitness-Coaches in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für Personal Trainer und Fitness-Coaches in ${city.name}: klare Positionierung, Erfolgsgeschichten, Erstgespräch-Anfragen statt Instagram-DMs. Kostenloser Entwurf in 48 Stunden, ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/homepage-fuer-personal-trainer/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Homepage für Personal Trainer in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Personal Trainer & Fitness-Coaches' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/homepage-fuer-personal-trainer/" style="color:var(--hero-muted)">Homepage für Personal Trainer</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Du bist die Marke. Zeig es deinen Kunden in <em>{city.name}</em>.
+      </h1>
+      <p class="sub">
+        Eine Website für dein Personal Training — mit klarer Positionierung, echten
+        Erfolgsgeschichten und Erstgespräch-Anfragen statt Instagram-DMs.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Homepage für Personal Trainer &amp; Fitness-Coaches {city.name}</p>
+        <h2 class="display">Follower zahlen keine Rechnungen. Kunden schon.</h2>
+        <div class="prose">
+          <p>Ob <strong>Personal Trainer</strong>, <strong>Fitness-Coach</strong> oder <strong>Ernährungscoach</strong> in {city.name} — dein Geschäft basiert auf Vertrauen in dich als Person. Deine Website muss in Sekunden zeigen: für wen du arbeitest, mit welcher Methode und mit welchen Ergebnissen.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob Kunden nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — sie vergleichen zwei, drei Trainer und buchen das Erstgespräch dort,
+            wo Kompetenz und Persönlichkeit sofort greifbar sind. Ein Instagram-Profil
+            allein liefert beides nicht.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Deine Positionierung glasklar</h3><p>Rücken, Abnehmen, Wettkampf, Bestager: Wir arbeiten deine Nische heraus — denn der Spezialist bekommt die Anfragen, nicht der Alleskönner.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Erfolgsgeschichten, die verkaufen</h3><p>Vorher/Nachher, Kundenstimmen, messbare Ergebnisse — sozialer Beweis ist im Coaching das stärkste Verkaufsargument.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Erstgespräch-Anfrage in einem Klick</h3><p>Strukturierte Anfragen mit Ziel und Wunschtermin direkt in dein Postfach — statt DMs, die zwischen Memes untergehen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Online-Coaching verkaufsfertig</h3><p>Programme, Pakete, Preise: Wenn du digital coachst, präsentieren wir deine Angebote so, dass Kunden auch aus anderen Städten buchen.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🏋️ Für Coaches, deren Kalender vom Training lebt</span>
+        <h3 class="display">Du trainierst deine Kunden. Wir trainieren deinen Auftritt.</h3>
+        <p>Du sagst uns, wen du trainierst und wofür du stehst — wir liefern in 48 Stunden einen Entwurf, der deine Persönlichkeit transportiert und Erstgespräche bringt. Danach pflegen wir die Seite, während du auf der Trainingsfläche stehst.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Coach-Website in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Deine Spezialisierung, dein Name, deine Stadt — mehr brauchen wir nicht.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du siehst einen echten Entwurf deiner neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Trainern &amp; Coaches</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Ich habe viele Follower auf Instagram — brauche ich trotzdem eine Website?</summary>
+            <p>Gerade dann: Deine Reichweite ist wertvoll, aber Instagram gehört dir nicht — der Algorithmus entscheidet, wen du erreichst. Die Website macht aus Followern zahlende Kunden und fängt zusätzlich alle ab, die bei Google nach einem Trainer in deiner Stadt suchen. Deinen Feed binden wir natürlich ein.</p>
+          </details>
+          <details>
+            <summary>Kann ich Vorher/Nachher-Bilder meiner Kunden zeigen?</summary>
+            <p>Ja — mit schriftlichem Einverständnis deiner Kunden. Wir bauen die Erfolgsgeschichten so auf, dass sie seriös wirken und deine Methode belegen, ohne unrealistische Versprechen zu machen.</p>
+          </details>
+          <details>
+            <summary>Ich biete auch Online-Coaching an — kann die Website das abbilden?</summary>
+            <p>Ja, und das solltest du: Wir präsentieren deine Programme mit Ablauf, Leistungen und Preisen so, dass auch Kunden außerhalb deiner Stadt buchen — dein Einzugsgebiet wird damit unbegrenzt.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für dein Coaching in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie dein neuer Auftritt aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

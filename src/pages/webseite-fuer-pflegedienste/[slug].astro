@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import { pflegeCities } from '../../data/pflege-cities.js';
+
+export function getStaticPaths() {
+  return pflegeCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Pflegedienste in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deinen Pflegedienst in ${city.name}: Vertrauen für Angehörige, Karriereseite gegen den Fachkräftemangel. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-pflegedienste/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Pflegedienste in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Ambulante Pflegedienste' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-pflegedienste/" style="color:var(--hero-muted)">Webseite für Pflegedienste</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Angehörige in <em>{city.name}</em> suchen nachts nach Pflege — und nach Vertrauen.
+      </h1>
+      <p class="sub">
+        Eine warme, seriöse Website für deinen Pflegedienst — die Familien Sicherheit
+        gibt und Pflegekräften zeigt, warum sie zu dir wechseln sollten.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Pflegedienste {city.name}</p>
+        <h2 class="display">Zwei Zielgruppen, eine Website: Familien und Fachkräfte.</h2>
+        <div class="prose">
+          <p>Ob <strong>ambulanter Pflegedienst</strong>, <strong>Tagespflege</strong> oder <strong>Betreuungsdienst</strong> in {city.name} — deine Website hat einen doppelten Auftrag: überforderten Angehörigen Sicherheit geben und gleichzeitig die Pflegekräfte überzeugen, ohne die kein Dienst wachsen kann.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob Familien nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — sie treffen eine der emotionalsten Entscheidungen ihres Lebens.
+            Eine kalte, veraltete oder verwirrende Website ist in diesem Moment ein
+            Ausschlusskriterium.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Wärme, die man online spürt</h3><p>Echte Gesichter, klare Sprache, keine Behörden-Floskeln — Angehörige wollen sehen, wem sie ihre Eltern anvertrauen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Leistungen &amp; Einzugsgebiet glasklar</h3><p>Grundpflege, Behandlungspflege, Betreuung, welche Orte ihr anfahrt — beantwortet die wichtigsten Fragen, bevor das Telefon klingelt.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Karriereseite gegen den Personalmangel</h3><p>Gehalt, Dienstplan-Kultur, Team-Einblicke, Ein-Klick-Bewerbung: Deine Website wird zum stärksten Recruiting-Kanal — günstiger als jede Zeitarbeitsfirma.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Infos für den Ernstfall</h3><p>Pflegegrade, Kostenübernahme, erste Schritte nach der Diagnose — hilfreiche Inhalte machen dich zur vertrauenswürdigen Anlaufstelle der Region.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">💙 Für Dienste, deren Zeit den Menschen gehört</span>
+        <h3 class="display">Ihr pflegt Menschen. Wir pflegen euren Auftritt.</h3>
+        <p>Ihr nennt uns Leistungen, Einzugsgebiet und ein paar Worte zu eurem Team — wir liefern in 48 Stunden einen Entwurf, der Familien Vertrauen gibt und Bewerbern Lust macht. Warm und professionell, ohne Krankenkassen-Deutsch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für euren Dienst in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Dienst, Leistungen, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Ihr seht einen echten Entwurf eurer neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er euch, wählt ihr euer Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Pflegediensten</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Hilft die Website wirklich bei der Personalsuche?</summary>
+            <p>Sie ist inzwischen der wichtigste Kanal: Pflegekräfte, die wechseln wollen, schauen sich jeden Dienst vorher online an — diskret, abends, mobil. Eine Karriereseite mit ehrlichen Einblicken, Benefits und unkomplizierter Kontaktaufnahme bringt planbar mehr Bewerbungen als Anzeigen.</p>
+          </details>
+          <details>
+            <summary>Können wir freie Kapazitäten oder einen Aufnahmestopp anzeigen?</summary>
+            <p>Ja — ein gut sichtbarer Hinweis („Wir nehmen wieder Klienten auf" / „Warteliste") spart eurem Büro täglich Telefonate und Familien unnötige Enttäuschungen. Änderungen pflegen wir kurzfristig ein.</p>
+          </details>
+          <details>
+            <summary>Dürfen wir Fotos von Klienten und Team verwenden?</summary>
+            <p>Team-Fotos mit Einverständnis: unbedingt — sie schaffen das meiste Vertrauen. Bei Klienten raten wir zu Zurückhaltung und arbeiten stattdessen mit Situationsbildern eures Alltags, die keine Persönlichkeitsrechte berühren.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findet ihr auf der <a href="/#preise">Startseite unter Preise</a>. Vorher seht ihr immer erst euren kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichert euch euren kostenlosen Website-Entwurf für euren Pflegedienst in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden seht ihr, wie eure neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import { anwaelteCities } from '../../data/anwaelte-cities.js';
+
+export function getStaticPaths() {
+  return anwaelteCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Rechtsanwälte in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine Kanzlei in ${city.name} erstellen lassen: Rechtsgebiet klar positioniert, Mandanten überzeugen statt verlieren. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-rechtsanwaelte/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Rechtsanwälte in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Rechtsanwälte & Kanzleien' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-rechtsanwaelte/" style="color:var(--hero-muted)">Webseite für Rechtsanwälte</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Mandanten in <em>{city.name}</em> suchen im Ernstfall — und beauftragen, wen sie finden.
+      </h1>
+      <p class="sub">
+        Eine seriöse Kanzlei-Website mit klar positioniertem Rechtsgebiet —
+        die aus dringenden Suchen neue Mandate macht.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Rechtsanwälte {city.name}</p>
+        <h2 class="display">Wer einen Anwalt sucht, hat es eilig — und vergleicht trotzdem.</h2>
+        <div class="prose">
+          <p>Ob <strong>Einzelkanzlei</strong> oder <strong>Sozietät</strong> in {city.name} — Mandanten suchen mit konkretem Problem und konkretem Rechtsgebiet. Deine Website muss in Sekunden zeigen: Hier bin ich richtig, hier wird mir schnell geholfen.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob Mandanten nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — in einer Stresssituation gewinnt die Kanzlei, die Kompetenz
+            ausstrahlt und die Kontaktaufnahme leicht macht. Beides ist eine Frage
+            des Webauftritts, nicht des Könnens.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Rechtsgebiete klar positioniert</h3><p>Arbeitsrecht, Familienrecht, Verkehrsrecht: Wir strukturieren deinen Auftritt nach Rechtsgebieten — so wirst du für jede Suche einzeln gefunden.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Seriosität auf Kanzlei-Niveau</h3><p>Zurückhaltendes, hochwertiges Design mit Anwaltsfoto und Werdegang — Vertrauen entsteht durch Menschen, nicht durch Paragraphen-Symbolbilder.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Erstberatung leicht gemacht</h3><p>Klare Kontaktwege, Hinweis zu Erstberatungskosten, auf Wunsch Online-Terminbuchung — je niedriger die Hürde, desto mehr Mandate.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Berufsrechtlich sauber formuliert</h3><p>Wir texten sachlich und informationsbezogen — im Rahmen dessen, was das anwaltliche Berufsrecht (BRAO/BORA) an Außendarstellung erlaubt.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">⚖️ Für Kanzleien, deren Stunden abrechenbar sind</span>
+        <h3 class="display">Du vertrittst deine Mandanten. Wir vertreten dich online.</h3>
+        <p>Du nennst uns deine Rechtsgebiete und ein paar Eckdaten zur Kanzlei — wir liefern in 48 Stunden einen Entwurf, der Kompetenz und Zugänglichkeit verbindet. Diskret, seriös und ohne Marktschreierei — so, wie es zum Berufsstand passt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Kanzlei-Website in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Kanzlei, Rechtsgebiete, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du siehst einen echten Entwurf deiner neuen Kanzlei-Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Kanzleien</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Was dürfen Anwälte auf ihrer Website überhaupt sagen?</summary>
+            <p>Anwaltliche Werbung muss sachlich und berufsbezogen sein (§ 43b BRAO, § 6 BORA) — Erfolgsversprechen oder reißerische Aussagen sind tabu. Wir formulieren entsprechend: Rechtsgebiete, Werdegang, Arbeitsweise, Erreichbarkeit. Das reicht völlig, um zu überzeugen.</p>
+          </details>
+          <details>
+            <summary>Dürfen wir „Spezialist" oder „Experte" schreiben?</summary>
+            <p>Vorsicht: Solche Begriffe sind berufsrechtlich heikel, wenn keine Fachanwaltschaft dahintersteht. Wir verwenden die korrekten Bezeichnungen — Fachanwalt, Tätigkeitsschwerpunkt, Interessenschwerpunkt — und positionieren dich trotzdem unverwechselbar.</p>
+          </details>
+          <details>
+            <summary>Bringt die Website auch Mandate außerhalb der Stadt?</summary>
+            <p>Ja — besonders bei Rechtsgebieten, die remote funktionieren (Arbeitsrecht, Verkehrsrecht, Inkasso): Mit Videoberatung als sichtbarem Angebot gewinnst du Mandanten weit über {city.name} hinaus.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für deine Kanzlei in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Kanzlei-Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

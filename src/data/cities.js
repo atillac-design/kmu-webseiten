@@ -302,4 +302,135 @@ export const cities = [
     visitText:
       'Wir arbeiten mit Kunden in Leipzig komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
   },
+
+  {
+    slug: 'bad-neuenahr-ahrweiler',
+    name: 'Bad Neuenahr-Ahrweiler',
+    intro:
+      'Bad Neuenahr-Ahrweiler baut wieder auf: Nach der Flut haben viele Betriebe im Ahrtal neu eröffnet, renoviert, neu gedacht — Gastronomie, Weingüter, Handwerk, Praxen. Der Neustart verdient einen Auftritt, der ihm gerecht wird.',
+    regionText:
+      'Touristen und Tagesgäste kommen zurück ins Ahrtal — und suchen online nach Restaurants, Winzern und Unterkünften. Gleichzeitig brauchen die Handwerker des Wiederaufbaus Sichtbarkeit. Wir optimieren deinen Auftritt für Bad Neuenahr-Ahrweiler und das ganze Ahrtal.',
+    searchTerms: ['Restaurant Bad Neuenahr', 'Weingut Ahrtal', 'Handwerker Ahrweiler'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — das Ahrtal ist für uns keine halbe Stunde. Wir kennen die Region und wissen, was der Neuanfang hier bedeutet.',
+    visitText:
+      'Ja — von Bendorf nach Bad Neuenahr-Ahrweiler sind es rund 30 Minuten. Das meiste klären wir per Telefon oder WhatsApp, ein persönliches Treffen machen wir gerne möglich.',
+  },
+  {
+    slug: 'remagen',
+    name: 'Remagen',
+    intro:
+      'Zwischen Rhein, Apollinariskirche und Hochschulcampus: Remagen ist klein, aber wirtschaftlich lebendig — mit Gastronomie am Rheinufer, Handwerk in den Ortsteilen und Dienstleistern für die wachsende Pendler-Gemeinde.',
+    regionText:
+      'Remagener Betriebe konkurrieren mit Bonn im Norden und Koblenz im Süden — gerade deshalb zählt lokale Sichtbarkeit: Wer bei „Friseur Remagen" oder „Restaurant Rheinufer" vorne steht, hält die Kaufkraft im Ort. Wir optimieren für Remagen, Sinzig und die Goldene Meile.',
+    searchTerms: ['Restaurant Remagen', 'Handwerker Remagen', 'Zahnarzt Remagen'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — Remagen liegt quasi auf unserem Weg. Regionale Betriebe betreuen wir besonders gern persönlich.',
+    visitText:
+      'Ja — von Bendorf nach Remagen ist es eine gute halbe Stunde. Das meiste klären wir per Telefon oder WhatsApp, ein persönliches Treffen machen wir gerne möglich.',
+  },
+  {
+    slug: 'boppard',
+    name: 'Boppard',
+    intro:
+      'Boppard lebt vom Welterbe Mittelrheintal: Hotels, Weinstuben, Ausflugsgastronomie — dazu Handwerk und Gesundheitsversorgung für die Stadtteile vom Rhein bis auf die Höhe. Die Gäste von morgen suchen heute online.',
+    regionText:
+      'Millionen Touristen fahren jährlich durchs Obere Mittelrheintal — mit der BUGA 2029 werden es noch mehr. Bopparder Betriebe, die online sichtbar sind, verwandeln diesen Strom in Gäste und Kunden. Wir optimieren für Boppard und das Welterbe-Tal von St. Goar bis Braubach.',
+    searchTerms: ['Hotel Boppard', 'Restaurant Boppard', 'Weinstube Mittelrhein'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — nach Boppard sind es 25 Minuten am Rhein entlang. Wir kennen das Tal, seine Saison und seine Gäste.',
+    visitText:
+      'Ja — von Bendorf nach Boppard ist es knapp eine halbe Stunde. Das meiste klären wir per Telefon oder WhatsApp, ein persönliches Treffen machen wir gerne möglich.',
+  },
+  {
+    slug: 'bad-ems',
+    name: 'Bad Ems',
+    intro:
+      'Bad Ems trägt das UNESCO-Welterbe im Namen der großen Kurstädte Europas — und lebt heute von Gesundheit, Tourismus und einem feinen lokalen Gewerbe an der Lahn: Praxen, Therapeuten, Gastronomie, Einzelhandel.',
+    regionText:
+      'Kurgäste und Gesundheitstouristen planen ihren Aufenthalt komplett online — von der Pension bis zum Physiotermin. Bad Emser Betriebe mit starkem Webauftritt schöpfen diese Nachfrage ab. Wir optimieren für Bad Ems und das Lahntal bis Nassau.',
+    searchTerms: ['Physiotherapie Bad Ems', 'Hotel Bad Ems', 'Restaurant Bad Ems'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — Bad Ems erreichen wir in 20 Minuten durchs Lahntal. Die Region ist unser Zuhause.',
+    visitText:
+      'Ja — von Bendorf nach Bad Ems sind es rund 20 Minuten. Das meiste klären wir per Telefon oder WhatsApp, ein persönliches Treffen machen wir gerne möglich.',
+  },
+  {
+    slug: 'cochem',
+    name: 'Cochem',
+    intro:
+      'Cochem ist das Herz der Ferienmosel: Reichsburg, Weinberge, Millionen Übernachtungen im Umkreis. Hotels, Winzer, Gastronomie und Freizeitanbieter leben hier fast vollständig von Gästen, die online planen und buchen.',
+    regionText:
+      'Wer an der Mosel nicht online gefunden wird, existiert für Touristen nicht — die buchen von Köln, Holland oder Belgien aus, Wochen im Voraus. Ein starker Webauftritt mit klarer Buchungsmöglichkeit ist hier direkte Umsatzsteigerung. Wir optimieren für Cochem und die Moselorte von Treis-Karden bis Zell.',
+    searchTerms: ['Hotel Cochem', 'Weingut Mosel Cochem', 'Restaurant Cochem'],
+    localNote:
+      'Hinter KMU-Webseiten.de steht die Agentur Pixel56 aus Bendorf bei Koblenz — die Mosel ist unsere Nachbarschaft. Wir wissen, wie Saisongeschäft funktioniert und was Gäste online erwarten.',
+    visitText:
+      'Ja — von Bendorf nach Cochem ist es eine knappe Stunde entlang der Mosel. Das meiste klären wir per Telefon oder WhatsApp, ein persönliches Treffen machen wir gerne möglich.',
+  },
+  {
+    slug: 'siegen',
+    name: 'Siegen',
+    intro:
+      'Siegen und das Siegerland sind Industrie- und Mittelstandsland: hunderte Zulieferer, Maschinenbauer und Handwerksbetriebe, dazu eine Universitätsstadt mit wachsender Dienstleistungsszene.',
+    regionText:
+      'Viele Siegerländer Betriebe sind Weltklasse in ihrer Nische — und online praktisch unsichtbar. Das ist eine Chance: Wer hier zuerst professionell auftritt, dominiert die lokalen Suchen seiner Branche auf Jahre. Wir optimieren für Siegen und das Siegerland bis Kreuztal und Netphen.',
+    searchTerms: ['Webdesign Siegen', 'Handwerker Siegen', 'Steuerberater Siegen'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Siegen bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Siegen komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'giessen',
+    name: 'Gießen',
+    intro:
+      'Gießen hat die höchste Studierendendichte Deutschlands — und ein Umland voller Mittelstand. Cafés, Praxen, Fahrschulen, Handwerker: Wer hier jung und digital auftritt, erreicht eine Stadt, die ständig neu zuzieht.',
+    regionText:
+      'Eine Stadt mit so viel Fluktuation sucht permanent neu: Jedes Semester googeln tausende Neu-Gießener nach Ärzten, Friseuren und Fitnessangeboten. Lokal optimierte Websites fangen diese Suchen ab. Wir optimieren für Gießen und Mittelhessen bis Wetzlar und Marburg.',
+    searchTerms: ['Webdesign Gießen', 'Zahnarzt Gießen', 'Café Gießen'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Gießen bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Gießen komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'kaiserslautern',
+    name: 'Kaiserslautern',
+    intro:
+      'Kaiserslautern verbindet Pfälzer Mittelstand mit Tech-Standort (DFKI, Universität) und zehntausenden US-Amerikanern der Air Base — eine Kundschaft, die selbstverständlich alles online sucht, gern auch auf Englisch.',
+    regionText:
+      'Die US-Community ist ein unterschätzter Markt: Autowerkstätten, Zahnärzte, Restaurants und Dienstleister, die online professionell auftreten, erschließen sich zehntausende zusätzliche Kunden. Wir optimieren für Kaiserslautern und die Westpfalz.',
+    searchTerms: ['Webdesign Kaiserslautern', 'Autowerkstatt Kaiserslautern', 'Restaurant Kaiserslautern'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Kaiserslautern bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Kaiserslautern komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'aachen',
+    name: 'Aachen',
+    intro:
+      'Aachen ist Europastadt im Dreiländereck: RWTH-Spin-offs, traditionsreicher Einzelhandel, Gesundheitswirtschaft — und Kundschaft aus Belgien und den Niederlanden, die zum Einkaufen und Behandeln über die Grenze kommt.',
+    regionText:
+      'Grenznahe Betriebe haben ein doppeltes Einzugsgebiet — wenn man sie findet. Ein lokal optimierter Webauftritt bringt Aachener Betrieben Kunden aus drei Ländern. Wir optimieren für Aachen und die Städteregion bis Herzogenrath und Stolberg.',
+    searchTerms: ['Webdesign Aachen', 'Zahnarzt Aachen', 'Restaurant Aachen'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Aachen bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Aachen komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'karlsruhe',
+    name: 'Karlsruhe',
+    intro:
+      'Karlsruhe ist Deutschlands heimliche IT-Hauptstadt — und trotzdem voller klassischer KMU: Handwerk in der Fächerstadt, Praxen, Gastronomie, Dienstleister. Die digitale Messlatte liegt hier höher als anderswo.',
+    regionText:
+      'In einer Stadt voller Technikaffiner fällt ein schwacher Webauftritt doppelt auf — und ein starker zahlt sich doppelt aus. Wer hier lokal sucht, erwartet Qualität. Wir optimieren für Karlsruhe und die Region bis Ettlingen und Bruchsal.',
+    searchTerms: ['Webdesign Karlsruhe', 'Handwerker Karlsruhe', 'Physiotherapie Karlsruhe'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Karlsruhe bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Karlsruhe komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
 ];
