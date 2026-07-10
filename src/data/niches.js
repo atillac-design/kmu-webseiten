@@ -9,6 +9,9 @@ import { bauCities } from './bau-cities.js';
 import { gastroCities } from './gastro-cities.js';
 import { beautyCities } from './beauty-cities.js';
 import { immoCities } from './immo-cities.js';
+import { fotografenCities } from './fotografen-cities.js';
+import { fitnessCities } from './fitness-cities.js';
+import { steuerberaterCities } from './steuerberater-cities.js';
 
 export const niches = [
   {
@@ -90,6 +93,36 @@ export const niches = [
       'Websites für Makler: seriöser Auftritt, der Eigentümer überzeugt und Verkaufsmandate bringt. Wähl deine Stadt.',
     icon: '🏡',
     cities: immoCities,
+  },
+  {
+    prefix: 'homepage-fuer-fotografen',
+    label: 'Homepage für Fotografen',
+    audience: 'Fotografen & Fotostudios',
+    hubHeading: 'Homepage & Portfolio-Website für Fotografen — in deiner Stadt',
+    hubLead:
+      'Websites für Fotografen: Galerien, die in Sekunden laden, und Buchungsanfragen statt Instagram-Likes. Wähl deine Stadt.',
+    icon: '📸',
+    cities: fotografenCities,
+  },
+  {
+    prefix: 'webseite-fuer-fitnessstudios',
+    label: 'Webseite für Fitnessstudios',
+    audience: 'Fitnessstudios, Gyms & Personal Trainer',
+    hubHeading: 'Webseite für Fitnessstudios — in deiner Stadt',
+    hubLead:
+      'Websites für Studios: Kursplan, Preise und ein Probetraining-Button, der neue Mitglieder bringt. Wähl deine Stadt.',
+    icon: '💪',
+    cities: fitnessCities,
+  },
+  {
+    prefix: 'webseite-fuer-steuerberater',
+    label: 'Webseite für Steuerberater',
+    audience: 'Steuerberater & Steuerkanzleien',
+    hubHeading: 'Webseite für Steuerberater — in deiner Stadt',
+    hubLead:
+      'Websites für Kanzleien: seriöser Auftritt für neue Mandate — und eine Karriereseite gegen den Fachkräftemangel. Wähl deine Stadt.',
+    icon: '📊',
+    cities: steuerberaterCities,
   },
 ];
 

@@ -1,0 +1,154 @@
+---
+import Base from '../../layouts/Base.astro';
+import { steuerberaterCities } from '../../data/steuerberater-cities.js';
+
+export function getStaticPaths() {
+  return steuerberaterCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Steuerberater in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine Steuerkanzlei in ${city.name} erstellen lassen: seriöser Auftritt, neue Mandanten und Bewerber überzeugen. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-steuerberater/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Steuerberater in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Steuerberater & Steuerkanzleien' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-steuerberater/" style="color:var(--hero-muted)">Webseite für Steuerberater</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Mandanten in <em>{city.name}</em> vertrauen ihrer Kanzlei — nachdem sie sie gegoogelt haben.
+      </h1>
+      <p class="sub">
+        Eine seriöse, moderne Website für deine Steuerkanzlei — die neue Mandanten
+        überzeugt und Bewerber anzieht, statt beide abzuschrecken.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Steuerberater {city.name}</p>
+        <h2 class="display">Kompetenz hast du. Deine Website muss sie zeigen.</h2>
+        <div class="prose">
+          <p>Ob <strong>Kanzlei-Website</strong> oder <strong>Homepage für deine Steuerberatung</strong> in {city.name} — Mandate und Bewerbungen entstehen heute nach demselben Muster: erst googeln, dann urteilen, dann anrufen. Dein Auftritt entscheidet, ob es zum dritten Schritt kommt.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob Mandanten nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — bei Geld- und Steuerthemen wählen Menschen besonders vorsichtig.
+            Ein Auftritt von vorgestern signalisiert unfreiwillig: Hier arbeitet man auch so.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Seriös, ohne verstaubt zu wirken</h3><p>Klares, vertrauenswürdiges Design auf der Höhe der Zeit — die digitale Visitenkarte einer Kanzlei, die auch digital arbeitet.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Schwerpunkte klar positioniert</h3><p>Selbstständige, Heilberufe, Immobilien, Gastronomie: Wer seine Nische benennt, gewinnt die passenden Mandate — und sortiert unpassende vor.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Karriereseite gegen den Fachkräftemangel</h3><p>Steuerfachangestellte sind rar. Eine überzeugende Karriereseite mit echtem Einblick in die Kanzlei ist heute wichtiger als jede Stellenanzeige.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Digitale Kanzlei sichtbar gemacht</h3><p>DATEV Unternehmen online, Belege per App, Videoberatung — wir zeigen, wie modern deine Kanzlei arbeitet. Das überzeugt Gründer und junge Unternehmen.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">📊 Für Kanzleien, deren Zeit abrechenbar ist</span>
+        <h3 class="display">Du berätst deine Mandanten. Wir bauen deinen Auftritt.</h3>
+        <p>Du nennst uns deine Beratungsschwerpunkte und ein paar Eckdaten zur Kanzlei — wir liefern in 48 Stunden einen Entwurf, der Seriosität und Kompetenz ausstrahlt. Berufsrechtlich zurückhaltend formuliert, ohne reißerische Versprechen — so, wie es zum Berufsstand passt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Kanzlei-Website in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Kanzlei, Schwerpunkte, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du siehst einen echten Entwurf deiner neuen Kanzlei-Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Kanzleien</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Was dürfen Steuerberater überhaupt auf ihrer Website bewerben?</summary>
+            <p>Für Steuerberater gelten berufsrechtliche Grenzen (StBerG, BOStB) — etwa bei Erfolgsversprechen und vergleichender Werbung. Wir formulieren sachlich und informationsbezogen: Schwerpunkte, Arbeitsweise, Team. Im Zweifel stimmst du den finalen Text kurz mit deiner Kammer ab.</p>
+          </details>
+          <details>
+            <summary>Hilft die Website wirklich bei der Mitarbeitersuche?</summary>
+            <p>Enorm. Bewerber — gerade junge Steuerfachangestellte — schauen sich jede Kanzlei vorher online an. Eine Karriereseite mit echten Einblicken, Benefits und einfacher Kontaktaufnahme bringt erfahrungsgemäß mehr qualifizierte Bewerbungen als teure Stellenportale.</p>
+          </details>
+          <details>
+            <summary>Können wir Mandanten-Logins oder DATEV-Zugänge verlinken?</summary>
+            <p>Ja — wir binden Links zu DATEV Unternehmen online, Meine Steuern oder anderen Portalen prominent ein, damit Mandanten den Zugang immer über deine Website finden.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für deine Kanzlei in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Kanzlei-Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

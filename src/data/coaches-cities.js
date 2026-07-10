@@ -75,4 +75,29 @@ export const coachesCities = [
     pain: 'In einem so kommunikationsaffinen Umfeld wie Mainz fällt schlechte oder veraltete Selbstdarstellung besonders auf — deine Website ist hier dein erstes Aushängeschild.',
     searchTerms: ['Coach Mainz', 'Kommunikationsberatung Mainz', 'Businesscoaching Mainz'],
   },
+
+  {
+    slug: 'neuwied',
+    name: 'Neuwied',
+    intro:
+      'Auch abseits der Großstädte wächst der Coaching-Markt: In Neuwied und dem Umland suchen Fach- und Führungskräfte Unterstützung — oft diskret, fast immer online, gern in Kombination mit Video-Sitzungen.',
+    pain: 'Gerade weil das Angebot vor Ort überschaubar ist, gewinnt hier, wer gefunden wird: Ein Coach mit klarer Website besetzt die Region praktisch konkurrenzlos.',
+    searchTerms: ['Coaching Neuwied', 'Business Coach Neuwied', 'Karriereberatung Neuwied'],
+  },
+  {
+    slug: 'wiesbaden',
+    name: 'Wiesbaden',
+    intro:
+      'Landesministerien, Versicherungen, gehobener Mittelstand: Wiesbaden ist voller Menschen in verantwortungsvollen Positionen — die klassische Zielgruppe für Executive- und Karriere-Coaching.',
+    pain: 'Diese Klientel wählt ihren Coach wie einen Anwalt: diskret, anspruchsvoll und nach gründlicher Online-Recherche. Ohne seriöse, klar positionierte Website findet dieser Vergleich ohne dich statt.',
+    searchTerms: ['Coaching Wiesbaden', 'Executive Coaching Wiesbaden', 'Karrierecoach Wiesbaden'],
+  },
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Trier bietet Coaches ein doppeltes Einzugsgebiet: die Region — und Luxemburg, wo zehntausende deutsche Grenzgänger arbeiten, die bei Karrierefragen gern einen Coach diesseits der Grenze buchen.',
+    pain: 'Grenzgänger suchen abends von zu Hause aus, online. Ein Trierer Coach ohne auffindbare Website existiert für diese kaufkräftige Zielgruppe schlicht nicht.',
+    searchTerms: ['Coaching Trier', 'Business Coach Trier', 'Coaching Luxemburg deutsch'],
+  },
 ];

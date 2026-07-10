@@ -66,4 +66,37 @@ export const beautyCities = [
     pain: 'In München erwartet die Kundschaft Niveau — schon beim ersten Klick auf die Website. Ein Studio ohne ansprechenden Auftritt und ohne bequeme Online-Terminbuchung verliert die anspruchsvolle, zahlungskräftige Klientel an die Konkurrenz.',
     searchTerms: ['Kosmetikstudio München', 'Nagelstudio München', 'Wimpernverlängerung München'],
   },
+
+  {
+    slug: 'wiesbaden',
+    name: 'Wiesbaden',
+    intro:
+      'Wiesbaden ist ein Premium-Beauty-Markt: Kosmetikinstitute, Medical Beauty und exklusive Nagelstudios bedienen eine Kundschaft, die Qualität sucht — und bereit ist, dafür zu zahlen und weiter zu fahren.',
+    pain: 'Diese Kundschaft bucht nicht über eine Facebook-Seite. Wer im Wiesbadener Preissegment mitspielen will, braucht einen Auftritt, der genauso gepflegt ist wie das Studio selbst.',
+    searchTerms: ['Kosmetikstudio Wiesbaden', 'Medical Beauty Wiesbaden', 'Nagelstudio Wiesbaden'],
+  },
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Trier hat einen Standortvorteil, den kaum jemand nutzt: Kundinnen aus Luxemburg, die für Beauty-Behandlungen gern über die Grenze fahren — bei deutschen Preisen ein unschlagbares Angebot.',
+    pain: 'Diese Kundinnen finden ein Studio nur über Google. Wer online nicht professionell sichtbar ist, verschenkt die kaufkräftigste Kundengruppe der Region an besser auffindbare Mitbewerber.',
+    searchTerms: ['Kosmetikstudio Trier', 'Wimpernverlängerung Trier', 'Nagelstudio Trier'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Von Eppendorf bis Ottensen: Hamburgs Beauty-Szene ist riesig und stark stadtteilgeprägt — gebucht wird im eigenen Viertel, gesucht wird mit Stadtteilnamen: „Kosmetik Winterhude", „Lashes Eimsbüttel".',
+    pain: 'Genau diese Stadtteil-Suchen gewinnen Studios mit lokal optimierter Website — nicht die mit den meisten Instagram-Followern. Wer nur auf Social setzt, bleibt im eigenen Viertel unsichtbar.',
+    searchTerms: ['Kosmetikstudio Hamburg', 'Wimpernverlängerung Hamburg', 'Nagelstudio Hamburg Winterhude'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Stuttgarts Beauty-Markt wächst mit dem Anspruch seiner Kundschaft: Permanent Make-up, Gesichtsbehandlungen und Brow-Styling werden hier gezielt gesucht und großzügig gebucht.',
+    pain: 'Schwäbische Kundinnen vergleichen vor dem Termin — Preise, Bewertungen, Vorher-Nachher-Bilder. Ein Studio ohne überzeugende Website fällt in diesem Vergleich einfach durch.',
+    searchTerms: ['Kosmetikstudio Stuttgart', 'Permanent Make-up Stuttgart', 'Nagelstudio Stuttgart'],
+  },
 ];

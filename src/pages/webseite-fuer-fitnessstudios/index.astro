@@ -1,0 +1,6 @@
+---
+import NicheIndex from '../../components/NicheIndex.astro';
+import { nicheByPrefix } from '../../data/niches.js';
+const niche = nicheByPrefix('webseite-fuer-fitnessstudios');
+---
+<NicheIndex niche={niche} />

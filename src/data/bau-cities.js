@@ -83,4 +83,37 @@ export const bauCities = [
     pain: 'In München entscheidet die Website eines Bauunternehmens doppelt: Sie überzeugt zahlungskräftige Bauherren von der Seriosität — und ist im leergefegten Arbeitsmarkt oft das Zünglein an der Waage, ob sich qualifizierte Fachkräfte überhaupt bewerben.',
     searchTerms: ['Bauunternehmen München', 'Bauträger München', 'Sanierung München'],
   },
+
+  {
+    slug: 'andernach',
+    name: 'Andernach',
+    intro:
+      'Zwischen Pellenz und Rheinufer wird gebaut: Neubaugebiete, Gewerbeflächen und ein alternder Gebäudebestand sichern Bauunternehmen rund um Andernach volle Auftragsbücher — wenn Bauherren sie finden.',
+    pain: 'Private Bauherren vergleichen heute drei, vier Unternehmen online, bevor sie anfragen. Ein Baubetrieb ohne Referenz-Website fliegt aus diesem Vergleich raus, bevor er davon erfährt.',
+    searchTerms: ['Bauunternehmen Andernach', 'Rohbau Andernach', 'Sanierung Andernach'],
+  },
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Der Bauboom rund um Trier hat einen Namen: Luxemburg. Grenzgänger-Familien bauen und sanieren auf deutscher Seite, Investoren entwickeln Wohnraum — ein Markt mit überdurchschnittlichen Budgets.',
+    pain: 'Diese Bauherren sind digital unterwegs und vergleichen gründlich. Bauunternehmen ohne professionelle Referenz-Präsentation verlieren die attraktivsten Projekte der Region an sichtbarere Wettbewerber.',
+    searchTerms: ['Bauunternehmen Trier', 'Hausbau Trier', 'Sanierung Trier'],
+  },
+  {
+    slug: 'limburg',
+    name: 'Limburg',
+    intro:
+      'Limburg liegt im Pendlergürtel des Rhein-Main-Gebiets — wer in Frankfurt verdient, baut gern hier. Für Bauunternehmen der Region heißt das: anspruchsvolle Bauherren mit städtischen Erwartungen.',
+    pain: 'Diese Bauherren erwarten von ihrem Bauunternehmen denselben professionellen Auftritt wie von ihrem Arbeitgeber. Ein Betrieb ohne moderne Website wirkt auf sie riskant — bei der größten Investition ihres Lebens.',
+    searchTerms: ['Bauunternehmen Limburg', 'Hausbau Limburg', 'Rohbau Limburg'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Nachverdichtung, Sanierungswellen, HafenCity-Ausbau: Hamburg baut permanent — und sucht permanent zuverlässige Bauunternehmen, vom Rohbauer bis zum Sanierungsspezialisten.',
+    pain: 'Bauherren und Projektentwickler in Hamburg prüfen Referenzen grundsätzlich online, bevor sie zur Ausschreibung einladen. Wer dort nicht professionell auftritt, steht auf keiner Liste.',
+    searchTerms: ['Bauunternehmen Hamburg', 'Sanierung Hamburg', 'Rohbau Hamburg'],
+  },
 ];

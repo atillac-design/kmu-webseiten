@@ -66,4 +66,37 @@ export const immoCities = [
     pain: 'Bei Münchner Objektwerten trennt sich beim Online-Auftritt die Spreu vom Weizen. Ein Makler ohne erstklassige Website wirkt neben der Konkurrenz sofort zweitklassig — und verliert genau die hochpreisigen Mandate, die das Geschäft ausmachen.',
     searchTerms: ['Immobilienmakler München', 'Haus verkaufen München', 'Immobilienbewertung München'],
   },
+
+  {
+    slug: 'wiesbaden',
+    name: 'Wiesbaden',
+    intro:
+      'Wiesbaden gehört zu den teuersten Immobilienmärkten Hessens — Gründerzeitvillen, gepflegte Stadtwohnungen, vermögende Eigentümer. Wer hier ein Verkaufsmandat gewinnt, gewinnt viel.',
+    pain: 'Entsprechend prüfen Wiesbadener Eigentümer ihre Makler besonders kritisch. Ein Auftritt, der nicht zur Preisklasse der Objekte passt, disqualifiziert — noch vor dem ersten Gespräch.',
+    searchTerms: ['Immobilienmakler Wiesbaden', 'Haus verkaufen Wiesbaden', 'Immobilienbewertung Wiesbaden'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Elbvororte, HafenCity, Walddörfer: Hamburgs Immobilienmarkt ist groß, teuer und umkämpft — tausende Makler konkurrieren um die Mandate einer Stadt, in der Immobilien Familienvermögen sind.',
+    pain: 'Hanseatische Eigentümer wählen diskret und gründlich: Die Makler-Website wird zur stillen Referenz. Wer dort nicht überzeugt, wird gar nicht erst kontaktiert.',
+    searchTerms: ['Immobilienmakler Hamburg', 'Haus verkaufen Hamburg', 'Wohnung verkaufen Hamburg'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Halbhöhenlage, Speckgürtel, Erbbaugrundstücke: Der Stuttgarter Immobilienmarkt hat seine Eigenheiten — und Eigentümer, die einen Makler suchen, der sie nachweislich versteht.',
+    pain: 'Diese Kompetenz muss online belegt sein: mit Marktkenntnis, Referenzen und seriösem Auftritt. Ein Makler ohne überzeugende Website wirkt in Stuttgart wie ein Handwerker ohne Meisterbrief.',
+    searchTerms: ['Immobilienmakler Stuttgart', 'Haus verkaufen Stuttgart', 'Immobilienbewertung Stuttgart'],
+  },
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Der Trierer Immobilienmarkt hat einen einzigartigen Treiber: Luxemburg. Grenzgänger und luxemburgische Investoren treiben die Nachfrage — und suchen Makler, die beide Seiten der Grenze verstehen.',
+    pain: 'Wer diese besondere Marktlage auf seiner Website nicht sichtbar macht, überlässt die lukrativsten Mandate der Region den wenigen Kollegen, die es tun.',
+    searchTerms: ['Immobilienmakler Trier', 'Haus verkaufen Trier', 'Immobilien Trier Luxemburg'],
+  },
 ];

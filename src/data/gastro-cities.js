@@ -66,4 +66,37 @@ export const gastroCities = [
     pain: 'In München erwarten Gäste einen Auftritt, der zum Anspruch der Stadt passt. Fehlt eine gepflegte Website mit Speisekarte, Fotos und Reservierungsmöglichkeit, wandern die zahlungskräftigen Gäste zur besser sichtbaren Konkurrenz ab.',
     searchTerms: ['Restaurant München', 'Biergarten München', 'Restaurant München Schwabing'],
   },
+
+  {
+    slug: 'wiesbaden',
+    name: 'Wiesbaden',
+    intro:
+      'Kurhaus-Publikum, Geschäftsessen, Wochenend-Ausflügler aus dem Rheingau: Wiesbadens Gastronomie bedient anspruchsvolle Gäste — die vor der Reservierung grundsätzlich erst die Karte und die Bilder online prüfen.',
+    pain: 'Ein gehobenes Restaurant ohne ansprechende Website verschenkt in Wiesbaden bares Geld: Genau die Gäste mit den größten Rechnungen recherchieren am gründlichsten.',
+    searchTerms: ['Restaurant Wiesbaden', 'Brunch Wiesbaden', 'Restaurant Wiesbaden Innenstadt'],
+  },
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Porta Nigra, Mosel, Millionen Touristen im Jahr: Triers Gastronomie lebt von Gästen, die die Stadt nicht kennen — und ihr Restaurant deshalb ausschließlich online aussuchen, oft noch vom Hotelzimmer aus.',
+    pain: 'Wer bei „Restaurant Trier Altstadt" nicht mit Fotos, Karte und Öffnungszeiten überzeugt, verliert die Touristen an die Konkurrenz am selben Platz — jeden einzelnen Abend.',
+    searchTerms: ['Restaurant Trier', 'Weinstube Trier', 'Restaurant Trier Altstadt'],
+  },
+  {
+    slug: 'andernach',
+    name: 'Andernach',
+    intro:
+      'Geysir-Touristen, Rheinradler und die Stammgäste aus der Stadt: Andernacher Gastronomen bedienen ein gemischtes Publikum — und auch der Ausflügler entscheidet unterwegs per Handy, wo eingekehrt wird.',
+    pain: 'Ohne aktuelle Öffnungszeiten und appetitliche Bilder im Netz fährt der Tagestourist weiter nach Koblenz oder Linz — die Stammkundschaft allein füllt an Wochentagen keine Terrasse.',
+    searchTerms: ['Restaurant Andernach', 'Café Andernach', 'Biergarten Andernach'],
+  },
+  {
+    slug: 'limburg',
+    name: 'Limburg',
+    intro:
+      'Limburgs Altstadt zieht Wochenendbesucher aus dem gesamten Rhein-Main-Gebiet — Fachwerk-Kulisse inklusive. Gastronomen profitieren davon aber nur, wenn ihre Lokale online genauso einladend wirken wie die Gassen.',
+    pain: 'Viele Limburger Traditionshäuser haben starke Küche, aber schwache Webauftritte — und überlassen die online planenden Ausflügler den Ketten an der Autobahn.',
+    searchTerms: ['Restaurant Limburg', 'Café Limburg Altstadt', 'Restaurant Limburg an der Lahn'],
+  },
 ];

@@ -249,4 +249,57 @@ export const cities = [
     visitText:
       'Wir arbeiten mit Kunden in München komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
   },
+
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin hat mehr kleine und mittlere Unternehmen als jede andere deutsche Stadt — vom Spandauer Handwerksbetrieb bis zum Kreuzberger Café. Und alle konkurrieren um dieselben lokalen Google-Suchen ihrer Kieze.',
+    regionText:
+      'Die gute Nachricht: Berlin wird in Kiezen gesucht — „Friseur Prenzlauer Berg", „Steuerberater Charlottenburg". Genau diese Kiez-Suchen gewinnt, wer lokal optimiert ist. Wir betreuen Berliner Betriebe komplett digital: gleiche Qualität, persönliche Betreuung, keine Anfahrt nötig.',
+    searchTerms: ['Webdesign Berlin', 'Handwerker Berlin Prenzlauer Berg', 'Physiotherapie Berlin'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Berlin bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Berlin komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Messestadt, Mittelstandsregion, kurze Wege: Hannover ist eine klassische KMU-Stadt, in der Betriebe vom Maschinenbauer-Zulieferer bis zur Physiopraxis um lokale Sichtbarkeit konkurrieren.',
+    regionText:
+      'Hannoveraner gelten als das nüchternste Publikum Deutschlands — Werbeversprechen ziehen hier nicht, klare Fakten schon. Genau so bauen wir deine Website: sachlich überzeugend, lokal optimiert für Hannover und die Region.',
+    searchTerms: ['Webdesign Hannover', 'Handwerker Hannover', 'Steuerberater Hannover'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Hannover bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Hannover komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'nuernberg',
+    name: 'Nürnberg',
+    intro:
+      'Nürnberg und die Metropolregion Franken sind traditionsreiches Gewerbe- und Handwerksland — mit tausenden Familienbetrieben, die seit Generationen bestehen, deren Websites aber oft aus einer anderen Zeit stammen.',
+    regionText:
+      'Genau darin liegt die Chance: Wer in Nürnberg als Erster seiner Branche modern und lokal optimiert auftritt, zieht an jahrzehntealten Wettbewerbern vorbei — bei Google zählt der Auftritt, nicht das Gründungsjahr.',
+    searchTerms: ['Webdesign Nürnberg', 'Handwerker Nürnberg', 'Restaurant Nürnberg'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Nürnberg bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Nürnberg komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig ist die am schnellsten wachsende Großstadt Deutschlands — jedes Jahr kommen tausende Menschen und hunderte neue Betriebe dazu: Cafés, Studios, Praxen, Handwerker. Ein Markt im Aufbruch.',
+    regionText:
+      'Wo so viel Neues entsteht, sind die Google-Rankings noch nicht zementiert — anders als in München oder Hamburg. Wer jetzt in Leipzig lokal sichtbar wird, sichert sich Positionen, die in fünf Jahren unbezahlbar sind.',
+    searchTerms: ['Webdesign Leipzig', 'Handwerker Leipzig', 'Café Leipzig Südvorstadt'],
+    localNote:
+      'KMU-Webseiten.de ist ein Produkt der Agentur Pixel56. Wir betreuen Betriebe deutschlandweit komplett digital — für Leipzig bedeutet das: keine Anfahrtszeiten, aber dieselbe persönliche Betreuung wie vor Ort.',
+    visitText:
+      'Wir arbeiten mit Kunden in Leipzig komplett remote — per Telefon, Videocall und E-Mail. Das funktioniert erfahrungsgemäß genauso gut wie ein persönliches Treffen, nur schneller und flexibler für dich.',
+  },
 ];
