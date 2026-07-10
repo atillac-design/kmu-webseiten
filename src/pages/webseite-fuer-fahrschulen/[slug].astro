@@ -1,0 +1,154 @@
+---
+import Base from '../../layouts/Base.astro';
+import { fahrschulenCities } from '../../data/fahrschulen-cities.js';
+
+export function getStaticPaths() {
+  return fahrschulenCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Fahrschulen in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine Fahrschule in ${city.name}: Online-Anmeldung, transparente Preise, Team & Fahrzeuge — überzeugt Fahrschüler und Eltern. Kostenloser Entwurf in 48 Stunden, ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-fahrschulen/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Fahrschulen in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Fahrschulen' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-fahrschulen/" style="color:var(--hero-muted)">Webseite für Fahrschulen</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Fahrschüler in <em>{city.name}</em> melden sich an, wo sie sich online wiederfinden.
+      </h1>
+      <p class="sub">
+        Eine Website für deine Fahrschule, die 17-Jährige begeistert und ihre
+        Eltern überzeugt — mit klaren Preisen, deinem Team und Online-Anmeldung.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Fahrschulen {city.name}</p>
+        <h2 class="display">Deine nächsten Fahrschüler sitzen am Handy — nicht im Schaufenster.</h2>
+        <div class="prose">
+          <p>Ob <strong>Klasse B</strong>, <strong>Motorrad</strong> oder <strong>BF17</strong> in {city.name} — die Fahrschul-Wahl trifft heute eine Generation, die alles online erledigt. Und im Hintergrund vergleichen die Eltern mit, die am Ende zahlen.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            gesucht wird — angemeldet wird dort, wo Preise, Ablauf und Team sofort
+            überzeugen und die Anmeldung keine Hürde ist. Alles andere wird weggescrollt.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Online-Anmeldung, die ankommt</h3><p>Name, Klasse, Wunschstart — die Anmeldung landet strukturiert in deinem Postfach, statt dass Interessenten auf den Anrufbeantworter sprechen müssen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Preise transparent erklärt</h3><p>Grundbetrag, Fahrstunde, Prüfungsgebühren: Wer Kosten offen zeigt, gewinnt das Vertrauen der Eltern — und spart sich hundert Telefonate.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Team &amp; Fahrzeuge im Rampenlicht</h3><p>Deine Fahrlehrer, deine Autos, dein Theorieraum — echte Bilder entscheiden, ob sich Jugendliche bei dir wohlfühlen werden.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Theorietermine immer aktuell</h3><p>Kursplan und Ferien-Intensivkurse pflegen wir laufend ein — deine Website bleibt die verlässliche Infoquelle für alle Fahrschüler.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🚗 Für Fahrschulen, die im Auto sitzen statt am Schreibtisch</span>
+        <h3 class="display">Du bringst Menschen aufs Auto. Wir bringen dir die Anmeldungen.</h3>
+        <p>Du nennst uns Klassen, Preise und ein paar Worte zu deinem Team — wir liefern in 48 Stunden einen Entwurf, der junge Leute anspricht, ohne die Eltern zu verlieren. Kurstermine und Aktionen halten wir danach aktuell.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Fahrschul-Website in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Fahrschule, Klassen, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du siehst einen echten Entwurf deiner neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Fahrschulen</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Können sich Fahrschüler direkt über die Website anmelden?</summary>
+            <p>Ja — mit Führerscheinklasse, Wunschstart und Kontaktdaten, direkt in dein E-Mail-Postfach. Du meldest dich dann mit den nächsten Schritten; das Ausfüllen der offiziellen Anträge bleibt wie gewohnt bei dir vor Ort.</p>
+          </details>
+          <details>
+            <summary>Sollen wir wirklich unsere Preise online zeigen?</summary>
+            <p>Wir empfehlen es klar: Die Preisfrage stellt ohnehin jeder — wer sie offen beantwortet, wirkt fair und spart Telefonzeit. Du entscheidest, wie detailliert: vom Grundbetrag bis zur kompletten Preisliste ist alles möglich.</p>
+          </details>
+          <details>
+            <summary>Erreichen wir über die Website auch Erwachsene und Umschreiber?</summary>
+            <p>Ja — Wiedereinsteiger, Angst-Fahrstunden, Umschreibung ausländischer Führerscheine: Diese Zielgruppen suchen fast ausschließlich online und sind oft die lukrativsten. Wir geben ihnen eigene, gut auffindbare Bereiche auf deiner Seite.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für deine Fahrschule in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

@@ -100,4 +100,21 @@ export const coachesCities = [
     pain: 'Grenzgänger suchen abends von zu Hause aus, online. Ein Trierer Coach ohne auffindbare Website existiert für diese kaufkräftige Zielgruppe schlicht nicht.',
     searchTerms: ['Coaching Trier', 'Business Coach Trier', 'Coaching Luxemburg deutsch'],
   },
+
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin ist Deutschlands Coaching-Hauptstadt: Startups, Kreative, Führungskräfte im Wandel — nirgendwo ist die Nachfrage nach beruflicher Orientierung größer. Und nirgendwo das Angebot.',
+    pain: 'In diesem Überangebot entscheidet die Positionierung: Ein Berliner Coach ohne glasklare Nische und professionelle Website ist einer von zehntausend. Mit beidem ist er die erste Wahl seiner Zielgruppe.',
+    searchTerms: ['Business Coach Berlin', 'Karrierecoaching Berlin', 'Coaching Berlin Mitte'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig wächst — und mit der Stadt wachsen die Umbrüche: Neue Jobs, neue Unternehmen, neue Lebensentwürfe. Der Coaching-Markt ist jung und noch nicht verteilt.',
+    pain: 'Anders als in München oder Hamburg sind die Google-Positionen für Coaching-Begriffe in Leipzig noch zu gewinnen — wer jetzt professionell sichtbar wird, besetzt sie auf Jahre.',
+    searchTerms: ['Coaching Leipzig', 'Business Coach Leipzig', 'Karriereberatung Leipzig'],
+  },
 ];

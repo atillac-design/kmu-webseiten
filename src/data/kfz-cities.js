@@ -82,4 +82,21 @@ export const kfzCities = [
     pain: 'Diese Kundschaft findet eine Werkstatt ausschließlich online. Wer bei „Autowerkstatt Trier" nicht sichtbar ist, überlässt den Luxemburg-Effekt der Konkurrenz.',
     searchTerms: ['KFZ Werkstatt Trier', 'Autowerkstatt Trier', 'Reifenwechsel Trier'],
   },
+
+  {
+    slug: 'kaiserslautern',
+    name: 'Kaiserslautern',
+    intro:
+      'Kaiserslautern hat einen Werkstatt-Markt mit Besonderheit: Zehntausende US-Amerikaner mit eigenen Fahrzeugen — von US-Imports bis zum deutschen Gebrauchten — suchen Werkstätten mit englischsprachigem Service.',
+    pain: 'Wer „car repair Kaiserslautern" bedienen kann, es aber online nicht zeigt, überlässt diese treue, unkomplizierte Kundschaft den wenigen Betrieben, die es tun.',
+    searchTerms: ['KFZ Werkstatt Kaiserslautern', 'car repair Kaiserslautern', 'Autowerkstatt Kaiserslautern'],
+  },
+  {
+    slug: 'siegen',
+    name: 'Siegen',
+    intro:
+      'Das Siegerland fährt Auto — Pendler, Handwerker, Familien in den Hanglagen. Werkstätten haben hier einen stabilen Markt, der allerdings zunehmend online nach Terminen und Preisen sucht.',
+    pain: 'Viele Siegener Werkstätten sind digital kaum präsent — wer als Erster im Stadtteil mit Online-Terminanfrage und klaren Leistungen auftritt, zieht die Neukunden der ganzen Umgebung.',
+    searchTerms: ['KFZ Werkstatt Siegen', 'Autowerkstatt Siegen', 'Reifenwechsel Siegen'],
+  },
 ];

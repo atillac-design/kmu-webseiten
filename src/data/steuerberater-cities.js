@@ -82,4 +82,21 @@ export const steuerberaterCities = [
     pain: 'Der Münchner Markt verzeiht keinen schwachen Auftritt: Mandanten, die viel zahlen, erwarten eine Kanzlei, die auch digital erstklassig wirkt — von der Website bis zum Online-Terminkalender.',
     searchTerms: ['Steuerberater München', 'Steuerberater München GmbH', 'Steuerkanzlei München'],
   },
+
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Trier ist Deutschlands Hauptstadt der Grenzgänger-Besteuerung: Zehntausende pendeln nach Luxemburg — mit Steuerfragen, die kaum eine Kanzlei außerhalb der Region beherrscht. Ein Spezialmarkt direkt vor der Tür.',
+    pain: 'Genau danach wird gesucht: „Steuerberater Grenzgänger Luxemburg". Kanzleien mit dieser Kompetenz, aber ohne sichtbare Website, überlassen den lukrativsten Mandantenstrom der Region ein paar wenigen Kollegen.',
+    searchTerms: ['Steuerberater Trier', 'Steuerberater Grenzgänger Luxemburg', 'Steuererklärung Luxemburg Trier'],
+  },
+  {
+    slug: 'siegen',
+    name: 'Siegen',
+    intro:
+      'Das Siegerland ist voller Familienunternehmen in zweiter und dritter Generation — mit Themen wie Nachfolge, Umwandlung und Betriebsübergabe, die hochwertige Beratung brauchen.',
+    pain: 'Diese Mandate entstehen in Umbruchmomenten — und dann wird verglichen, auch online. Eine Kanzlei ohne modernen Auftritt wirkt bei Zukunftsthemen wie Nachfolge unfreiwillig wie von gestern.',
+    searchTerms: ['Steuerberater Siegen', 'Unternehmensnachfolge Siegen', 'Steuerberater Siegerland'],
+  },
 ];

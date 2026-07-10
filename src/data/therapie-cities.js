@@ -107,4 +107,21 @@ export const therapieCities = [
     pain: 'Diese überregionalen Patienten findet man nicht im Wartezimmer, sondern bei Google. Eine Praxis ohne starke Online-Präsenz schöpft das Trierer Einzugsgebiet nicht mal zur Hälfte aus.',
     searchTerms: ['Physiotherapie Trier', 'Osteopathie Trier', 'Logopädie Trier'],
   },
+
+  {
+    slug: 'karlsruhe',
+    name: 'Karlsruhe',
+    intro:
+      'Karlsruhe verbindet Technologie-Standort und Gesundheitsbewusstsein: Von Sportphysiotherapie für die aktive Stadt bis zu Ergonomie-Beratung für die IT-Branche — Therapiepraxen finden hier dankbare Nischen.',
+    pain: 'Die digital geprägte Kundschaft erwartet allerdings digitale Standards: Online-Terminanfrage und ein klarer Webauftritt sind in Karlsruhe die Eintrittskarte, nicht die Kür.',
+    searchTerms: ['Physiotherapie Karlsruhe', 'Osteopathie Karlsruhe', 'Ergotherapie Karlsruhe'],
+  },
+  {
+    slug: 'aachen',
+    name: 'Aachen',
+    intro:
+      'Aachen zieht als Universitäts- und Grenzstadt Patienten aus drei Ländern an — auch in der Therapie: Belgische und niederländische Patienten schätzen deutsche Praxen und kurze Wartezeiten.',
+    pain: 'Dieses grenzüberschreitende Potenzial erschließt nur, wer online gut auffindbar ist — die Praxis um die Ecke kennt der Patient aus Kelmis oder Vaals nur über Google.',
+    searchTerms: ['Physiotherapie Aachen', 'Logopädie Aachen', 'Heilpraktiker Aachen'],
+  },
 ];

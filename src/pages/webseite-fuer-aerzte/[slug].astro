@@ -1,0 +1,154 @@
+---
+import Base from '../../layouts/Base.astro';
+import { aerzteCities } from '../../data/aerzte-cities.js';
+
+export function getStaticPaths() {
+  return aerzteCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Ärzte & Arztpraxen in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine Arztpraxis in ${city.name}: Patienten informieren, Praxisteam entlasten, MFA gewinnen. Kostenloser Entwurf in 48 Stunden, Pakete ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-aerzte/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Ärzte in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Ärzte & Arztpraxen' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-aerzte/" style="color:var(--hero-muted)">Webseite für Ärzte</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Patienten in <em>{city.name}</em> googeln ihre Praxis — bevor sie ihr vertrauen.
+      </h1>
+      <p class="sub">
+        Eine seriöse Praxis-Website, die Patienten informiert und dein Team entlastet —
+        Sprechzeiten, Leistungen und Terminwege klar beantwortet, bevor das Telefon klingelt.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Ärzte &amp; Arztpraxen {city.name}</p>
+        <h2 class="display">Die Website ist deine erste Sprechstunde.</h2>
+        <div class="prose">
+          <p>Ob <strong>Hausarztpraxis</strong>, <strong>Facharztpraxis</strong> oder <strong>MVZ</strong> in {city.name} — bevor ein Patient anruft, hat er die Praxis längst online besucht. Was er dort findet, prägt sein Vertrauen — und entscheidet, wie oft dein Empfang dieselben Fragen beantworten muss.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob Patienten nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            suchen — bei Gesundheitsthemen zählt Seriosität doppelt. Ein veralteter oder
+            fehlender Auftritt passt nicht zu einer Praxis, die medizinisch auf der Höhe ist.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Entlastung fürs Praxisteam</h3><p>Sprechzeiten, Urlaubsvertretung, Anfahrt, benötigte Unterlagen: Die Website beantwortet die Dauerbrenner — dein Empfang gewinnt jeden Tag Zeit.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Online-Termine eingebunden</h3><p>Doctolib, Jameda oder dein eigenes System: Wir integrieren deine Terminbuchung prominent — so landen Routinetermine nicht in der Warteschleife.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Leistungen verständlich erklärt</h3><p>Vorsorge, Diagnostik, IGeL: sachlich und patientenverständlich dargestellt — im Rahmen dessen, was die ärztliche Berufsordnung erlaubt.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Karriereseite für MFA &amp; Kollegen</h3><p>Der Fachkräftemangel trifft Praxen hart: Eine ehrliche Karriereseite mit Team-Einblicken bringt Bewerbungen, die keine Stellenanzeige liefert.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🩺 Für Praxen, deren Wartezimmer voll genug ist</span>
+        <h3 class="display">Du kümmerst dich um Patienten. Wir uns um deinen Auftritt.</h3>
+        <p>Du nennst uns Fachrichtung, Leistungsspektrum und Sprechzeiten — wir liefern in 48 Stunden einen Entwurf: ruhig, seriös und berufsrechtlich sauber formuliert. Änderungen wie Urlaubszeiten oder neue Leistungen pflegen wir danach laufend ein.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Praxis-Website in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Fachrichtung, Praxis, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du siehst einen echten Entwurf deiner neuen Praxis-Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Praxen</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Was dürfen Ärzte auf ihrer Website veröffentlichen?</summary>
+            <p>Die ärztliche Berufsordnung erlaubt sachliche, berufsbezogene Information — untersagt sind anpreisende oder irreführende Aussagen. Wir texten entsprechend: Leistungsspektrum, Qualifikationen, Praxisorganisation. Im Zweifel stimmst du den Text kurz mit deiner Kammer ab.</p>
+          </details>
+          <details>
+            <summary>Können wir unsere Online-Terminbuchung einbinden?</summary>
+            <p>Ja — Doctolib, Jameda, samedi oder das System deiner Wahl verlinken wir prominent. Patienten finden den Termin-Button auf jeder Seite, dein Telefon wird spürbar leiser.</p>
+          </details>
+          <details>
+            <summary>Hilft die Website bei der MFA-Suche?</summary>
+            <p>Deutlich: Medizinische Fachangestellte schauen sich jede Praxis vor der Bewerbung online an. Eine Karriereseite mit Team-Fotos, Arbeitszeiten-Kultur und einfacher Kontaktaufnahme hebt dich von den Praxen ab, die nur eine Anzeige schalten.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Website-Entwurf für deine Praxis in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine neue Praxis-Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

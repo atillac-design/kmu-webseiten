@@ -15,6 +15,8 @@ import { kfzCities } from './kfz-cities.js';
 import { pflegeCities } from './pflege-cities.js';
 import { anwaelteCities } from './anwaelte-cities.js';
 import { steuerberaterCities } from './steuerberater-cities.js';
+import { fahrschulenCities } from './fahrschulen-cities.js';
+import { aerzteCities } from './aerzte-cities.js';
 
 export const niches = [
   {
@@ -156,6 +158,26 @@ export const niches = [
       'Websites für Kanzleien: seriöser Auftritt für neue Mandate — und eine Karriereseite gegen den Fachkräftemangel. Wähl deine Stadt.',
     icon: '📊',
     cities: steuerberaterCities,
+  },
+  {
+    prefix: 'webseite-fuer-fahrschulen',
+    label: 'Webseite für Fahrschulen',
+    audience: 'Fahrschulen aller Klassen',
+    hubHeading: 'Webseite für Fahrschulen — in deiner Stadt',
+    hubLead:
+      'Websites für Fahrschulen: Online-Anmeldung, transparente Preise und ein Auftritt, der Fahrschüler wie Eltern überzeugt. Wähl deine Stadt.',
+    icon: '🚗',
+    cities: fahrschulenCities,
+  },
+  {
+    prefix: 'webseite-fuer-aerzte',
+    label: 'Webseite für Ärzte',
+    audience: 'Haus- & Facharztpraxen, MVZ',
+    hubHeading: 'Webseite für Ärzte & Arztpraxen — in deiner Stadt',
+    hubLead:
+      'Websites für Praxen: Patienten informieren, das Team entlasten, MFA gewinnen — seriös und berufsrechtlich sauber. Wähl deine Stadt.',
+    icon: '⚕️',
+    cities: aerzteCities,
   },
 ];
 

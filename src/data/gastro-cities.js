@@ -99,4 +99,29 @@ export const gastroCities = [
     pain: 'Viele Limburger Traditionshäuser haben starke Küche, aber schwache Webauftritte — und überlassen die online planenden Ausflügler den Ketten an der Autobahn.',
     searchTerms: ['Restaurant Limburg', 'Café Limburg Altstadt', 'Restaurant Limburg an der Lahn'],
   },
+
+  {
+    slug: 'boppard',
+    name: 'Boppard',
+    intro:
+      'Boppard lebt vom Welterbe-Tourismus: Rheinpromenade, Weinstuben, Ausflugslokale. Die Gäste kommen aus aller Welt — und wählen ihr Restaurant vom Hotelzimmer oder Schiffsdeck aus, per Handy.',
+    pain: 'Wer hier ohne appetitliche Website mit Karte und Öffnungszeiten antritt, verliert die Tagesgäste an die Terrasse nebenan — und mit der BUGA 2029 wird der Online-Vergleich noch härter.',
+    searchTerms: ['Restaurant Boppard', 'Weinstube Boppard', 'Restaurant Rheinpromenade Boppard'],
+  },
+  {
+    slug: 'cochem',
+    name: 'Cochem',
+    intro:
+      'Cochem hat in der Saison mehr Gäste als Einwohner — Mosel-Touristen, Busgruppen, Camper. Sie alle entscheiden online, wo sie essen: nach Fotos, Bewertungen und aktueller Karte.',
+    pain: 'Ein Lokal ohne modernen Webauftritt ist für diese Laufkundschaft von morgen unsichtbar — die plant nämlich heute schon von zu Hause aus, wo an der Mosel eingekehrt wird.',
+    searchTerms: ['Restaurant Cochem', 'Weinstube Cochem', 'Restaurant Mosel Cochem'],
+  },
+  {
+    slug: 'bad-neuenahr-ahrweiler',
+    name: 'Bad Neuenahr-Ahrweiler',
+    intro:
+      'Die Gastronomie im Ahrtal hat sich nach der Flut neu erfunden — viele Häuser sind renoviert, neu eröffnet, besser als je zuvor. Die zurückkehrenden Gäste wollen genau das sehen: online, bevor sie kommen.',
+    pain: 'Wer den Neuanfang nicht digital zeigt, wird noch mit alten Bildern oder Flutmeldungen gefunden. Eine aktuelle Website erzählt die neue Geschichte — und füllt die neuen Gasträume.',
+    searchTerms: ['Restaurant Bad Neuenahr', 'Weinstube Ahrweiler', 'Restaurant Ahrtal'],
+  },
 ];

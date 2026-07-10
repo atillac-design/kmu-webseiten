@@ -116,4 +116,21 @@ export const handwerkerCities = [
     pain: 'Wenn Frankfurter Betriebe mit professionellen Websites ins Limburger Umland expandieren, hilft nur eins: selbst online sichtbar sein — bei Kunden und bei Azubis.',
     searchTerms: ['Handwerker Limburg', 'Maler Limburg', 'Heizung Sanitär Limburg'],
   },
+
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Handwerk rund um Trier profitiert vom Luxemburg-Effekt: Grenzgänger-Familien bauen um, sanieren und modernisieren — mit Budgets, die deutlich über dem Landesschnitt liegen.',
+    pain: 'Diese Kundschaft vergleicht online und erwartet schnelle Antworten. Betriebe ohne moderne Website verlieren die attraktivsten Aufträge der Region — oft ohne je davon zu erfahren.',
+    searchTerms: ['Handwerker Trier', 'Maler Trier', 'Schreiner Trier'],
+  },
+  {
+    slug: 'siegen',
+    name: 'Siegen',
+    intro:
+      'Im Siegerland hat Handwerk Tradition und volle Auftragsbücher — aber auch hier gilt: Die nächste Generation Kunden und die dringend gesuchten Gesellen suchen online, nicht im Branchenbuch.',
+    pain: 'Wer in Siegen als Handwerksbetrieb eine moderne Website mit Karriereseite hat, ist praktisch allein auf weiter Flur — ein Vorsprung, der sich bei Aufträgen und Bewerbungen doppelt auszahlt.',
+    searchTerms: ['Handwerker Siegen', 'Dachdecker Siegen', 'Elektriker Siegen'],
+  },
 ];
