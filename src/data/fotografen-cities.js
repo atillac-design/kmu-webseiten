@@ -82,4 +82,21 @@ export const fotografenCities = [
     pain: 'Genau da liegt die Hürde: Münchner Kundschaft erwartet Perfektion schon auf der Website. Langsame Galerien und Baukasten-Design disqualifizieren — bevor jemand das erste Bild bewertet hat.',
     searchTerms: ['Fotograf München', 'Hochzeitsfotograf München', 'Businessporträts München'],
   },
+
+  {
+    slug: 'trier',
+    name: 'Trier',
+    intro:
+      'Trierer Fotografen haben einen doppelten Markt: die Region — und Luxemburg, wo Hochzeiten und Firmenaufträge mit deutlich höheren Budgets vergeben werden, gern an Fotografen von der deutschen Seite.',
+    pain: 'Diese Luxemburg-Aufträge werden online vergeben. Wer als Trierer Fotograf grenzüberschreitend arbeitet, es aber auf seiner Website nicht zeigt, verschenkt die bestbezahlten Buchungen der Region.',
+    searchTerms: ['Hochzeitsfotograf Trier', 'Fotograf Trier', 'Hochzeitsfotograf Luxemburg'],
+  },
+  {
+    slug: 'aachen',
+    name: 'Aachen',
+    intro:
+      'Dom-Hochzeiten, RWTH-Absolventenporträts, Firmenaufträge aus dem Dreiländereck: Aachener Fotografen bedienen einen internationalen Markt — Kunden aus Belgien und den Niederlanden inklusive.',
+    pain: 'Diese grenzüberschreitende Kundschaft findet Fotografen nur über Google und die Website. Ein reiner Instagram-Auftritt bleibt für sie unsichtbar — Portfolio-Websites gewinnen die Buchungen.',
+    searchTerms: ['Hochzeitsfotograf Aachen', 'Fotograf Aachen', 'Businessfotos Aachen'],
+  },
 ];

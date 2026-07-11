@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import { reinigungCities } from '../../data/reinigung-cities.js';
+
+export function getStaticPaths() {
+  return reinigungCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Gebäudereinigung in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für dein Reinigungsunternehmen in ${city.name}: Angebotsanfragen von Firmen & Hausverwaltungen, seriöser B2B-Auftritt, Personalgewinnung. Kostenloser Entwurf in 48 Stunden, ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-gebaeudereinigung/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Gebäudereinigung in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Gebäudereinigung & Facility Services' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-gebaeudereinigung/" style="color:var(--hero-muted)">Webseite für Gebäudereinigung</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Reinigungsverträge in <em>{city.name}</em> werden online vergeben — an sichtbare Betriebe.
+      </h1>
+      <p class="sub">
+        Ein seriöser B2B-Auftritt für dein Reinigungsunternehmen — der Hausverwaltungen
+        und Firmen überzeugt und Angebotsanfragen bringt.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Gebäudereinigung {city.name}</p>
+        <h2 class="display">Ein Vertrag hält Jahre. Der Weg dorthin führt über Google.</h2>
+        <div class="prose">
+          <p>Ob <strong>Unterhaltsreinigung</strong>, <strong>Glasreinigung</strong> oder <strong>Sonderreinigung</strong> in {city.name} — deine Auftraggeber sind Profis: Hausverwaltungen, Office-Manager, Praxisinhaber. Sie vergleichen Dienstleister systematisch, und der erste Filter ist der Webauftritt.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            gesucht wird — bei einem Vertrauensgewerk wie Reinigung entscheidet der
+            professionelle Eindruck: Wer online seriös auftritt, bekommt die Anfrage.
+            Wer gar nicht auftritt, existiert für Entscheider nicht.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Angebotsanfrage in 2 Minuten</h3><p>Objektart, Fläche, Intervall — strukturierte Anfragen von echten Entscheidern direkt in dein Postfach, vorqualifiziert statt Kaltakquise.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Leistungen klar paketiert</h3><p>Unterhalts-, Glas-, Bau- und Sonderreinigung sauber getrennt dargestellt — Auftraggeber sehen sofort, dass du ihr Gewerk beherrschst.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Referenzen &amp; Vertrauen</h3><p>Objekte, Branchen, Zertifikate, Versicherungsschutz: Wir machen deine Zuverlässigkeit sichtbar — das wichtigste Kaufargument im B2B.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Mitarbeiter finden &amp; halten</h3><p>Eine Karriereseite mit fairen Konditionen und einfacher Bewerbung — in einer Branche mit hoher Fluktuation dein zweiter Umsatzhebel.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🧽 Für Betriebe, die im Objekt stehen statt am Schreibtisch</span>
+        <h3 class="display">Ihr sorgt für saubere Objekte. Wir für saubere Anfragen.</h3>
+        <p>Ihr nennt uns Leistungen, Einsatzgebiet und Referenzen — wir liefern in 48 Stunden einen Entwurf, der bei Hausverwaltungen und Firmenkunden Eindruck macht. Seriös, klar und auf Angebotsanfragen optimiert.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für euren Betrieb in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Betrieb, Leistungen, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Ihr seht einen echten Entwurf eurer neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er euch, wählt ihr euer Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Reinigungsunternehmen</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Unsere Aufträge kommen bisher über Empfehlungen — lohnt sich das trotzdem?</summary>
+            <p>Empfehlungen sind stark, aber nicht planbar. Die Website macht euch unabhängiger: Sie fängt die Auftraggeber ab, die gerade unzufrieden mit ihrem jetzigen Dienstleister googeln — das sind die wechselwilligsten und wertvollsten Anfragen überhaupt.</p>
+          </details>
+          <details>
+            <summary>Können wir nach Objektarten getrennt gefunden werden?</summary>
+            <p>Ja — Praxisreinigung, Büroreinigung, Treppenhausreinigung: Wir strukturieren die Seite so, dass jede Leistung einzeln bei Google gefunden wird. So kommt die Anfrage gleich mit dem richtigen Bedarf.</p>
+          </details>
+          <details>
+            <summary>Hilft die Website bei der Personalsuche?</summary>
+            <p>Deutlich — gerade in der Reinigung: Bewerber wollen sehen, dass ein Betrieb seriös ist, fair zahlt und pünktlich plant. Eine ehrliche Karriereseite mit einfacher Bewerbung (auch per WhatsApp) bringt mehr Rückläufe als jedes Jobportal-Inserat.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findet ihr auf der <a href="/#preise">Startseite unter Preise</a>. Vorher seht ihr immer erst euren kostenlosen Entwurf. Ein einziger gewonnener Unterhaltsreinigungs-Vertrag zahlt das Paket für Jahre.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichert euch euren kostenlosen Website-Entwurf für euren Betrieb in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden seht ihr, wie eure neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

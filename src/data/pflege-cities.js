@@ -83,4 +83,21 @@ export const pflegeCities = [
     pain: 'Viele Siegener Pflegedienste sind digital kaum präsent. Ein moderner, warmherziger Webauftritt ist hier ein echter Wettbewerbsvorteil — bei Familien und beim raren Fachpersonal.',
     searchTerms: ['Pflegedienst Siegen', 'ambulante Pflege Siegen', 'Tagespflege Siegen'],
   },
+
+  {
+    slug: 'limburg',
+    name: 'Limburg',
+    intro:
+      'Zwischen Westerwald und Taunus versorgen Limburger Pflegedienste ein weitläufiges, ländliches Einzugsgebiet — mit wachsendem Bedarf und Familien, die oft aus dem Rhein-Main-Gebiet heraus die Pflege der Eltern organisieren.',
+    pain: 'Diese erwachsenen Kinder in Frankfurt oder Wiesbaden googeln „Pflegedienst Limburg" — und beauftragen den Dienst, dessen Website Kompetenz und Wärme ausstrahlt. Ohne Auftritt findet diese Wahl ohne dich statt.',
+    searchTerms: ['Pflegedienst Limburg', 'ambulante Pflege Limburg', 'Tagespflege Limburg'],
+  },
+  {
+    slug: 'giessen',
+    name: 'Gießen',
+    intro:
+      'Gießen verbindet medizinische Infrastruktur (Uniklinikum!) mit einem alternden mittelhessischen Umland — ambulante Dienste wachsen hier seit Jahren und konkurrieren zunehmend um Personal aus den Pflegestudiengängen.',
+    pain: 'Gerade die jungen, gut ausgebildeten Kräfte aus Gießens Hochschulen wählen ihren Arbeitgeber online aus. Ein Pflegedienst ohne moderne Karriereseite existiert für diesen Nachwuchs nicht.',
+    searchTerms: ['Pflegedienst Gießen', 'ambulante Pflege Gießen', 'Pflegedienst Gießen Jobs'],
+  },
 ];

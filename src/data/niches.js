@@ -17,6 +17,8 @@ import { anwaelteCities } from './anwaelte-cities.js';
 import { steuerberaterCities } from './steuerberater-cities.js';
 import { fahrschulenCities } from './fahrschulen-cities.js';
 import { aerzteCities } from './aerzte-cities.js';
+import { hotelsCities } from './hotels-cities.js';
+import { reinigungCities } from './reinigung-cities.js';
 
 export const niches = [
   {
@@ -178,6 +180,26 @@ export const niches = [
       'Websites für Praxen: Patienten informieren, das Team entlasten, MFA gewinnen — seriös und berufsrechtlich sauber. Wähl deine Stadt.',
     icon: '⚕️',
     cities: aerzteCities,
+  },
+  {
+    prefix: 'webseite-fuer-hotels',
+    label: 'Webseite für Hotels & Ferienwohnungen',
+    audience: 'Hotels, Pensionen & Ferienwohnungen',
+    hubHeading: 'Webseite für Hotels & Ferienwohnungen — in deiner Stadt',
+    hubLead:
+      'Websites für Gastgeber: Direktbuchungen statt Portal-Provision — dein Haus, deine Geschichte, deine Gäste. Wähl deine Stadt.',
+    icon: '🛎️',
+    cities: hotelsCities,
+  },
+  {
+    prefix: 'webseite-fuer-gebaeudereinigung',
+    label: 'Webseite für Gebäudereinigung',
+    audience: 'Reinigungsunternehmen & Facility Services',
+    hubHeading: 'Webseite für Gebäudereinigung — in deiner Stadt',
+    hubLead:
+      'Websites für Reinigungsbetriebe: Angebotsanfragen von Firmen und Hausverwaltungen, seriöser B2B-Auftritt, Personalgewinnung. Wähl deine Stadt.',
+    icon: '🧽',
+    cities: reinigungCities,
   },
 ];
 
