@@ -1,0 +1,153 @@
+---
+import Base from '../../layouts/Base.astro';
+import { landingpageCities } from '../../data/landingpage-cities.js';
+
+export function getStaticPaths() {
+  return landingpageCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Landingpage erstellen lassen in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Landingpage für deine Kampagne in ${city.name}: eine Seite, ein Ziel, mehr Anfragen aus deinem Werbebudget. Kostenloser Entwurf in 48 Stunden, ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/landingpage-erstellen-lassen/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Landingpage erstellen lassen in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/landingpage-erstellen-lassen/" style="color:var(--hero-muted)">Landingpage erstellen lassen</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Landingpage erstellen lassen in <em>{city.name}</em> — eine Seite, ein Ziel, mehr Anfragen.
+      </h1>
+      <p class="sub">
+        Für Google Ads, Social-Kampagnen, Aktionen oder Recruiting: eine fokussierte
+        Landingpage, die aus teuren Klicks echte Anfragen macht.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Landingpage {city.name}</p>
+        <h2 class="display">Deine Anzeige macht das Versprechen. Die Landingpage muss es halten.</h2>
+        <div class="prose">
+          <p>Eine <strong>Landingpage</strong> ist keine kleine Website — sie ist ein Spezialwerkzeug: eine einzelne Seite mit genau einem Ziel, gebaut für Besucher aus einer Kampagne. Kein Menü, keine Ablenkung, nur dein Angebot und der Weg zur Anfrage.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob du nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            gesucht hast — die Rechnung ist immer dieselbe: Gleiche Anzeige, gleiches Budget,
+            aber eine Seite, die konvertiert, statt einer Startseite, die verwirrt.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Ein Ziel, null Ablenkung</h3><p>Anzeigen-Botschaft aufgegriffen, Angebot erklärt, ein klarer Call-to-Action — die Struktur, die aus Klicks Anfragen macht.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Blitzschnell geladen</h3><p>Jede Sekunde Ladezeit kostet Conversions — deine Landingpage lädt in unter 2 Sekunden, auch mobil im Funkloch.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Vertrauen auf einen Blick</h3><p>Bewertungen, Referenzen, Garantien: Wir bauen die Elemente ein, die Zweifler in Anfragen verwandeln.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Bereit für deine Kampagne</h3><p>Ob Google Ads, Meta oder QR-Code auf dem Flyer — die Seite ist messbar, DSGVO-konform und sofort einsatzbereit.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">🚀 Für Kampagnen, die sich rechnen sollen</span>
+        <h3 class="display">Du schaltest die Werbung. Wir bauen die Seite, die sie verdient.</h3>
+        <p>Du sagst uns Angebot, Zielgruppe und Kampagnenziel — wir liefern in 48 Stunden einen Landingpage-Entwurf, der dein Anzeigen-Versprechen einlöst. Auf Wunsch als Ergänzung zu deiner bestehenden Website oder komplett eigenständig.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zu deiner Landingpage für {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Angebot, Ziel, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Du siehst einen echten Entwurf deiner Landingpage. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er dir, wählst du dein Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen zu Landingpages</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Was ist der Unterschied zwischen Landingpage und normaler Website?</summary>
+            <p>Die Website stellt deinen ganzen Betrieb vor — die Landingpage verkauft genau ein Angebot an genau eine Zielgruppe. Kein Menü, keine Nebenwege: Besucher aus deiner Kampagne sehen nur das, wofür sie geklickt haben. Deshalb konvertiert sie deutlich besser.</p>
+          </details>
+          <details>
+            <summary>Ich habe schon eine Website — brauche ich trotzdem eine Landingpage?</summary>
+            <p>Wenn du Werbung schaltest: ja. Klicks auf die Startseite versanden, weil dort zu viel passiert. Die Landingpage ergänzt deine Website als Kampagnen-Werkzeug — beides zusammen ist der Standard erfolgreicher Werbetreibender.</p>
+          </details>
+          <details>
+            <summary>Kann ich mehrere Landingpages für verschiedene Angebote haben?</summary>
+            <p>Ja — und das ist oft sinnvoll: eine pro Angebot, Zielgruppe oder Stelle (Recruiting). Weitere Landingpages ergänzen wir zu fairen Konditionen in deinem bestehenden Paket.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findest du auf der <a href="/#preise">Startseite unter Preise</a>. Vorher siehst du immer erst deinen kostenlosen Entwurf. Zum Vergleich: Das ist meist weniger als ein Tag Klickbudget.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichere dir deinen kostenlosen Landingpage-Entwurf für {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden siehst du, wie deine Landingpage aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

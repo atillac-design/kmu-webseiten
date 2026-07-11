@@ -21,6 +21,9 @@ import { reinigungCities } from './reinigung-cities.js';
 import { umzugCities } from './umzug-cities.js';
 import { galabauCities } from './galabau-cities.js';
 import { versicherungCities } from './versicherung-cities.js';
+import { landingpageCities } from './landingpage-cities.js';
+import { onepagerCities } from './onepager-cities.js';
+import { homepageCities } from './homepage-cities.js';
 
 export const niches = [
   {
@@ -222,6 +225,36 @@ export const niches = [
       'Websites für Makler: Unabhängigkeit sichtbar machen, Erstgespräche gewinnen — gegen Portale und Strukturvertriebe. Wähl deine Stadt.',
     icon: '🛡️',
     cities: versicherungCities,
+  },
+  {
+    prefix: 'landingpage-erstellen-lassen',
+    label: 'Landingpage erstellen lassen',
+    audience: 'Kampagnen, Ads & Recruiting',
+    hubHeading: 'Landingpage erstellen lassen — in deiner Stadt',
+    hubLead:
+      'Eine Seite, ein Ziel: Landingpages für Google Ads, Social-Kampagnen und Recruiting — damit aus teuren Klicks Anfragen werden. Wähl deine Stadt.',
+    icon: '🚀',
+    cities: landingpageCities,
+  },
+  {
+    prefix: 'onepager-erstellen-lassen',
+    label: 'One-Pager & Einseiter',
+    audience: 'Kleine Betriebe & Selbstständige',
+    hubHeading: 'One-Pager & Einseiter erstellen lassen — in deiner Stadt',
+    hubLead:
+      'Alles Wichtige auf einer Seite: der kompakte, professionelle Auftritt für kleine Betriebe, Freiberufler und Portfolios. Wähl deine Stadt.',
+    icon: '📄',
+    cities: onepagerCities,
+  },
+  {
+    prefix: 'homepage-erstellen-lassen',
+    label: 'Homepage erstellen lassen',
+    audience: 'Betriebe ohne Technik-Stress',
+    hubHeading: 'Homepage erstellen lassen — in deiner Stadt',
+    hubLead:
+      'Der einfachste Weg zur eigenen Homepage: Erst siehst du deinen fertigen Entwurf, dann entscheidest du. Wähl deine Stadt.',
+    icon: '🏠',
+    cities: homepageCities,
   },
 ];
 
