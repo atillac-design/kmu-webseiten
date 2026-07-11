@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import { umzugCities } from '../../data/umzug-cities.js';
+
+export function getStaticPaths() {
+  return umzugCities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const title = `Webseite für Umzugsunternehmen in ${city.name} — Entwurf in 48h | KMU-Webseiten.de`;
+const description = `Website für deine Umzugsfirma in ${city.name}: Angebotsanfragen direkt statt teurer Portal-Leads, Vertrauen durch Referenzen. Kostenloser Entwurf in 48 Stunden, ab 99 €/Monat.`;
+const canonical = `https://kmu-webseiten.de/webseite-fuer-umzugsunternehmen/${city.slug}/`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Webseite für Umzugsunternehmen in ${city.name}`,
+  description,
+  url: canonical,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'KMU-Webseiten.de (Pixel56)',
+    url: 'https://kmu-webseiten.de/',
+  },
+  areaServed: { '@type': 'City', name: city.name },
+  audience: { '@type': 'Audience', audienceType: 'Umzugsunternehmen' },
+});
+---
+<Base title={title} description={description} css="/css/city.css" canonical={canonical}>
+  <script slot="head" is:inline type="application/ld+json" set:html={jsonLd} />
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de Logo" /></a>
+      <a class="btn btn-header" href="/#formular">Kostenlosen Entwurf sichern</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Brotkrumen">
+        <a href="/">Startseite</a> › <a href="/webseite-fuer-umzugsunternehmen/" style="color:var(--hero-muted)">Webseite für Umzugsunternehmen</a> › <strong style="color:var(--hero-text)">{city.name}</strong>
+      </nav>
+      <h1 class="display">
+        Wer in <em>{city.name}</em> umzieht, holt 3 Angebote ein. Bist du dabei?
+      </h1>
+      <p class="sub">
+        Eine Website für dein Umzugsunternehmen, die Angebotsanfragen bringt —
+        direkt von Kunden, ohne teure Portal-Leads und ohne Provision.
+        Erster Entwurf kostenlos, in 48 Stunden.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/#formular">Kostenlosen Entwurf anfordern →</a>
+        <span class="mini">100 % kostenlos · Antwort in 48 h</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Webseite für Umzugsunternehmen {city.name}</p>
+        <h2 class="display">Fremde Leute tragen den Hausstand — da zählt Vertrauen doppelt.</h2>
+        <div class="prose">
+          <p>Ob <strong>Privatumzug</strong>, <strong>Firmenumzug</strong> oder <strong>Seniorenumzug</strong> in {city.name} — deine Kunden lassen dich in ihr Zuhause. Diese Vertrauensfrage entscheiden sie online: anhand deiner Website, deiner Bewertungen, deines Auftritts.</p>
+          <p>{city.intro}</p>
+          <p>{city.pain}</p>
+          <p>
+            Egal ob nach <strong>„{city.searchTerms[0]}"</strong>,
+            <strong>„{city.searchTerms[1]}"</strong> oder <strong>„{city.searchTerms[2]}"</strong>
+            gesucht wird — Umzüge werden verglichen. Wer im Vergleich auftaucht und seriös
+            wirkt, bekommt die Anfrage. Der Rest verteilt sich auf Vermittlungsportale,
+            die dieselben Anfragen teuer weiterverkaufen.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2 rv">
+        <div class="g-card"><h3><span class="ic">✓</span>Anfrage mit allen Eckdaten</h3><p>Wohnungsgröße, Etage, Termin, Zusatzleistungen — vorqualifizierte Anfragen direkt in dein Postfach, ohne Portal-Gebühr dazwischen.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Vertrauen sichtbar gemacht</h3><p>Versicherung, festes Team, echte Bewertungen, Referenzumzüge — alles, was dich vom anonymen Sprinter-Angebot unterscheidet.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Leistungen klar gegliedert</h3><p>Privatumzug, Firmenumzug, Halteverbotszone, Küchenmontage, Einlagerung: Jede Leistung einzeln auffindbar — für jede Suchanfrage die passende Seite.</p></div>
+        <div class="g-card"><h3><span class="ic">✓</span>Festpreis-Kultur statt Preisschock</h3><p>Transparente Infos zu Besichtigung und Festpreisangebot nehmen Kunden die größte Angst — und dir die Diskussionen am Umzugstag.</p></div>
+      </div>
+
+      <div class="localbox rv">
+        <span class="pin">📦 Für Firmen, die anpacken statt Websites zu bauen</span>
+        <h3 class="display">Ihr tragt die Kartons. Wir tragen euch Anfragen zu.</h3>
+        <p>Ihr nennt uns Leistungen, Einzugsgebiet und ein paar Eckdaten — wir liefern in 48 Stunden einen Entwurf, der Vertrauen aufbaut und das Anfragen leicht macht. Saison-Hinweise und Aktionen pflegen wir laufend ein.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">So einfach geht's</p>
+        <h2 class="display">In 3 Schritten zur neuen Website für eure Firma in {city.name}.</h2>
+      </div>
+      <div class="steps-inline rv">
+        <div class="s-card"><span class="num">SCHRITT 01</span><h3>60 Sekunden Formular</h3><p>Firma, Leistungen, Stadt — mehr brauchen wir nicht, um loszulegen.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 02</span><h3>Entwurf in 48 Stunden</h3><p>Ihr seht einen echten Entwurf eurer neuen Website. Kostenlos.</p></div>
+        <div class="s-card"><span class="num">SCHRITT 03</span><h3>Live in wenigen Tagen</h3><p>Gefällt er euch, wählt ihr euer Paket ab 99 €/Monat — 0 € Startkosten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Häufige Fragen von Umzugsfirmen</p>
+        <h2 class="display">Kurz beantwortet.</h2>
+        <div class="faq">
+          <details>
+            <summary>Wir kaufen bisher Leads von Portalen — was bringt die eigene Website?</summary>
+            <p>Portal-Leads sind teuer, umkämpft (derselbe Lead geht an mehrere Firmen) und gehören nicht euch. Anfragen über die eigene Website kosten keine Gebühr, kommen exklusiv — und die Kunden haben euch bewusst ausgewählt, was die Abschlussquote deutlich erhöht.</p>
+          </details>
+          <details>
+            <summary>Können Kunden online eine Umzugsanfrage mit Details stellen?</summary>
+            <p>Ja — Wohnungsgröße, Stockwerke, Wunschtermin, Zusatzleistungen wie Packservice oder Halteverbotszone. Ihr bekommt alles strukturiert per E-Mail und könnt direkt kalkulieren oder die Besichtigung vereinbaren.</p>
+          </details>
+          <details>
+            <summary>Lohnt sich das auch außerhalb der Umzugssaison?</summary>
+            <p>Gerade dann: Firmenumzüge, Seniorenumzüge und Einlagerung laufen ganzjährig — und werden fast nur über Google vergeben. Die Website arbeitet in der Nebensaison für genau diese planbaren Aufträge.</p>
+          </details>
+          <details>
+            <summary>Was kostet das?</summary>
+            <p>Feste Pakete ab 99 € im Monat mit 0 € Startkosten — alle Details findet ihr auf der <a href="/#preise">Startseite unter Preise</a>. Vorher seht ihr immer erst euren kostenlosen Entwurf. Zum Vergleich: Das ist weniger, als viele Firmen für eine Handvoll Portal-Leads zahlen.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" id="cta">
+    <div class="wrap rv">
+      <h2 class="display">Sichert euch euren kostenlosen Website-Entwurf für eure Umzugsfirma in {city.name}.</h2>
+      <p>60 Sekunden Formular — in 48 Stunden seht ihr, wie eure neue Website aussehen könnte. Kostenlos und unverbindlich.</p>
+      <a class="btn big" href="/#formular">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.png" alt="KMU-Webseiten.de" /></a>
+      <nav>
+        <a href="/branchen/">Branchen</a>
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="/agb/">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/reveal.js" defer></script>
+</Base>

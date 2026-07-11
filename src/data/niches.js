@@ -17,8 +17,10 @@ import { anwaelteCities } from './anwaelte-cities.js';
 import { steuerberaterCities } from './steuerberater-cities.js';
 import { fahrschulenCities } from './fahrschulen-cities.js';
 import { aerzteCities } from './aerzte-cities.js';
-import { hotelsCities } from './hotels-cities.js';
 import { reinigungCities } from './reinigung-cities.js';
+import { umzugCities } from './umzug-cities.js';
+import { galabauCities } from './galabau-cities.js';
+import { versicherungCities } from './versicherung-cities.js';
 
 export const niches = [
   {
@@ -182,16 +184,6 @@ export const niches = [
     cities: aerzteCities,
   },
   {
-    prefix: 'webseite-fuer-hotels',
-    label: 'Webseite für Hotels & Ferienwohnungen',
-    audience: 'Hotels, Pensionen & Ferienwohnungen',
-    hubHeading: 'Webseite für Hotels & Ferienwohnungen — in deiner Stadt',
-    hubLead:
-      'Websites für Gastgeber: Direktbuchungen statt Portal-Provision — dein Haus, deine Geschichte, deine Gäste. Wähl deine Stadt.',
-    icon: '🛎️',
-    cities: hotelsCities,
-  },
-  {
     prefix: 'webseite-fuer-gebaeudereinigung',
     label: 'Webseite für Gebäudereinigung',
     audience: 'Reinigungsunternehmen & Facility Services',
@@ -200,6 +192,36 @@ export const niches = [
       'Websites für Reinigungsbetriebe: Angebotsanfragen von Firmen und Hausverwaltungen, seriöser B2B-Auftritt, Personalgewinnung. Wähl deine Stadt.',
     icon: '🧽',
     cities: reinigungCities,
+  },
+  {
+    prefix: 'webseite-fuer-umzugsunternehmen',
+    label: 'Webseite für Umzugsunternehmen',
+    audience: 'Umzugsfirmen & Möbelspeditionen',
+    hubHeading: 'Webseite für Umzugsunternehmen — in deiner Stadt',
+    hubLead:
+      'Websites für Umzugsfirmen: Angebotsanfragen direkt von Kunden — ohne teure Portal-Leads, ohne Provision. Wähl deine Stadt.',
+    icon: '📦',
+    cities: umzugCities,
+  },
+  {
+    prefix: 'webseite-fuer-galabau',
+    label: 'Webseite für Garten- & Landschaftsbau',
+    audience: 'Galabau-Betriebe & Gartengestalter',
+    hubHeading: 'Webseite für Garten- & Landschaftsbau — in deiner Stadt',
+    hubLead:
+      'Websites für den Galabau: Projektgalerien, die Gartenträume verkaufen — plus Anfragen für Pflegeverträge. Wähl deine Stadt.',
+    icon: '🌿',
+    cities: galabauCities,
+  },
+  {
+    prefix: 'webseite-fuer-versicherungsmakler',
+    label: 'Webseite für Versicherungsmakler',
+    audience: 'Unabhängige Makler & Finanzberater',
+    hubHeading: 'Webseite für Versicherungsmakler — in deiner Stadt',
+    hubLead:
+      'Websites für Makler: Unabhängigkeit sichtbar machen, Erstgespräche gewinnen — gegen Portale und Strukturvertriebe. Wähl deine Stadt.',
+    icon: '🛡️',
+    cities: versicherungCities,
   },
 ];
 
