@@ -83,7 +83,24 @@
       answers.name = name;
       answers.email = email;
       answers.telefon = telefon;
-      answers.quelle = 'kmu-webseiten.de';
+      /* Herkunft: in Base.astro gemerkte Kampagnen-Parameter (sessionStorage) mitsenden */
+      var utm = {};
+      try { utm = JSON.parse(sessionStorage.getItem('kmu_utm') || '{}'); } catch (e) {}
+      answers.utmSource = utm.utm_source || '';
+      answers.utmMedium = utm.utm_medium || '';
+      answers.utmCampaign = utm.utm_campaign || '';
+      answers.utmTerm = utm.utm_term || '';
+      answers.utmContent = utm.utm_content || '';
+      answers.landingpage = utm.landing || '';
+      if (utm.utm_source) {
+        answers.quelle = 'Anzeige: ' + utm.utm_source +
+          (utm.utm_medium ? ' / ' + utm.utm_medium : '') +
+          (utm.utm_campaign ? ' / Kampagne "' + utm.utm_campaign + '"' : '');
+      } else if (utm.ref) {
+        answers.quelle = 'Verweis: ' + utm.ref;
+      } else {
+        answers.quelle = 'Direkt oder Google (unbezahlt)';
+      }
       var WEBHOOK = window.KMU_WEBHOOK_URL || '';
       if (WEBHOOK) {
         /* form-urlencoded = "simple request": kein CORS-Preflight, funktioniert

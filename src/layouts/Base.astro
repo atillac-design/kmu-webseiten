@@ -26,6 +26,34 @@ const onboardingWebhook = import.meta.env.PUBLIC_ONBOARDING_WEBHOOK_URL || DEFAU
     <link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href={css} />
     <script is:inline define:vars={{ webhook, onboardingWebhook }}>window.KMU_WEBHOOK_URL = webhook; window.KMU_ONBOARDING_WEBHOOK_URL = onboardingWebhook;</script>
+    <script is:inline>
+      /* Herkunftsmessung ohne Cookies: Kampagnen-Parameter (utm_*) aus dem
+         Anzeigen-Link merken wir uns nur für die laufende Sitzung (sessionStorage,
+         wird beim Schließen des Tabs gelöscht) — damit sie das Formular auf der
+         Startseite noch kennt, auch wenn der Besucher auf einer Unterseite landet. */
+      (function () {
+        try {
+          var q = new URLSearchParams(location.search);
+          var utm = {}, has = false;
+          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (k) {
+            var v = q.get(k);
+            if (v) { utm[k] = v.slice(0, 120); has = true; }
+          });
+          /* Auto-Kennungen der Plattformen als Fallback, falls utm_* fehlt */
+          if (!utm.utm_source && q.get('gclid')) { utm.utm_source = 'google'; utm.utm_medium = utm.utm_medium || 'cpc'; has = true; }
+          if (!utm.utm_source && q.get('fbclid')) { utm.utm_source = 'meta'; utm.utm_medium = utm.utm_medium || 'paid'; has = true; }
+          if (has) {
+            utm.landing = location.pathname;
+            sessionStorage.setItem('kmu_utm', JSON.stringify(utm));
+          } else if (!sessionStorage.getItem('kmu_utm') && document.referrer) {
+            var ref = new URL(document.referrer);
+            if (ref.hostname && ref.hostname !== location.hostname) {
+              sessionStorage.setItem('kmu_utm', JSON.stringify({ ref: ref.hostname, landing: location.pathname }));
+            }
+          }
+        } catch (e) { /* ohne Herkunft weiter — Formular funktioniert trotzdem */ }
+      })();
+    </script>
     <slot name="head" />
   </head>
   <body>
