@@ -82,7 +82,7 @@ WÜNSCHE
 
 ---
 Nächster Schritt: Website bauen 🛠
-Logo/Fotos kommen ggf. per WhatsApp (+49 178 5282464).
+Logo/Fotos kommen ggf. per WhatsApp (+49 176 22088079).
 ```
 
 ## Test-Payload (führt Claude aus, sobald die URL da ist)

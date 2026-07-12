@@ -66,7 +66,7 @@ Demo ansehen: `https://kmu-webseiten.de/entwurf/demo-malerbetrieb/`
 > „Ja, so soll meine Website werden" — der Rest dauert 5 Minuten.
 >
 > **Du willst etwas anders haben?** Antworte auf diese E-Mail oder schreib
-> mir per WhatsApp (+49 178 5282464) — Änderungen am Entwurf sind kostenlos.
+> mir per WhatsApp (+49 176 22088079) — Änderungen am Entwurf sind kostenlos.
 >
 > Und falls nicht: auch okay. Der Entwurf ist unverbindlich, es entstehen
 > keine Kosten und du hörst von uns nur, wenn du das willst.
