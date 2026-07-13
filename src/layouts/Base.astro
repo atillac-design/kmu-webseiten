@@ -8,6 +8,9 @@ const webhook = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL || DEFAULT_WEBHOOK;
 // Onboarding-Formular (Kunden nach Zusage): eigener Make-Webhook (Szenario „KMU Onboarding").
 const DEFAULT_ONBOARDING_WEBHOOK = 'https://hook.eu2.make.com/miu7jywnrhp1wkjth4194x28aq47yxmj';
 const onboardingWebhook = import.meta.env.PUBLIC_ONBOARDING_WEBHOOK_URL || DEFAULT_ONBOARDING_WEBHOOK;
+// Meta-Pixel (Datensatz „KMU-Webseiten"). Feuert NUR nach aktiver Einwilligung
+// über den Consent-Banner (DSGVO/TDDDG). Zum Wechseln hier die ID tauschen.
+const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '881376747898001';
 ---
 <!doctype html>
 <html lang="de">
@@ -25,7 +28,27 @@ const onboardingWebhook = import.meta.env.PUBLIC_ONBOARDING_WEBHOOK_URL || DEFAU
     <link rel="icon" href="/img/logo.png" />
     <link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href={css} />
-    <script is:inline define:vars={{ webhook, onboardingWebhook }}>window.KMU_WEBHOOK_URL = webhook; window.KMU_ONBOARDING_WEBHOOK_URL = onboardingWebhook;</script>
+    <style>
+      #kmu-consent{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:none;
+        padding:1rem;background:#12141a;color:#f4f5f7;box-shadow:0 -8px 30px rgba(0,0,0,.28);
+        font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+      #kmu-consent.show{display:block}
+      #kmu-consent .kc-in{max-width:1000px;margin:0 auto;display:flex;gap:1rem 1.4rem;
+        align-items:center;flex-wrap:wrap;justify-content:space-between}
+      #kmu-consent p{margin:0;font-size:.9rem;line-height:1.5;flex:1 1 340px;color:#d4d7de}
+      #kmu-consent p strong{color:#fff}
+      #kmu-consent a{color:#8ab4ff;text-decoration:underline}
+      #kmu-consent .kc-btns{display:flex;gap:.6rem;flex:0 0 auto}
+      #kmu-consent button{cursor:pointer;border:0;border-radius:8px;padding:.7rem 1.3rem;
+        font-size:.9rem;font-weight:600;font-family:inherit}
+      #kmu-consent .kc-no{background:#2c2f38;color:#f4f5f7}
+      #kmu-consent .kc-yes{background:#2f6bff;color:#fff}
+      #kmu-consent .kc-no:hover{background:#3a3e49}
+      #kmu-consent .kc-yes:hover{background:#1f57e6}
+      @media(max-width:640px){#kmu-consent .kc-in{flex-direction:column;align-items:stretch}
+        #kmu-consent .kc-btns{justify-content:stretch}#kmu-consent .kc-btns button{flex:1}}
+    </style>
+    <script is:inline define:vars={{ webhook, onboardingWebhook, pixelId }}>window.KMU_WEBHOOK_URL = webhook; window.KMU_ONBOARDING_WEBHOOK_URL = onboardingWebhook; window.KMU_PIXEL_ID = pixelId;</script>
     <script is:inline>
       /* Herkunftsmessung ohne Cookies: Kampagnen-Parameter (utm_*) aus dem
          Anzeigen-Link merken wir uns nur für die laufende Sitzung (sessionStorage,
@@ -58,5 +81,52 @@ const onboardingWebhook = import.meta.env.PUBLIC_ONBOARDING_WEBHOOK_URL || DEFAU
   </head>
   <body>
     <slot />
+
+    <!-- Cookie-Consent-Banner: Meta-Pixel lädt NUR nach aktivem „Akzeptieren" (DSGVO/TDDDG) -->
+    <div id="kmu-consent" role="dialog" aria-label="Cookie-Hinweis">
+      <div class="kc-in">
+        <p>
+          <strong>Cookies für Marketing.</strong> Wir nutzen den Meta-Pixel, um unsere Werbung
+          zu verbessern — nur mit deiner Einwilligung. Technisch notwendige Funktionen brauchen
+          keine Zustimmung. Mehr in der <a href="/datenschutz/">Datenschutzerklärung</a>.
+        </p>
+        <div class="kc-btns">
+          <button type="button" class="kc-no" id="kmuDeny">Ablehnen</button>
+          <button type="button" class="kc-yes" id="kmuAllow">Akzeptieren</button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function () {
+        var KEY = 'kmu_consent';
+        var banner = document.getElementById('kmu-consent');
+        function loadPixel() {
+          if (window.fbq || !window.KMU_PIXEL_ID) return;
+          !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,
+            'script','https://connect.facebook.net/en_US/fbevents.js');
+          window.fbq('init', window.KMU_PIXEL_ID);
+          window.fbq('track', 'PageView');
+        }
+        function store(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+        function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+        var choice = get();
+        if (choice === 'granted') { window.KMU_CONSENT = true; loadPixel(); return; }
+        if (choice === 'denied')  { window.KMU_CONSENT = false; return; }
+        // Noch keine Wahl → Banner zeigen
+        if (banner) {
+          banner.classList.add('show');
+          document.getElementById('kmuAllow').addEventListener('click', function () {
+            store('granted'); window.KMU_CONSENT = true; banner.classList.remove('show'); loadPixel();
+          });
+          document.getElementById('kmuDeny').addEventListener('click', function () {
+            store('denied'); window.KMU_CONSENT = false; banner.classList.remove('show');
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

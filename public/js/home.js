@@ -111,6 +111,8 @@
       } else {
         console.log('Lead (Demo-Modus, kein Webhook konfiguriert):', answers);
       }
+      /* Meta-Pixel „Lead": nur vorhanden, wenn der Besucher eingewilligt hat (fbq geladen) */
+      if (window.fbq) { try { window.fbq('track', 'Lead'); } catch (e) {} }
       show(5);
     });
 
