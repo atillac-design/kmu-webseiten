@@ -42,7 +42,13 @@ Anzeigen-Link-Beispiel: `https://kmu-webseiten.de/?utm_source=meta&utm_campaign=
 - Neue Formularfelder erscheinen im E-Mail-Mapping erst, nachdem der Webhook einen
   Payload mit diesen Feldern gesehen hat („Redetermine data structure" bzw. Testschuss).
 
-## Zustellbarkeit (empfohlen)
+## Zustellbarkeit (Stand: eingerichtet)
 
-Damit die Bestätigungs-Mails dauerhaft im Posteingang landen (nicht im Spam):
-für `kmu-webseiten.de` bei IONOS **SPF** und **DKIM** einrichten.
+DNS für `kmu-webseiten.de` liegt bei **Cloudflare** (Nameserver), Mail über **IONOS** (MX).
+- **SPF** ✓ gesetzt: `v=spf1 include:_spf-eu.ionos.com ~all`
+- **DMARC** ✓ gesetzt (Cloudflare, TXT `_dmarc`): `v=DMARC1; p=none; rua=mailto:kontakt@kmu-webseiten.de`
+  (Ein alter IONOS-`_dmarc`-CNAME → dmarc.ionos.de wurde entfernt, da er mit dem TXT kollidierte.)
+- **DKIM** bewusst ausgelassen: Bei „Mail Basic" + externen Nameservern (Cloudflare) bietet IONOS
+  keine saubere DKIM-Einrichtung. SPF + DMARC genügen für das Mailvolumen. Falls später
+  gewünscht: Bestätigungs-Mails über einen Dienst mit Domain-Authentifizierung senden
+  (liefert fertige DKIM-Einträge für Cloudflare) oder DKIM-Record über IONOS-Support anfordern.
