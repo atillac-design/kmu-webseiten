@@ -34,11 +34,27 @@ Honeypot-Feld: `firmenfax` (bei Befüllung wird nicht gesendet).
 
 Anzeigen-Link-Beispiel: `https://kmu-webseiten.de/?utm_source=meta&utm_campaign=handwerker-koblenz`
 
+## Schutz-Filter gegen leere Bot-Pings (WICHTIG)
+
+Die Webhook-URL ist öffentlich (steckt im Browser-JS). Bots im Netz schicken **leere POSTs**
+direkt an den Webhook (ohne das Formular zu nutzen). Ein leerer Datensatz brachte früher das
+**MailerLite-Modul** zum Absturz („Missing value of required parameter 'email'") → Make
+**deaktivierte das ganze Szenario** → echte Anfragen gingen verloren.
+
+**Lösung (eingebaut):** Direkt hinter dem Webhook sitzt ein **Filter** auf der Verbindung
+Webhook → erstes E-Mail-Modul:
+- Label: `Nur echte Anfragen`
+- Bedingung: **`email`** (aus Webhook) **Contains** `@`
+
+→ Nur Anfragen mit echter E-Mail laufen durch; leere Bot-Pings werden still verworfen.
+Getestet: gefüllte Anfrage kommt an, leerer Ping erzeugt keine Mail und keinen Absturz.
+
 ## Wartung / Fehlerbehebung
 
-- Wird das Szenario durch einen fehlerhaften Datensatz **deaktiviert** („Validation failed"),
+- Sollte das Szenario doch mal **deaktiviert** werden („Validation failed"),
   in der Queue mit **„Delete old data"** aufräumen, dann wieder aktivieren (Schedule
-  „Immediately"). Danach mit einem sauberen Test-Payload prüfen.
+  „Immediately"). Danach mit einem sauberen Test-Payload prüfen. Prüfen, dass der
+  o. g. Filter noch aktiv ist.
 - Neue Formularfelder erscheinen im E-Mail-Mapping erst, nachdem der Webhook einen
   Payload mit diesen Feldern gesehen hat („Redetermine data structure" bzw. Testschuss).
 
