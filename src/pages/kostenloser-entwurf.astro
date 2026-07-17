@@ -1,0 +1,227 @@
+---
+import Base from '../layouts/Base.astro';
+// Werbe-Landingpage für bezahlten Traffic (Meta Ads):
+// – Optik & Botschaft matchen die Anzeige (dunkel, blau, „kostenlos in 48h")
+// – Formular sofort sichtbar, keine Navigation, keine Ausgänge außer Pflicht-Links
+// – noindex: organischer Traffic läuft weiter über die Startseite
+---
+<Base
+  title="Kostenloser Website-Entwurf in 48h | KMU-Webseiten.de"
+  description="Sichere dir deinen kostenlosen Website-Entwurf: in 48 Stunden fertig, 0 € Startkosten, ab 99 €/Monat. Erst sehen, dann entscheiden."
+  css="/css/home.css"
+  noindex={true}
+>
+  <style is:inline slot="head">
+    /* LP-eigene Styles – aufbauend auf home.css (Variablen, .btn, .form-card …) */
+    .lp-top { display:flex; align-items:center; justify-content:space-between;
+      padding: 0.85rem 1.1rem; background: var(--hero-bg); }
+    .lp-top img { height: 30px; display:block; }
+    .lp-top .lp-badge { font-size: 0.74rem; font-weight: 650; color: #9fe0bd;
+      border: 1px solid rgba(23,165,108,0.45); border-radius: 999px; padding: 0.32rem 0.7rem;
+      white-space: nowrap; }
+    .lp-hero { background: var(--hero-bg); color: var(--hero-text);
+      padding: 1.1rem 1.1rem 4.6rem; text-align: left; position: relative; overflow: hidden; }
+    .lp-hero::before { content:""; position:absolute; inset:0; pointer-events:none;
+      background-image: linear-gradient(rgba(103,140,255,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(103,140,255,0.07) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(120% 100% at 50% 0%, #000 40%, transparent 90%); }
+    .lp-hero h1 { font-family: "Bricolage", sans-serif; font-weight: 800;
+      font-size: clamp(1.55rem, 5.4vw, 2.5rem); line-height: 1.08; letter-spacing: -0.02em;
+      margin: 0; position: relative; }
+    .lp-hero h1 em { font-style: normal;
+      background: linear-gradient(100deg, #6E93FF, #9CB7FF);
+      -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lp-hero .lp-sub { color: var(--hero-muted); font-size: 0.95rem; line-height: 1.5;
+      margin: 0.6rem 0 0; position: relative; }
+    .lp-hero .lp-sub b { color: var(--hero-text); font-weight: 650; }
+    .lp-formwrap { max-width: 640px; margin: -3.6rem auto 0; padding: 0 1.1rem 1.4rem;
+      position: relative; z-index: 2; }
+    .lp-trust { display:flex; flex-wrap:wrap; gap: 0.45rem 1.1rem; justify-content:center;
+      padding: 0.2rem 1.1rem 0.4rem; }
+    .lp-trust span { font-size: 0.8rem; color: var(--muted); }
+    .lp-trust b { color: var(--ok); font-weight: 700; }
+    .lp-sec { max-width: 640px; margin: 0 auto; padding: 1.6rem 1.1rem 0; }
+    .lp-sec h2 { font-family:"Bricolage",sans-serif; font-size: 1.25rem; letter-spacing:-0.01em;
+      margin: 0 0 0.75rem; }
+    .lp-steps { display:grid; gap: 0.6rem; }
+    .lp-step { display:flex; gap: 0.75rem; align-items:flex-start; background: var(--card);
+      border: 1px solid var(--line); border-radius: 12px; padding: 0.8rem 0.95rem; }
+    .lp-step .n { flex:none; width: 26px; height: 26px; border-radius: 50%;
+      background: var(--accent-soft); color: var(--accent-deep); font-weight: 800;
+      font-size: 0.82rem; display:flex; align-items:center; justify-content:center; }
+    .lp-step strong { display:block; font-size: 0.92rem; margin-bottom: 0.1rem; }
+    .lp-step p { margin:0; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+    .lp-why { background: var(--accent-soft); border-radius: 14px; padding: 1rem 1.1rem; }
+    .lp-why h2 { margin-bottom: 0.45rem; }
+    .lp-why p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.55; color: var(--text); }
+    .lp-why p:last-child { margin-bottom: 0; }
+    .lp-quotes { display:grid; gap: 0.7rem; }
+    .lp-quote { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      padding: 0.9rem 1rem; }
+    .lp-quote p { margin: 0 0 0.5rem; font-size: 0.88rem; line-height: 1.5; }
+    .lp-quote footer { font-size: 0.78rem; color: var(--muted); font-weight: 650; }
+    .lp-cta2 { text-align:center; padding: 1.7rem 1.1rem 0.6rem; }
+    .lp-cta2 .btn { width: 100%; max-width: 420px; justify-content: center; }
+    footer.lp-foot { text-align:center; padding: 1.6rem 1.1rem 2rem; font-size: 0.76rem;
+      color: var(--muted); }
+    footer.lp-foot a { color: var(--muted); margin: 0 0.5rem; }
+    @media (min-width: 700px) {
+      .lp-top { padding: 1rem 2rem; }
+      .lp-hero { text-align: center; padding-top: 1.6rem; }
+      .lp-hero .lp-sub { margin-left:auto; margin-right:auto; max-width: 560px; }
+    }
+  </style>
+
+  <!-- Mini-Topbar: Logo + Vertrauens-Badge, bewusst OHNE Navigation -->
+  <div class="lp-top">
+    <img src="/img/logo.png" alt="KMU-Webseiten.de" />
+    <span class="lp-badge">✓ 100 % kostenlos &amp; unverbindlich</span>
+  </div>
+
+  <!-- Kompakter Hero: matcht die Anzeige (Botschaft + Look) -->
+  <section class="lp-hero">
+    <h1>Deine neue Website — <em>kostenlos entworfen</em> in 48&nbsp;Stunden.</h1>
+    <p class="lp-sub">Erst siehst du den fertigen Entwurf, dann entscheidest du.
+      <b>0&nbsp;€ Startkosten, ab 99&nbsp;€/Monat</b> — Pflege inklusive.</p>
+  </section>
+
+  <!-- FORMULAR: sofort sichtbar, identische IDs wie Startseite → home.js funktioniert -->
+  <div class="lp-formwrap">
+    <div class="form-card">
+      <div class="form-head">
+        <strong>Los geht's</strong>
+        <span class="step-count" id="stepCount">Schritt 1 von 4 · unter 60 Sekunden</span>
+      </div>
+      <div class="progress"><i id="progressBar"></i></div>
+
+      <form id="leadForm" novalidate>
+        <div class="form-step active" data-step="1">
+          <h3>Was machst du?</h3>
+          <p class="hint">Wähl deine Branche — der Rest dauert keine Minute.</p>
+          <div class="choices">
+            <button type="button" class="choice" data-answer="Handwerk &amp; Bau">Handwerk &amp; Bau</button>
+            <button type="button" class="choice" data-answer="Coaching &amp; Beratung">Coaching &amp; Beratung</button>
+            <button type="button" class="choice" data-answer="Therapie &amp; Gesundheit">Therapie &amp; Gesundheit</button>
+            <button type="button" class="choice" data-answer="Beauty &amp; Kosmetik">Beauty &amp; Kosmetik</button>
+            <button type="button" class="choice" data-answer="Gastronomie">Gastronomie</button>
+            <button type="button" class="choice" data-answer="Etwas anderes">Etwas anderes</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2">
+          <h3>Hast du schon eine Website?</h3>
+          <p class="hint">Wir holen dich da ab, wo du stehst.</p>
+          <div class="choices">
+            <button type="button" class="choice wide" data-answer="Noch keine Website" data-advance="1">Noch keine Website</button>
+            <button type="button" class="choice wide" data-answer="Veraltet / unzufrieden" data-url="1">Ja — veraltet oder unzufrieden</button>
+            <button type="button" class="choice wide" data-answer="Läuft, soll besser werden" data-url="1">Ja — läuft, soll besser werden</button>
+          </div>
+          <div class="reveal" id="urlReveal">
+            <label class="field"><span>Adresse deiner Website</span>
+              <input type="url" name="website" placeholder="z. B. meinbetrieb.de" autocomplete="url">
+            </label>
+            <div style="text-align:right"><button type="button" class="btn" id="next2">Weiter <span class="arr">→</span></button></div>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3">
+          <h3>Dein Betrieb &amp; deine Stadt</h3>
+          <p class="hint">Für einen Entwurf mit lokaler Relevanz — den Rest recherchieren wir.</p>
+          <label class="field"><span>Name deines Betriebs *</span>
+            <input type="text" name="firma" autocomplete="organization" placeholder="z. B. Malerbetrieb Schmidt" required>
+          </label>
+          <label class="field"><span>Stadt *</span>
+            <input type="text" name="ort" autocomplete="address-level2" placeholder="z. B. Koblenz" required>
+          </label>
+          <p class="form-error" id="err3">Bitte gib deinen Betrieb und deine Stadt an.</p>
+          <div style="text-align:right"><button type="button" class="btn" id="next3">Weiter <span class="arr">→</span></button></div>
+        </div>
+
+        <div class="form-step" data-step="4">
+          <h3>Fast geschafft — wohin dürfen wir deinen Entwurf schicken?</h3>
+          <p class="hint">In 48 Stunden hast du ihn im Postfach.</p>
+          <label class="field"><span>Name *</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Vor- und Nachname" required>
+          </label>
+          <label class="field"><span>E-Mail *</span>
+            <input type="email" name="email" autocomplete="email" placeholder="name@firma.de" required>
+          </label>
+          <label class="field"><span>Telefon *</span>
+            <input type="tel" name="telefon" autocomplete="tel" placeholder="0151 23456789" required>
+          </label>
+          <label class="hp" aria-hidden="true">Bitte dieses Feld leer lassen <input type="text" name="firmenfax" tabindex="-1" autocomplete="off"></label>
+          <label class="consent">
+            <input type="checkbox" name="datenschutz" required>
+            <span>Ich bin mit der Verarbeitung meiner Angaben zur Kontaktaufnahme einverstanden (<a href="/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>). *</span>
+          </label>
+          <p class="form-error" id="err4">Bitte fülle Name, E-Mail und Telefon aus und bestätige den Datenschutz-Hinweis.</p>
+          <div style="text-align:right; margin-top: 1rem"><button type="submit" class="btn">Kostenlosen Entwurf anfordern <span class="arr">→</span></button></div>
+          <p class="fineprint">Du bekommst innerhalb von 48&nbsp;h einen echten Entwurf. Kostenlos, unverbindlich. Keine Werbung, keine Weitergabe deiner Daten.</p>
+        </div>
+
+        <div class="form-step" data-step="5">
+          <div class="success">
+            <div class="mark">✓</div>
+            <h3>Danke! Dein Entwurf ist unterwegs.</h3>
+            <p class="hint" style="margin-top:0.5rem">Wir melden uns innerhalb von 48 Stunden mit deinem persönlichen Entwurf — kostenlos und unverbindlich.</p>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="back" id="backBtn">← Zurück</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="lp-trust">
+    <span><b>✓</b> Kein Verkaufsgespräch</span>
+    <span><b>✓</b> 0 € Startkosten</span>
+    <span><b>✓</b> Antwort in 48 h</span>
+  </div>
+
+  <!-- So funktioniert's -->
+  <section class="lp-sec">
+    <h2>So einfach geht's:</h2>
+    <div class="lp-steps">
+      <div class="lp-step"><span class="n">1</span><div><strong>60 Sekunden Formular</strong><p>Branche, Betrieb, Stadt — mehr brauchen wir nicht.</p></div></div>
+      <div class="lp-step"><span class="n">2</span><div><strong>Fertiger Entwurf in 48 h</strong><p>Du siehst deine neue Website als echten, individuellen Entwurf. Kostenlos.</p></div></div>
+      <div class="lp-step"><span class="n">3</span><div><strong>Du entscheidest in Ruhe</strong><p>Gefällt er dir, geht's ab 99 €/Monat live. Wenn nicht, schuldest du uns nichts.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Einwände: Warum kostenlos / wo ist der Haken -->
+  <section class="lp-sec">
+    <div class="lp-why">
+      <h2>Warum kostenlos — wo ist der Haken?</h2>
+      <p>Es gibt keinen. Andere Agenturen wollen erst ein Beratungsgespräch — <b>wir liefern erst das Ergebnis.</b> Wir bauen deinen Entwurf auf eigenes Risiko, weil wir wissen: Wer ihn sieht, will ihn meistens haben.</p>
+      <p>Erst wenn du dich <b>danach</b> bewusst für ein Paket entscheidest, verdienen wir — mit festen Monatspreisen, in denen Hosting, Domain, Pflege und Änderungen schon drin sind. Keine Vorkasse, keine versteckten Kosten.</p>
+    </div>
+  </section>
+
+  <!-- Beweis -->
+  <section class="lp-sec">
+    <h2>Das sagen Betriebe, die es gemacht haben:</h2>
+    <div class="lp-quotes">
+      <div class="lp-quote">
+        <p>„Ich hab das Formular abends ausgefüllt — zwei Tage später hatte ich einen Entwurf, der besser aussah als alles, was mir Agenturen für 4.000 € angeboten haben."</p>
+        <footer>Dachdecker-Meisterbetrieb, Rheinland-Pfalz</footer>
+      </div>
+      <div class="lp-quote">
+        <p>„Endlich kümmert sich jemand dauerhaft. Neue Fotos, neue Preise — kurze WhatsApp und es ist online. Genau das hab ich gebraucht."</p>
+        <footer>Transport &amp; Logistik, Region Koblenz</footer>
+      </div>
+    </div>
+    <div class="lp-cta2">
+      <a class="btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </section>
+
+  <footer class="lp-foot">
+    Ein Angebot von Pixel56 · Bendorf ·
+    <a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/agb/">AGB</a>
+  </footer>
+
+  <script is:inline src="/js/home.js" defer></script>
+</Base>

@@ -30,23 +30,27 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '881376747898001';
     <link rel="stylesheet" href={css} />
     <style>
       #kmu-consent{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:none;
-        padding:1rem;background:#12141a;color:#f4f5f7;box-shadow:0 -8px 30px rgba(0,0,0,.28);
+        padding:.8rem 1rem;background:#12141a;color:#f4f5f7;box-shadow:0 -8px 30px rgba(0,0,0,.28);
         font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
       #kmu-consent.show{display:block}
-      #kmu-consent .kc-in{max-width:1000px;margin:0 auto;display:flex;gap:1rem 1.4rem;
+      #kmu-consent .kc-in{max-width:1000px;margin:0 auto;display:flex;gap:.8rem 1.4rem;
         align-items:center;flex-wrap:wrap;justify-content:space-between}
-      #kmu-consent p{margin:0;font-size:.9rem;line-height:1.5;flex:1 1 340px;color:#d4d7de}
+      #kmu-consent p{margin:0;font-size:.86rem;line-height:1.45;flex:1 1 300px;color:#d4d7de}
       #kmu-consent p strong{color:#fff}
       #kmu-consent a{color:#8ab4ff;text-decoration:underline}
       #kmu-consent .kc-btns{display:flex;gap:.6rem;flex:0 0 auto}
-      #kmu-consent button{cursor:pointer;border:0;border-radius:8px;padding:.7rem 1.3rem;
-        font-size:.9rem;font-weight:600;font-family:inherit}
+      #kmu-consent button{cursor:pointer;border:0;border-radius:8px;padding:.65rem 1.2rem;
+        font-size:.88rem;font-weight:600;font-family:inherit}
       #kmu-consent .kc-no{background:#2c2f38;color:#f4f5f7}
       #kmu-consent .kc-yes{background:#2f6bff;color:#fff}
       #kmu-consent .kc-no:hover{background:#3a3e49}
       #kmu-consent .kc-yes:hover{background:#1f57e6}
-      @media(max-width:640px){#kmu-consent .kc-in{flex-direction:column;align-items:stretch}
-        #kmu-consent .kc-btns{justify-content:stretch}#kmu-consent .kc-btns button{flex:1}}
+      @media(max-width:640px){
+        #kmu-consent{padding:.55rem .7rem}
+        #kmu-consent .kc-in{gap:.5rem}
+        #kmu-consent p{font-size:.74rem;line-height:1.35;flex:1 1 100%}
+        #kmu-consent .kc-btns{flex:1 1 100%;justify-content:stretch}
+        #kmu-consent .kc-btns button{flex:1;padding:.5rem .8rem;font-size:.8rem}}
     </style>
     <script is:inline define:vars={{ webhook, onboardingWebhook, pixelId }}>window.KMU_WEBHOOK_URL = webhook; window.KMU_ONBOARDING_WEBHOOK_URL = onboardingWebhook; window.KMU_PIXEL_ID = pixelId;</script>
     <script is:inline>
@@ -86,9 +90,8 @@ const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID || '881376747898001';
     <div id="kmu-consent" role="dialog" aria-label="Cookie-Hinweis">
       <div class="kc-in">
         <p>
-          <strong>Cookies für Marketing.</strong> Wir nutzen den Meta-Pixel, um unsere Werbung
-          zu verbessern — nur mit deiner Einwilligung. Technisch notwendige Funktionen brauchen
-          keine Zustimmung. Mehr in der <a href="/datenschutz/">Datenschutzerklärung</a>.
+          <strong>Cookies für Marketing.</strong> Wir nutzen den Meta-Pixel nur mit deiner
+          Einwilligung — Details in der <a href="/datenschutz/">Datenschutzerklärung</a>.
         </p>
         <div class="kc-btns">
           <button type="button" class="kc-no" id="kmuDeny">Ablehnen</button>
