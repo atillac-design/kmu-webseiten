@@ -28,8 +28,11 @@
 
     form.querySelectorAll('[data-step="1"] .choice').forEach(function (btn) {
       btn.addEventListener('click', function () {
+        form.querySelectorAll('[data-step="1"] .choice').forEach(function (b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
         answers.branche = btn.dataset.answer;
-        show(2);
+        /* kurzes visuelles Feedback der Auswahl, dann weiter */
+        setTimeout(function () { show(2); }, 220);
       });
     });
 
