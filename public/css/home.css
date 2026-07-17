@@ -142,9 +142,24 @@
 
   /* ---------- FORMULAR ---------- */
   .form-card {
-    background: var(--card); color: var(--text); border-radius: 18px;
-    box-shadow: var(--shadow-lg), var(--glow); border: 1px solid var(--line); padding: 28px 28px 26px;
+    background: var(--card); color: var(--text); border-radius: 18px; position: relative;
+    border: 1px solid transparent; padding: 34px 28px 26px;
+    box-shadow: var(--shadow-lg), 0 0 0 2px var(--accent), 0 0 55px rgba(37, 87, 232, 0.45);
+    animation: formGlow 3.2s ease-in-out infinite;
   }
+  .form-card::before {
+    content: "✓ 100 % kostenlos & unverbindlich";
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, #2557E8, #4470F4); color: #fff;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 999px; white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(37, 87, 232, 0.4);
+  }
+  @keyframes formGlow {
+    0%, 100% { box-shadow: var(--shadow-lg), 0 0 0 2px var(--accent), 0 0 38px rgba(37, 87, 232, 0.32); }
+    50% { box-shadow: var(--shadow-lg), 0 0 0 2px var(--accent), 0 0 70px rgba(37, 87, 232, 0.58); }
+  }
+  @media (prefers-reduced-motion: reduce) { .form-card { animation: none; } }
   .form-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.7rem; }
   .form-head strong { font-size: 0.98rem; font-family: "Bricolage", sans-serif; }
   .step-count { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
