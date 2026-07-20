@@ -80,7 +80,7 @@
       var honeypot = form.elements.firmenfax.value;
       var err = document.getElementById('err4');
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-      if (!name || !emailOk || !telefon || !consent) { err.classList.add('show'); return; }
+      if (!name || !emailOk || !consent) { err.classList.add('show'); return; }
       err.classList.remove('show');
       if (honeypot) { show(5); return; }
       answers.name = name;
