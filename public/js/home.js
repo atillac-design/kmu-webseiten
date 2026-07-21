@@ -163,4 +163,27 @@
       if (reduced) { el.textContent = el.dataset.to; return; }
       animateCount(el);
     });
+
+    /* Vorher/Nachher Zieh-Vergleich: Standard = beide Seiten, ziehen zoomt die jeweilige Seite voll ins Bild */
+    var vnc = document.getElementById('vnCompare');
+    if (vnc) {
+      var vncImg = vnc.querySelector('.vnc-img');
+      var vncDrag = false;
+      function vncApply(clientX) {
+        var r = vnc.getBoundingClientRect();
+        var rel = Math.min(Math.max((clientX - r.left) / r.width, 0), 1);
+        var scale = 1 + Math.abs(rel - 0.5) * 2; /* Mitte = 1 (beide), Rand = 2 (eine Seite voll) */
+        vncImg.style.transformOrigin = (rel * 100) + '% 50%';
+        vncImg.style.transform = 'scale(' + scale.toFixed(3) + ')';
+      }
+      vnc.addEventListener('pointerdown', function (e) {
+        vncDrag = true; vnc.classList.add('active');
+        try { vnc.setPointerCapture(e.pointerId); } catch (err) {}
+        vncApply(e.clientX);
+      });
+      vnc.addEventListener('pointermove', function (e) { if (vncDrag) vncApply(e.clientX); });
+      function vncEnd() { vncDrag = false; }
+      vnc.addEventListener('pointerup', vncEnd);
+      vnc.addEventListener('pointercancel', vncEnd);
+    }
   })();
