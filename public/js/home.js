@@ -89,6 +89,7 @@
       answers.name = name;
       answers.email = email;
       answers.telefon = telefon;
+      answers.wuensche = (form.elements.wuensche ? form.elements.wuensche.value.trim() : '');
       /* Herkunft: in Base.astro gemerkte Kampagnen-Parameter (sessionStorage) mitsenden */
       var utm = {};
       try { utm = JSON.parse(sessionStorage.getItem('kmu_utm') || '{}'); } catch (e) {}

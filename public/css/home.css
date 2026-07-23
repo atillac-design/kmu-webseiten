@@ -192,8 +192,8 @@
   .field { display: block; margin-bottom: 0.9rem; }
   .field span { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
   .field .opt { color: var(--muted); font-weight: 400; }
-  .field input { width: 100%; font: inherit; color: var(--text); padding: 0.72rem 0.85rem; border-radius: 12px; border: 1.5px solid var(--line); background: var(--paper); }
-  .field input:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+  .field input, .field textarea { width: 100%; font: inherit; color: var(--text); padding: 0.72rem 0.85rem; border-radius: 12px; border: 1.5px solid var(--line); background: var(--paper); resize: vertical; }
+  .field input:focus, .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
   .consent { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.83rem; color: var(--muted); margin: 0.9rem 0 0; cursor: pointer; }
   .consent input { width: 17px; height: 17px; margin-top: 3px; flex: none; accent-color: var(--accent); }
   .hp { position: absolute; left: -9999px; top: -9999px; }
