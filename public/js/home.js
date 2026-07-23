@@ -80,7 +80,10 @@
       var honeypot = form.elements.firmenfax.value;
       var err = document.getElementById('err4');
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-      if (!name || !emailOk || !consent) { err.classList.add('show'); return; }
+      /* Qualitäts-Filter: voller Name (Vor- + Nachname) und echte Telefonnummer */
+      var nameOk = name.trim().split(/\s+/).length >= 2;
+      var telOk = telefon.replace(/\D/g, '').length >= 6;
+      if (!nameOk || !emailOk || !telOk || !consent) { err.classList.add('show'); return; }
       err.classList.remove('show');
       if (honeypot) { show(5); return; }
       answers.name = name;
