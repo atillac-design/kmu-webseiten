@@ -99,4 +99,44 @@ export const beautyCities = [
     pain: 'Schwäbische Kundinnen vergleichen vor dem Termin — Preise, Bewertungen, Vorher-Nachher-Bilder. Ein Studio ohne überzeugende Website fällt in diesem Vergleich einfach durch.',
     searchTerms: ['Kosmetikstudio Stuttgart', 'Permanent Make-up Stuttgart', 'Nagelstudio Stuttgart'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Nirgendwo in Deutschland ist die Dichte an Kosmetik-, Nagel- und Beautystudios höher als in Berlin — und nirgendwo wird härter über Instagram und Google um Kundinnen gekämpft. Ein Studio ohne buchbare Website verliert hier täglich Termine an die Konkurrenz zwei Straßen weiter.',
+    pain: 'Berliner Kundinnen entscheiden spontan und buchen am liebsten sofort online — wer nur über DM-Anfragen auf Instagram erreichbar ist, verliert genau diese Laufkundschaft der Suche.',
+    searchTerms: ['Kosmetikstudio Berlin', 'Nagelstudio Berlin Prenzlauer Berg', 'Wimpernverlängerung Berlin'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzigs junge, wachsende Bevölkerung ist die perfekte Zielgruppe für Beauty-Dienstleistungen — von Kosmetik über Microblading bis Lashes. Die Nachfrage wächst schneller als das Angebot, aber gefunden wird nur, wer online sichtbar ist.',
+    pain: 'Viele Leipziger Studios sind über Wochen ausgebucht und glauben deshalb, keine Website zu brauchen — bis Preiserhöhungen, Umzug oder neue Konkurrenz zeigen, wie fragil reine Stammkundschaft ist.',
+    searchTerms: ['Kosmetikstudio Leipzig', 'Nagelstudio Leipzig Plagwitz', 'Microblading Leipzig'],
+  },
+  {
+    slug: 'dresden',
+    name: 'Dresden',
+    intro:
+      'Dresdens Beauty-Markt wächst stetig — und Kundinnen vergleichen hier besonders gründlich: Preise, Bewertungen, Vorher-Nachher-Bilder. Eine professionelle Website mit klarer Preisliste beantwortet all das, bevor die erste Nachricht kommt.',
+    pain: 'Ohne eigene Website hängt dein Studio komplett von Instagram und Mundpropaganda ab — beides erreicht in Dresden genau die Kundinnen nicht, die aktiv nach einem neuen Studio suchen.',
+    searchTerms: ['Kosmetikstudio Dresden', 'Nagelstudio Dresden Neustadt', 'Wimpernlifting Dresden'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Von der List bis Linden: Hannovers Beauty-Szene ist vielfältig, aber online erstaunlich schwach vertreten. Studios mit professionellem Auftritt und Online-Terminbuchung stechen hier sofort heraus.',
+    pain: 'Die meisten Studios in Hannover verlieren Neukundinnen nicht an bessere Konkurrenz — sondern an die, die bei Google einfach zuerst und seriöser erscheint.',
+    searchTerms: ['Kosmetikstudio Hannover', 'Nagelstudio Hannover List', 'Gesichtsbehandlung Hannover'],
+  },
+  {
+    slug: 'nuernberg',
+    name: 'Nürnberg',
+    intro:
+      'Ob Gostenhof oder Erlenstegen — in Nürnberg suchen Kundinnen täglich nach Kosmetik, Nails und Lashes. Der Markt ist groß genug für alle, aber die Termine bekommen die Studios, die online professionell und buchbar auftreten.',
+    pain: 'Viele Nürnberger Studios arbeiten fachlich auf Top-Niveau, wirken online aber wie Hobby-Angebote — und werden deshalb bei den Preisen gedrückt, die sie eigentlich verdienen.',
+    searchTerms: ['Kosmetikstudio Nürnberg', 'Nagelstudio Nürnberg Gostenhof', 'Wimpernverlängerung Nürnberg'],
+  },
 ];

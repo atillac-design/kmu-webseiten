@@ -99,4 +99,44 @@ export const kfzCities = [
     pain: 'Viele Siegener Werkstätten sind digital kaum präsent — wer als Erster im Stadtteil mit Online-Terminanfrage und klaren Leistungen auftritt, zieht die Neukunden der ganzen Umgebung.',
     searchTerms: ['KFZ Werkstatt Siegen', 'Autowerkstatt Siegen', 'Reifenwechsel Siegen'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Millionen Autos, tausende Werkstätten: In Berlin sucht jeden Tag eine kleine Stadt an Autofahrern nach „Werkstatt in meiner Nähe" — für TÜV, Inspektion, Reifen oder die Reparatur nach dem Parkrempler.',
+    pain: 'Berliner Autofahrer sind Werkstätten gegenüber misstrauisch — transparente Leistungen, echte Bewertungen und ein professioneller Auftritt entscheiden, wem sie ihren Wagen anvertrauen.',
+    searchTerms: ['KFZ Werkstatt Berlin', 'Autowerkstatt Berlin Neukölln', 'TÜV Berlin Termin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Von Harburg bis Barmbek: Hamburgs freie Werkstätten konkurrieren mit Vertragswerkstätten und Ketten — und gewinnen dort, wo sie online persönlicher, ehrlicher und erreichbarer wirken.',
+    pain: 'Ohne moderne Website landet deine Werkstatt in Hamburg hinter jeder Kette, die für Google optimiert — obwohl deine Arbeit besser und dein Preis fairer ist.',
+    searchTerms: ['Autowerkstatt Hamburg', 'KFZ Werkstatt Hamburg Harburg', 'Inspektion Hamburg günstig'],
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München fährt viel und gut — und erwartet auch von der Werkstatt Premium-Auftreten: Online-Terminanfrage, klare Leistungen, gepflegter Auftritt. Der erste Eindruck entsteht lange vor dem ersten Werkstattbesuch.',
+    pain: 'Münchner Kunden zahlen gute Preise, aber nur bei Werkstätten, denen sie vertrauen — und dieses Vertrauen entsteht heute zuerst auf deiner Website, nicht mehr am Empfangstresen.',
+    searchTerms: ['KFZ Werkstatt München', 'Autowerkstatt München Sendling', 'Bremsen wechseln München'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'In der Autostadt Stuttgart sitzen die anspruchsvollsten Autofahrer des Landes — viele schrauben-affin, alle vergleichsfreudig. Werkstätten mit klarem Online-Auftritt und ehrlicher Preisansage stechen sofort heraus.',
+    pain: 'Stuttgarter vergleichen Werkstätten wie Autos: Datenblatt gegen Datenblatt. Deine Website ist dein Datenblatt — fehlt sie, fällst du aus dem Vergleich.',
+    searchTerms: ['Autowerkstatt Stuttgart', 'KFZ Werkstatt Stuttgart Feuerbach', 'TÜV Stuttgart'],
+  },
+  {
+    slug: 'dortmund',
+    name: 'Dortmund',
+    intro:
+      'Dortmund und das Ruhrgebiet sind Autofahrer-Land: lange Pendelstrecken, viele ältere Fahrzeuge, ständiger Bedarf an Reparatur und Wartung. Ein stabiler Markt für jede Werkstatt, die gefunden wird.',
+    pain: 'Zwischen den vielen Werkstätten im Ruhrgebiet entscheidet meist die Google-Suche — wer dort ohne Website antritt, existiert nur für Stammkunden, und die werden weniger.',
+    searchTerms: ['Autowerkstatt Dortmund', 'KFZ Werkstatt Dortmund Hörde', 'Auto reparieren Dortmund'],
+  },
 ];

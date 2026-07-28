@@ -83,4 +83,44 @@ export const onepagerCities = [
     pain: 'Aber auch solide Information muss man finden können. Der Einseiter bringt Siegener Kleinbetriebe dorthin, wo ihre Kunden längst suchen — ohne Schnickschnack, mit allem Nötigen.',
     searchTerms: ['One-Pager erstellen lassen Siegen', 'Einseiter Siegen', 'kleine Website Siegen'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Für viele Berliner Selbstständige — vom Fotografen bis zur Beraterin — ist ein starker Onepager die perfekte Website: alles Wichtige auf einer Seite, schnell online, klar auf Anfragen ausgerichtet.',
+    pain: 'In Berlin zählt Tempo: Wer wochenlang auf ein Website-Projekt wartet, verliert Aufträge — ein professioneller Onepager ist in Tagen live und arbeitet ab Tag eins.',
+    searchTerms: ['Onepager erstellen lassen Berlin', 'One Page Website Berlin', 'einfache Website Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Hamburger Selbstständige und kleine Betriebe brauchen selten zehn Unterseiten — sie brauchen eine Seite, die ihr Angebot klar erklärt und Anfragen bringt. Genau das leistet ein gut gebauter Onepager.',
+    pain: 'Viele zahlen in Hamburg für aufgeblähte Websites, deren Unterseiten nie jemand besucht — ein fokussierter Onepager konvertiert oft besser und kostet weniger.',
+    searchTerms: ['Onepager erstellen lassen Hamburg', 'One Page Website Hamburg', 'kleine Website Hamburg'],
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'Ob Kanzlei-Auftritt, Praxis-Seite oder Berater-Profil: In München muss auch die kompakteste Website hochwertig wirken — ein Onepager im Baukasten-Look schadet hier mehr, als er nützt.',
+    pain: 'Münchner Kunden schließen von der Website direkt auf die Qualität der Leistung — ein professionell gestalteter Onepager gibt dir Premium-Wirkung ohne Premium-Projektkosten.',
+    searchTerms: ['Onepager erstellen lassen München', 'One Page Website München', 'Landingpage München'],
+  },
+  {
+    slug: 'frankfurt-am-main',
+    name: 'Frankfurt am Main',
+    intro:
+      'Frankfurt ist die Stadt der Selbstständigen mit vollen Kalendern: Berater, Coaches, Finanzprofis. Für sie ist ein Onepager ideal — minimale Abstimmung, maximale Wirkung, schnell live.',
+    pain: 'Wer in Frankfurt keine Zeit für ein Website-Projekt hat, hat meist auch keine Website — der Onepager löst genau dieses Henne-Ei-Problem: 60 Sekunden Formular, 48 Stunden Entwurf.',
+    searchTerms: ['Onepager erstellen lassen Frankfurt', 'One Page Website Frankfurt', 'schnelle Website Frankfurt'],
+  },
+  {
+    slug: 'duesseldorf',
+    name: 'Düsseldorf',
+    intro:
+      'Düsseldorfs Dienstleister leben vom ersten Eindruck — und oft reicht dafür genau eine perfekte Seite: Angebot, Referenzen, Kontakt. Ein Onepager, der aussieht wie Maßarbeit, nicht wie ein Template.',
+    pain: 'Zwischen Kö-Glanz und Agentur-Konkurrenz fällt in Düsseldorf jeder halbherzige Auftritt sofort auf — lieber ein exzellenter Onepager als fünf mittelmäßige Unterseiten.',
+    searchTerms: ['Onepager erstellen lassen Düsseldorf', 'One Page Website Düsseldorf', 'Website für Selbstständige Düsseldorf'],
+  },
 ];

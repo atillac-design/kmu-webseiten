@@ -99,4 +99,44 @@ export const immoCities = [
     pain: 'Wer diese besondere Marktlage auf seiner Website nicht sichtbar macht, überlässt die lukrativsten Mandate der Region den wenigen Kollegen, die es tun.',
     searchTerms: ['Immobilienmakler Trier', 'Haus verkaufen Trier', 'Immobilien Trier Luxemburg'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin ist der härteste Maklermarkt Deutschlands: tausende Makler, knappe Objekte — und Eigentümer, die sich sehr genau anschauen, wem sie ihr Verkaufsmandat geben. Deine Website ist dabei dein wichtigstes Bewerbungsschreiben.',
+    pain: 'In Berlin bekommt selten der Makler mit den meisten Kontakten das Mandat, sondern der, der beim Eigentümer-Check online am professionellsten wirkt — Alleinauftrag gibt es nur mit Vertrauen.',
+    searchTerms: ['Immobilienmakler Berlin', 'Makler Berlin Charlottenburg', 'Wohnung verkaufen Berlin'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig ist seit Jahren der Boom-Markt im Osten: sanierte Altbauten, Investoren aus ganz Deutschland und stark steigende Preise. Makler, die hier online überzeugend auftreten, profitieren doppelt — bei Eigentümern und bei überregionalen Käufern.',
+    pain: 'Viele Leipziger Eigentümer werden von Makler-Anfragen überhäuft — den Zuschlag bekommt, wer schon vor dem ersten Gespräch online Kompetenz und Marktkenntnis beweist.',
+    searchTerms: ['Immobilienmakler Leipzig', 'Makler Leipzig Südvorstadt', 'Haus verkaufen Leipzig'],
+  },
+  {
+    slug: 'dresden',
+    name: 'Dresden',
+    intro:
+      'Dresden verbindet stabile Nachfrage mit anspruchsvollen Verkäufern: Ob Gründerzeitvilla in Blasewitz oder Eigentumswohnung in der Neustadt — Eigentümer erwarten hier einen Makler, der ihr Objekt hochwertig präsentiert.',
+    pain: 'Wer als Makler in Dresden mit einer veralteten Website auftritt, verliert genau die hochwertigen Objekte, bei denen die Provision am attraktivsten ist.',
+    searchTerms: ['Immobilienmakler Dresden', 'Makler Dresden Blasewitz', 'Haus verkaufen Dresden'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Der Immobilienmarkt in Hannover ist sachlich und bodenständig — Eigentümer vergleichen in Ruhe, bevor sie einem Makler ihr Haus anvertrauen. Genau in dieser Vergleichsphase entscheidet dein Online-Auftritt.',
+    pain: 'Zwischen Kirchrode und Linden werben dutzende Makler um dieselben Objekte — ohne überzeugende Website landest du in der Vergleichsliste der Eigentümer ganz unten.',
+    searchTerms: ['Immobilienmakler Hannover', 'Makler Hannover Kirchrode', 'Wohnung verkaufen Hannover'],
+  },
+  {
+    slug: 'nuernberg',
+    name: 'Nürnberg',
+    intro:
+      'In der Metropolregion Nürnberg-Fürth-Erlangen ziehen Arbeitsplätze bei Industrie und Tech stetig neue Käufer an — und Eigentümer wissen, dass ihre Immobilie gefragt ist. Umso wählerischer sind sie beim Makler.',
+    pain: 'Nürnberger Eigentümer fragen sich vor der Mandatsvergabe vor allem eines: Kann dieser Makler mein Objekt professionell präsentieren? Deine eigene Website ist der Beweis — oder das Gegenteil.',
+    searchTerms: ['Immobilienmakler Nürnberg', 'Makler Nürnberg Erlenstegen', 'Haus verkaufen Nürnberg'],
+  },
 ];

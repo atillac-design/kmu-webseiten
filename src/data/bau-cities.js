@@ -116,4 +116,28 @@ export const bauCities = [
     pain: 'Bauherren und Projektentwickler in Hamburg prüfen Referenzen grundsätzlich online, bevor sie zur Ausschreibung einladen. Wer dort nicht professionell auftritt, steht auf keiner Liste.',
     searchTerms: ['Bauunternehmen Hamburg', 'Sanierung Hamburg', 'Rohbau Hamburg'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin ist Deutschlands größte Baustelle: Sanierung, Dachausbau, Neubau — die Nachfrage übersteigt das Angebot seit Jahren. Bauunternehmen mit professionellem Auftritt können sich Projekte und Preise aussuchen.',
+    pain: 'Berliner Bauherren vergeben sechsstellige Aufträge nicht an Firmen, die online unsichtbar sind — Referenzprojekte auf der Website sind heute die Grundvoraussetzung, um überhaupt angefragt zu werden.',
+    searchTerms: ['Bauunternehmen Berlin', 'Sanierung Berlin Altbau', 'Rohbau Berlin'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Hanglage, Nachverdichtung, energetische Sanierung: Bauen in Stuttgart ist anspruchsvoll — und Bauherren suchen gezielt nach Unternehmen, die diese Spezialitäten nachweislich beherrschen.',
+    pain: 'Wer in Stuttgart Hangbau oder Aufstockung kann, es online aber nicht zeigt, wird für genau diese margenstarken Spezialprojekte nie angefragt.',
+    searchTerms: ['Bauunternehmen Stuttgart', 'Sanierung Stuttgart', 'Aufstockung Stuttgart'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzigs Gründerzeitbestand wird Straße für Straße saniert, dazu wachsen ganze Neubauviertel — für Bauunternehmen ist die Stadt einer der attraktivsten Märkte Ostdeutschlands.',
+    pain: 'Viele Auftraggeber in Leipzig sind überregionale Investoren — sie finden und prüfen Baufirmen ausschließlich online. Ohne überzeugende Website existierst du für diesen Markt nicht.',
+    searchTerms: ['Bauunternehmen Leipzig', 'Altbausanierung Leipzig', 'Baufirma Leipzig'],
+  },
 ];

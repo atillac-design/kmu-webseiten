@@ -83,4 +83,44 @@ export const aerzteCities = [
     pain: 'Münchner Patienten erwarten von einer Praxis denselben digitalen Standard wie von jedem anderen Premium-Dienstleister: Online-Termin, klare Leistungsdarstellung, hochwertiger Auftritt. Alles darunter kostet Zulauf.',
     searchTerms: ['Hausarzt München', 'Privatpraxis München', 'Hautarzt München Schwabing'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'In Berlin suchen Patienten ihre Praxis fast ausschließlich online — ob neuer Hausarzt nach dem Umzug, Facharzt mit kurzer Wartezeit oder Privatpraxis. Wer hier keine moderne Praxis-Website hat, existiert für tausende Suchende schlicht nicht.',
+    pain: 'Berliner Praxen kämpfen weniger um Patienten als um die richtigen: Privatversicherte, Selbstzahler und planbare Termine erreichst du nur, wenn dein Online-Auftritt Vertrauen und Spezialisierung sofort sichtbar macht.',
+    searchTerms: ['Hausarzt Berlin Prenzlauer Berg', 'Facharzt Berlin Termin online', 'Privatpraxis Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Von Eppendorf bis Altona: Hamburgs Patienten sind anspruchsvoll und digital — Termin-Buchung, Praxis-Infos und erste Einschätzung der Praxis passieren online, lange vor dem ersten Besuch.',
+    pain: 'Viele Hamburger Praxen verstecken ihre Kompetenz hinter einer Website aus den 2010ern — und wundern sich, warum Neupatienten bei der moderner auftretenden Praxis nebenan landen.',
+    searchTerms: ['Hausarzt Hamburg Eppendorf', 'Zahnarzt Hamburg Altona', 'Praxis Hamburg online Termin'],
+  },
+  {
+    slug: 'frankfurt-am-main',
+    name: 'Frankfurt am Main',
+    intro:
+      'Frankfurt ist eine Pendler- und Zuzugsstadt — ständig suchen Menschen neu nach Hausarzt, Zahnarzt oder Facharzt in ihrer Nähe. Diese Suchen laufen zu über 90 Prozent über Google, nicht über Empfehlungen.',
+    pain: 'Wer in Frankfurt zuzieht, kennt keinen einzigen Arzt — die Praxis mit dem vertrauenswürdigsten Online-Auftritt gewinnt diese Patienten automatisch.',
+    searchTerms: ['Hausarzt Frankfurt Bockenheim', 'Zahnarzt Frankfurt Innenstadt', 'Facharzt Frankfurt am Main'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Stuttgarts Praxen sind voll — aber die Zusammensetzung entscheidet über Wirtschaftlichkeit: Selbstzahlerleistungen, Prophylaxe, Privatpatienten. Genau diese informieren sich vorab besonders gründlich online.',
+    pain: 'Ohne professionelle Website bleiben in Stuttgart vor allem die lukrativen Selbstzahler- und Privatleistungen unsichtbar, die deine Praxis wirtschaftlich stark machen.',
+    searchTerms: ['Hausarzt Stuttgart West', 'Zahnarzt Stuttgart Mitte', 'Privatpraxis Stuttgart'],
+  },
+  {
+    slug: 'duesseldorf',
+    name: 'Düsseldorf',
+    intro:
+      'Düsseldorf hat eine der höchsten Privatpatienten-Quoten Deutschlands — entsprechend hoch sind die Erwartungen an den Auftritt einer Praxis. Website, Bewertungen und Online-Termin gehören hier zum Standard.',
+    pain: 'In Düsseldorf vergleichen Patienten Praxen wie Dienstleister — eine veraltete oder fehlende Website wird direkt als Zeichen für veraltete Praxisführung gelesen.',
+    searchTerms: ['Hausarzt Düsseldorf Oberkassel', 'Zahnarzt Düsseldorf Termin', 'Facharzt Düsseldorf privat'],
+  },
 ];

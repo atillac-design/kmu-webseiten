@@ -124,4 +124,36 @@ export const gastroCities = [
     pain: 'Wer den Neuanfang nicht digital zeigt, wird noch mit alten Bildern oder Flutmeldungen gefunden. Eine aktuelle Website erzählt die neue Geschichte — und füllt die neuen Gasträume.',
     searchTerms: ['Restaurant Bad Neuenahr', 'Weinstube Ahrweiler', 'Restaurant Ahrtal'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin isst rund um die Uhr — aber die Stadt vergisst schnell: Tausende Restaurants kämpfen um Aufmerksamkeit, und wer bei „Restaurant in meiner Nähe" nicht mit Speisekarte, Fotos und Reservierung auftaucht, wird schlicht überscrollt.',
+    pain: 'Berliner Gäste entscheiden in Sekunden am Handy — veraltete Öffnungszeiten oder eine PDF-Speisekarte, die nicht lädt, schicken sie direkt zum Lokal nebenan.',
+    searchTerms: ['Restaurant Berlin Kreuzberg', 'Frühstück Berlin Mitte', 'Restaurant reservieren Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Vom Portugiesenviertel bis zur Schanze: Hamburgs Gastronomie lebt von Stammgästen UND von Touristen — und beide Gruppen finden ihr nächstes Lokal über Google Maps und die Website.',
+    pain: 'Touristen und Geschäftsreisende kennen deine Ecke nicht — sie vergleichen online Fotos, Karte und Bewertungen. Ohne starken Auftritt gehen diese Tische jeden Abend an andere.',
+    searchTerms: ['Restaurant Hamburg Schanze', 'Fischrestaurant Hamburg', 'Restaurant Hamburg reservieren'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Zwischen Maultaschen-Tradition und moderner Küche: Stuttgarts Gäste sind treu, wenn man sie einmal gewonnen hat — gewonnen werden sie heute aber online, nicht durch Zufallslaufkundschaft.',
+    pain: 'Stuttgarter reservieren gern im Voraus — wer keine einfache Online-Reservierung oder wenigstens klare Kontaktmöglichkeit bietet, verliert genau die planenden Gäste mit den größeren Gruppen.',
+    searchTerms: ['Restaurant Stuttgart Mitte', 'schwäbisches Restaurant Stuttgart', 'Mittagstisch Stuttgart'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzigs Gastro-Szene boomt mit der Stadt: neue Cafés in Plagwitz, Restaurants in der Südvorstadt, Bars im Zentrum — und ein junges Publikum, das jede Neueröffnung online entdeckt.',
+    pain: 'In Leipzig entscheidet Instagram über den Hype, aber Google über die dauerhafte Auslastung — wer nur auf Social Media setzt, ist nach dem Eröffnungs-Buzz schnell wieder leer.',
+    searchTerms: ['Restaurant Leipzig Südvorstadt', 'Café Leipzig Plagwitz', 'Restaurant Leipzig reservieren'],
+  },
 ];

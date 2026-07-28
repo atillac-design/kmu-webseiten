@@ -83,4 +83,44 @@ export const versicherungCities = [
     pain: 'Münchner vergleichen ihren Makler mit ihrer Privatbank. Ein Auftritt unter diesem Niveau kostet die besten Mandate — einer auf diesem Niveau macht aus einem Erstgespräch eine Kundenbeziehung über Jahrzehnte.',
     searchTerms: ['Versicherungsmakler München', 'private Krankenversicherung München', 'Finanzberater München'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Gründer, Freiberufler, junge Familien: Berlin ist voller Menschen, die gerade zum ersten Mal ernsthaft über Absicherung nachdenken — und ihren Makler online suchen, nicht im Bekanntenkreis.',
+    pain: 'Berliner Kunden misstrauen Versicherungsvertretern — ein unabhängiger Makler mit transparenter, moderner Website hebt sich genau an diesem Punkt ab und gewinnt die Beratungstermine.',
+    searchTerms: ['Versicherungsmakler Berlin', 'unabhängiger Versicherungsmakler Berlin', 'Berufsunfähigkeitsversicherung Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Hamburgs Mittelstand, Reeder-Tradition und Immobilienbesitzer brauchen Absicherung auf hohem Niveau — Gewerbeversicherung, Vermögensschutz, betriebliche Vorsorge. Mandate mit Substanz für Makler mit Auftritt.',
+    pain: 'Gerade Gewerbekunden in Hamburg prüfen vor dem Erstgespräch die Website des Maklers — wirkt sie veraltet, wird aus dem Termin nichts, egal wie gut deine Beratung wäre.',
+    searchTerms: ['Versicherungsmakler Hamburg', 'Gewerbeversicherung Hamburg', 'Versicherungsberater Hamburg'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Mit dem Wachstum Leipzigs wächst der Beratungsbedarf: Erste eigene Wohnung, Familiengründung, Selbstständigkeit — Lebensphasen, in denen Menschen aktiv nach unabhängiger Versicherungsberatung suchen.',
+    pain: 'Die junge Leipziger Zielgruppe schließt nichts mehr am Küchentisch ab — sie recherchiert online, vergleicht und bucht Beratungstermine digital. Ohne Website bist du für sie unsichtbar.',
+    searchTerms: ['Versicherungsmakler Leipzig', 'Versicherung Beratung Leipzig', 'BU Versicherung Leipzig'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Hannover ist Versicherungsstadt — mehrere Konzerne haben hier ihren Sitz. Paradox daran: Gerade hier suchen viele Kunden bewusst den unabhängigen Makler als Gegengewicht zu den Konzernen.',
+    pain: 'Als unabhängiger Makler in Hannover ist deine Website dein Unterscheidungsmerkmal Nummer eins — sie muss zeigen, dass du auf Kundenseite stehst, nicht im Konzernvertrieb.',
+    searchTerms: ['Versicherungsmakler Hannover', 'unabhängige Versicherungsberatung Hannover', 'Altersvorsorge Hannover'],
+  },
+  {
+    slug: 'nuernberg',
+    name: 'Nürnberg',
+    intro:
+      'Versicherungsstandort Nürnberg: Auch hier sitzen große Versicherer — und ein Mittelstand aus Industrie und Handwerk, der unabhängige Beratung für Betrieb und Belegschaft sucht.',
+    pain: 'Nürnberger Unternehmer wechseln den Makler selten — aber wenn, dann nach Online-Recherche. In diesem Moment entscheidet deine Website, ob du auf der Liste stehst.',
+    searchTerms: ['Versicherungsmakler Nürnberg', 'Gewerbeversicherung Nürnberg', 'Versicherungsmakler Mittelstand Nürnberg'],
+  },
 ];

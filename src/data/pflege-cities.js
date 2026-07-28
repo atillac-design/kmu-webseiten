@@ -100,4 +100,44 @@ export const pflegeCities = [
     pain: 'Gerade die jungen, gut ausgebildeten Kräfte aus Gießens Hochschulen wählen ihren Arbeitgeber online aus. Ein Pflegedienst ohne moderne Karriereseite existiert für diesen Nachwuchs nicht.',
     searchTerms: ['Pflegedienst Gießen', 'ambulante Pflege Gießen', 'Pflegedienst Gießen Jobs'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin hat den größten Pflegebedarf aller deutschen Städte — und Angehörige, die unter Zeitdruck online nach einem Pflegedienst suchen, dem sie vertrauen können. Deine Website ist oft der erste und einzige Eindruck vor dem Anruf.',
+    pain: 'Die Entscheidung für einen Pflegedienst treffen in Berlin meist die erwachsenen Kinder — digital-affin, kritisch und im Vergleichsmodus. Ein veralteter Auftritt kostet genau diese Anfragen.',
+    searchTerms: ['Pflegedienst Berlin', 'ambulante Pflege Berlin Pankow', 'Pflegedienst Berlin Kosten'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Auch in Hamburg gilt: Pflege wird gesucht, wenn es dringend ist — nach dem Krankenhausaufenthalt, nach der Diagnose. Angehörige googeln abends und kontaktieren die zwei, drei Dienste, die seriös und menschlich wirken.',
+    pain: 'Hamburger Pflegedienste konkurrieren weniger um Patienten als um Personal — und Pflegekräfte schauen sich ihren möglichen Arbeitgeber heute zuerst online an.',
+    searchTerms: ['Pflegedienst Hamburg', 'ambulante Pflege Hamburg Wandsbek', 'Pflegedienst Hamburg Jobs'],
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München altert wohlhabend — Familien sind bereit, für gute Pflege zu zahlen, erwarten dafür aber Professionalität in jedem Detail. Der Online-Auftritt deines Dienstes ist das erste Detail, das sie prüfen.',
+    pain: 'In München entscheidet oft der feine Unterschied: Zwei Pflegedienste mit gleicher Leistung — Anruf bekommt der, dessen Website Wärme UND Professionalität ausstrahlt.',
+    searchTerms: ['Pflegedienst München', 'ambulante Pflege München Schwabing', '24 Stunden Pflege München'],
+  },
+  {
+    slug: 'frankfurt-am-main',
+    name: 'Frankfurt am Main',
+    intro:
+      'Frankfurts internationale Bevölkerung sucht Pflege oft aus der Distanz: Kinder, die beruflich in aller Welt sind, organisieren die Versorgung der Eltern online — von der ersten Suche bis zum Vertrag.',
+    pain: 'Wenn Angehörige aus der Ferne entscheiden, zählt nur, was online sichtbar ist: Leistungen, Team, Erreichbarkeit. Ein Pflegedienst ohne starke Website findet bei diesen Familien nicht statt.',
+    searchTerms: ['Pflegedienst Frankfurt', 'ambulante Pflege Frankfurt Bornheim', 'Seniorenbetreuung Frankfurt'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Im Raum Stuttgart wächst der Pflegebedarf schneller als das Angebot — eigentlich beste Bedingungen. Doch sichtbar sind online vor allem die großen Träger, nicht die familiären Dienste mit der besseren Betreuung.',
+    pain: 'Kleine Stuttgarter Pflegedienste verlieren Anfragen an große Ketten, nur weil deren Google-Auftritt professioneller wirkt — nicht weil deren Pflege besser wäre.',
+    searchTerms: ['Pflegedienst Stuttgart', 'ambulante Pflege Stuttgart Bad Cannstatt', 'Pflegedienst Stuttgart privat'],
+  },
 ];

@@ -99,4 +99,36 @@ export const fotografenCities = [
     pain: 'Diese grenzüberschreitende Kundschaft findet Fotografen nur über Google und die Website. Ein reiner Instagram-Auftritt bleibt für sie unsichtbar — Portfolio-Websites gewinnen die Buchungen.',
     searchTerms: ['Hochzeitsfotograf Aachen', 'Fotograf Aachen', 'Businessfotos Aachen'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin ist Deutschlands größter Markt für Fotografie — Hochzeiten, Business-Porträts, Events, Content-Produktionen. Gleichzeitig ist die Konkurrenz riesig: Wer hier nur über Instagram sichtbar ist, konkurriert mit zehntausenden Accounts statt mit ein paar Dutzend Websites.',
+    pain: 'Berliner Auftraggeber — gerade Firmen und Agenturen — buchen selten über Instagram-DMs: Sie wollen Portfolio, Preise und Ablauf auf einer professionellen Website sehen, bevor sie anfragen.',
+    searchTerms: ['Hochzeitsfotograf Berlin', 'Businessfotograf Berlin Mitte', 'Fotograf Berlin Preise'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig zieht Kreative und junge Familien gleichermaßen an — ideal für Fotografen von Hochzeit bis Familienshooting. Die wachsende Stadt bedeutet jeden Monat neue Kundschaft, die noch keinen „Stammfotografen" hat.',
+    pain: 'Genau diese Neuzugezogenen finden ihren Fotografen über die Google-Suche — wer dort mit einem starken Portfolio auftaucht, gewinnt sie vor allen etablierten Kollegen.',
+    searchTerms: ['Fotograf Leipzig', 'Hochzeitsfotograf Leipzig', 'Familienshooting Leipzig'],
+  },
+  {
+    slug: 'dresden',
+    name: 'Dresden',
+    intro:
+      'Mit Elbschlössern, Altstadt und Heide gehört Dresden zu den beliebtesten Hochzeits- und Shooting-Kulissen im Osten — entsprechend gefragt sind Fotografen mit professionellem Auftritt.',
+    pain: 'Brautpaare vergleichen in Dresden oft fünf und mehr Fotografen — fast immer anhand der Websites. Ohne eigene Seite fliegst du aus diesem Vergleich, bevor er beginnt.',
+    searchTerms: ['Hochzeitsfotograf Dresden', 'Fotograf Dresden Neustadt', 'Paarshooting Dresden'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Messen, Unternehmen, Familien: Hannover bietet Fotografen ein breites, stabiles Auftragsspektrum — von Businessporträts für LinkedIn bis zur Messefotografie für Aussteller.',
+    pain: 'Firmenkunden in Hannover beauftragen fast nie über Social Media — sie googeln, vergleichen Websites und rufen dann genau einen Fotografen an. Die Frage ist, ob dich.',
+    searchTerms: ['Fotograf Hannover', 'Businessfotograf Hannover', 'Messefotograf Hannover'],
+  },
 ];

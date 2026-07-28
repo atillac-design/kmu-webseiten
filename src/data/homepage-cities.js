@@ -83,4 +83,44 @@ export const homepageCities = [
     pain: 'Münchner Kunden schließen von der Homepage auf den Betrieb: veraltet gleich nachlässig, professionell gleich vertrauenswürdig. Diese Rechnung geht jeden Tag auf — in die eine oder andere Richtung.',
     searchTerms: ['Homepage erstellen lassen München', 'Homepage München', 'Homepage Firma München'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Ob Kiezladen, Agentur oder Handwerksbetrieb: In Berlin gründen und arbeiten mehr kleine Unternehmen als irgendwo sonst in Deutschland — und jedes davon braucht eine Homepage, die gefunden wird und überzeugt.',
+    pain: 'Die Berliner Konkurrenz ist immer nur einen Klick entfernt — eine Homepage von der Stange oder aus dem Baukasten reicht hier nicht, um aus Suchenden Kunden zu machen.',
+    searchTerms: ['Homepage erstellen lassen Berlin', 'Homepage für Firma Berlin', 'kleine Firmenwebsite Berlin'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Stuttgarts Wirtschaft lebt von tausenden kleinen Betrieben rund um Industrie und Dienstleistung — solide Unternehmen, deren Online-Auftritt oft Jahre hinter ihrer tatsächlichen Qualität zurückliegt.',
+    pain: 'Im Raum Stuttgart entsteht gerade eine digitale Zweiklassengesellschaft: Betriebe mit moderner Homepage gewinnen die Anfragen, die anderen leben von der Substanz alter Kontakte.',
+    searchTerms: ['Homepage erstellen lassen Stuttgart', 'Firmenhomepage Stuttgart', 'Website für Kleinunternehmen Stuttgart'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig gründet: Cafés, Studios, Praxen, Handwerk. Die wachsende Stadt bietet Raum für neue Unternehmen — und die brauchen zum Start vor allem eines: eine Homepage, die vom ersten Tag an professionell wirkt.',
+    pain: 'Wer in Leipzig neu startet, hat weder Stammkundschaft noch Empfehlungsnetz — die Homepage übernimmt beides, oder das Geschäft bleibt leer.',
+    searchTerms: ['Homepage erstellen lassen Leipzig', 'Website für Gründer Leipzig', 'Firmenwebsite Leipzig'],
+  },
+  {
+    slug: 'dresden',
+    name: 'Dresden',
+    intro:
+      'Dresdens Wirtschaft ist kleinteiliger als ihr Ruf: Neben Chip-Industrie prägen tausende kleine Betriebe, Praxen und Dienstleister die Stadt — viele davon mit Webauftritten aus einem anderen Jahrzehnt.',
+    pain: 'Kunden in Dresden vergleichen längst online — ein Betrieb, dessen Homepage nach 2012 aussieht, verliert an Vertrauen, bevor der erste Kontakt entsteht.',
+    searchTerms: ['Homepage erstellen lassen Dresden', 'Firmenhomepage Dresden', 'Website erstellen Dresden'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Hannovers Stärke sind bodenständige kleine Unternehmen: Handel, Handwerk, Dienstleistung. Genau diese Zielgruppe profitiert am meisten von einer bezahlbaren, professionellen Homepage im Abo statt teurer Agenturprojekte.',
+    pain: 'Viele Betriebe in Hannover verschieben ihre Homepage seit Jahren — jede Woche Aufschub heißt aber: Anfragen, die beim Wettbewerber mit Website landen.',
+    searchTerms: ['Homepage erstellen lassen Hannover', 'Website für Firma Hannover', 'Homepage Service Hannover'],
+  },
 ];

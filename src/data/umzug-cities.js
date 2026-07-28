@@ -83,4 +83,44 @@ export const umzugCities = [
     pain: 'Zwischen Kleinanzeigen-Sprintern und Großspeditionen gewinnt der seriöse Mittelstand über Vertrauen: Versicherung, echte Bewertungen, Festpreise — online sichtbar gemacht. Ohne Website bleibt nur der Preiskampf.',
     searchTerms: ['Umzugsunternehmen Berlin', 'Umzugsfirma Berlin', 'Umzug Berlin Festpreis'],
   },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München ist Deutschlands teuerster und zugleich bewegungsreichster Wohnungsmarkt — ständig wird umgezogen, und wer umzieht, bucht sein Umzugsunternehmen nach Google-Suche und Bewertungen.',
+    pain: 'Münchner Kunden zahlen gute Preise für stressfreie Umzüge — aber nur an Firmen, deren Auftritt Versicherung, Festpreis und Zuverlässigkeit glaubhaft macht.',
+    searchTerms: ['Umzugsunternehmen München', 'Umzug München Kosten', 'Umzugsfirma München Schwabing'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Kessellage, enge Straßen, Halteverbotszonen: Umziehen in Stuttgart ist kompliziert — genau deshalb suchen die Menschen hier Profis statt Transporter-Selbsthilfe.',
+    pain: 'Wer in Stuttgart „Umzugsunternehmen" googelt, will Sicherheit: Festpreis, Versicherung, Halteverbot inklusive. Deine Website muss diese Sorgen beantworten, sonst tut es die der Konkurrenz.',
+    searchTerms: ['Umzugsunternehmen Stuttgart', 'Umzug Stuttgart Festpreis', 'Umzugsfirma Stuttgart'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig ist Zuzugsstadt Nummer eins im Osten — jeden Monat ziehen tausende Menschen neu in die Stadt oder innerhalb Leipzigs um. Ein konstant wachsender Markt für Umzugsunternehmen.',
+    pain: 'Die Zuziehenden buchen ihren Umzug aus der Ferne — komplett online. Ohne professionelle Website mit klarer Anfrage existiert dein Unternehmen für diesen Markt nicht.',
+    searchTerms: ['Umzugsunternehmen Leipzig', 'Umzug nach Leipzig', 'Umzugsfirma Leipzig Preise'],
+  },
+  {
+    slug: 'dresden',
+    name: 'Dresden',
+    intro:
+      'Dresden wächst ruhig aber stetig — Familienumzüge ins Umland, Studenten zum Semesterstart, Senioren in kleinere Wohnungen. Ein vielseitiger, stabiler Umzugsmarkt.',
+    pain: 'Dresdner vergleichen vor dem Umzug meist drei Angebote — angefragt werden aber nur Firmen, die online seriös wirken und eine einfache Anfrage-Möglichkeit bieten.',
+    searchTerms: ['Umzugsunternehmen Dresden', 'Umzug Dresden Kosten', 'Umzugshelfer Dresden'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Als Messestadt und Verkehrsknoten hat Hannover neben Privatumzügen ein starkes Zusatzgeschäft: Firmenumzüge und Messelogistik — Aufträge mit ordentlichen Margen für professionell auftretende Unternehmen.',
+    pain: 'Firmenkunden in Hannover vergeben Umzugsaufträge nach Website-Check und Referenzen — ohne beides bleibt dir nur das preisgedrückte Privatkundengeschäft.',
+    searchTerms: ['Umzugsunternehmen Hannover', 'Firmenumzug Hannover', 'Umzugsfirma Hannover'],
+  },
 ];

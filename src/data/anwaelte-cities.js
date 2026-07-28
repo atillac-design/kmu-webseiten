@@ -82,4 +82,44 @@ export const anwaelteCities = [
     pain: 'Münchner Mandanten prüfen hart: Auszeichnungen, Spezialisierung, Auftritt. Eine Kanzlei-Website unter dem Niveau der Mandate kostet hier mehr Umsatz als jede Fehlentscheidung im Marketing.',
     searchTerms: ['Rechtsanwalt München', 'Anwalt Immobilienrecht München', 'Anwalt Erbrecht München'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin hat die meisten Rechtsanwälte Deutschlands — und die meisten Mandanten, die ihren Anwalt über Google suchen: Mietrecht, Arbeitsrecht, Familienrecht, Verkehrsrecht. Sichtbar wird in dieser Masse nur, wer sein Rechtsgebiet online klar besetzt.',
+    pain: 'Wer in Berlin als „Anwalt für alles" auftritt, geht unter — Mandanten suchen einen Spezialisten für ihr konkretes Problem, und deine Website muss diese Spezialisierung in Sekunden beweisen.',
+    searchTerms: ['Anwalt Mietrecht Berlin', 'Anwalt Arbeitsrecht Berlin', 'Fachanwalt Familienrecht Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Hamburgs Kanzleilandschaft reicht von Großkanzleien in der HafenCity bis zur Einzelkanzlei in Wandsbek. Für kleine und mittlere Kanzleien ist die eigene Website der einzige Kanal, auf dem sie mit den Großen auf Augenhöhe wirken können.',
+    pain: 'Mandanten vergleichen in Hamburg meist zwei, drei Kanzleien online, bevor sie anrufen — ohne überzeugenden Auftritt findet dieser Vergleich ohne dich statt.',
+    searchTerms: ['Anwalt Hamburg Wandsbek', 'Anwalt Verkehrsrecht Hamburg', 'Kanzlei Hamburg Arbeitsrecht'],
+  },
+  {
+    slug: 'duesseldorf',
+    name: 'Düsseldorf',
+    intro:
+      'Düsseldorf ist Gerichts- und Wirtschaftsstandort — von gewerblichen Mandaten bis zu Privatklienten mit hohen Ansprüchen. Der erste Eindruck deiner Kanzlei entsteht hier fast immer digital.',
+    pain: 'Gerade bei gut zahlenden Wirtschafts- und Privatmandaten gilt in Düsseldorf: Eine Kanzlei, die online nicht überzeugt, wird gar nicht erst kontaktiert.',
+    searchTerms: ['Rechtsanwalt Düsseldorf', 'Anwalt Wirtschaftsrecht Düsseldorf', 'Fachanwalt Düsseldorf'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'In Stuttgart suchen sowohl Mittelständler als auch Privatpersonen ihre Rechtsberatung zunehmend online — vom Arbeitsrecht nach der Kündigung bis zur Nachfolgeregelung im Familienbetrieb.',
+    pain: 'Viele Stuttgarter Kanzleien leben von Empfehlungen einer älter werdenden Mandantschaft — die nächste Generation Mandanten entscheidet aber online, und dort sind viele Kanzleien unsichtbar.',
+    searchTerms: ['Anwalt Stuttgart', 'Anwalt Arbeitsrecht Stuttgart', 'Kanzlei Stuttgart Erbrecht'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig wächst — und mit der Stadt wachsen Mietstreitigkeiten, Arbeitsrechtsfälle und Unternehmensgründungen. Für Kanzleien ist das ein stetiger Strom neuer Mandate, der fast komplett über die Google-Suche läuft.',
+    pain: 'Die vielen Neu-Leipziger haben keinen „Anwalt der Familie" — sie googeln ihr Problem und beauftragen die Kanzlei, deren Website Kompetenz und Erreichbarkeit ausstrahlt.',
+    searchTerms: ['Anwalt Leipzig', 'Anwalt Mietrecht Leipzig', 'Rechtsanwalt Leipzig Zentrum'],
+  },
 ];

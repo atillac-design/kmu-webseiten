@@ -84,4 +84,36 @@ export const personalTrainerCities = [
     pain: 'Aber der Markt verzeiht nichts: Münchner Kundschaft vergleicht Trainer wie Dienstleister — und bucht Erstgespräche fast ausschließlich über professionelle Websites, nicht über DMs.',
     searchTerms: ['Personal Trainer München', 'Fitness Coach München', 'Personal Training München Schwabing'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin ist der größte Fitness-Markt Deutschlands — und der Markt mit den meisten Personal Trainern. Kunden, die 80 bis 150 Euro pro Stunde zahlen, wählen ihren Trainer nicht über Instagram-Reels, sondern über einen Auftritt, der Methode und Ergebnisse zeigt.',
+    pain: 'In Berlin gibt es für jede Nische Konkurrenz — ohne Website mit klarer Positionierung bleibst du einer von tausend Trainern statt DER Experte für dein Thema.',
+    searchTerms: ['Personal Trainer Berlin', 'Personal Training Berlin Mitte', 'Abnehmen mit Personal Trainer Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Ob Outdoor-Training an der Alster oder Studio-Sessions in Eppendorf: Hamburgs zahlungskräftige Kundschaft investiert in Gesundheit — und recherchiert vorher gründlich, wem sie ihren Körper anvertraut.',
+    pain: 'Hamburger Kunden vergleichen Qualifikationen, Erfolgsgeschichten und Preise — eine Website, die das professionell zeigt, ersetzt dir dutzende Kennenlerngespräche mit Unentschlossenen.',
+    searchTerms: ['Personal Trainer Hamburg', 'Personal Training Hamburg Eppendorf', 'Fitnesstrainer Hamburg'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzigs junge, wachsende Bevölkerung entdeckt Personal Training gerade erst — der Markt ist längst nicht so besetzt wie in München oder Berlin. Wer jetzt online sichtbar wird, baut sich einen Vorsprung auf, den Nachzügler teuer bezahlen.',
+    pain: 'Noch ranken in Leipzig erstaunlich schwache Seiten für Trainings-Suchbegriffe — diese Lücke schließt sich, und wer zu spät kommt, kämpft dann gegen etablierte Konkurrenz.',
+    searchTerms: ['Personal Trainer Leipzig', 'Personal Training Leipzig Zentrum', 'Ernährungscoaching Leipzig'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Zwischen Eilenriede und Maschsee trainiert Hannover gern draußen — und sucht seine Trainer online. Firmenfitness und Business-Kunden machen hier einen wachsenden Teil des Marktes aus.',
+    pain: 'Gerade Firmenkunden und Führungskräfte in Hannover buchen nur Trainer, die online seriös auftreten — ein Instagram-Profil allein wirkt auf diese Zielgruppe eher abschreckend.',
+    searchTerms: ['Personal Trainer Hannover', 'Personal Training Hannover List', 'Firmenfitness Hannover'],
+  },
 ];

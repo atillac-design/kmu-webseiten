@@ -83,4 +83,44 @@ export const reinigungCities = [
     pain: 'Wer für amerikanische Auftraggeber oder deren Dienstleister arbeiten will, braucht einen Auftritt, der auch auf Englisch überzeugt — die wenigsten Mitbewerber haben das, ein echter Vorsprung.',
     searchTerms: ['Gebäudereinigung Kaiserslautern', 'Büroreinigung Kaiserslautern', 'cleaning service Kaiserslautern'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Büros, Praxen, Hausverwaltungen, Airbnbs: Berlin ist Deutschlands größter Markt für Gebäude- und Unterhaltsreinigung — und Auftraggeber suchen ihre Dienstleister über Google, nicht über Kleinanzeigen.',
+    pain: 'Gewerbliche Auftraggeber in Berlin vergeben Reinigungsverträge nur an Firmen, die seriös wirken — eine professionelle Website trennt dich von den hundert Anbietern, die nach Gelegenheits-Trupp aussehen.',
+    searchTerms: ['Gebäudereinigung Berlin', 'Büroreinigung Berlin Mitte', 'Unterhaltsreinigung Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Hafen, Büros, Hotellerie: Hamburgs Reinigungsmarkt ist groß und vielfältig — von der täglichen Büroreinigung bis zur Glas- und Fassadenreinigung an der Elbphilharmonie-Nachbarschaft.',
+    pain: 'Hamburger Facility-Manager und Hausverwaltungen schreiben Aufträge zunehmend online aus — wer keine überzeugende Website hat, kommt in deren Anbieterliste gar nicht erst vor.',
+    searchTerms: ['Gebäudereinigung Hamburg', 'Büroreinigung Hamburg', 'Glasreinigung Hamburg'],
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'Münchens Unternehmen zahlen für Qualität — auch bei der Reinigung. Wer hier hochwertige Büro- und Praxisreinigung anbietet und das online professionell zeigt, gewinnt Verträge mit Laufzeiten von Jahren.',
+    pain: 'In München entscheidet der Auftritt über die Preisklasse: Dieselbe Leistung wird mit professioneller Website zum Premium-Preis gebucht — ohne wird sie zum Billig-Tarif verhandelt.',
+    searchTerms: ['Gebäudereinigung München', 'Büroreinigung München', 'Praxisreinigung München'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Industrie, Autohäuser, Bürotürme: Im Raum Stuttgart gibt es für Reinigungsfirmen konstant hochwertige Gewerbeaufträge — vergeben werden sie an die Anbieter, die auffindbar und vertrauenswürdig sind.',
+    pain: 'Stuttgarter Unternehmen wechseln ihren Reinigungsdienst häufiger als man denkt — aber nur zu Anbietern, die sie online finden und ernst nehmen können.',
+    searchTerms: ['Gebäudereinigung Stuttgart', 'Büroreinigung Stuttgart', 'Industriereinigung Stuttgart'],
+  },
+  {
+    slug: 'dortmund',
+    name: 'Dortmund',
+    intro:
+      'Das Ruhrgebiet ist Logistik- und Gewerbeland: Hallen, Büros, Praxen — der Bedarf an zuverlässiger Reinigung ist riesig, und Dortmund ist das Zentrum dieses Marktes.',
+    pain: 'Zwischen Dutzenden Reinigungsfirmen im Ruhrgebiet gewinnt selten die günstigste — sondern die, die im entscheidenden Google-Moment seriös und erreichbar wirkt.',
+    searchTerms: ['Gebäudereinigung Dortmund', 'Büroreinigung Dortmund', 'Hallenreinigung Dortmund'],
+  },
 ];

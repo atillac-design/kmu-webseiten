@@ -1,0 +1,108 @@
+---
+// Querverlinkung + Beispiel-Entwürfe für alle Stadt-/Branchen-Seiten.
+// Eine Quelle für: Beweis-Sektion (Demo-Entwürfe), interne Verlinkung
+// (Schwester-Städte + andere Branchen derselben Stadt) und Breadcrumb-Schema.
+import { niches } from '../data/niches.js';
+
+const { prefix, slug, cityName } = Astro.props;
+
+const current = niches.find((n) => n.prefix === prefix);
+const label = current?.label || 'Webseiten';
+const siblingCities = (current?.cities || []).filter((c) => c.slug !== slug);
+const otherNiches = niches.filter(
+  (n) => n.prefix !== prefix && (n.cities || []).some((c) => c.slug === slug)
+);
+
+/* Passende Demo-Entwürfe je Branche (Fallback: gemischte Auswahl) */
+const demoMap = {
+  'webdesign-fuer-handwerker': ['malerbetrieb', 'bauunternehmen', 'gasthaus'],
+  'webseite-fuer-bauunternehmen': ['bauunternehmen', 'malerbetrieb', 'immobilien'],
+  'webseite-fuer-galabau': ['bauunternehmen', 'malerbetrieb', 'gasthaus'],
+  'webseite-fuer-kfz-werkstaetten': ['malerbetrieb', 'bauunternehmen', 'immobilien'],
+  'webseite-fuer-gebaeudereinigung': ['malerbetrieb', 'bauunternehmen', 'coaching'],
+  'webseite-fuer-umzugsunternehmen': ['bauunternehmen', 'malerbetrieb', 'immobilien'],
+  'homepage-fuer-coaches': ['coaching', 'physiotherapie', 'immobilien'],
+  'homepage-fuer-personal-trainer': ['coaching', 'physiotherapie', 'gasthaus'],
+  'homepage-fuer-therapiepraxen': ['physiotherapie', 'coaching', 'gasthaus'],
+  'webseite-fuer-aerzte': ['physiotherapie', 'coaching', 'immobilien'],
+  'webseite-fuer-pflegedienste': ['physiotherapie', 'coaching', 'gasthaus'],
+  'webseite-fuer-gastronomie': ['gasthaus', 'malerbetrieb', 'coaching'],
+  'webseite-fuer-kosmetikstudios': ['physiotherapie', 'coaching', 'gasthaus'],
+  'webseite-fuer-immobilienmakler': ['immobilien', 'bauunternehmen', 'coaching'],
+  'webseite-fuer-steuerberater': ['coaching', 'immobilien', 'physiotherapie'],
+  'webseite-fuer-rechtsanwaelte': ['coaching', 'immobilien', 'physiotherapie'],
+  'webseite-fuer-versicherungsmakler': ['coaching', 'immobilien', 'physiotherapie'],
+};
+const demoLabels = {
+  malerbetrieb: 'Handwerker-Entwurf',
+  bauunternehmen: 'Bauunternehmen-Entwurf',
+  gasthaus: 'Gastronomie-Entwurf',
+  physiotherapie: 'Physiotherapie-Entwurf',
+  immobilien: 'Immobilien-Entwurf',
+  coaching: 'Coaching-Entwurf',
+};
+const demos = (demoMap[prefix] || ['malerbetrieb', 'coaching', 'physiotherapie']).map((d) => ({
+  slug: 'demo-' + d,
+  label: demoLabels[d],
+}));
+
+const crumbs = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://kmu-webseiten.de/' },
+    { '@type': 'ListItem', position: 2, name: label, item: `https://kmu-webseiten.de/${prefix}/` },
+    { '@type': 'ListItem', position: 3, name: cityName, item: `https://kmu-webseiten.de/${prefix}/${slug}/` },
+  ],
+});
+---
+<script is:inline type="application/ld+json" set:html={crumbs} />
+<section class="tight">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Beispiel-Entwürfe</p>
+      <h2 class="display">Kein Versprechen ins Blaue — so sehen unsere Entwürfe aus.</h2>
+      <div class="exdrafts">
+        {demos.map((d) => (
+          <a href={`/entwurf/${d.slug}/`}>
+            <img src={`/img/referenzen/${d.slug}.jpg`} alt={`Beispiel-Website: ${d.label} von kmu-webseiten.de`} loading="lazy" />
+            <span>{d.label} ansehen →</span>
+          </a>
+        ))}
+      </div>
+      <p class="exnote">
+        Komplette Beispiel-Websites zum Durchklicken — dein Entwurf wird individuell für deinen
+        Betrieb in {cityName} recherchiert und gestaltet. <a href="/#referenzen">Echte Kundenprojekte ansehen</a>
+      </p>
+    </div>
+
+    <div class="xlinks rv">
+      {siblingCities.length > 0 && (
+        <div>
+          <h3>{label} — weitere Städte</h3>
+          <p>
+            {siblingCities.map((c, i) => (
+              <>
+                <a href={`/${prefix}/${c.slug}/`}>{c.name}</a>
+                {i < siblingCities.length - 1 ? ' · ' : ''}
+              </>
+            ))}
+          </p>
+        </div>
+      )}
+      {otherNiches.length > 0 && (
+        <div>
+          <h3>Weitere Angebote in {cityName}</h3>
+          <p>
+            {otherNiches.map((n, i) => (
+              <>
+                <a href={`/${n.prefix}/${slug}/`}>{n.label}</a>
+                {i < otherNiches.length - 1 ? ' · ' : ''}
+              </>
+            ))}
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

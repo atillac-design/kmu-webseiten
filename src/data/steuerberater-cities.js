@@ -99,4 +99,44 @@ export const steuerberaterCities = [
     pain: 'Diese Mandate entstehen in Umbruchmomenten — und dann wird verglichen, auch online. Eine Kanzlei ohne modernen Auftritt wirkt bei Zukunftsthemen wie Nachfolge unfreiwillig wie von gestern.',
     searchTerms: ['Steuerberater Siegen', 'Unternehmensnachfolge Siegen', 'Steuerberater Siegerland'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin ist Gründerhauptstadt — jedes Jahr entstehen zehntausende neue Unternehmen, und fast alle suchen früher oder später eine Steuerkanzlei, die digital arbeitet. Wer als Steuerberater in Berlin online nicht sichtbar ist, überlässt genau diese jungen Mandate den Kanzleien mit gutem Auftritt.',
+    pain: 'Viele Berliner Kanzleien sind faktisch voll — ihr eigentliches Thema ist nicht mehr Mandantengewinnung um jeden Preis, sondern die richtigen Mandate anzuziehen und im Wettbewerb um Fachkräfte als moderne Kanzlei aufzutreten.',
+    searchTerms: ['Steuerberater Berlin Mitte', 'Steuerberater für Gründer Berlin', 'digitale Steuerkanzlei Berlin'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Stuttgart lebt vom Mittelstand: Zulieferer, Maschinenbau, Handwerk und tausende Selbstständige — Mandate mit Substanz, die ihren Steuerberater meist über Jahrzehnte behalten. Umso wichtiger ist der erste Eindruck, wenn ein Unternehmen tatsächlich wechselt oder neu gründet.',
+    pain: 'Gerade im Raum Stuttgart steht bei vielen Kanzleien die Nachfolge an — und junge Mandanten wie junge Mitarbeiter entscheiden zuerst nach dem, was sie online sehen.',
+    searchTerms: ['Steuerberater Stuttgart', 'Steuerkanzlei Stuttgart Mitte', 'Steuerberater für GmbH Stuttgart'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig wächst schneller als fast jede andere deutsche Stadt — mit jedem zugezogenen Selbstständigen und jedem neuen Unternehmen wächst auch die Nachfrage nach Steuerberatung. Ein großer Teil dieser Neu-Leipziger sucht die Kanzlei ausschließlich über Google.',
+    pain: 'Wer neu in Leipzig ist, hat keine Empfehlungen aus dem Bekanntenkreis — die Website ersetzt hier das persönliche Netzwerk, das alteingesessene Kanzleien haben.',
+    searchTerms: ['Steuerberater Leipzig', 'Steuerberater Leipzig Zentrum', 'Steuerberater für Selbstständige Leipzig'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Hannover ist Messestadt und Sitz unzähliger mittelständischer Betriebe — von Logistik über Handel bis zu Agenturen. Der Markt für Steuerberatung ist solide, aber der Auftritt vieler Kanzleien stammt noch aus einer Zeit, in der man Mandanten per Telefonbuch fand.',
+    pain: 'In Hannover gewinnt oft nicht die beste Kanzlei das Mandat, sondern die, die online seriös und erreichbar wirkt — ein veralteter Auftritt kostet still und leise Anfragen.',
+    searchTerms: ['Steuerberater Hannover', 'Steuerkanzlei Hannover List', 'Steuerberater Mittelstand Hannover'],
+  },
+  {
+    slug: 'nuernberg',
+    name: 'Nürnberg',
+    intro:
+      'Die Metropolregion Nürnberg vereint Industrie, Handwerk und eine wachsende Dienstleistungsszene — entsprechend breit ist das Mandantenspektrum der Kanzleien zwischen Nürnberg, Fürth und Erlangen.',
+    pain: 'Viele fränkische Kanzleien leben von Bestandsmandaten und unterschätzen, wie viele wechselwillige Unternehmer jede Woche „Steuerberater Nürnberg" googeln — und bei der Konkurrenz landen.',
+    searchTerms: ['Steuerberater Nürnberg', 'Steuerberater Nürnberg Südstadt', 'Steuerberater für Handwerker Nürnberg'],
+  },
 ];

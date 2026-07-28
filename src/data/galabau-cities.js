@@ -83,4 +83,44 @@ export const galabauCities = [
     pain: 'Diese Kundschaft erwartet digitale Professionalität: Projektgalerie, klare Leistungen, einfache Anfrage. Galabau-Betriebe, die das bieten, schöpfen die höchsten Budgets der Region ab.',
     searchTerms: ['Gartenbau Trier', 'Galabau Trier', 'Gartengestaltung Trier'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Zehntausende Stadtgärten, Dachterrassen und Firmengelände: Berlin ist ein riesiger Markt für Garten- und Landschaftsbau — vom Hecken-Rückschnitt in Zehlendorf bis zur kompletten Außenanlage für Wohnquartiere.',
+    pain: 'Berliner Auftraggeber — private wie gewerbliche — finden ihren GaLaBau-Betrieb über Google. Wer dort nicht mit Referenzfotos überzeugt, verliert die lukrativen Gestaltungsprojekte an die Konkurrenz.',
+    searchTerms: ['Gartenbau Berlin', 'Galabau Berlin Zehlendorf', 'Gartengestaltung Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Hamburgs Villenviertel, Reihenhausgärten und Firmensitze brauchen ganzjährig Pflege und Gestaltung — ein stabiler Markt für GaLaBau-Betriebe, die sichtbar sind, wenn gesucht wird.',
+    pain: 'Gerade bei größeren Gartenprojekten vergleichen Hamburger Auftraggeber mehrere Betriebe — fast immer anhand der Referenzbilder auf den Websites. Ohne eigene Seite findest du in diesem Vergleich nicht statt.',
+    searchTerms: ['Gartenbau Hamburg', 'Galabau Hamburg Blankenese', 'Gartenpflege Hamburg'],
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München investiert in seine Gärten wie kaum eine andere Stadt — von der Neugestaltung des Stadtgartens bis zum pflegeleichten Firmengelände. Die Budgets sind hoch, die Erwartungen auch.',
+    pain: 'Münchner Kunden vergeben fünfstellige Gartenprojekte nur an Betriebe, deren Auftritt Professionalität zeigt — deine Website ist dein wichtigstes Referenzalbum.',
+    searchTerms: ['Gartenbau München', 'Gartengestaltung München', 'Galabau München Preise'],
+  },
+  {
+    slug: 'frankfurt-am-main',
+    name: 'Frankfurt am Main',
+    intro:
+      'Zwischen Bankentürmen und Taunus-Vororten liegt ein starker GaLaBau-Markt: gepflegte Firmenareale, private Gärten in Sachsenhausen, Dachbegrünungen in der Innenstadt.',
+    pain: 'Frankfurter Hausverwaltungen und Unternehmen vergeben Pflegeverträge über Jahre — aber nur an Betriebe, die sie online finden und ernst nehmen können.',
+    searchTerms: ['Gartenbau Frankfurt', 'Gartenpflege Frankfurt Sachsenhausen', 'Dachbegrünung Frankfurt'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Hanglagen, Terrassengärten, anspruchsvolle Bepflanzung: Stuttgarts Topografie macht Gartenbau zur Spezialisten-Arbeit — und Spezialisten werden hier gezielt online gesucht.',
+    pain: 'Wer in Stuttgart Hangbefestigung oder Terrassenbau kann, aber online unsichtbar ist, überlässt die margenstärksten Projekte den Betrieben mit guter Website.',
+    searchTerms: ['Gartenbau Stuttgart', 'Galabau Stuttgart Hanglage', 'Terrassenbau Stuttgart'],
+  },
 ];

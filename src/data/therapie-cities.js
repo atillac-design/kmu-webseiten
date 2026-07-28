@@ -124,4 +124,36 @@ export const therapieCities = [
     pain: 'Dieses grenzüberschreitende Potenzial erschließt nur, wer online gut auffindbar ist — die Praxis um die Ecke kennt der Patient aus Kelmis oder Vaals nur über Google.',
     searchTerms: ['Physiotherapie Aachen', 'Logopädie Aachen', 'Heilpraktiker Aachen'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Wochenlange Wartezeiten, überlaufene Praxen: Wer in Berlin einen Therapieplatz sucht — Physio, Ergo, Logopädie oder Heilpraktik — vergleicht online, wo er schnell und gut behandelt wird.',
+    pain: 'Berliner Praxen mit klarem Online-Auftritt können sich ihre Patienten aussuchen und Selbstzahler-Angebote etablieren — Praxen ohne Website füllen nur die Lücken, die andere übrig lassen.',
+    searchTerms: ['Physiotherapie Berlin Friedrichshain', 'Heilpraktiker Berlin', 'Logopädie Berlin Termin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Hamburgs Gesundheitsmarkt wächst — und mit ihm die Ansprüche: Patienten erwarten Online-Terminanfrage, klare Leistungsbeschreibung und einen Auftritt, der Vertrauen weckt, bevor sie die Praxis betreten.',
+    pain: 'Gerade Selbstzahler-Leistungen — von Osteopathie bis Präventionskursen — werden in Hamburg fast nur über die Website gebucht. Ohne sie bleibt deine Praxis im Kassenhamsterrad.',
+    searchTerms: ['Physiotherapie Hamburg Winterhude', 'Osteopathie Hamburg', 'Ergotherapie Hamburg'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Zwischen Bürojobs und Sportvereinen ist der Bedarf an Therapie in Stuttgart konstant hoch — Rücken, Gelenke, Reha. Praxen, die online sichtbar sind, haben Wartelisten; unsichtbare haben Lücken im Kalender.',
+    pain: 'Stuttgarter Patienten bleiben einer Praxis jahrelang treu — aber der Erstkontakt läuft heute fast immer über Google. Wer dort fehlt, bekommt diese treuen Patienten nie zu Gesicht.',
+    searchTerms: ['Physiotherapie Stuttgart West', 'Heilpraktiker Stuttgart', 'Manuelle Therapie Stuttgart'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Mit dem Zuzug junger Familien wächst Leipzigs Bedarf an Therapieplätzen rasant — von der Kinder-Logopädie bis zur Sportphysio. Die Praxen, die online gefunden werden, wachsen mit.',
+    pain: 'Neu-Leipziger haben keine Hausarzt-Empfehlung für eine Praxis — sie googeln. Deine Website entscheidet, ob deine Praxis von dieser Wachstumswelle profitiert oder sie verpasst.',
+    searchTerms: ['Physiotherapie Leipzig Gohlis', 'Logopädie Leipzig', 'Heilpraktiker Leipzig'],
+  },
 ];

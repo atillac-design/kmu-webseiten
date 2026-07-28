@@ -99,4 +99,36 @@ export const landingpageCities = [
     pain: 'Gerade mit kleinen Budgets zählt jede Conversion doppelt. Eine fokussierte Landingpage ist für Leipziger Gründer der Unterschied zwischen „Ads funktionieren nicht" und einem planbaren Anfragenkanal.',
     searchTerms: ['Landingpage erstellen lassen Leipzig', 'Landingpage Leipzig', 'Conversion Optimierung Leipzig'],
   },
+  {
+    slug: 'dresden',
+    name: 'Dresden',
+    intro:
+      'Dresdner Unternehmen entdecken Online-Werbung gerade erst richtig — und wer Google- oder Meta-Anzeigen schaltet, braucht eine Landingpage, die aus teuren Klicks echte Anfragen macht.',
+    pain: 'Viele Dresdner Betriebe schicken Werbe-Traffic auf ihre normale Startseite — und wundern sich über verbranntes Budget. Eine fokussierte Landingpage verdoppelt oft die Anfragen aus demselben Werbebudget.',
+    searchTerms: ['Landingpage erstellen lassen Dresden', 'Landingpage für Google Ads Dresden', 'Conversion Seite Dresden'],
+  },
+  {
+    slug: 'hannover',
+    name: 'Hannover',
+    intro:
+      'Ob Messeauftritt, Aktion oder Recruiting-Kampagne: Hannovers Unternehmen brauchen regelmäßig Seiten, die genau ein Ziel haben — und dafür gebaut sind, dieses Ziel zu erreichen.',
+    pain: 'Eine Landingpage, die nebenbei vom Azubi gebaut wurde, kostet in Hannover bares Geld: Jeder Werbe-Euro bringt weniger, wenn die Zielseite nicht auf Conversion optimiert ist.',
+    searchTerms: ['Landingpage erstellen lassen Hannover', 'Landingpage Agentur Hannover', 'Kampagnen-Seite Hannover'],
+  },
+  {
+    slug: 'nuernberg',
+    name: 'Nürnberg',
+    intro:
+      'Nürnbergs Mittelstand investiert zunehmend in Google Ads und Social-Media-Werbung — aber der Unterschied zwischen Gewinn und Verlust liegt fast immer auf der Landingpage, nicht in der Anzeige.',
+    pain: 'Gleiche Anzeige, gleiche Zielgruppe, doppelte Anfragen: Genau das leistet eine professionelle Landingpage — und genau das fehlt den meisten Nürnberger Kampagnen.',
+    searchTerms: ['Landingpage erstellen lassen Nürnberg', 'Landingpage für Werbekampagne Nürnberg', 'Google Ads Landingpage Nürnberg'],
+  },
+  {
+    slug: 'dortmund',
+    name: 'Dortmund',
+    intro:
+      'Vom Handwerksbetrieb bis zum Logistiker: Immer mehr Unternehmen im Ruhrgebiet schalten Online-Werbung — und brauchen Landingpages, die den Ruhrpott-Ton treffen: direkt, ehrlich, ohne Schnörkel.',
+    pain: 'Werbebudget ist im Ruhrgebiet hart erarbeitet — eine Landingpage, die Besucher nicht konvertiert, wirft es weg. Eine gute holt aus jedem Euro das Maximum.',
+    searchTerms: ['Landingpage erstellen lassen Dortmund', 'Landingpage Ruhrgebiet', 'Werbe-Landingpage Dortmund'],
+  },
 ];

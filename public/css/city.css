@@ -170,3 +170,17 @@
     section { padding: 54px 0; }
     .localbox { padding: 30px 24px; }
   }
+
+  /* ===== Beispiel-Entwürfe + Querverlinkung (CityCross) ===== */
+  .exdrafts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.4rem; }
+  .exdrafts a { display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--card); text-decoration: none; color: var(--text); box-shadow: var(--shadow); transition: transform 0.15s ease; }
+  .exdrafts a:hover { transform: translateY(-3px); }
+  .exdrafts img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; }
+  .exdrafts span { display: block; padding: 0.65rem 0.9rem; font-weight: 650; font-size: 0.88rem; color: var(--accent); }
+  .exnote { margin-top: 1rem; font-size: 0.85rem; color: var(--muted); }
+  @media (max-width: 700px) { .exdrafts { grid-template-columns: 1fr; } }
+  .xlinks { margin-top: 2.6rem; display: grid; gap: 1.4rem; }
+  .xlinks h3 { font-size: 0.95rem; margin: 0 0 0.4rem; }
+  .xlinks p { font-size: 0.88rem; line-height: 1.9; color: var(--muted); margin: 0; }
+  .xlinks a { color: var(--accent); text-decoration: none; }
+  .xlinks a:hover { text-decoration: underline; }

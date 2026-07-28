@@ -133,4 +133,36 @@ export const handwerkerCities = [
     pain: 'Wer in Siegen als Handwerksbetrieb eine moderne Website mit Karriereseite hat, ist praktisch allein auf weiter Flur — ein Vorsprung, der sich bei Aufträgen und Bewerbungen doppelt auszahlt.',
     searchTerms: ['Handwerker Siegen', 'Dachdecker Siegen', 'Elektriker Siegen'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Berlin baut, saniert und renoviert ohne Pause — Handwerker sind hier chronisch ausgebucht. Die Website entscheidet deshalb weniger über „ob Aufträge", sondern über „welche": Wer online stark auftritt, kann sich die lukrativen Projekte und die besseren Kunden aussuchen.',
+    pain: 'Das größte Problem der Berliner Betriebe ist nicht der Auftragsmangel, sondern die Mitarbeitersuche — und Gesellen wie Azubis schauen sich einen möglichen Arbeitgeber heute zuerst im Netz an.',
+    searchTerms: ['Elektriker Berlin Charlottenburg', 'Sanitär Notdienst Berlin', 'Malerbetrieb Berlin'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Altbausanierung in Ottensen, Neubau in der HafenCity, Instandhaltung überall: Hamburgs Handwerksmarkt ist riesig — und wird zunehmend über Google vergeben, von Privatkunden wie von Hausverwaltungen.',
+    pain: 'Hamburger Hausverwaltungen und Bauträger nehmen Betriebe ohne professionellen Webauftritt oft gar nicht erst in ihre Vergabeliste — da hilft auch der beste Ruf im Viertel nichts.',
+    searchTerms: ['Dachdecker Hamburg', 'Elektriker Hamburg Altona', 'Sanitärfirma Hamburg'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'Schwäbische Gründlichkeit trifft volle Auftragsbücher: Stuttgarts Handwerk hat goldenen Boden — aber der Wettbewerb um Fachkräfte und um die attraktiven Sanierungsprojekte läuft längst online.',
+    pain: 'Im Raum Stuttgart zahlen Kunden gern für Qualität — sie müssen sie aber online erkennen können: Referenzfotos, Meistertitel, Bewertungen. Ohne Website bleibt deine Qualität dein Geheimnis.',
+    searchTerms: ['Maler Stuttgart', 'Elektriker Stuttgart West', 'Fliesenleger Stuttgart'],
+  },
+  {
+    slug: 'leipzig',
+    name: 'Leipzig',
+    intro:
+      'Leipzig saniert sich durch den Gründerzeit-Bestand: Wohnungen, Fassaden, Dächer — Handwerker sind gefragter denn je, und die vielen zugezogenen Eigentümer suchen ihre Betriebe komplett über Google.',
+    pain: 'Die neuen Leipziger Hausbesitzer kennen keinen einzigen Handwerker persönlich — sie beauftragen die Betriebe, die online auffindbar und vertrauenswürdig sind. Alteingesessen zählt für sie nichts.',
+    searchTerms: ['Maler Leipzig', 'Dachdecker Leipzig', 'Sanitär Leipzig Südvorstadt'],
+  },
 ];

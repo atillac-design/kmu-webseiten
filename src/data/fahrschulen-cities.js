@@ -83,4 +83,44 @@ export const fahrschulenCities = [
     pain: 'Fahrschulen, die diesen Service anbieten, aber online nur auf Deutsch und veraltet auftreten, verschenken die kaufkräftigste Sonderzielgruppe der Region.',
     searchTerms: ['Fahrschule Kaiserslautern', 'driving school Kaiserslautern', 'Führerschein Kaiserslautern'],
   },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    intro:
+      'Jedes Jahr machen zehntausende Berliner ihren Führerschein — und die Generation, die jetzt 17 wird, sucht ihre Fahrschule zu 100 Prozent am Handy: Google, Preise, Bewertungen, fertig.',
+    pain: 'Berliner Fahrschüler vergleichen gnadenlos: Preisliste online, Anmeldung online, moderne Autos auf Fotos. Fahrschulen ohne zeitgemäßen Auftritt wirken auf 17-Jährige wie aus einer anderen Zeit.',
+    searchTerms: ['Fahrschule Berlin', 'Fahrschule Berlin Neukölln Preise', 'Führerschein Berlin Kosten'],
+  },
+  {
+    slug: 'hamburg',
+    name: 'Hamburg',
+    intro:
+      'Von Altona bis Bergedorf: Hamburgs Fahrschulmarkt ist dicht besetzt, aber die Nachfrage bleibt riesig — inklusive Intensivkurse, Umschreibungen internationaler Führerscheine und Auffrischungsstunden.',
+    pain: 'Wer in Hamburg nach „Fahrschule in meiner Nähe" sucht, sieht zuerst Google Maps und Websites — Empfehlungen vom Schulhof reichen längst nicht mehr, um die Kurse zu füllen.',
+    searchTerms: ['Fahrschule Hamburg', 'Intensivkurs Führerschein Hamburg', 'Fahrschule Hamburg Altona'],
+  },
+  {
+    slug: 'muenchen',
+    name: 'München',
+    intro:
+      'München hat zahlungskräftige Fahrschüler und volle Wartelisten — aber auch hier gilt: Die Anmeldungen bekommen die Fahrschulen, die online professionell auftreten und Anmeldung wie Terminplanung digital anbieten.',
+    pain: 'Münchner Eltern zahlen 3.000+ Euro für den Führerschein ihrer Kinder — und wählen die Fahrschule mit, deren Auftritt Seriosität und moderne Ausbildung verspricht.',
+    searchTerms: ['Fahrschule München', 'Fahrschule München Schwabing', 'Führerschein München Preis'],
+  },
+  {
+    slug: 'frankfurt-am-main',
+    name: 'Frankfurt am Main',
+    intro:
+      'Frankfurts internationale Bevölkerung bringt Fahrschulen ein Zusatzgeschäft, das viele unterschätzen: Umschreibungen ausländischer Führerscheine und Unterricht auf Englisch — beides wird fast nur online gesucht.',
+    pain: 'Ohne Website, die Leistungen wie „Führerschein-Umschreibung" oder „English lessons" sichtbar macht, verschenkt eine Frankfurter Fahrschule genau die Nischen mit der geringsten Konkurrenz.',
+    searchTerms: ['Fahrschule Frankfurt', 'driving school Frankfurt English', 'Führerschein umschreiben Frankfurt'],
+  },
+  {
+    slug: 'stuttgart',
+    name: 'Stuttgart',
+    intro:
+      'In der Autostadt Stuttgart gehört der Führerschein zur Grundausstattung — die Nachfrage ist konstant hoch, vom B-Führerschein bis zu Motorrad- und Anhängerklassen.',
+    pain: 'Stuttgarter Fahrschulen mit veralteter oder fehlender Website verlieren die Schüler an Ketten mit Online-Anmeldung — obwohl die persönliche Betreuung beim Familienbetrieb oft besser ist.',
+    searchTerms: ['Fahrschule Stuttgart', 'Fahrschule Stuttgart West', 'Motorradführerschein Stuttgart'],
+  },
 ];

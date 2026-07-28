@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CityCross from '../../components/CityCross.astro';
 import { reinigungCities } from '../../data/reinigung-cities.js';
 
 export function getStaticPaths() {
@@ -130,6 +131,8 @@ const jsonLd = JSON.stringify({
       </div>
     </div>
   </section>
+
+  <CityCross prefix="webseite-fuer-gebaeudereinigung" slug={city.slug} cityName={city.name} />
 
   <div class="cta-band" id="cta">
     <div class="wrap rv">
