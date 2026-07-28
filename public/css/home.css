@@ -531,3 +531,11 @@
   @media (max-width: 960px) {
     .vncompare.big { margin: 1.2rem -24px 0; width: calc(100% + 48px); max-width: none; border-radius: 0; }
   }
+
+  /* ===== SEO-Verzeichnis (Branchen & Städte) ===== */
+  .seolinks { border-top: 1px solid var(--line); padding: 2.2rem 0 1.6rem; background: var(--paper); }
+  .seolinks .wrap { display: grid; gap: 1.4rem; }
+  .seolinks h2 { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.4rem; }
+  .seolinks p { font-size: 0.85rem; line-height: 2; color: var(--muted); margin: 0; }
+  .seolinks a { color: var(--muted); text-decoration: none; }
+  .seolinks a:hover { color: var(--accent); text-decoration: underline; }
