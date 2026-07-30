@@ -66,10 +66,26 @@ import Base from '../layouts/Base.astro';
     footer.lp-foot { text-align:center; padding: 1.6rem 1.1rem 2rem; font-size: 0.76rem;
       color: var(--muted); }
     footer.lp-foot a { color: var(--muted); margin: 0 0.5rem; }
+    .lp-kicker { position: relative; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; color: #9CB7FF; margin: 0 0 0.55rem; }
+    .lp-compare { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      overflow: hidden; box-shadow: var(--shadow); }
+    .lpc-head, .lpc-row { display: grid; grid-template-columns: 1fr 74px 74px; align-items: center; }
+    .lpc-head { background: var(--hero-bg); color: #fff; font-size: 0.72rem; font-weight: 700;
+      line-height: 1.25; text-align: center; }
+    .lpc-head span { padding: 0.6rem 0.4rem; }
+    .lpc-us { background: linear-gradient(135deg, #2557E8, #4470F4); }
+    .lpc-them { color: #97A4B6; }
+    .lpc-row { border-top: 1px solid var(--line); font-size: 0.85rem; line-height: 1.4; }
+    .lpc-row > span:first-child { padding: 0.7rem 0.9rem; }
+    .lpc-row .ok, .lpc-row .no { text-align: center; font-weight: 800; padding: 0.7rem 0.2rem; font-size: 0.95rem; }
+    .lpc-row .ok { color: var(--ok); background: rgba(23,165,108,0.08); }
+    .lpc-row .no { color: var(--bad); font-size: 0.8rem; }
     @media (min-width: 700px) {
       .lp-top { padding: 1rem 2rem; }
       .lp-hero { text-align: center; padding-top: 1.6rem; }
       .lp-hero .lp-sub { margin-left:auto; margin-right:auto; max-width: 560px; }
+      .lp-kicker { text-align: center; }
     }
   </style>
 
@@ -81,9 +97,9 @@ import Base from '../layouts/Base.astro';
 
   <!-- Kompakter Hero: matcht die Anzeige (Botschaft + Look) -->
   <section class="lp-hero">
-    <h1>Deine neue Website — <em>kostenlos entworfen</em> in 48&nbsp;Stunden.</h1>
-    <p class="lp-sub">Erst siehst du den fertigen Entwurf, dann entscheidest du.
-      <b>0&nbsp;€ Startkosten, ab 99&nbsp;€/Monat</b> — Pflege inklusive.</p>
+    <p class="lp-kicker">Für Selbstständige &amp; kleine Unternehmen — egal welche Branche</p>
+    <h1>Vergiss 3.000&nbsp;€ Agenturpreise. <em>Sieh deine Website kostenlos</em> — dann entscheide.</h1>
+    <p class="lp-sub">Wir bauen dir in <b>48 Stunden</b> einen echten, individuellen Entwurf deiner neuen Website. Gefällt er dir: <b>ab 99&nbsp;€/Monat, 0&nbsp;€ Startkosten</b> — Hosting, Pflege &amp; Änderungen inklusive. Wenn nicht: kostet dich keinen Cent.</p>
   </section>
 
   <!-- FORMULAR: sofort sichtbar, identische IDs wie Startseite → home.js funktioniert -->
@@ -132,7 +148,7 @@ import Base from '../layouts/Base.astro';
             <input type="text" name="firma" autocomplete="organization" placeholder="z. B. Malerbetrieb Schmidt" required>
           </label>
           <label class="field"><span>Stadt *</span>
-            <input type="text" name="ort" autocomplete="address-level2" placeholder="z. B. Koblenz" required>
+            <input type="text" name="ort" autocomplete="address-level2" placeholder="z. B. Köln" required>
           </label>
           <p class="form-error" id="err3">Bitte gib deinen Betrieb und deine Stadt an.</p>
           <div style="text-align:right"><button type="button" class="btn" id="next3">Weiter <span class="arr">→</span></button></div>
@@ -191,6 +207,27 @@ import Base from '../layouts/Base.astro';
       <div class="lp-step"><span class="n">1</span><div><strong>60 Sekunden Formular</strong><p>Branche, Betrieb, Stadt — mehr brauchen wir nicht.</p></div></div>
       <div class="lp-step"><span class="n">2</span><div><strong>Fertiger Entwurf in 48 h</strong><p>Du siehst deine neue Website als echten, individuellen Entwurf. Kostenlos.</p></div></div>
       <div class="lp-step"><span class="n">3</span><div><strong>Du entscheidest in Ruhe</strong><p>Gefällt er dir, geht's ab 99 €/Monat live. Wenn nicht, schuldest du uns nichts.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Vergleich: Agentur vs. KMU-Webseiten -->
+  <section class="lp-sec">
+    <h2>Der direkte Vergleich:</h2>
+    <div class="lp-compare">
+      <div class="lpc-head">
+        <span></span>
+        <span class="lpc-us">KMU-<br>Webseiten</span>
+        <span class="lpc-them">Klassische<br>Agentur</span>
+      </div>
+      <div class="lpc-row"><span>Du siehst den fertigen Entwurf, <b>bevor</b> du zahlst</span><span class="ok">✓</span><span class="no">✕</span></div>
+      <div class="lpc-row"><span>0&nbsp;€ Startkosten — ab 99&nbsp;€/Monat statt 3.000–12.000&nbsp;€ Projektpreis</span><span class="ok">✓</span><span class="no">✕</span></div>
+      <div class="lpc-row"><span>Hosting, Domain, Pflege &amp; Änderungen inklusive</span><span class="ok">✓</span><span class="no">✕</span></div>
+      <div class="lpc-row"><span>Live in Tagen statt in Monaten</span><span class="ok">✓</span><span class="no">✕</span></div>
+      <div class="lpc-row"><span>Fester Ansprechpartner — auch per WhatsApp</span><span class="ok">✓</span><span class="no">✕</span></div>
+      <div class="lpc-row"><span>Texte, SEO &amp; Rechtliches (DSGVO) mit drin</span><span class="ok">✓</span><span class="no">teils extra</span></div>
+    </div>
+    <div class="lp-cta2" style="padding-top:1.1rem">
+      <a class="btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Kostenlosen Entwurf sichern →</a>
     </div>
   </section>
 
