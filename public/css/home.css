@@ -539,3 +539,11 @@
   .seolinks p { font-size: 0.85rem; line-height: 2; color: var(--muted); margin: 0; }
   .seolinks a { color: var(--muted); text-decoration: none; }
   .seolinks a:hover { color: var(--accent); text-decoration: underline; }
+
+  /* ===== Sticky-Bar mit WhatsApp-Option ===== */
+  .sticky-cta-bar { display: none; }
+  @media (max-width: 960px) {
+    .sticky-cta-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; box-shadow: 0 -6px 24px rgba(0,0,0,0.22); }
+    .sticky-cta { position: static; flex: 1; box-shadow: none; }
+    .sticky-wa { display: flex; align-items: center; justify-content: center; width: 64px; background: #1EBE5D; color: #fff; font-size: 1.55rem; text-decoration: none; }
+  }
