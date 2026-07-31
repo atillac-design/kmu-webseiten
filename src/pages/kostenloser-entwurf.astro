@@ -72,9 +72,16 @@ import Base from '../layouts/Base.astro';
     .lp-vn img { display: block; width: 100%; height: auto; }
     .lp-vn-note { margin-top: 0.7rem; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
     .lp-who { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-      padding: 1rem 1.1rem; }
+      padding: 1.1rem 1.1rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .lp-who-img { width: 84px; height: 84px; border-radius: 50%; flex: none;
+      box-shadow: 0 6px 20px rgba(11,17,25,0.18); }
     .lp-who .stars { color: #FFC34D; letter-spacing: 2px; font-size: 1rem; }
     .lp-who p { margin: 0.4rem 0 0; font-size: 0.88rem; line-height: 1.55; color: var(--text); }
+    .lp-who-wa { color: var(--muted) !important; }
+    .lp-wa-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.7rem;
+      background: #1EBE5D; color: #fff; font-weight: 700; font-size: 0.9rem;
+      text-decoration: none; padding: 0.6rem 1.15rem; border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(30,190,93,0.35); }
     .lp-compare { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
       overflow: hidden; box-shadow: var(--shadow); }
     .lpc-head, .lpc-row { display: grid; grid-template-columns: 1fr 74px 74px; align-items: center; }
@@ -277,8 +284,13 @@ import Base from '../layouts/Base.astro';
   <!-- Wer dahinter steht -->
   <section class="lp-sec">
     <div class="lp-who">
-      <span class="stars" aria-hidden="true">★★★★★</span>
-      <p><strong>KMU-Webseiten.de ist ein Angebot der Agentur Pixel56</strong> — über <strong>6 Jahre</strong> Webdesign &amp; SEO, mehr als <strong>100 umgesetzte Webseiten</strong>. Du sprichst direkt mit den Leuten, die deine Website bauen — kein Callcenter, auch per WhatsApp erreichbar.</p>
+      <img class="lp-who-img" src="/img/atilla.png" alt="Atilla — dein Ansprechpartner bei KMU-Webseiten.de" loading="lazy" />
+      <div>
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p><strong>Hi, ich bin Atilla — dein direkter Ansprechpartner.</strong> KMU-Webseiten.de ist mein Angebot der Agentur <strong>Pixel56</strong>: über <strong>6 Jahre</strong> Webdesign &amp; SEO, mehr als <strong>100 umgesetzte Webseiten</strong>. Deinen Entwurf betreue ich persönlich — kein Callcenter, keine Warteschleife.</p>
+        <p class="lp-who-wa">Du hast noch Fragen? Schreib mir einfach per WhatsApp — ich antworte persönlich:</p>
+        <a class="lp-wa-btn" href="https://wa.me/4917622088079?text=Hallo%20Atilla!%20Ich%20habe%20eine%20Frage%20zum%20kostenlosen%20Website-Entwurf." target="_blank" rel="noopener">💬 Frage per WhatsApp stellen</a>
+      </div>
     </div>
   </section>
 
