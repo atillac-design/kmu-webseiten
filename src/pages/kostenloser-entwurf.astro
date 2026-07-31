@@ -68,6 +68,13 @@ import Base from '../layouts/Base.astro';
     footer.lp-foot a { color: var(--muted); margin: 0 0.5rem; }
     .lp-kicker { position: relative; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em;
       text-transform: uppercase; color: #9CB7FF; margin: 0 0 0.55rem; }
+    .lp-vn { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+    .lp-vn img { display: block; width: 100%; height: auto; }
+    .lp-vn-note { margin-top: 0.7rem; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+    .lp-who { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 1rem 1.1rem; }
+    .lp-who .stars { color: #FFC34D; letter-spacing: 2px; font-size: 1rem; }
+    .lp-who p { margin: 0.4rem 0 0; font-size: 0.88rem; line-height: 1.55; color: var(--text); }
     .lp-compare { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
       overflow: hidden; box-shadow: var(--shadow); }
     .lpc-head, .lpc-row { display: grid; grid-template-columns: 1fr 74px 74px; align-items: center; }
@@ -210,6 +217,15 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
+  <!-- Visueller Beweis: Vorher/Nachher -->
+  <section class="lp-sec">
+    <h2>So sieht das aus — vorher und nachher:</h2>
+    <figure class="lp-vn">
+      <img src="/img/vorher-nachher.jpg" alt="Vorher: veraltete Website auf altem Monitor. Nachher: moderne Website, die Kunden überzeugt." loading="lazy" />
+    </figure>
+    <p class="lp-vn-note">Genau so einen Entwurf bekommst du — individuell für deinen Betrieb recherchiert und gestaltet. Kostenlos.</p>
+  </section>
+
   <!-- Vergleich: Agentur vs. KMU-Webseiten -->
   <section class="lp-sec">
     <h2>Der direkte Vergleich:</h2>
@@ -255,6 +271,14 @@ import Base from '../layouts/Base.astro';
     </div>
     <div class="lp-cta2">
       <a class="btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Jetzt kostenlosen Entwurf anfordern →</a>
+    </div>
+  </section>
+
+  <!-- Wer dahinter steht -->
+  <section class="lp-sec">
+    <div class="lp-who">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <p><strong>KMU-Webseiten.de ist ein Angebot der Agentur Pixel56</strong> — über <strong>6 Jahre</strong> Webdesign &amp; SEO, mehr als <strong>100 umgesetzte Webseiten</strong>. Du sprichst direkt mit den Leuten, die deine Website bauen — kein Callcenter, auch per WhatsApp erreichbar.</p>
     </div>
   </section>
 
