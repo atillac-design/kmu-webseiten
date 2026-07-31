@@ -532,13 +532,14 @@
     .vncompare.big { margin: 1.2rem -24px 0; width: calc(100% + 48px); max-width: none; border-radius: 0; }
   }
 
-  /* ===== SEO-Verzeichnis (Branchen & Städte) ===== */
-  .seolinks { border-top: 1px solid var(--line); padding: 2.2rem 0 1.6rem; background: var(--paper); }
-  .seolinks .wrap { display: grid; gap: 1.4rem; }
-  .seolinks h2 { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.4rem; }
-  .seolinks p { font-size: 0.85rem; line-height: 2; color: var(--muted); margin: 0; }
-  .seolinks a { color: var(--muted); text-decoration: none; }
-  .seolinks a:hover { color: var(--accent); text-decoration: underline; }
+  /* ===== SEO-Verzeichnis (Branchen & Städte) — integriert in den dunklen Footer ===== */
+  .seolinks { background: var(--hero-bg); border-top: 1px solid var(--hero-line); padding: 2.4rem 0 0.6rem; }
+  .seolinks .wrap { display: grid; gap: 1.6rem; }
+  .seolinks h2 { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: #5A6675; margin: 0 0 0.45rem; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .seolinks p { font-size: 0.82rem; line-height: 2.1; color: var(--hero-muted); margin: 0; opacity: 0.85; }
+  .seolinks a { color: var(--hero-muted); text-decoration: none; }
+  .seolinks a:hover { color: var(--hero-text); text-decoration: underline; }
+  .seolinks + footer.site { border-top: 0; padding-top: 20px; }
 
   /* ===== Sticky-Bar mit WhatsApp-Option ===== */
   .sticky-cta-bar { display: none; }
