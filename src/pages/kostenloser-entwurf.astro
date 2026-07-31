@@ -82,6 +82,12 @@ import Base from '../layouts/Base.astro';
       background: #1EBE5D; color: #fff; font-weight: 700; font-size: 0.9rem;
       text-decoration: none; padding: 0.6rem 1.15rem; border-radius: 999px;
       box-shadow: 0 6px 18px rgba(30,190,93,0.35); }
+    .lp-who p + p { margin-top: 0.65rem; }
+    @media (max-width: 560px) {
+      .lp-who { flex-direction: column; align-items: center; text-align: left; }
+      .lp-who-img { width: 96px; height: 96px; }
+      .lp-who .stars { display: block; text-align: center; }
+    }
     .lp-compare { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
       overflow: hidden; box-shadow: var(--shadow); }
     .lpc-head, .lpc-row { display: grid; grid-template-columns: 1fr 74px 74px; align-items: center; }
@@ -287,7 +293,10 @@ import Base from '../layouts/Base.astro';
       <img class="lp-who-img" src="/img/atilla.png" alt="Atilla — dein Ansprechpartner bei KMU-Webseiten.de" loading="lazy" />
       <div>
         <span class="stars" aria-hidden="true">★★★★★</span>
-        <p><strong>Hi, ich bin Atilla — dein direkter Ansprechpartner.</strong> KMU-Webseiten.de ist mein Angebot der Agentur <strong>Pixel56</strong>: über <strong>6 Jahre</strong> Webdesign &amp; SEO, mehr als <strong>100 umgesetzte Webseiten</strong>. Deinen Entwurf betreue ich persönlich — kein Callcenter, keine Warteschleife.</p>
+        <p><strong>Hi, ich bin Atilla — dein direkter Ansprechpartner.</strong></p>
+        <p>KMU-Webseiten.de habe ich aus einem einfachen Grund gestartet: In über <strong>6 Jahren Agenturarbeit</strong> (Pixel56, <strong>100+ Webseiten</strong>) habe ich zu oft erlebt, dass kleine und mittelständische Unternehmen, Einzelunternehmer und Coaches <strong>3.000 bis 12.000&nbsp;€</strong> zahlen sollen — bevor sie überhaupt etwas gesehen haben. Viele verzichten dann ganz auf eine gute Website. Und verlieren jeden Monat Kunden.</p>
+        <p>Das finde ich falsch. Hinter jedem kleinen Unternehmen steht ein Mensch, der jeden Tag richtig gute Arbeit macht — und diese Arbeit verdient einen Auftritt, der ihr gerecht wird. <strong>Deshalb gibt es hier dieselbe Qualität zum fairen Monatspreis:</strong> Erst siehst du deinen kostenlosen Entwurf, dann entscheidest du. Ohne Risiko, ohne Agenturpreise.</p>
+        <p>Deinen Entwurf betreue ich persönlich — kein Callcenter, keine Warteschleife.</p>
         <p class="lp-who-wa">Du hast noch Fragen? Schreib mir einfach per WhatsApp — ich antworte persönlich:</p>
         <a class="lp-wa-btn" href="https://wa.me/4917622088079?text=Hallo%20Atilla!%20Ich%20habe%20eine%20Frage%20zum%20kostenlosen%20Website-Entwurf." target="_blank" rel="noopener">💬 Frage per WhatsApp stellen</a>
       </div>
