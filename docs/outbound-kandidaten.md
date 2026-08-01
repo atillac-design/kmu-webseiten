@@ -39,3 +39,23 @@ Prüfmethode: Mobil-Optimierung (viewport), Baujahr-Signale, SSL, Seitengröße,
 2. Anrufen (Leitfaden: docs/entwurf-automatik.md + Gesprächsnotizen)
 3. Bei Interesse: Entwurf bauen (src/data/entwuerfe/_vorlage.js) → live unter /entwurf/{slug}/
 4. Entwurf-Link per WhatsApp/E-Mail NACH dem Gespräch senden (dann ist es erlaubt)
+
+## Liste 2 (Maler- & Elektro-Innung, 01.08.2026)
+
+| # | Betrieb | Ort | Telefon | Website | Befund |
+|---|---------|-----|---------|---------|--------|
+| 11 | Malerwerkstätte Kroll GmbH | Raubach (Kirchstr. 5) | 02684-5525 | malerkroll.de | kein SSL — Browser warnt „Nicht sicher" |
+| 12 | Prangenberg Maler + Raumausstatter | Roßbach (Wiedtalstr. 57) | 02638-203 | prangenberg-raumausstattung.de | kein SSL |
+| 13 | MC-Homedesign (Marcus Colmi) | Kleinmaischeid (Vor dem Löh 29) | 02689-959455 | mc-homedesign.de | Website quasi leer (322 Bytes) |
+| 14 | FARBENundSTIL | Region Neuwied | über Google Maps | farbenundstil.de | kein SSL |
+| 15 | R+R Malermeisterbetrieb | Region Neuwied | über Google Maps | r-rmalermeisterbetrieb.de | kein SSL |
+| 16 | Michael Bruch Elektrotechnik GmbH | Raum Wirges/WW (Im Kurzenseifen 3) | 02626-92397-0 | bruch-elektrotechnik.de | nicht handytauglich |
+| 17 | Elektro Horst Breunig | Raum Betzdorf (Am Ottoturm 51) | 02741-60264 | elektro-breunig.de | nicht handytauglich |
+| 18 | Elektro Kreuels GmbH (Inh. M. Pfeifer) | Westerwald (Hermannshainer Str. 1) | 02667-752 | elektro-kreuels.de | nicht handytauglich |
+| 19 | Jürgen Fassbender Elektrotechnik | Region Neuwied (Im Wiedtal 21) | esf-neuwied@web.de | elektro-service-fassbender.jimdo.com | läuft auf KOSTENLOSER Jimdo-Subdomain |
+| 20 | Elektro-Hüsch (Dipl.-Ing. S. Hüsch) | Westerwald (Struthweg 1) | 02747-2170 | elektro-huesch.de | kein SSL |
+
+**Existenz-Check:** Alle Kontakte stammen aus aktuellen Innungs-Mitgliederlisten
+(Dachdecker-, Maler-, Elektro-Innung Kreis Neuwied / Rhein-Westerwald). Innungsbetriebe
+zahlen Mitgliedsbeiträge — tote Firmen fliegen dort raus. 100 % Garantie gibt nur der
+Anruf selbst (= 30 Sekunden).
